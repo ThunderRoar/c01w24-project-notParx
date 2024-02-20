@@ -20,7 +20,7 @@ def submit_search_form(driver, surname):
     wait = WebDriverWait(driver, 10)
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.ng-table-responsive')))
 
-    
+
 def scrape_table_data(driver):
     table = driver.find_element(By.CSS_SELECTOR, '.ng-table-responsive')
     rows = table.find_elements(By.TAG_NAME, 'tr')[1:]
@@ -42,3 +42,32 @@ def scrape_table_data(driver):
         }
         all_rows_data.append(row_data)
     return all_rows_data
+
+def check_status_on_register(driver, profile_url):
+    driver.get(profile_url)
+    try:
+        wait = WebDriverWait(driver, 10)
+        status_present = EC.presence_of_element_located(
+            (By.ID, 'ctl01_TemplateBody_WebPartManager1_gwpciNewSummaryDisplayCommon_ciNewSummaryDisplayCommon_Status'))
+        wait.until(status_present)
+        status_element = driver.find_element(By.ID, 'ctl01_TemplateBody_WebPartManager1_gwpciNewSummaryDisplayCommon_ciNewSummaryDisplayCommon_Status')
+        return "On the Register" in status_element.text
+    except TimeoutException:
+        print("Timed out waiting for the status element to load")
+        return False
+
+def main():
+    driver = initialize_webdriver()
+    try:
+        submit_search_form(driver, 'Shreya')
+        doctors_data = scrape_table_data(driver)
+        for doctor in doctors_data:
+            if check_status_on_register(driver, doctor['ProfileLink']):
+                print(f"{doctor['FirstName']} {doctor['LastName']} is on the register")
+            else:
+                print(f"{doctor['FirstName']} {doctor['LastName']} is not on the register")
+    finally:
+        driver.quit()
+
+if __name__ == "__main__":
+    main()
