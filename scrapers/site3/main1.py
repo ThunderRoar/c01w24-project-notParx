@@ -19,3 +19,26 @@ def submit_search_form(driver, surname):
 
     wait = WebDriverWait(driver, 10)
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.ng-table-responsive')))
+
+    
+def scrape_table_data(driver):
+    table = driver.find_element(By.CSS_SELECTOR, '.ng-table-responsive')
+    rows = table.find_elements(By.TAG_NAME, 'tr')[1:]
+    all_rows_data = []
+    for row in rows:
+        cells = row.find_elements(By.TAG_NAME, 'td')
+        row_data = {
+            'LastName': cells[0].text,
+            'FirstName': cells[1].text,
+            'MiddleName': cells[2].text,
+            'City': cells[3].text,
+            'Province': cells[4].text,
+            'Country': cells[5].text,
+            'Language': cells[6].text,
+            'PostalCode': cells[7].text,
+            'Phone': cells[8].text,
+            'Fax': cells[9].text,
+            'ProfileLink': cells[10].find_element(By.TAG_NAME, 'a').get_attribute('href')
+        }
+        all_rows_data.append(row_data)
+    return all_rows_data
