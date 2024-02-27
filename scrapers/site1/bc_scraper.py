@@ -40,7 +40,7 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
     search_btn.click()
 
     # Delay for the website to process data
-    time.sleep(4)
+    time.sleep(1)
 
     # print(browser.current_url)
     assert browser.current_url == "https://www.cpsbc.ca/public/registrant-directory/search-result"
