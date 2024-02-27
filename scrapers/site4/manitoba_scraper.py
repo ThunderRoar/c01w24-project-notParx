@@ -58,11 +58,11 @@ def check_status(memberClass: str):
 
 
 if __name__ == "__main__":
-    print(get_user_status("Emily", "Saganski"))   # Found and VERIFIED
+    print(get_user_status("Emily", "Saganski"))   # VERIFIED
     print()
     print(get_user_status("Stuart", "Koensgen"))  # NOT FOUND
     print()
-    print(get_user_status("Marina", "Rountree-James"))  # NOT FOUND
+    print(get_user_status("Marina", "Rountree-James"))  # VERIFIED
     print()
     print(get_user_status("Kim", "Rosing"))  # VERFIED
 
