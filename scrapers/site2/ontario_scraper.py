@@ -26,7 +26,7 @@ def parse_prescriber_page(soup, last_name: str, first_name: str):
     
     # If we could not find the correct (or any) prescriber name, then we found no one. This accounts for the 0 results case as well.
     if not name_correct: 
-        return "NOT_FOUND"
+        return "NOT FOUND"
 
     ## Check prescriber status
     candidates = soup.find("div", class_="doctor-info").find_all("strong") # First doctor info should always contain member status
@@ -99,7 +99,3 @@ def get_status(last_name: str, first_name: str, number: str):
         return parse_prescriber_page(soup, last_name, first_name)
     except:
         return "ERROR"
-
-if __name__ == "__main__":
-    # Sanity Test
-    print(get_status("Edwards", "Bonnie", 30722))

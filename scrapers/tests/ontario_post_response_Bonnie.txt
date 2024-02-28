@@ -1,0 +1,1211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-CA" lang="en-CA">
+<head id="head"><title>
+	CPSO - Doctor Details
+</title><meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+<meta http-equiv="pragma" content="no-cache" /> 
+<meta http-equiv="content-style-type" content="text/css" /> 
+<meta http-equiv="content-script-type" content="text/javascript" /> 
+	<!-- ### META ###-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="/Content/Images/site/favicon.ico" />
+	<!-- ### META - END ###-->
+
+	<title>CPSO - Home</title>	
+
+	<!-- ### FONTS ###-->
+	<link async href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700|Roboto:400,400i,700" rel="stylesheet"><!-- ROBOTO AND RALEWAY -->
+	<!-- ### FONTS - END ###-->
+
+	<!-- ### CSS ### -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/Scripts/slick-1.8.1/slick/slick.css" />
+
+	<link rel="stylesheet" href="/CPSO/dist/css/styles.css?v=1.96">
+	<!-- ### CSS - END ### -->
+
+	<!-- ### JS ### -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<!-- ### JS - END ### -->
+ 
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+<link href="/favicon.ico" type="image/x-icon" rel="icon"/>
+<meta name="description" content="Edwards, Bonnie Lynn" /><style>h1.flagged.inline:before{color:#0062AF; display:none} h2.flagged.inline:before{color:#0062AF; display:none} .sticky_nav a.flagged:before{color:#0062AF; display:none} .sticky_nav a.flagged{padding-left:0px;}  h2.flagged{padding-left:0px;}</style></head>
+<body class="LTR Chrome ENCA ContentBody" >
+    
+    <form method="post" action="/DoctorDetails/Bonnie-Lynn-Edwards/0025899-30722?type=num&amp;term=30722" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="__CMSCsrfToken" id="__CMSCsrfToken" value="OnINroLXOEg3a5XADjo6OWRs1rRoqKDOcjNNQy9+sqsRlBlWDO/SeDBWQ2i6R4MEmiP/1PpZVv6dXRJ+t0AyCi1him9yTdNNJEGgMcjXkhk=" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/azFJqVe3QbrobsLcIr1u11hN9IB6fex2DEZciSZN7pjFKTwfFXw8nSo75FC+ns3NKCfcYztrLgjcS4qjYymWAs+wp7pc8WGncjK3DhQ9haT0VQ9Y5tqRKySzklkKUkxtrjFgfRrqHVzjCrsTlVrTSHrA3XO4NQSyqNwwuyRCsi3jyZ0NeVvpMyUSeI9jE3fkMhE1UdAyeTeloaq89uZLp0Yuby2bU7oyOl4qNpMlxHfxMZxW77CW0+BIesUvzE80VQb9BGDZ+6xLg5JOFlQ2BjCCeQGaY0Y+BzhnoylzI0PWtz812AtujubtfzcTWOYNVRms7IcwnaP75/M4BJRwj9qtcvO8cq2/umGq3uQxQ6ebItsDGHiUzrwV8xGcxkSmIZl5okcx1pUKEMEknT8fwxE0ACjNXjFr7nADrzl9XarcxKMqhkmdfKQ4DQly8gnw4uW5H4rGYaZl4LPCujk/qOwCxWAtU48MrK/aQcVBrzL5+lxa9WbJO9LsMg0QRCtIDzIojwo9k6W/4o8hMieESAH/mRXn3X/8C0Poo7rRc7gU7SOHLadVEDdfe8v0pgHMXdrxwc2lsA+NfCh22igG9xf/wbFVI/2HB+IGMFZdSXlYCUeYvcAU9uLMCExWAfXlm2YIc8RIabfbLWMH61lLTh37kLDgX03nVfLZHmEeI/kb2DxBdXVwSoh4jkxO2FDaxDqBLl+5xSS1Bm2OU49iut2U3tJu34iptaR1if8PG/78dlW3Ke9ISKTdlh0RSTN7DKn2dGm7cTWnPmAlPbH4lAn8KfOvlgP8tPKv6yQsmoKgtZSCaHLN4joq+2tJeEokayFuGjAzj+SQEFg0hz3t0HA8++p1FQZBs0wY8P29T8=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form'];
+if (!theForm) {
+    theForm = document.form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZJve6WGUGV_KNVZlmBqaKpuNHcDO-wuQ5-NJufTNC7PbzB9lBIpSrYS4GneJoXwZog2&amp;t=638403444553933774" type="text/javascript"></script>
+
+<input type="hidden" name="lng" id="lng" value="en-CA" />
+<script type="text/javascript">
+	//<![CDATA[
+
+function PM_Postback(param) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; }; __doPostBack('m$am',param); }
+function PM_Callback(param, callback, ctx) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus(); };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }
+//]]>
+</script>
+<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhviZSkTa1nwglBKvBuiOi9LuMRHj9E-_llzX_f_mk812RpGPPk0d3cBu7yvWKSFrHcqV1iFAexuIcnD5BNqFfJ2ulklXB9h1CI21SAN74HmMWsfQe2YQEBN2pFiE8n97CVRe9GXZki9Ikpk9gHFpdiq41&amp;t=3cf0aaa4" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OKX7VK4nMVjqax2v7GUerV_1xHLoxMxgQ3L9xHIsldjwkIYbXsgDSMFyySfElnQDpqVGNNpFvG-qcKv5kWVrWPXjxmWEwzgDcacFm16QEjFi3YHlvJ5v_K7Dxzwm_IxLvWwSE93ogxNi5A3R8LdCuWg1&amp;t=3cf0aaa4" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+var CMS = CMS || {};
+CMS.Application = {
+  "language": "en",
+  "imagesUrl": "/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f",
+  "isDebuggingEnabled": false,
+  "applicationUrl": "/",
+  "isDialog": false,
+  "isRTL": "false"
+};
+
+//]]>
+</script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A5343185" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('manScript', 'form', ['tctxM',''], [], [], 90, '');
+//]]>
+</script>
+
+    <div id="ctxM">
+
+</div>
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWM7D6X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04KQWSX9S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-04KQWSX9S4');
+</script>
+<!-- End Google tag (gtag.js) -->
+	<a class="skiptocontent" href="#content">skip to content</a>
+<div class="header-shim"></div>
+  <header id="siteheader">
+   
+  <!-- Nav -->
+      <!-- Alert goes here -->
+
+<div class="container-fluid no_padding no_margin header_container">
+    <div class="header_utility">
+        <!-- ### SEARCH AND LOGIN ### -->
+        <div class="header_search_login_container">
+            <div class="header_search_login_container_inner">
+                <div class="header_search_container">
+                    <div class="searchboxcontainer">
+                        <label for="txtHeaderSearch" class="hidden">Enter text to search website</label>
+                        <input id="txtHeaderSearch" type="text" class="search_bar" />
+                    </div>
+                    <div class="searchbtncontainer">
+                        <button id="btnHeaderSearch" type="submit" class="search_btn"
+                            aria-label="Open site search bar"><i class="material-icons search">&#xe8b6;</i><i
+                                class="material-icons close">&#xe14c;</i></button>
+                    </div>
+                </div>
+                <div class="signin_container">
+                    <a target="_blank"
+                        href="https://cpsowebauth.b2clogin.com/cpsowebauth.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SignUp&client_id=9c1df94e-df99-494f-8dd8-7f7a3c60faae&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fmy.cpso.on.ca%2FAccount%2FLogin&scope=openid&response_type=id_token&prompt=login"
+                        class="redirect-check">
+                        <span class="icon">
+                            <?xml version="1.0" encoding="UTF-8" ?>
+                            <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g stroke="#FFFFFF">
+                                        <path
+                                            d="M4.5,4.5 C5.5182463,4.5 6.45094314,4.78678458 7.16528283,5.26797874 C7.83292383,5.7177157 8.31109559,6.33836983 8.4550949,7.05115016 L8.4550949,7.05115016 L8.49428596,10.5 L0.5,10.5 L0.5,7.05455569 C0.666028868,6.3396705 1.15608805,5.71660485 1.832674,5.26554755 C2.55190673,4.78605906 3.48325254,4.5 4.5,4.5 Z">
+                                        </path>
+                                        <circle cx="4.5" cy="2.5" r="2"></circle>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        New Applicant Account Creation
+                    </a>
+                    <a href="https://my.cpso.on.ca/" class="btn reducedheight transparent_w_border redirect-check"
+                        target="_blank">Member/Applicant Login</a>
+                </div>
+            </div>
+        </div>
+        <!-- ### SEARCH AND LOGIN - END ### -->
+    </div>
+
+    <div class="header_main">
+        <!-- ### LOGO ### -->
+        <div class="header_logo_container">
+            <a href="http://cpso.on.ca/"><img src="/Content/Images/site/CPSO_Logo_white.svg"
+                    alt="CPSO - Go to Homepage"></a>
+        </div>
+        <!-- ### LOGO - END ### -->
+        <!-- ### NAVIGATION ### -->
+        <div class="header_navigation_container" tabindex="-1">
+            <!-- ### MOBILE NAV MENU HEADER WITH CLOSE BUTTON ### -->
+            <div class="mobile_navigation_header show_mobile">
+                <button type="button" class="mobile_navigation_close" aria-label="Close navigation"
+                    data-ol-has-click-handler=""><i class="material-icons"></i></button>
+            </div>
+            <!-- ### MOBILE NAV MENU HEADER WITH CLOSE BUTTON - END ### -->
+
+            <!-- ### MAIN NAVIGATION ### -->
+            <nav class="main_navigation" aria-label="Primary navigation">
+                <ul>
+                    <li class="has-child">
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE ### -->
+                        <a href="https://www.cpso.on.ca/Public" class="top_level"><span>Public</span></a>
+                        <button type="button" aria-haspopup="true" class="nav-toggle" aria-expanded="false"
+                            aria-label="Toggle sub-navigation options for Public" data-ol-has-click-handler=""></button>
+                        <!-- <a href="#" class="show_sublevel show_mobile" aria-label="Show mobile menu of subpages for Public"><i class="material-icons">&#xe5c8;</i></a> -->
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU ### -->
+                        <div class="container-fluid navigation_megamenu_container" tabindex="-1" role="region"
+                            aria-label="Sub-navigation for Public">
+
+                            <div class="container navigation_megamenu_container_inner">
+
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON ### -->
+                                <div class="mobile_navigation_header show_mobile">
+                                    <button type="button" class="mobile_navigation_back"
+                                        aria-label="Go back to main navigation" data-ol-has-click-handler=""><i
+                                            class="material-icons"></i></button>
+                                    <div class="mobile_navigation_header_text">
+                                        <a href="https://www.cpso.on.ca/Public">Public</a>
+                                    </div>
+                                    <button type="submit" class="mobile_navigation_close" aria-label="Close navigation"
+                                        data-ol-has-click-handler=""><i class="material-icons"></i></button>
+                                </div>
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON - END ### -->
+                                <!-- ### MENU LINKS ### -->
+                                <div class="row no-gutters">
+                                    <div class="col contact_us_column">
+                                        <div><a class="skippastcontent" href="#Public-firstCol"
+                                                data-ol-has-click-handler="">Skip contact information</a></div>
+
+                                        <a href="https://www.cpso.on.ca/contact-us" class="top_level">Contact Us</a>
+
+                                        <strong>Hours of Operation</strong><br>
+                                        Monday - Friday, 8 a.m. - 5 p.m.<br>
+                                        416-967-2600
+
+                                        <br><br>
+
+                                        <strong>Address</strong><br>
+                                        College of Physicians and<br>
+                                        Surgeons of Ontario<br>
+                                        80 College Street<br>
+                                        Toronto, Ontario M5G 2E2
+
+                                        <br><br>
+
+                                        <div class="socialmedia">
+                                            <a href="https://twitter.com/cpso_ca" target="_blank"><img
+                                                    src="/Content/Images/site/footer_x.svg"
+                                                    alt="Twitter" class="twitterico"></a>
+                                            <a href="https://www.facebook.com/pages/College-of-Physicians-and-Surgeons-of-Ontario/144601285573797"
+                                                target="_blank"><img
+                                                    src="/Content/Images/site/footer_facebook.svg"
+                                                    alt="Facebook" class="facebookico"></a>
+                                            <a href="https://www.linkedin.com/company/thecpso" target="_blank"><img
+                                                    src="/Content/Images/site/linkedin.svg"
+                                                    alt="LinkedIn" class="linkedinico"></a>
+                                            <a href="https://www.youtube.com/user/theCpso" target="_blank"><img
+                                                    src="/Content/Images/site/youtube.svg"
+                                                    alt="Youtube" class="youtubeico"></a>
+                                            <a href="https://www.instagram.com/cpso_ca/" target="_blank"><img
+                                                    src="/Content/Images/site/footer_insta.svg"
+                                                    alt="Instagram" class="instaico"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col links_column" id="Public-firstCol">
+                                        <a href="https://www.cpso.on.ca/Public/Services" class="top_level">Services</a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://doctors.cpso.on.ca/?search=general"
+                                                    target="_blank">Doctor Search</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Services/Complaints-and-Concerns">Complaints
+                                                    and Concerns</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Services/Funding-for-Therapy-and-Counselling">Funding
+                                                    for Therapy and Counselling</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.cpso.on.ca/Public/Services/Patient-Help-Centre">Patient
+                                                    &amp; Public Help Centre</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col links_column">
+                                        <a href="https://www.cpso.on.ca/Public/Public-Information"
+                                            class="top_level">Public Information</a>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Public-Information/You-and-Your-Doctor">You
+                                                    and Your Doctor</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Public-Information/Compliment-a-physician">Compliment
+                                                    a Physician</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Public-Information/Navigating-the-Health-System">Navigating
+                                                    the Health System — A Guide for Patients and Caregivers</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Policies-Guidance/Policies">Policies</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://clinics.cpso.on.ca/" target="_blank">Clinic
+                                                    Inspections</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Public-Information/Unregistered-Practitioners">Unregistered
+                                                    Practitioners</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Public/Public-Information/Public-Engagement">Public
+                                                    Engagement</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="access_top_level_page show_mobile"><a
+                                            href="https://www.cpso.on.ca/Public">Public Homepage</a></div>
+                                </div>
+                                <!-- ### MENU LINKS - END ### -->
+                            </div>
+                        </div>
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU - END ### -->
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE - END ### -->
+                    </li>
+                    <li class="has-child">
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE ### -->
+                        <a href="https://www.cpso.on.ca/Physicians" class="top_level"><span>Physicians</span></a>
+                        <button type="button" aria-haspopup="true" class="nav-toggle" aria-expanded="false"
+                            aria-label="Toggle sub-navigation options for Physicians"
+                            data-ol-has-click-handler=""></button>
+                        <!-- <a href="#" class="show_sublevel show_mobile" aria-label="Show mobile menu of subpages for Physicians"><i class="material-icons">&#xe5c8;</i></a> -->
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU ### -->
+                        <div class="container-fluid navigation_megamenu_container" tabindex="-1" role="region"
+                            aria-label="Sub-navigation for Physicians">
+                            <div class="container navigation_megamenu_container_inner">
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON ### -->
+                                <div class="mobile_navigation_header show_mobile">
+                                    <button type="button" class="mobile_navigation_back"
+                                        aria-label="Go back to main navigation" data-ol-has-click-handler=""><i
+                                            class="material-icons"></i></button>
+                                    <div class="mobile_navigation_header_text">
+                                        <a href="https://www.cpso.on.ca/Physicians">Physicians</a>
+                                    </div>
+                                    <button type="submit" class="mobile_navigation_close" aria-label="Close navigation"
+                                        data-ol-has-click-handler=""><i class="material-icons"></i></button>
+                                </div>
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON - END ### -->
+                                <!-- ### MENU LINKS ### -->
+                                <div class="row no-gutters">
+                                    <div class="col contact_us_column">
+                                        <div><a class="skippastcontent" href="#Physicians-firstCol"
+                                                data-ol-has-click-handler="">Skip contact information</a></div>
+
+                                        <a href="https://www.cpso.on.ca/contact-us" class="top_level">Contact Us</a>
+
+                                        <strong>Hours of Operation</strong><br>
+                                        Monday - Friday, 8 a.m. - 5 p.m.<br>
+                                        416-967-2600
+
+                                        <br><br>
+
+                                        <strong>Address</strong><br>
+                                        College of Physicians and<br>
+                                        Surgeons of Ontario<br>
+                                        80 College Street<br>
+                                        Toronto, Ontario M5G 2E2
+
+                                        <br><br>
+
+                                        <div class="socialmedia">
+                                            <a href="https://twitter.com/cpso_ca" target="_blank"><img
+                                                    src="/Content/Images/site/footer_x.svg"
+                                                    alt="Twitter" class="twitterico"></a>
+                                            <a href="https://www.facebook.com/pages/College-of-Physicians-and-Surgeons-of-Ontario/144601285573797"
+                                                target="_blank"><img
+                                                    src="/Content/Images/site/footer_facebook.svg"
+                                                    alt="Facebook" class="facebookico"></a>
+                                            <a href="https://www.linkedin.com/company/thecpso" target="_blank"><img
+                                                    src="/Content/Images/site/linkedin.svg"
+                                                    alt="LinkedIn" class="linkedinico"></a>
+                                            <a href="https://www.youtube.com/user/theCpso" target="_blank"><img
+                                                    src="/Content/Images/site/youtube.svg"
+                                                    alt="Youtube" class="youtubeico"></a>
+                                            <a href="https://www.instagram.com/cpso_ca/" target="_blank"><img
+                                                    src="/Content/Images/site/footer_insta.svg"
+                                                    alt="Instagram" class="instaico"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col links_column" id="Physicians-firstCol">
+                                        <a href="https://www.cpso.on.ca/Physicians/Registration"
+                                            class="top_level">Registration and New Members</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/Physicians/Policies-Guidance"
+                                            class="top_level">Policies &amp; Guidance</a>
+                                        <ul></ul>
+                                    </div>
+
+                                    <div class="col links_column">
+                                        <a href="https://www.cpso.on.ca/Physicians/Your-Practice" class="top_level">Your
+                                            Practice</a>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Registration-Renewals-and-Incorporation">Registration
+                                                    Renewals and Incorporation</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Membership-Services">Membership
+                                                    Services</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Quality-Improvement-Program">Quality
+                                                    Improvement Program </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Quality-Management">Quality
+                                                    Management &amp; CPD</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Accreditation-Programs">Independent
+                                                    and Out-of-Hospital Health Facilities</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Physician-Advisory-Services">Physician
+                                                    Advisory Services</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/Physicians/Your-Practice/Equity-Diversity-and-Inclusion">Equity,
+                                                    Diversity and Inclusion</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="access_top_level_page show_mobile"><a
+                                            href="https://www.cpso.on.ca/Physicians">Physicians Homepage</a></div>
+                                </div>
+                                <!-- ### MENU LINKS - END ### -->
+                            </div>
+                        </div>
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU - END ### -->
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE - END ### -->
+                    </li>
+                    <li class="has-child">
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE ### -->
+                        <a href="https://www.cpso.on.ca/About" class="top_level"><span>About</span></a>
+                        <button type="button" aria-haspopup="true" class="nav-toggle" aria-expanded="false"
+                            aria-label="Toggle sub-navigation options for About" data-ol-has-click-handler=""></button>
+                        <!-- <a href="#" class="show_sublevel show_mobile" aria-label="Show mobile menu of subpages for About"><i class="material-icons">&#xe5c8;</i></a> -->
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU ### -->
+                        <div class="container-fluid navigation_megamenu_container" tabindex="-1" role="region"
+                            aria-label="Sub-navigation for About">
+                            <div class="container navigation_megamenu_container_inner">
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON ### -->
+                                <div class="mobile_navigation_header show_mobile">
+                                    <button type="button" class="mobile_navigation_back"
+                                        aria-label="Go back to main navigation" data-ol-has-click-handler=""><i
+                                            class="material-icons"></i></button>
+                                    <div class="mobile_navigation_header_text">
+                                        <a href="https://www.cpso.on.ca/About">About</a>
+                                    </div>
+                                    <button type="submit" class="mobile_navigation_close" aria-label="Close navigation"
+                                        data-ol-has-click-handler=""><i class="material-icons"></i></button>
+                                </div>
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON - END ### -->
+                                <!-- ### MENU LINKS ### -->
+                                <div class="row no-gutters">
+                                    <div class="col contact_us_column">
+                                        <div><a class="skippastcontent" href="#About-firstCol"
+                                                data-ol-has-click-handler="">Skip contact information</a></div>
+
+                                        <a href="https://www.cpso.on.ca/contact-us" class="top_level">Contact Us</a>
+
+                                        <strong>Hours of Operation</strong><br>
+                                        Monday - Friday, 8 a.m. - 5 p.m.<br>
+                                        416-967-2600
+
+                                        <br><br>
+
+                                        <strong>Address</strong><br>
+                                        College of Physicians and<br>
+                                        Surgeons of Ontario<br>
+                                        80 College Street<br>
+                                        Toronto, Ontario M5G 2E2
+
+                                        <br><br>
+
+                                        <div class="socialmedia">
+                                            <a href="https://twitter.com/cpso_ca" target="_blank"><img
+                                                    src="/Content/Images/site/footer_x.svg"
+                                                    alt="Twitter" class="twitterico"></a>
+                                            <a href="https://www.facebook.com/pages/College-of-Physicians-and-Surgeons-of-Ontario/144601285573797"
+                                                target="_blank"><img
+                                                    src="/Content/Images/site/footer_facebook.svg"
+                                                    alt="Facebook" class="facebookico"></a>
+                                            <a href="https://www.linkedin.com/company/thecpso" target="_blank"><img
+                                                    src="/Content/Images/site/linkedin.svg"
+                                                    alt="LinkedIn" class="linkedinico"></a>
+                                            <a href="https://www.youtube.com/user/theCpso" target="_blank"><img
+                                                    src="/Content/Images/site/youtube.svg"
+                                                    alt="Youtube" class="youtubeico"></a>
+                                            <a href="https://www.instagram.com/cpso_ca/" target="_blank"><img
+                                                    src="/Content/Images/site/footer_insta.svg"
+                                                    alt="Instagram" class="instaico"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col links_column" id="About-firstCol">
+                                        <a href="https://www.cpso.on.ca/About/What-we-do" class="top_level">What we
+                                            do</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/About/Council" class="top_level">Council</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/About/College-Leadership"
+                                            class="top_level">College Leadership</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/About/Committees"
+                                            class="top_level">Committees</a>
+                                        <ul></ul>
+                                    </div>
+
+                                    <div class="col links_column">
+                                        <a href="https://www.cpso.on.ca/Physicians/Your-Practice/Equity-Diversity-and-Inclusion"
+                                            class="top_level">Equity, Diversity and Inclusion</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/About/Get-Involved-with-CPSO"
+                                            class="top_level">Get Involved with the CPSO</a>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/About/Get-Involved-with-CPSO/Career-Opportunities">Career
+                                                    Opportunities</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col links_column">
+                                        <a href="https://www.cpso.on.ca/About/Legislation-By-Laws"
+                                            class="top_level">Legislation &amp; By-Laws</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/About/Privacy,-Accessibility-Human-Rights-Codes"
+                                            class="top_level">Privacy, Accessibility &amp; Human Rights Codes</a>
+                                        <ul></ul>
+                                    </div>
+                                    <div class="access_top_level_page show_mobile"><a
+                                            href="https://www.cpso.on.ca/About">About Homepage</a></div>
+                                </div>
+                                <!-- ### MENU LINKS - END ### -->
+                            </div>
+                        </div>
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU - END ### -->
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE - END ### -->
+                    </li>
+                    <li class="has-child">
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE ### -->
+                        <a href="https://www.cpso.on.ca/News" class="top_level"><span>News</span></a>
+                        <button type="button" aria-haspopup="true" class="nav-toggle" aria-expanded="false"
+                            aria-label="Toggle sub-navigation options for News" data-ol-has-click-handler=""></button>
+                        <!-- <a href="#" class="show_sublevel show_mobile" aria-label="Show mobile menu of subpages for News"><i class="material-icons">&#xe5c8;</i></a> -->
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU ### -->
+                        <div class="container-fluid navigation_megamenu_container" tabindex="-1" role="region"
+                            aria-label="Sub-navigation for News">
+                            <div class="container navigation_megamenu_container_inner">
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON ### -->
+                                <div class="mobile_navigation_header show_mobile">
+                                    <button type="button" class="mobile_navigation_back"
+                                        aria-label="Go back to main navigation" data-ol-has-click-handler=""><i
+                                            class="material-icons"></i></button>
+                                    <div class="mobile_navigation_header_text">
+                                        <a href="https://www.cpso.on.ca/News">News</a>
+                                    </div>
+                                    <button type="submit" class="mobile_navigation_close" aria-label="Close navigation"
+                                        data-ol-has-click-handler=""><i class="material-icons"></i></button>
+                                </div>
+                                <!-- ### MOBILE MENU HEADER WITH BACK AND CLOSE BUTTON - END ### -->
+                                <!-- ### MENU LINKS ### -->
+                                <div class="row no-gutters">
+
+                                    <div class="col contact_us_column">
+                                        <div><a class="skippastcontent" href="#News-firstCol"
+                                                data-ol-has-click-handler="">Skip contact information</a></div>
+
+                                        <a href="https://www.cpso.on.ca/contact-us" class="top_level">Contact Us</a>
+
+                                        <strong>Hours of Operation</strong><br>
+                                        Monday - Friday, 8 a.m. - 5 p.m.<br>
+                                        416-967-2600
+
+                                        <br><br>
+
+                                        <strong>Address</strong><br>
+                                        College of Physicians and<br>
+                                        Surgeons of Ontario<br>
+                                        80 College Street<br>
+                                        Toronto, Ontario M5G 2E2
+
+                                        <br><br>
+
+                                        <div class="socialmedia">
+                                            <a href="https://twitter.com/cpso_ca" target="_blank"><img
+                                                    src="/Content/Images/site/footer_x.svg"
+                                                    alt="Twitter" class="twitterico"></a>
+                                            <a href="https://www.facebook.com/pages/College-of-Physicians-and-Surgeons-of-Ontario/144601285573797"
+                                                target="_blank"><img
+                                                    src="/Content/Images/site/footer_facebook.svg"
+                                                    alt="Facebook" class="facebookico"></a>
+                                            <a href="https://www.linkedin.com/company/thecpso" target="_blank"><img
+                                                    src="/Content/Images/site/linkedin.svg"
+                                                    alt="LinkedIn" class="linkedinico"></a>
+                                            <a href="https://www.youtube.com/user/theCpso" target="_blank"><img
+                                                    src="/Content/Images/site/youtube.svg"
+                                                    alt="Youtube" class="youtubeico"></a>
+                                            <a href="https://www.instagram.com/cpso_ca/" target="_blank"><img
+                                                    src="/Content/Images/site/footer_insta.svg"
+                                                    alt="Instagram" class="instaico"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col links_column" id="News-firstCol">
+                                        <a href="https://www.cpso.on.ca/News/COVID-19-Updates"
+                                            class="top_level">COVID-19 Updates</a>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/News/COVID-19-Updates/Information-for-Physicians">Information
+                                                    for Physicians</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/News/COVID-19-Updates/Information-for-Patients">Information
+                                                    for Patients</a>
+                                            </li>
+                                        </ul>
+                                        <a href="https://www.cpso.on.ca/News/Statements"
+                                            class="top_level">Statements</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/News/Discipline-Hearings"
+                                            class="top_level">Discipline Hearings</a>
+                                        <ul></ul>
+                                        <a href="https://www.cpso.on.ca/News/Discipline-Decisions"
+                                            class="top_level">Discipline Decisions</a>
+                                        <ul></ul>
+                                    </div>
+
+                                    <div class="col links_column">
+                                        <a href="https://www.cpso.on.ca/News/Publications"
+                                            class="top_level">Publications &amp; Reports</a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.cpso.on.ca/News/Publications/Annual-Report">Annual
+                                                    Report</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.cpso.on.ca/News/Publications/EDI-Report">EDI
+                                                    Report</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.cpso.on.ca/News/Publications/Dialogue">eDialogue
+                                                    &amp; Podcast</a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.cpso.on.ca/News/Publications/Submissions-by-CPSO-to-Government">Submissions
+                                                    by CPSO to Government</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="access_top_level_page show_mobile"><a
+                                            href="https://www.cpso.on.ca/News">News Homepage</a></div>
+                                </div>
+                                <!-- ### MENU LINKS - END ### -->
+                            </div>
+                        </div>
+                        <!-- ### SUBLEVEL / MOBILE SUB LEVEL MENU - END ### -->
+                        <!-- ### TOP LEVEL LINK WITH BTN TO SHOW SUBLEVEL ON MOBILE - END ### -->
+                    </li>
+
+                    <li class="show_mobile">
+                        <a href="https://www.cpso.on.ca/Contact" class="top_level">Contact</a>
+                    </li>
+
+                    <li class="translate-toggle__mobile show_mobile">
+                        <span class="icon">
+                            <!--?xml version="1.0" encoding="UTF-8" ?-->
+                            <svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g stroke="#FFFFFF">
+                                        <line x1="1.5" y1="5.5" x2="9.5" y2="5.5" stroke-linecap="square"></line>
+                                        <circle cx="5.5" cy="5.5" r="5"></circle>
+                                        <ellipse cx="5.5" cy="5.5" rx="2.5" ry="4.5"></ellipse>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <a href="https://www.cpso.on.ca/fr">francais</a>
+                    </li>
+
+                    <li class="member_sign_in show_mobile">
+                        <a href="https://my.cpso.on.ca" class="btn blue_rect_btn">Member/Applicant Login</a>
+                        <a target="_blank"
+                            href="https://cpsowebauth.b2clogin.com/cpsowebauth.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SignUp&amp;client_id=9c1df94e-df99-494f-8dd8-7f7a3c60faae&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fmy.cpso.on.ca%2FAccount%2FLogin&amp;scope=openid&amp;response_type=id_token&amp;prompt=login">
+                            <span class="icon">
+                                <!--?xml version="1.0" encoding="UTF-8" ?-->
+                                <svg width="9px" height="11px" viewBox="0 0 9 11" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g stroke="#FFFFFF">
+                                            <path
+                                                d="M4.5,4.5 C5.5182463,4.5 6.45094314,4.78678458 7.16528283,5.26797874 C7.83292383,5.7177157 8.31109559,6.33836983 8.4550949,7.05115016 L8.4550949,7.05115016 L8.49428596,10.5 L0.5,10.5 L0.5,7.05455569 C0.666028868,6.3396705 1.15608805,5.71660485 1.832674,5.26554755 C2.55190673,4.78605906 3.48325254,4.5 4.5,4.5 Z">
+                                            </path>
+                                            <circle cx="4.5" cy="2.5" r="2"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                            New Applicant Account Creation
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- ### MAIN NAVIGATION - END ### -->
+        </div>
+
+        <!-- ### MOBILE NAV BTN ### -->
+        <div class="header_mobile_nav_btn_container show_mobile">
+            <button id="m_nav_btn" type="button" aria-expanded="false" aria-label="Open navigation"><i
+                    class="material-icons">notes</i></button>
+        </div>
+        <!-- ### MOBILE NAV BTN - END ### -->
+
+        <!-- ### MOBILE SEARCH BTN ### -->
+        <div class="header_mobile_search_btn_container show_mobile">
+            <button type="button" id="m_search_btn" aria-expanded="false" aria-label="Open site search bar"><i
+                    class="material-icons">&#xe8b6;</i></button>
+        </div>
+        <!-- ### MOBILE SEARCH BTN - END ### -->
+
+        <!-- ### MOBILE SEARCH OVERLAY ### -->
+        <div class="header_mobile_search_overlay" tabindex="-1" role="region" aria-label="Search">
+            <div class="mobile_navigation_header show_mobile">
+                <button type="button" aria-label="Close site search bar" class="mobile_search_menu_close"><i
+                        class="material-icons">&#xe5cd;</i></button>
+            </div>
+
+            <div class="header_mobile_search_overlay_body">
+                <label for="txtSearchMobile" class="hidden">Enter text to search website</label>
+                <input id="txtSearchMobile" type="text" class="form-control search_bar" /><br />
+                <a id="btnMobileSearch" href="#" class="btn red_rect_btn">Search</a>
+            </div>
+        </div>
+        <!-- ### MOBILE SEARCH OVERLAY - END ### -->
+    </div>
+</div>
+  <!-- Nav -->
+  </header>
+  <!-- Container -->
+   
+
+
+
+		<!-- ### TWO COLUMN CONTENT WITH STICKY NAV ### -->
+		<div class="container-fluid no_padding two_column_sticky_content_outer_container ecatwocolumn">
+
+			<div class="container no_padding two_column_sticky_content_container">
+
+				<!-- ### LEFT NAV ### -->
+                <div class="col left_column_sticky_nav" style="">
+                  <nav class="sticky_nav anchor_nav">
+<div class="parent">Member Info</div>
+
+<ul id="stickyMemberInfoList">
+</ul>
+</nav>
+                  </div>
+				<!-- ### LEFT NAV - END ### -->
+              
+        				<!-- ### RIGHT COLUMN ### -->
+              <main id="content">
+				<div class="col ml-auto right_column">
+                
+
+
+    <!-- Search -->
+<div class="doctor-details-back-print">
+			<div class="row no-gutters">
+				<div class="col">
+				<a class="backtodocsearch" href="https://doctors.cpso.on.ca/?refine=true&search=quick">Back to Search</a>
+
+				</div>
+			<div class="col text-right">
+        		                <a href="https://doctors.cpso.on.ca//Doctor-Details-Print.aspx?view=5&id=30722&ref-no=0025899" id="p_lt_ctl01_pageplaceholder_p_lt_ctl01_CPSO_Doctor_AllDetail_printme" class="printdetails" target="_blank" rel="nofollow">Printable Version</a>
+			</div>
+			</div>
+		</div>
+
+    <div class="search-breadcrumbs">
+
+        <!-- <div class="back-to-search"><a id="p_lt_ctl01_pageplaceholder_p_lt_ctl01_CPSO_Doctor_AllDetail_lnkSearchAgain" href="/public-register/registration-number-search"><strong>Search Again</strong></a></div> -->
+    </div>
+
+
+
+
+
+        <!-- Heading -->
+        <div class="doctor-details-heading">
+            
+				<div class="name_cpso_num">
+                <h1 id="docTitle">
+                    Edwards, Bonnie Lynn
+					</h1>
+                    <h3>CPSO#:
+                    	30722
+						  </h3>
+						</div>
+
+                <div class="doctor-info">
+						<div class="columns medium-6" >
+							<strong style="font-size:14px">MEMBER STATUS</strong>
+						</div>
+						<div class="columns medium-6 text-align--right">
+						<strong style="font-size:14px">Active Member as of
+						13 Jun 1977 </strong>
+						</div>
+					</div>
+
+						
+						  <div class="doctor-info">
+                    <div class="columns medium-6">
+                        CURRENT OR PAST CPSO REGISTRATION CLASS</div>
+								<div class="columns medium-6 text-align--right">
+								Independent Practice
+                        as of
+                        05 Jun 1979 
+								</div>
+							</div>
+
+
+					
+        </div>
+        <!-- /Heading -->
+        <!-- container for searchheader -->
+        <!-- /end searchheader -->
+    
+
+    <!-- Main -->
+		<div id="docDetails">
+
+		<!-- summary -->
+        <section id="summary" class="doctor-detail-section">
+
+                <h2>Summary
+                </h2>
+                
+                  <div class="hideMeOnPrint">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada. Pellentesque in ipsum id orci porta dapibus.
+                    </p>
+                  </div>
+                
+                
+                <div class="info">
+                    
+                    <p>
+                        <strong>Former Name:</strong>
+                        No Former Name
+                    </p>
+                    <p>
+                        <strong>Gender:</strong>
+                        Female         
+                    </p>
+                    <p>
+                        <strong>Languages Spoken:</strong>
+                        English
+                    </p>
+                    <p>
+                        <strong>Education:</strong>&nbsp;University of Toronto, 1977
+                    </p>
+                </div>
+
+                
+            </section>
+            <!-- /Summary -->
+
+				<!-- Practice Information -->
+            
+                <section id="practice_info" class="doctor-detail-section" >
+                    <h2 >Practice Information<span class="tooltip"
+
+                        data-tooltip=""
+                        data-title='Practice Info'
+                        data-description='Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat.'
+                        data-link-text='CPSO Link'
+                        data-link-url='www.cpso.on.ca' ></span>
+                    </h2>
+                    
+                    <div class="practice-location">
+                        <div class="location_heading">Primary Location of Practice</div>
+								<div class="location_details">
+                        216 West Street<br />Suite 203<br />Simcoe&nbsp;ON&nbsp;&nbsp;N3Y 1S8<br /><strong>Phone:</strong>&nbsp;(519) 426-2014<br /><strong>Fax:</strong>&nbsp;(519) 426-6805
+                            <strong>Electoral District:</strong>&nbsp;04<br />
+                        
+								</div>
+                    </div>
+                    
+                        <div class="additional-practice-location collapsible">
+                            <div class="location_heading">
+									 	<button type="button" class="additional-information-toggle" aria-expanded="false" aria-controls="professionalcorporationinfo" >View Professional Corporation Information</button>
+									 </div>
+                            <div class="additional-information-container"  id="professionalcorporationinfo">
+                                <h3>Professional Corporation Information</h3>
+										  <br>
+                                
+                                        <strong>Corporation Name:</strong> <span class="green">Bonnie Edwards Medicine Professional Corporation</span>
+													 <br>
+                                            <strong>Certificate of Authorization Status:</strong>&nbsp;Issued Date:&nbsp; Jun 10 2009
+
+                                            
+                                                    <br>
+																	 <br>
+                                                        <strong>Shareholders:</strong><br />
+                                                
+                                                    Dr. B. Edwards (
+                                                    <a href='https://doctors.cpso.on.ca/DoctorDetails/B-Edwards/0025899-30722'>CPSO# 30722 </a>)<br />
+                                                <br>
+
+                                            
+
+                                                        <strong>Business Address:</strong><br />
+                                                        216 West Street<br />Suite 203<br />Simcoe&nbsp;ON&nbsp;&nbsp;N3Y 1S8
+                                                        <br /><strong>Phone Number:</strong> (519) 426-2014
+                                                        
+																		  <br>
+																		  <br>
+
+                                                
+                                    
+                            </div>
+                        </div>
+                        <!-- /corp div-->
+                    
+
+
+                </section>
+
+                <!-- /Practice Info 1 -->
+            
+				<!-- Hospital Privileges -->
+            
+				<!-- end hospital privileges -->
+				<!-- specialties -->
+            
+                <section class="doctor-detail-section" id="specialties">
+                    <h2>Specialties<span class="tooltip"
+                        data-tooltip=""
+                        data-title=''
+                        data-description='tooltip.specialties'
+                        data-link-text=''
+                        data-link-url='' ></span>
+                    </h2>
+                    
+                            <table class="stack">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Specialty</th>
+                                        <th scope="col">Issued On</th>
+                                        <th scope="col">Type</th>
+                                    </tr>
+                                </thead>
+                        
+                            <tr>
+                                <td>No Speciality Reported</td>
+								        <td> </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                </section>
+                <!-- /Specialties -->
+            
+				<!-- end specialties -->
+				<!-- terms and conditions -->
+            
+                <section id="terms" class="doctor-detail-section">
+                    <h2>Terms and Conditions<span class="tooltip"
+                        data-tooltip=""
+                        data-title=''
+                        data-description='tooltip.terms-conditions'
+                        data-link-text=''
+                        data-link-url='' ></span>
+                    </h2>
+                    <p>(1) Dr. BONNIE LYNN EDWARDS may practise only in the areas of medicine in which Dr. EDWARDS is educated and experienced.</p>
+
+                </section>
+
+                <!-- TermCond -->
+            
+				<!-- end terms and conditions -->
+
+            
+  			<!-- /Post Grad -->
+					 <!-- registration history -->
+            <section class="doctor-detail-section" id="reghistory">
+                <h2>Registration History<span class="tooltip"
+                    data-tooltip=""
+                    data-title=''
+                    data-description='tooltip.registration-history'
+                    data-link-text=''
+                    data-link-url='' ></span>
+                </h2>
+                
+                        <table class="stack">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Issue Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    
+                        <tr>
+                            <td>First certificate of registration issued: Postgraduate Education Certificate</td>
+                            <td>Effective:   13 Jun 1977 </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Transfer of class of registration to: Independent Practice Certificate</td>
+                            <td>Effective:   05 Jun 1979 </td>
+                        </tr>
+                    </tbody></table>
+
+
+            </section>
+            <!-- /end Registration Details -->
+
+            
+            <!-- /Current Referrals -->
+            <!-- /Pending Discipline Hearings -->
+
+            
+            <!-- /Practice Restrictions -->
+
+
+
+
+
+            
+            <!-- /Concerns -->
+
+            
+
+        <!--/ doc details -->
+		</div>
+    <!-- main -->
+
+    
+    
+
+                
+                </div>
+             </main>
+             </div>
+          </div>
+
+            
+  
+   
+<!-- Page Alert Bar WebPart -->
+
+
+<!-- Suppressing web part? True,
+ Is Alert Feature Enabled? False,
+ Suppressing alert link? True
+ -->
+<!-- /Page Alert Bar WebPart -->
+
+<!--
+			<div class="alert_message_container" aria-label="Important message">
+				<i class="material-icons">&#xe8b2;</i><span>This is the alert message.</span>
+				<a href="#" class="close_alert" aria-label="Close alert message" onclick="event.preventDefault();CloseAlertMessage()"><i class="material-icons">&#xe14c;</i></a>
+			</div>
+			 END -->
+
+  <!-- /Container -->
+ 
+  <!-- Footer -->
+
+	<footer>
+<div class="container no_padding footer_contact_links_container">
+<div class="row no-gutters"><!-- ### CONTACT US ### -->
+<div class="col footer_links_column contact">
+<div class="row no-gutters">
+<div class="col links ">
+<h3><a href="https://www.cpso.on.ca/contact-us">CONTACT US</a></h3>
+
+<p>College of Physicians and Surgeons of Ontario<br />
+80 College Street<br />
+Toronto, ON, M5G 2E2<br />
+416-967-2600</p>
+</div>
+</div>
+</div>
+<!-- ### CONTACT US - END ### -->
+
+<div class="col footer_links_column public">
+<div class="col links">
+<h3><a href="https://www.cpso.on.ca/en/Public">Public</a></h3>
+
+<ul>
+	<li><a href="http://doctors.cpso.on.ca/" target="_blank">Doctor Search</a></li>
+	<li><a href="http://clinics.cpso.on.ca/" target="_blank">Clinic Inspections</a></li>
+	<li><a href="https://www.cpso.on.ca/en/Public/Services">Services</a></li>
+	<li><a href="https://www.cpso.on.ca/en/Public/Public-Information">Public Information</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col footer_links_column physicians">
+<div class="col links">
+<h3><a href="https://www.cpso.on.ca/en/Physicians">Physicians</a></h3>
+
+<ul>
+	<li><a href="https://www.cpso.on.ca/en/Physicians/Registration">Registration and New Members</a></li>
+	<li><a href="https://www.cpso.on.ca/en/Physicians/Your-Practice">Your Practice</a></li>
+	<li><a href="https://www.cpso.on.ca/en/Physicians/Policies-Guidance">Policies &amp; Guidance</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col footer_links_column about">
+<div class="col links">
+<h3><a href="https://www.cpso.on.ca/en/About">About</a></h3>
+
+<ul>
+	<li><a href="https://www.cpso.on.ca/en/About/What-we-do">What we do</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/Council">Council</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/College-Leadership">College Leadership</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/Committees">Committees</a></li>
+	<li><a href="https://www.cpso.on.ca/en/Physicians/Your-Practice/Equity-Diversity-and-Inclusion">Equity, Diversity and Inclusion</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/Get-Involved-with-CPSO">Get Involved with the CPSO</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/Legislation-By-Laws">Legislation &amp; By-Laws</a></li>
+	<li><a href="https://www.cpso.on.ca/en/About/Privacy,-Accessibility-Human-Rights-Codes">Privacy, Accessibility &amp; Human Rights Codes</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col footer_links_column news">
+<div class="col links">
+<h3><a href="https://www.cpso.on.ca/en/News">News</a></h3>
+
+<ul>
+	<li><a href="https://www.cpso.on.ca/en/News/COVID-19-Updates">COVID-19 Updates</a></li>
+	<li><a href="https://www.cpso.on.ca/en/News/Statements">Statements</a></li>
+	<li><a href="https://www.cpso.on.ca/en/News/Discipline-Hearings">Discipline Hearings</a></li>
+	<li><a href="https://www.cpso.on.ca/en/News/Discipline-Decisions">Discipline Decisions</a></li>
+	<li><a href="https://www.cpso.on.ca/en/News/Publications">Publications &amp; Reports</a></li>
+</ul>
+</div>
+</div>
+<!-- ### SOCIAL MEDIA ### -->
+
+<div class="col footer_links_column socialmedia"><a href="https://twitter.com/cpso_ca" target="_blank"><img alt="See CPSO on Twitter" class="twitterico" src="https://www.cpso.on.ca/Content/Images/site/footer_x.svg" /></a> <a href="https://www.facebook.com/pages/College-of-Physicians-and-Surgeons-of-Ontario/144601285573797" target="_blank"><img alt="See CPSO on Facebook" class="facebookico" src="https://www.cpso.on.ca/Content/Images/site/footer_facebook.svg" /></a> <a href="https://www.linkedin.com/company/thecpso/" target="_blank"><img alt="See CPSO on LinkedIn" class="linkedinico" src="https://www.cpso.on.ca/Content/Images/site/linkedin.svg" /></a> <a href="https://www.youtube.com/user/theCpso" target="_blank"><img alt="See CPSO on Youtube" class="youtubeico" src="https://www.cpso.on.ca/Content/Images/site/youtube.svg" /></a> <a href="https://www.instagram.com/cpso_ca/" target="_blank"><img alt="See CPSO on Instagram" class="instaico" src="https://www.cpso.on.ca/Content/Images/site/footer_insta.svg" /></a></div>
+<!-- ### SOCIAL MEDIA - END ### --></div>
+</div>
+
+<div class="container no_padding footer_bottom_container">
+<div class="row no-gutters">
+<div class="col no_padding">&copy; 2023 The College of Physicians and Surgeons of Ontario</div>
+
+<div class="col text-right"><a href="https://www.cpso.on.ca/en/About/Privacy,-Accessibility-Human-Rights-Codes">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.cpso.on.ca/en/About/Privacy,-Accessibility-Human-Rights-Codes/Privacy-Code">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/About/Privacy,-Accessibility-Human-Rights-Codes/Accessibility-Policy">Accessibility</a></div>
+</div>
+</div>
+</footer>
+
+
+<!-- Footer -->
+<!--<script type="text/javascript" src="/CPSO/js/jquery.sticky-kit.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js"></script>
+	<script src="/CPSO/dist/js/vendor/wicg-inert.js"></script>
+	<script src="/CPSO/dist/js/app.js"></script>
+
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/WebResource.axd?d=beToSAE3vdsL1QUQUxjWdU7fR_fRR2M4tHKyCWuyeJ4JKGk1czd5L54_qLp9j3xeGEaSYCT47LeJoXd5e9yWxg2&t=638403444553933774';
+WebForm_InitCallback();
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+</body>
+</html>
