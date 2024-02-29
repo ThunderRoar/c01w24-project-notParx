@@ -1,1 +1,1 @@
-from .test_ontario_scraper import *
+# Keep this empty. Needs to exist for test discovery purpose

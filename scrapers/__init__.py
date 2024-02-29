@@ -1,1 +1,2 @@
-from .site2 import ontario_scraper
+from .site2 import *
+from .site9 import *

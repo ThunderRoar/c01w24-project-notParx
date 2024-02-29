@@ -72,7 +72,7 @@ def get_status(last_name: str, first_name: str, number: str):
             return "INACTIVE"
         return "VERIFIED"
 
-    return "NOT_FOUND" 
+    return "NOT FOUND" 
 
 if __name__ == "__main__":
     ## Sanity Tests

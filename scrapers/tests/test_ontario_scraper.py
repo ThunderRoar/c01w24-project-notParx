@@ -14,7 +14,7 @@ import requests
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
         def __init__(self):
-            with open("ontario_get_response.txt", 'r', encoding="utf-8") as f:
+            with open(os.path.dirname(os.path.abspath(__file__)) + "/ontario_get_response.txt", 'r', encoding="utf-8") as f:
                 self.text = f.read()
             self.cookies = {}
     
@@ -31,13 +31,13 @@ def mocked_requests_post(*args, **kwargs):
     prescriber_idx = "p$lt$ctl01$pageplaceholder$p$lt$ctl02$CPSO_AllDoctorsSearch$txtCPSONumberGeneral"  
     
     if kwargs["data"][last_name_idx] == "Edwards" and kwargs["data"][first_name_idx] == "Bonnie" and kwargs["data"][prescriber_idx] == 30722:
-        return MockResponse("ontario_post_response_Bonnie.txt")
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/ontario_post_response_Bonnie.txt")
     
     if kwargs["data"][last_name_idx] == "Aaen" and kwargs["data"][first_name_idx] == "Gregory" and kwargs["data"][prescriber_idx] == 89942:
-        return MockResponse("ontario_post_response_GregA.txt")
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/ontario_post_response_GregA.txt")
     
     if kwargs["data"][last_name_idx] == "Pins" and kwargs["data"][first_name_idx] == "Gregory" and kwargs["data"][prescriber_idx] == 54111:
-        return MockResponse("ontario_post_response_GregP.txt")
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/ontario_post_response_GregP.txt")
     
     # Couldn't find given args
     assert False
