@@ -64,7 +64,7 @@ class TestSaskatchewanScraper(unittest.TestCase):
         
         with patch('site3.webdriver.support.expected_conditions.presence_of_element_located'):
             answer = site3.check_status_on_register(mock_driver, '')
-            self.assertEqual(answer, True)
+            self.assertEqual(answer, "VERIFIED")
 
     def test_check_status_on_register_False(self):
         mock_driver = MagicMock()
@@ -75,7 +75,21 @@ class TestSaskatchewanScraper(unittest.TestCase):
         
         with patch('site3.webdriver.support.expected_conditions.presence_of_element_located'):
             answer = site3.check_status_on_register(mock_driver, '')
-            self.assertEqual(answer, False)
+            self.assertEqual(answer, "INACTIVE")
+
+    def test_getStatus_with_mocked_functions(self):
+        with patch('site3.saskatchewan_scraper.initialize_webdriver') as mock_initialize,\
+            patch('site3.saskatchewan_scraper.submit_search_form') as mock_submit,\
+            patch('site3.saskatchewan_scraper.scrape_table_data') as mock_scrape,\
+            patch('site3.saskatchewan_scraper.check_status_on_register') as mock_check_status:
+
+            mock_initialize.return_value = MagicMock()
+            mock_submit.return_value = None
+            mock_scrape.return_value = [{'FirstName': 'John', 'LastName': 'Doe', 'ProfileLink': 'http://example.com'}]
+            mock_check_status.return_value = "VERIFIED"
+
+            status = site3.saskatchewan_scraper.getStatus("John", "Doe")
+            self.assertEqual(status, "VERIFIED")
 
 if __name__ == '__main__':
     unittest.main()

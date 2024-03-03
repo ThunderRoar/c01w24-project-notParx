@@ -51,10 +51,26 @@ def check_status_on_register(driver, profile_url):
             (By.ID, 'ctl01_TemplateBody_WebPartManager1_gwpciNewSummaryDisplayCommon_ciNewSummaryDisplayCommon_Status'))
         wait.until(status_present)
         status_element = driver.find_element(By.ID, 'ctl01_TemplateBody_WebPartManager1_gwpciNewSummaryDisplayCommon_ciNewSummaryDisplayCommon_Status')
-        return "On the Register" in status_element.text
-    except TimeoutException:
+        if status_element.text == "On the Register" :
+            return "VERIFIED"
+        return "INACTIVE"
+    except (TimeoutException, NoSuchElementException):
         print("Timed out waiting for the status element to load")
-        return False
+        return "NOT FOUND"
+
+# Get status for person in table with first and last name
+# Search parameter is 'Last Name', but we need 'First Name' to verify a specific person
+def getStatus(firstName: str, lastName: str):
+    driver = initialize_webdriver()
+    submit_search_form(driver, lastName)
+    doctors_data = scrape_table_data(driver)
+
+    status = "NOT FOUND"
+    for doctor in doctors_data:
+        if doctor['FirstName'] == firstName and doctor['LastName'] == lastName:
+            status = check_status_on_register(driver, doctor['ProfileLink'])
+    driver.quit()
+    return status
 
 def main():
     driver = initialize_webdriver()
@@ -62,7 +78,7 @@ def main():
         submit_search_form(driver, 'Shreya')
         doctors_data = scrape_table_data(driver)
         for doctor in doctors_data:
-            if check_status_on_register(driver, doctor['ProfileLink']):
+            if check_status_on_register(driver, doctor['ProfileLink']) == "VERIFIED":
                 print(f"{doctor['FirstName']} {doctor['LastName']} is on the register")
             else:
                 print(f"{doctor['FirstName']} {doctor['LastName']} is not on the register")
@@ -70,4 +86,7 @@ def main():
         driver.quit()
 
 if __name__ == "__main__":
+    print(getStatus('Shreya', 'Moodley')) # INACTIVE
+    print(getStatus('Brittni', 'Webster')) # VERIFIED
+    print(getStatus('abc123', 'abc123')) # NOT FOUND
     main()
