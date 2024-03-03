@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js ie8" lang="en">
+<!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Physician Directory  - CPSA
+</title><link rel="icon" href="../Content/Theme/images/favIco_32x32.png" sizes="32x32" /><link rel="icon" href="../Content/Theme/images/favIco_192x192.png" sizes="192x192" /><link rel="apple-touch-icon-precomposed" href="../Content/Theme/images/favIco_180x180.png" /><meta name="msapplication-TileImage" content="../Content/Theme/images/favIco_270x270.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli&amp;display=swap" /><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" /><link rel="stylesheet" href="Content/Theme/css/style.css?v=2.0" /><link rel="stylesheet" media="print" href="Content/Theme/css/print.css" />
+
+    <!-- JS -->
+    <!-- browser compatibility check -->
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/modernizr/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/vendor/respond.min.js"></script>
+    <!--[if !lt IE 9]><!-->
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/foundation.min.js"></script>
+    <![endif]-->
+
+	<!-- lt IE 9 backwards compatibility, add to modernizr -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/foundation3.min.js"></script>
+		<script src="../Content/Theme/js/bower_components/foundation/js/vendor/rem.min.js"></script>		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+		<link rel="stylesheet" href="../Content/Theme/css/ieFix.css" />	
+	<![endif]-->
+    <script type="text/javascript" src="../Content/Theme/js/floatl.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/scripts.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99002683-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99002683-1');
+    </script>
+</head>
+<body>
+    <form method="post" action="./PhysicianProfile?e=cce8302c-4d89-469c-831f-c28f4cff3af2&amp;i=0" id="ctl01" data-abide="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="hczfbbnnJBonh3o4SIFitMnmDDRIg16w4Ozhr8s6LF/KEiZLoE/ErJ0bgu1IhdDAa1y4qEEqWFUmwFC/97mDzjau5TvNbAE+qFeYE7bw1KE6YOYrFOYzhhASGg2ePyr0bGJKLPa/HICLf5MKN1VtfkphEv6J8XsO/75gB30Fv2l+xgz64knfTOo4YG9Vn/ZevLnqv99CYytKb4W8ZZwwcEq3PKe4kd3rbiMMjnuyXnOJvGyJFsFz5RSlPa73vIcR4wo6dUNmeNiQKEVmUQ3RYMVRo49LnnmBQCP5AHeQc0/TMfUrY5zR68sIke4f8WXO/ll+2uPX+ToBOLTsazcCDzMQ1doKUZekp5Qh4qazu4cnCDrtzDSXe3JNa5QlZ65q4RxODZkKjSuAoP3l18oJQ2SvPlg01G5McBDXNj21VehiIMVGJgq3zZALt7XMh7Bld+yRoOQRZROXNIYe3XVezHs1NiTjnaxnUgpZB8b0lkGSBGHDFHQKMS7wVirzXowiTSmFRAnBHrGp71KfXiW2W7vpwO8h+aV/qXPB4SI9laokivKpP8K81v+g5oZSh+kD5QNe8hR8CJY5Gmmm2yDNVyk87OsLsdlqqaHnoPbeO+isi7o03f70Iz+SQIM5v7AAWMu1uQYtKt50gINA6j+gIJ1XVhfA50XCi6y8WGepUTxCQ/3JYKdwscF0y8o9DVsE" />
+
+
+<script src="Scripts/WebForms/MsAjax/MicrosoftAjax.js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="935FE932" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="37ttcVfc1jsO0Qv/6qwHVHieU7Q8m+c8XhfmpVPcr/RQEQuyXZMyFG1bG9gXCxJkIrA3LcBwPvCeVuF5Y6wwr3ojKN9DOQW0Wmga0JgS3hyBKh2pYajNJqrX6nB4IW8s" />
+        
+        <div class="mainWrapper">
+            <div class="header" role="banner">
+                <div class="row">
+                    <div class="small-12 column">
+                        <div class="logo">
+                            <a href="https://cpsa.ca/">
+                                <img alt="Logo" src="../Content/Theme/Images/logo.png" />
+
+                            </a>
+                        </div>
+                        <div class="mobileTrigger"></div>
+                        <div class="mainNav">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- body-->
+            <div class="mainContent">
+                
+        
+
+<div class="x-breadcrumb-wrap">
+    <div class=" row">
+        <div class="x-breadcrumbs column small-12">
+            <a href="https://cpsa.ca"><span class="home"><i class="x-icon-home"></i></span></a><span class="delimiter"><i class="x-icon-angle-right"></i></span><a href="/Physiciansearch"><span>Physician directory</span></a><span class="delimiter"><i class="x-icon-angle-right"></i></span><span class="current">Physician Profile</span>
+        </div>
+    </div>
+</div>
+<div class="pageHeader">
+    <h1>Physician Details</h1>
+</div>
+<div class="mainProfile">
+    <div class="row tabMobileWrapper">
+        <div class="small-12 column">
+            <div class="tabWrapper scrollMarker">
+                
+                
+                <div id="MainContent_physicianProfileView_pnlLimitedDisciplineNav">
+	
+                    <div class="nav">
+                        <ul>
+                            <li class="current">
+                                <a id="MainContent_physicianProfileView_HyperLink3" tab="Tab1Content">Summary</a>
+                            </li>
+                            <li>
+                                <a id="MainContent_physicianProfileView_HyperLink2" tab="Tab2Content">Qualifications</a>
+                            </li>                            
+                            <li>
+                                <a id="HyperLink4" class="disciplineTab" tab="Tab4Content">Disciplinary Actions</a>
+                            </li>
+                            <li>
+                                <a id="MainContent_physicianProfileView_HyperLink6" tab="Tab5Content">Register History</a>
+                            </li>
+                        </ul>
+                    </div>
+                
+</div>
+                <div class="tabHeader">
+                    <div class="row">
+                        <div class="small-10 medium-8 columns">
+                            <h2>
+                                William Atherton <span style="color: Red">(Inactive)</span>
+                                <span class="prefName"></span>
+                            </h2>
+                        </div>
+                        <div class="small-2 medium-4 columns text-right">
+                            <button type="button" class="printBtn button" onclick="window.print()">Print</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="tabContentWrapper status1">
+                    <div id="Tab1Content" class="tabContent current">
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Registration Number</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>005184</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Languages</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    English
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Gender</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    Male
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Practice Disciplines</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                
+                                <div id="MainContent_physicianProfileView_pnlNotStudenDiscipline">
+	
+                                    <p>General Surgery</p>
+                                
+</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Specialties</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    General Surgery
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Membership Status</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    Inactive
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Conditions on Practice Permit</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    
+                                            None
+                                        
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Tab2Content" class="tabContent">
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>Qualifications</h3>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    MD Doctor of Medicine (UofA - University of Alberta, 1969)
+                                    <br />
+                                    
+                                            LMCC - Licentiate of the Medical Council of Canada<br />
+                                        
+                                    
+                                            FRCSC - Fellow, Royal College of Surgeons Canada - General Surgery<br />
+                                        
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-4 columns">
+                                <h3>CPSA Approvals<a data-reveal-id="modeInfo" class="infoModalProfile">?</a></h3>
+                                <div id="modeInfo" class="reveal-modal large-10 small-10 medium-10 columns" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                                    <h2 id="modalTitle">CPSA Approvals</h2>
+                                    <p>Approval means an approval of the physician by the CPSA to perform a particular procedure or use a particular technology in a medical office setting.  Only a small number of office-based procedures and technologies require specific approval from the CPSA. Approval is based on the training and experience of the physician. These approvals do not necessarily apply to the hospital setting, which is the responsibility of Alberta Health Services.</p>
+                                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                                </div>
+                            </div>
+                            <div class="medium-8 columns">
+                                <p>
+                                    
+                                            None<br />
+                                        
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Tab4Content" class="tabContent">
+                        <div class="row">
+                            <div class="medium-6 large-4 columns">
+                                <h3>Upcoming Hearings </h3>
+                            </div>
+                            <div class="medium-6 large-8 columns">
+                                
+                                <div id="MainContent_physicianProfileView_pnlNoHearings">
+	
+                                    <p>None</p>
+                                
+</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="medium-6 large-4 columns">
+                                <h3 class="inline">Disciplinary Actions</h3>
+                            </div>
+                            <div class="medium-6 large-8 columns">
+                                
+                                <div id="MainContent_physicianProfileView_pnlNoDisciplinaryActions">
+	
+                                    <p>None</p>
+                                
+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Tab5Content" class="tabContent">
+                        <div class="row">
+                            <div class="small-12 column">
+                                <table role="grid" class="regHistory">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th><a data-reveal-id="infoPhysType" class="infoBoxTrigger">Type</a></th>
+                                            <th>Explanation for Change</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                                <tr>
+                                                    <td>
+                                                        <div class="dateWrapper">
+                                                            <div class="date">
+                                                                <span class="day">16</span>
+                                                                <span class="month">Jun</span>
+                                                                <span class="year">1970</span>
+                                                            </div>
+                                                            <div class="date">
+                                                                <span class="currentYear"></span>
+                                                                <span class="day">31</span>
+                                                                <span class="month">Dec</span>
+                                                                <span class="year">1999</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        Alberta Medical Register
+                                                    </td>
+                                                    <td>
+                                                        Voluntary Erasure
+                                                    </td>
+                                                </tr>
+                                            
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Tab6Content" class="tabContent">
+                        <div class="row">
+                            <div class="medium-8 columns googleMaps">
+                                <div id="map-canvas"></div>
+                            </div>
+                            <div class="medium-4 columns">
+                                <div class="addressFormat">
+                                    <p>c/o Saudi Aramco</p>
+                                    <p>PO Box 6513</p>
+                                    <p></p>
+                                    <p>Dhahran, Eastern Province, Saudi Arabia</p>
+                                    <p></p>
+                                    <p>
+                                        
+                                        
+                                    </p>
+                                </div>
+                                <!--need these to try and show a location (any location) on the map, they will not be visible except in the source.  Hi people reading the source! -->
+                                <span id="spanFormattedAddress" style="display: none;">c/o Saudi Aramco PO Box 6513  Dhahran, Eastern Province, Saudi Arabia </span>
+                                <span id="spanFormattedCityProvCountAndCode" style="display: none;">Dhahran, Eastern Province, Saudi Arabia </span>
+                                <span id="spanFormattedCityProvCount" style="display: none;">Dhahran, Eastern Province, Saudi Arabia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="button scrolltoTopBtn">Back to Top</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 column">
+            <input type="submit" name="ctl00$MainContent$physicianProfileView$btnBack" value="Back to Search Results" id="MainContent_physicianProfileView_btnBack" class="button" />
+        </div>
+    </div>
+</div>
+
+<div id="infoPhysType" class="reveal-modal infoBox" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2>Type Classification</h2>
+    <p>
+        <span class="lead">General Register (GRFP, GRGP, GRNS, GRSD – Independent Practice)</span>
+        Family Medicine or Specialist physicians who are responsible and accountable for their medical practice and the care of their patients. These physicians do not require supervision.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Administrative Medicine Assistant (LRAA)</span>
+        Physicians or osteopaths who have successfully completed an orientation program and assessment of the sponsoring entity which have been approved by the Registrar, who are not the most responsible physician in the administration of patient related matters, whose practice of medicine is limited to medical administration duties assigned by the sponsoring entity, and are subject to the supervision of a member on the General Register or Provisional Register Conditional Practice.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Clinical Assistant (LRCA)</span>
+        Physicians who are not qualified for independent practice but who have successfully completed Alberta Health Services’ Clinical Assistant orientation program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Lead or designate. Their practice of medicine is limited to assignment by Alberta Health Services.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Clinical and Surgical Assistant (LRCS)</span>
+        Physicians who are not qualified for independent practice but who have successfully completed Alberta Health Services’ Clinical Assistant orientation program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Lead, attending surgeon or designate. Their practice of medicine is limited to duties assigned by Alberta Health Services.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Orientation and Assessment of Clinical Assistant or Surgical Assistant (LROA)</span>
+        Physicians who have met the criteria for Clinical or Surgical Assistant registration on the Limited Practice Register, and who are enrolled in an Alberta Health Services’ Clinical Assistant or Surgical Assistant orientation program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Lead or designate. Their practice of medicine is limited to participating in Alberta Health Services’ orientation program.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Medical Research Assistant (LRRA)</span>
+        Physicians who are not qualified for independent practice. Medical practice for these physicians is limited to ethically approved medical research studies. These physicians are not the most responsible physician in the care of patients and require supervision by a medical investigator. The medical investigator must be a regulated member of the CPSA registered for independent practice in Alberta.
+    </p>
+    <p>
+        <span class="lead">Limited Practice Register Surgical Assistant (LRSA)</span>
+        Physicians who are not qualified for independent practice but who have successfully completed Alberta Health Services’ Surgical Assistant orientation program. These physicians are not the most responsible physician in the care of patients and require supervision by the attending surgeon or designate. Their practice of medicine is limited to intra-operative surgical assist assignment by Alberta Health Services.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Academic Appointment (PRCA - Independent Practice)</span>
+        Physicians and osteopaths recruited to a full-time academic position at a Faculty of Medicine in Alberta because of their expertise and/or international reputation who do not meet the criteria of the General Register.  This registration is valid only during the academic appointment.  These members are responsible and accountable for their medical practice without supervision by another physician and are  the most responsible physician in the care of their patients.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Conditional General Practice (PRCF, PRCG – Independent Practice)</span>
+        Family Medicine or General Practice physicians who are in the process of qualifying for the General Register but do not yet meet the full criteria. These physicians are responsible and accountable for their medical practice and the care of their patients. They do not require supervision.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Conditional Non-specialist defined Practice (PRCN - Independent Practice)</span>
+        Non-specialist physicians in a specialty discipline, other than Family Medicine, who are in the process of qualifying for the General Register but do not yet meet the full criteria. Non-specialist physicians are allowed to practice in a specialty discipline when they have successfully completed the required postgraduate training in that discipline. These physicians are responsible and accountable for their medical practice and the care of their patients. They do not require supervision.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Conditional Specialist Defined Practice (PRCS – Independent Practice)</span>
+        Physicians in a specialty discipline, other than Family Medicine, who are in the process of qualifying for the General Register but do not yet meet the full criteria. These physicians are responsible and accountable for their medical practice and the care of their patients. They do not require supervision.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Physician Undergoing Practice Assessment (PRPA)</span>
+        Physicians whose clinical skills are being assessed before the physician can go on the Provisional Register. These physicians are not the most responsible physician in the care of patients and require supervision by the assessor or designate.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Postgraduate Trainee (PRPT)</span>
+        Physicians enrolled in an approved postgraduate training program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Director or designate.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Postgraduate Trainee Physician Extender (PRPX - regular)</span>
+        Physicians enrolled in an approved postgraduate training program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Director or designate.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Postgrad Trainee Physician Extender Limited (PRPX - Limited)</span>
+        Physicians enrolled in an approved postgraduate training program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Director or designate.
+    </p>
+    <p>
+        <span class="lead">Provisional Register Postgrad Trainee Physician Extender Surgical Assistant (PRPX – Surgical Assistant)</span>
+        Physicians enrolled in an approved postgraduate training program. These physicians are not the most responsible physician in the care of patients and require supervision by the Program Director or designate.
+    </p>
+    <p>
+        <span class="lead">Student Register (STAB)</span>
+        CPSA members currently in undergraduate medical school training at the University of Alberta or University of Calgary.
+    </p>
+    <p>
+        <span class="lead">Telemedicine Register (TELM)</span>
+        Physicians located outside of Alberta who provide telemedicine services for patients in Alberta.
+    </p>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div id="modeInfo3" class="reveal-modal small-10 columns" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2>Hearing Status Definitions</h2>
+    <ul class="no-bullet modalList">
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>Cancelled:</strong>
+                </div>
+                <div class="small-10 columns">
+                    Hearing was scheduled (not started) and then cancelled. A new date is <u>not</u> required.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>Concluded:</strong>
+                </div>
+                <div class="small-10 columns">
+                    Hearing was held and a decision issued. The College’s hearing process is complete.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>Confirmed:</strong>
+                </div>
+                <div class="small-10 columns">
+                    A hearing date has been set by the College, respondent physician and lawyers.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>In Appeal:</strong>
+                </div>
+                <div class="small-10 columns">
+                    The Hearing Tribunal’s decision is being appealed to the CPSA Council/Appeal to Alberta Court of Appeal/Appeal to the Supreme Court of Canada.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>In-Camera:</strong>
+                </div>
+                <div class="small-10 columns">
+                    The Hearing Tribunal will be considering an application to close this hearing to the public as per Section 78 of the Health Professions Act. If granted, no members of the public will be able to attend.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>In Progress:</strong>
+                </div>
+                <div class="small-10 columns">
+                    Hearing is underway/Outcome pending the conclusion of Tribunal deliberations.
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="row">
+                <div class="small-2 columns">
+                    <strong>Postponed:</strong>
+                </div>
+                <div class="small-10 columns">
+                    Hearing was scheduled (not started) and is now postponed. No new date is set.
+                </div>
+            </div>
+        </li>
+    </ul>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCKymw3HPNwN2qlJIwp8LSqkYRkBk-luvg"></script>
+<script type="text/javascript" src="../Content/Theme/js/MapScripts.js"></script>
+<script src="../Content/Theme/js/markerwithlabel_packed.js"></script>
+<script type="text/javascript">
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    $(document).ready(function ($) {
+        if (getUrlVars()["d"]) {
+            var tab = $('.disciplineTab').attr('tab');
+            var currentTab = '#' + tab;
+            $('.disciplineTab').parent('li').addClass('current').siblings().removeClass('current');
+            $(currentTab).addClass('current').siblings().removeClass('current');
+        }
+    });
+
+    var mapDiv = document.getElementById('MainContent_physicianProfileView_Tab6');
+    var mapLink = document.getElementById('MapLink');
+    google.maps.event.addDomListener(mapDiv, 'click', initialize);
+    google.maps.event.addDomListener(mapLink, 'click', initialize);
+</script>
+
+
+            </div>
+        </div>
+        <!-- footer-->
+        <footer>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="footer-bottom">
+                        <div class="col-6">
+                            <p>
+                                <small>&copy; 2024  - CPSA</small>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <span>Contact Us</span>
+                            <ul>
+                                <li><span>Phone: </span><a href="tel:780-423-4764">780-423-4764</a> or <a href="tel:1-800-561-3899">1-800-561-3899</a> (in Canada) </li>
+                                <li style="margin-left:10px;"><span>Email: </span><a href="mailto:support@cpsa.ca">support@cpsa.ca</a></li>
+                            </ul>
+                            <p>Regular business hours are 8:15 a.m. to 4:15 p.m. MT, Monday to Friday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <div class="browserDetectWrapper">
+        <div class="browserDetect">
+            <h2>Your browser is out of date</h2>
+            <p>
+                PLEASE NOTE: It has known security flaws and may not display all features of this and other websites. Please visit <a href="http://browsehappy.com" target="_blank">Here</a> to learn how to update your browser.
+            </p>
+            <a class="overlay-close">Close &#215;</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/fastclick/lib/fastclick.js"></script>
+</body>
+</html>
