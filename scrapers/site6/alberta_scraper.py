@@ -81,15 +81,19 @@ def parse_results_page(soup, first_name, last_name):
     """
     results = filter_results(soup, first_name, last_name)
     if results is False:
-        return False
+        return "Non-Practicing1"
     elif isinstance(results, list):
         for result in results:
             result_name = result[0].split(", ")
             if len(result_name) > 1 and first_name.lower() in result_name[1].lower() and last_name.lower() in result_name[0].lower():
-                return open_profile_and_analyze(result[1])
-        return False
+                #print(result[1])
+                status = open_profile_and_analyze(result[1])
+                print(status)
+                return("Practicing" if status else "Non-Practicing4")
+        return "Non-Practicing2"
     else:
-        return open_profile_and_analyze(results[0][1])
+        status = open_profile_and_analyze(results[0][1])
+        return("Practicing" if status else "Non-Practicing3")
 
 def get_status(last_name: str, first_name: str):
     """
@@ -110,6 +114,9 @@ def get_status(last_name: str, first_name: str):
             return "ERROR: Could not get initial page"
         
         soup = BeautifulSoup(initial_req.text, 'html.parser')
+        # with open("alberta_get_response.txt", 'w', encoding="utf-8") as f:
+        #     f.write(initial_req.text)
+
         #form_data = {field.get("name"): field.get("value") for field in soup.find_all("input", {"name": True})}
         form_data = {}
         for field in ["__VIEWSTATE", "__VIEWSTATEGENERATOR", "__EVENTVALIDATION", "__EVENTTARGET"]:
@@ -134,6 +141,8 @@ def get_status(last_name: str, first_name: str):
 
         cookies = requests.utils.dict_from_cookiejar(initial_req.cookies)
         search_req = session.post(url, headers=headers, data=form_data, cookies=cookies)
+        with open("alberta_post_response_JohnA.txt", 'w', encoding="utf-8") as f:
+            f.write(search_req.text)
         if search_req.status_code != 200:
             return "ERROR: Could not post search"
 
@@ -142,6 +151,5 @@ def get_status(last_name: str, first_name: str):
 
 # Entry point for script execution
 if __name__ == "__main__":
-    status = get_status("amanie", "John")
+    status = get_status("Amanie", "John")
     print(status)
-    print("Physician status:", "Practicing" if status else "Non-Practicing")
