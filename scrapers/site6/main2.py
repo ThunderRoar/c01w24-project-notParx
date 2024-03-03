@@ -8,6 +8,8 @@ headers = {
 }
 
 payload = {
+    'ctl00$ctl16': 'ctl00$ctl16|ctl00$MainContent$physicianSearchView$btnSearch',
+    '__EVENTTARGET':'ctl00$MainContent$physicianSearchView$btnSearch',
     'ctl00$MainContent$physicianSearchView$txtFirstName': 'John',
     'ctl00$MainContent$physicianSearchView$txtLastName': '',
     'ctl00$MainContent$physicianSearchView$txtCity': '',
@@ -17,7 +19,7 @@ payload = {
     'ctl00$MainContent$physicianSearchView$rblGender': '',
     'ctl00$MainContent$physicianSearchView$ddApprovals': '',
     'ctl00$MainContent$physicianSearchView$ddLanguage': '',
-    '__EVENTTARGET':'ctl00$MainContent$physicianSearchView$btnSearch'
+    '__ASYNCPOST': 'true',
 }
 
 response = requests.post(api_url, headers=headers, data=payload)
