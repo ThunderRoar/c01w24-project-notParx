@@ -52,6 +52,8 @@ def get_user_status(firstname: str, lastname: str):
         return "NOT FOUND"
 
 def check_status(memberClass: str):
+    if memberClass is None:
+        return "NOT ACTIVE"
     if re.search(r'Regulated Member', memberClass):
         return "VERIFIED"
     return "NOT ACTIVE"
