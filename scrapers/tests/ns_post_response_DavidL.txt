@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	 - CPSNS
+</title><link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="Content/bootstrap.css" rel="stylesheet" /><link href="Content/bootstrap-theme.min.css" rel="stylesheet" /><link href="Content/Site.css" rel="stylesheet" />
+<script src="Scripts/jquery-1.9.1.min.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+    
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="Scripts/jquery.bootgrid.js"></script>
+</head>
+<body>
+ 
+        <div class="container body-content">
+            
+    <style>
+        .tooltip-inner {
+            background-color: antiquewhite;
+            color: black;
+        }
+
+        #grid-basic td:nth-child(1) {
+            width: 40%;
+        }
+        /*.popover{
+            left:150px !important;
+        }*/
+
+        .classificationPop + .popover.top {
+            color: red;
+            text-align: center;
+        }
+        .medicalRecord {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <div class="container">
+                <a href="http://cpsns.ns.ca" data-toggle="tooltip" data-placement="top" title="The College of Physicians and Surgeons of Nova Scotia | Home">
+                    <img src="logo_med.png" id="logo"></a>
+            </div>
+        </div>
+
+        <div class="col-md-12 ">
+            <div id="MainContent_frmSearchResults"><div class="row body-content"><div class="col-md-12 "><br/><br/><Table id="grid-basic" class="table table-condensed table-hover table-striped"><thead><tr><th data-column-id="SearchResults" data-content="( Note: Select a physician name to see full information )" class="searchResults"><a href="javascript:void(0);" class="testst">Search Results </a></th><th data-column-id="Classification"></th><th data-column-id="MedicalLocation"></th></tr></thead><tbody><tr> <td><a href="/PhysicianDetails.aspx?LicenceNumber=010819">Ley, David C.</a>&nbsp;&nbsp;MD<br/>Specialty:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Family Medicine<br/>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;902 849 7595<br/>Practice Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reserve Mines <br/>Zone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eastern Zone <br/></td></tr></tbody></table></div></div></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div id="MainContent_anothersearch"><div class="col-md-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "/" >Perform another search</a> </div></div>
+            <div id="MainContent_exporttocsv"><div class="col-md-3"><a href="ExportData.aspx?firstname=David&lastname=Ley&previousname=&gender=3&location=&physiciantype=1&specialty=&licencetype=&licencenumber=10819&zone=&IsOnAtlanticRegistry=0&HomeJurisdiction=">Export Data to Excel</a></div></div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row rowoffset">
+                <div style="font-size: medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are a physician and would like to update your own contact information, please login to <a href="https://portal.cpsnscrm.com:8133/memservices/">Member Services.</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').hover(function () {
+                $('.tooltip-inner').css('min-width', '400px');
+                $('.tooltip-inner').css('color', 'red');
+            });                                                         //.tooltip();
+
+        });
+        $(window).load(function () {
+            $("#grid-basic th:first a span:first").attr("data-content", "( Note: Select a physician name to see full information )");
+
+            $('#grid-basic th:first a span:first').popover(
+                {
+                    placement: 'right',
+                    trigger: "hover",
+                    template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
+                });
+
+            $(".classificationPop").attr("data-content", "Not currently licenced to practice medicine in NS");
+            $('.classificationPop').popover(
+                {
+                    placement: 'top',
+                    trigger: "hover",
+                    template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
+                });
+
+
+            $(".infoBar").append("<div style='text-decoration: underline;font-size: 90%;'>Note: this search may include physicians who are no longer actively practicing medicine in NS.</div>");
+
+        });
+    </script>
+
+
+            <hr />
+            <div>
+                <p class="footer">&copy;  - College of Physicians & Surgeons of Nova Scotia - R3.9</p>
+            </div>
+        </div>
+
+<script>
+$(function () {
+    $(document).tooltip({items:"select,option",position:{ my: "left top", at: "left bottom"}
+    });
+});
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#grid-basic").bootgrid({
+            css: {
+                paginationButton: 'btn-info btn-sm'
+            }
+        });
+
+      
+    $(function () {
+        $("#tabs").tabs();
+    });
+
+    });
+</script>
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99329027-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
+
+
