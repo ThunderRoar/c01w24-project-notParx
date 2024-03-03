@@ -15,37 +15,35 @@ def confirm_status(text):
 
 def get_user_info(firstName: str, lastName: str, licence_num=""):
     user_status = False
+    browser = None
 
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--log-level=3')
-    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    # browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    try: 
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--log-level=3')
+        browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
-    browser.get("https://www.cpsbc.ca/public/registrant-directory")
+        browser.get("https://www.cpsbc.ca/public/registrant-directory")
 
-    # browser.maximize_window()
+        # Form filling
+        adv_search = browser.find_element(By.CLASS_NAME, "option")
+        adv_search.click()
 
-    # Form filling
-    adv_search = browser.find_element(By.CLASS_NAME, "option")
-    adv_search.click()
+        last_name = browser.find_element(By.ID, "edit-ps-last-name")
+        last_name.send_keys(lastName)
 
-    last_name = browser.find_element(By.ID, "edit-ps-last-name")
-    last_name.send_keys(lastName)
+        license_num = browser.find_element(By.ID, "edit-ps-first-name")
+        license_num.send_keys(firstName)
 
-    license_num = browser.find_element(By.ID, "edit-ps-first-name")
-    license_num.send_keys(firstName)
+        search_btn = browser.find_element(By.CLASS_NAME, "ps-submit")
+        search_btn.click()
 
-    search_btn = browser.find_element(By.CLASS_NAME, "ps-submit")
-    search_btn.click()
+        # Delay for the website to process data
+        time.sleep(1)
 
-    # Delay for the website to process data
-    time.sleep(1)
+        # print(browser.current_url)
+        assert browser.current_url == "https://www.cpsbc.ca/public/registrant-directory/search-result"
 
-    # print(browser.current_url)
-    assert browser.current_url == "https://www.cpsbc.ca/public/registrant-directory/search-result"
-
-    try:
         search_res = browser.find_element(By.XPATH, "//*[@id='cpsbc-directory-form']/div/div[2]/div[2]/div[1]/div[1]/h5/a").text
         # print("Name:", search_res)
         assert True == confirm_user(lastName, firstName, search_res)
@@ -55,12 +53,12 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         assert True != confirm_status(status_check)
         user_status = True
     except:
-        error = browser.find_element(By.XPATH, "//*[@id='cpsbc-directory-form']/div/div[2]/div/div/div").text
-        # print("error:", error)
-        if error.strip() == "Sorry, there are no matching results found. Please try another search.":
-            user_status = False
-
-    browser.quit()
+        error = browser.find_element(By.XPATH, "//*[@id='cpsbc-directory-form']/div/div[2]/div/div/div").text.strip()
+        # print("Error:", error)
+        user_status = False
+    finally:
+        if browser: 
+            browser.quit()
 
     if user_status == True:
         return "VERIFIED"
