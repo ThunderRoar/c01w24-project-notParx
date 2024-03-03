@@ -54,7 +54,7 @@ def get_status(first_name: str, last_name: str, licence_number: str):
     return "ERROR"
 
   # Get prescriber's id
-  res = raw_response.json()
+  res = json.loads(raw_response.text)
   if res['Records']:
     record = res['Records'][0]
     if re.search(r'^' + last_name + ', ' + first_name + '\s((\w+)\s)*\(' + licence_number + '\)', record['rl']):
