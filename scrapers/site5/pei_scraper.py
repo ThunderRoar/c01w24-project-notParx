@@ -1,5 +1,7 @@
 import requests, json
 import re
+import logging
+import time
 
 QUERY_SID = "1000608"
 
@@ -40,17 +42,23 @@ def get_status(first_name: str, last_name: str, licence_number: str):
     'querySID': QUERY_SID
   }
 
-  # Search prescriber
-  try:
-    raw_response = requests.post(url, headers=headers, data=data)
-  except:
-    return "ERROR"
+  is_search_successful = False
 
-  # Error handling
-  if raw_response.status_code == 403:
-    return "TOO_MANY_REQUESTS" # Triggered every ~8 consecutive searches
-  elif raw_response.status_code != 200:
-    return "ERROR"
+  # Attempt to search prescriber
+  while not is_search_successful:
+    try:
+      raw_response = requests.post(url, headers=headers, data=data)
+    except:
+      return "ERROR"
+
+    # Rate limited status (403) is triggered every ~8 consecutive searches
+    if raw_response.status_code == 403:
+      logging.warning("Excessive requests detected. Retrying search after 15 seconds...")
+      time.sleep(15)
+    elif raw_response.status_code != 200:
+      return "ERROR"
+    else:
+      is_search_successful = True
 
   # Check if listed
   res = json.loads(raw_response.text)
