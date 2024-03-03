@@ -9,8 +9,8 @@ def is_physician_practicing(soup):
     - soup: BeautifulSoup object containing the parsed HTML content.
 
     Returns:
-    - True if the physician is practicing.
-    - False if the physician is non-practicing.
+    - "Practicing" if the physician is practicing.
+    - "Non-Practicing"" if the physician is non-practicing.
     - None if the status cannot be determined.
     """
     # Iterate through each row in the table body
@@ -23,9 +23,9 @@ def is_physician_practicing(soup):
             status = status_cell.get_text(strip=True)
             # Return False if 'Non-Practicing', True if 'Practicing'
             if "Non-Practicing" in status:
-                return False
+                return "Non-Practicing"
             elif "Practicing" in status:
-                return True
+                return "Practicing"
     # Return None if no conclusive status is found
     return None
 
@@ -52,7 +52,8 @@ def perform_search(license_number, first_name, last_name):
         response = session.get(initial_url)
         if response.status_code != 200:
             return "ERROR: Couldn't fetch the search page to initialize session."
-
+        # with open("scrapers/tests/nf_get_response.txt", "w", encoding="utf-8") as file:
+        #     file.write(response.text)
         # Parse the page to extract hidden form data for ASP.NET postback
         soup = BeautifulSoup(response.text, 'html.parser')
         # Extract tokens and hidden fields
@@ -86,6 +87,8 @@ def perform_search(license_number, first_name, last_name):
 
         # Submit the POST request with the payload and headers
         response = session.post(initial_url, data=payload, headers=headers)
+        # with open("scrapers/tests/nf_post_response_WilliamDurocher.txt", "w", encoding="utf-8") as file:
+        #     file.write(response.text)
         if response.status_code == 200:
             # Parse the response and check the practicing status
             soup = BeautifulSoup(response.text, 'html.parser')
@@ -96,9 +99,9 @@ def perform_search(license_number, first_name, last_name):
 # Main execution
 if __name__ == "__main__":
     # Replace with actual search terms
-    license_num = "F 01923"
-    first_name = "John"
-    last_name = "Abbatt"
+    license_num = "F 03818"
+    first_name = "William"
+    last_name = "Durocher"
 
     # Perform the search and print the result
     result = perform_search(license_num, first_name, last_name)

@@ -1,0 +1,684 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head id="ctl00_Head1"><meta charset="UTF-8" /><title>
+	Physician Search New
+</title>
+
+    <link rel="search" type="application/opensearchdescription+xml" href="/web/OpenSearch.aspx" title="Portal Search" />
+<link rel="stylesheet" href="/web/Assets/css/10-UltraWaveResponsive.css"><link rel="shortcut icon" href="/web/favicon.ico" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var gDocumentTitle = document.title;
+var gPostBackFormObject = null;
+var gWindowOnLoad = new Array();
+var gPostBackFormProcessSubmit = true;
+var gWebRoot = '/web';
+var gWebSiteRoot = 'https://imis.cpsnl.ca/web';
+var gPageTheme = 'CPSNL_Portal';
+var gAdminWebRoot = gWebRoot + '/Admin';
+var gWebsiteKey = 'fc53f095-a16f-472a-b902-39199b7299f2';
+var gHKey = '';
+var gIsPostBack = false;
+var gDefaultConfirmMessage = 'Continue without saving changes?';
+var gIsEasyEditEnabled = false;
+var gMasterPage = '/web/templates/masterpages/empty.master';
+
+if(gWebsiteKey != 'fbdf17a3-cae7-4943-b1eb-71b9c0dd65d2' && gWebsiteKey != 'fad2fd17-7e27-4c96-babe-3291ecde4822'){
+    gIsEasyEditEnabled = false;  
+}
+//]]>
+</script><script src="/web/AsiCommon/Scripts/Modernizr/Modernizr.min.js" type="text/javascript"></script><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <script type="text/javascript">
+            // add a class to the <html> tag of browsers that do not support Media Queries
+            var mqSupported = Modernizr.mq('only all');
+            if (!mqSupported) {
+                document.documentElement.className += ' no-mqs';
+            }
+        </script>
+    <meta name="rating" content="General" /><meta name="Author" content="Advanced Solutions International, Inc." /><link href="../../App_Themes/CPSNL_Portal/01-bootstrap.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/02-wp-style.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/03-ubermenu.min.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/04-ubermenu-skin-minimal.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/05-ubermenu-blackwhite2.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/99-CPSNL.css" type="text/css" rel="stylesheet" /><link href="../../App_Themes/CPSNL_Portal/bsi-forms.css" type="text/css" rel="stylesheet" /><script src="/WEB/AsiCommon/Scripts/Jquery/Jquery.min.js" type="text/javascript" ></script><script src="/WEB/AsiCommon/Scripts/Jquery/jquery-migrate-3.0.1.min.js" type="text/javascript" ></script><script src="/WEB/AsiCommon/Scripts/Jquery/jquery-ui.custom.min.js" type="text/javascript" ></script><!--[if !IE 8]><!--><script src="/WEB/AsiCommon/Scripts/AngularBundles/angular-bundle.min.js" type="text/javascript" defer></script>
+<script src="/WEB/AsiCommon/Scripts/AngularBundles/angular-spin-bundle.min.js" type="text/javascript" defer></script>
+<script src="/WEB/AsiCommon/Scripts/AngularBundles/asi-core-bundle.min.js" type="text/javascript" defer></script>
+<!--<![endif]--><link href="/WEB/WebResource.axd?d=eyQj9jJPkSMKmjT9mzfaeWgspUDWqX_qyV5pvGIxjsFF9iqhc3m29yqGL2MIG60KGHq_wzKgxwQJ6OM3yHgNIBAfnLCRqUO-PgZApgNH4iQUYLGQBAnTNf2yVJCAMrkZ-FgLEjf3ElW-9vPIkGWxyg2&amp;t=637753415400000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WEB/WebResource.axd?d=a3qcWs3USaCNjSHPJaHp2_GynO7h1OP7hv3WUx-p0oBwdo9oAhVbgHqCy9xF2C5Plt6Xn7nbPvIvjO2ugYOzEaacd5YQKi9HfpsKdcuadTgmn5lX-IsuNyC-yT6gJdJv5JTM5XPwDz3HPAiff9uEY-_9Ltjq1J01680BK6IoQ-_wOjq49O9Guros2DE0jy9M0&amp;t=637753415400000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+    <body id="MainBody">                            
+        <form method="post" action="./Physician_Search_New.aspx" id="aspnetForm">
+<input type="hidden" name="__WPPS" id="__WPPS" value="s" />
+<input type="hidden" name="__ClientContext" id="__ClientContext" value="{&quot;baseUrl&quot;:&quot;/WEB/&quot;,&quot;isAnonymous&quot;:true,&quot;loggedInPartyId&quot;:&quot;3&quot;,&quot;selectedPartyId&quot;:&quot;3&quot;,&quot;websiteRoot&quot;:&quot;https://imis.cpsnl.ca/web/&quot;,&quot;virtualDir&quot;:&quot;/WEB/&quot;}" />
+<input type="hidden" name="__CTRLKEY" id="__CTRLKEY" value="" />
+<input type="hidden" name="__SHIFTKEY" id="__SHIFTKEY" value="" />
+<input type="hidden" name="ctl00_ScriptManager1_TSM" id="ctl00_ScriptManager1_TSM" value="" />
+<input type="hidden" name="PageInstanceKey" id="PageInstanceKey" value="bbd29afd-ba53-476a-96ad-527a1c6c8e50" />
+<input type="hidden" name="__RequestVerificationToken" id="__RequestVerificationToken" value="EPi5kgI6CSUV4x5z9uknzL7Qme8lt9FDXVYO5bonGop1zB10uAEsnxcyK7l7-w7kMQAv1eJ4fHl24HXxd83P286ZUDsJcanIypMfJJP4o3A1" />
+<input type="hidden" name="TemplateUserMessagesID" id="TemplateUserMessagesID" value="ctl00_TemplateUserMessages_ctl00_Messages" />
+<input type="hidden" name="PageIsDirty" id="PageIsDirty" value="false" />
+<input type="hidden" name="IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f$ciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f" id="IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f$ciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon" id="IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$TemplateBody$ContentPage1" id="IsControlPostBackctl00$TemplateBody$ContentPage1" value="1" />
+<input type="hidden" name="IsControlPostBackctl00$TemplateBody$ContentPageFooter1" id="IsControlPostBackctl00$TemplateBody$ContentPageFooter1" value="1" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkYzNiYjQyYTFjZWRhYRgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUUY3RsMDAkV2luZG93TWFuYWdlcjEFE2N0bDAwJEdlbmVyaWNXaW5kb3cFE2N0bDAwJE9iamVjdEJyb3dzZXIFGWN0bDAwJE9iamVjdEJyb3dzZXJEaWFsb2cKj6OGRz1rbaGqpDfUFQEVQ1c/viW0JGr1BnMVQ+2dJg==" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function CopyMoveContentItem_Callback(dialogWindow)
+{
+    if (!dialogWindow.result) return;
+    eval(dialogWindow.Argument.replace('[[RESULT]]',dialogWindow.result));
+}
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en-CA","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135584200000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"-","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"MMMM d, yyyy h:mm:ss tt","LongDatePattern":"MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"d MMMM","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"yyyy-MM-dd","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM, yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/WEB/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_ScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d4.1.50508%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a0c8c847b-b611-49a7-8e75-2196aa6e72fa%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2021.1.119.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3aa3561803-43fa-48b8-8632-66948071f7a3%3a16e4e7cd%3aed16cbdc%3af7645509%3a24ee1bba%3af46195d3%3a874f8ea2%3ab2e06756%3a92fe8ea0%3a4877f69a%3a33715776%3afa31b949%3ac128760b%3a19620875%3a490a9d4e%3abd8f85e4" type="text/javascript"></script>
+<script src="/web/AsiCommon/scripts/Asi.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+GetActionLink:function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetActionLink',false,{action:action,templateType:templateType,docType:docType,hierarchyKey:hierarchyKey,documentVersionKey:documentVersionKey,folderHierarchyKey:folderHierarchyKey,itemCount:itemCount,closeWindowOnCommit:closeWindowOnCommit,websiteKey:websiteKey,pageInstanceKey:pageInstanceKey},succeededCallback,failedCallback,userContext); },
+GetWindowProperties:function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetWindowProperties',false,{action:action,templateType:templateType,docType:docType,hierarchyKey:hierarchyKey,documentVersionKey:documentVersionKey,folderHierarchyKey:folderHierarchyKey,itemCount:itemCount,closeWindowOnCommit:closeWindowOnCommit,websiteKey:websiteKey,pageInstanceKey:pageInstanceKey},succeededCallback,failedCallback,userContext); },
+GetAddressCompletionList:function(prefixText,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetAddressCompletionList',false,{prefixText:prefixText},succeededCallback,failedCallback,userContext); },
+CheckForPasteConflict:function(selectedKeys,targetHierarchyKey,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckForPasteConflict',false,{selectedKeys:selectedKeys,targetHierarchyKey:targetHierarchyKey},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("Physician_Search_New.aspx");
+PageMethods.GetActionLink= function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetActionLink(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext); }
+PageMethods.GetWindowProperties= function(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetWindowProperties(action,templateType,docType,hierarchyKey,documentVersionKey,folderHierarchyKey,itemCount,closeWindowOnCommit,websiteKey,pageInstanceKey,onSuccess,onFailed,userContext); }
+PageMethods.GetAddressCompletionList= function(prefixText,onSuccess,onFailed,userContext) {PageMethods._staticInstance.GetAddressCompletionList(prefixText,onSuccess,onFailed,userContext); }
+PageMethods.CheckForPasteConflict= function(selectedKeys,targetHierarchyKey,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CheckForPasteConflict(selectedKeys,targetHierarchyKey,onSuccess,onFailed,userContext); }
+var gtc = Sys.Net.WebServiceProxy._generateTypedConstructor;
+Type.registerNamespace('Asi.Web.UI.Common.BSA');
+if (typeof(Asi.Web.UI.Common.BSA.WindowProperties) === 'undefined') {
+Asi.Web.UI.Common.BSA.WindowProperties=gtc("Asi.Web.UI.Common.BSA.WindowProperties");
+Asi.Web.UI.Common.BSA.WindowProperties.registerClass('Asi.Web.UI.Common.BSA.WindowProperties');
+}
+Type.registerNamespace('Asi.Web.UI');
+if (typeof(Asi.Web.UI.PageOperation) === 'undefined') {
+Asi.Web.UI.PageOperation = function() { throw Error.invalidOperation(); }
+Asi.Web.UI.PageOperation.prototype = {None: 0,Edit: 1,New: 2,Execute: 3,Select: 4,SelectAndReturnValue: 5,Delete: 6,Purge: 7,Import: 8,Export: 9,Publish: 10,Versions: 11,Refresh: 12,Cut: 13,Copy: 14,Paste: 15,Undo: 16,SelectAll: 17,Search: 18,Preview: 19,Submit: 20,RequestDelete: 21,PurgeAll: 22,Download: 23}
+Asi.Web.UI.PageOperation.registerEnum('Asi.Web.UI.PageOperation', true);
+}
+if (typeof(Asi.Web.UI.TemplateType) === 'undefined') {
+Asi.Web.UI.TemplateType = function() { throw Error.invalidOperation(); }
+Asi.Web.UI.TemplateType.prototype = {I: 0,D: 1,P: 2,E: 3,T: 4,F: 5,A: 6}
+Asi.Web.UI.TemplateType.registerEnum('Asi.Web.UI.TemplateType', true);
+}
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="805979C7" />
+            <input type="hidden" name="ctl00$lastClickedElementId" id="lastClickedElementId" />
+            
+            <div id="ctl00_TemplateFillLoadingPanel" style="display:none;">
+	
+                    <div class="NotPrinted ProgressDiv" id="FillProgressDiv">
+                        <div id="FillProgressLoadingDiv">      
+                        <span id="ctl00_LoadingLabel" translate="yes">Loading</span>
+                            <img id="ctl00_ProgressImage2" src="/web/images/ImageLibrary/loading.gif" alt="Loading" style="vertical-align: middle;" />
+                        </div>
+                    </div>     
+                
+</div>
+            <div id="MainPanel">
+                <div id="ctl00_ContentPanel" class="EmptyMasterContentPanel" translate="yes">
+	
+                    
+                        <div id="ctl00_UserMessagesUpdatePanel">
+		
+                                <!-- This provides a placeholder for any applicable User Messages that a page needs to display -->
+                                
+<div role="alert">
+
+</div>
+                            
+	</div>
+                    
+<script type="text/javascript">
+
+</script>
+	<div id="ctl00_TemplateBody_WebPartManager1___Drag" style="display:none;position:absolute;z-index:32000;filter:alpha(opacity=75);">
+
+	</div>
+<div>
+	<div class="row">
+		<div class="col-sm-12">
+						<div class="ContentItemContainer">
+				<div id="WebPartZone1_Page1" class="WebPartZone ">
+
+			<div class="iMIS-WebPart">
+				<div id="ste_container_ciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f" class="ContentItemContainer"><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f_ciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f_Panel_NewContentHtml">
+	<p style="font-weight: bold; font-size: 18px;">Please note that the College does not manage, nor provide, a list of physicians accepting new patients.</p>
+</div><div>
+
+</div></div>
+			</div>
+				<div class="iMIS-WebPart">
+					<div id="ste_container_ciNewQueryMenuCommon" class="ContentItemContainer"><div class="panel ">
+	<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon__Head" class="panel-heading Distinguish">
+		<h2 class="panel-title" translate="yes">Physician Search</h2>
+	</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon__BodyContainer" class="panel-body-container">
+		<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon__Body" class="panel-body">
+			<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ContentPanel">
+				
+    <div class="ClearFix PositionRelative">
+        <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_UpdateProgress1" style="display:none;">
+					
+                <div class="NotPrinted ProgressDiv Interior">
+                    <span translate="yes">Loading</span>
+                    <img id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ProgressImage" src="/web/images/ImageLibrary/loading.gif" alt="Loading" />
+                </div>
+            
+				</div>
+        
+    </div>
+     <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ListerPanel" translate="yes">
+					
+            
+            <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid" data-gridId="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1" data-hiddenFieldId="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_HiddenKeyField1" data-keyColumnName="code_id" style="overflow:auto;">
+						<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$mHiddenCacheQueryId" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_mHiddenCacheQueryId" TabIndex="-1" /><input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$mHiddenQueryCached" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_mHiddenQueryCached" TabIndex="-1" value="False" /><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel" class="panel  FilterPanel">
+							<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_Head" class="panel-heading">
+
+							</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_BodyContainer" class="panel-body-container">
+								<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_Body" class="panel-body">
+									<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_ParametersContainer">
+										<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0">
+											<div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl01" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL23" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input0_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt0">Licence number</label><div class="PanelFieldValue">
+													<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input0$TextBox1" type="text" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input0_TextBox1" /><span style="color:Red;"></span>
+												</div>
+											</div><div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl04" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL26" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input1_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt1">Last name</label><div class="PanelFieldValue">
+													<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input1$TextBox1" type="text" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input1_TextBox1" /><span style="color:Red;"></span>
+												</div>
+											</div><div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl07" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL27" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input2_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt2">First name</label><div class="PanelFieldValue">
+													<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input2$TextBox1" type="text" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input2_TextBox1" /><span style="color:Red;"></span>
+												</div>
+											</div><div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl10" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL28" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input3_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt3">City name starts with</label><div class="PanelFieldValue">
+													<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input3$TextBox1" type="text" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input3_TextBox1" /><span style="color:Red;"></span>
+												</div>
+											</div><div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl13" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL31" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input4_DropDown1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt4">Area of Practice</label><div class="PanelFieldValue">
+													<select name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input4$DropDown1" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input4_DropDown1">
+														<option selected="selected" value="">(Any)</option>
+														<option value="106">Acute Care Point of Care Ultrasonography (POCUS)</option>
+														<option value="107">Addiction Medicine</option>
+														<option value="108">Adolescent and Young Adult Oncology</option>
+														<option value="83">Adolescent Medicine</option>
+														<option value="109">Adult Cardiac Electrophysiology</option>
+														<option value="110">Adult Congenital Heart Disease</option>
+														<option value="111">Adult Echocardiography</option>
+														<option value="136">Adult Glomerular Disease</option>
+														<option value="112">Adult Hepatology</option>
+														<option value="113">Adult Interventional Cardiology</option>
+														<option value="114">Adult Thrombosis Medicine</option>
+														<option value="115">Advanced Heart Failure and Cardiac Transplantation</option>
+														<option value="116">Aerospace Medicine</option>
+														<option value="55">Anatomical &amp; Clinical Pathology</option>
+														<option value="25">Anatomical Pathology</option>
+														<option value="1">Anesthesiology</option>
+														<option value="117">Antimicrobial Stewardship</option>
+														<option value="118">Brachytherapy</option>
+														<option value="67">Cardiac Surgery</option>
+														<option value="2">Cardiology</option>
+														<option value="31">Cardiovascular and Thoracic Surgery</option>
+														<option value="101">Care of the Elderly</option>
+														<option value="102">Care of Under-Served Populations</option>
+														<option value="98">Child and Adolescent Psychiatry</option>
+														<option value="119">Child Maltreatment Pediatrics</option>
+														<option value="96">Clinical Associate</option>
+														<option value="3">Clinical Immunology and Allergy</option>
+														<option value="85">Clinical Pharmacology and Toxicology</option>
+														<option value="120">Clinician Educator</option>
+														<option value="48">Colorectal Surgery</option>
+														<option value="4">Community Medicine</option>
+														<option value="121">Consultation-Liaison Psychiatry</option>
+														<option value="45">Critical Care Medicine</option>
+														<option value="122">Cytopathology</option>
+														<option value="5">Dermatology</option>
+														<option value="87">Developmental Pediatrics</option>
+														<option value="6">Diagnostic Radiology</option>
+														<option value="7">Emergency Medicine</option>
+														<option value="8">Endocrinology and Metabolism</option>
+														<option value="58">Family Medicine</option>
+														<option value="69">Forensic Pathology</option>
+														<option value="61">Forensic Psychiatry</option>
+														<option value="9">Gastroenterology</option>
+														<option value="100">General Internal Medicine</option>
+														<option value="26">General Pathology</option>
+														<option value="32">General Surgery</option>
+														<option value="49">General Surgical Oncology</option>
+														<option value="10">Geriatric Medicine</option>
+														<option value="97">Geriatric Psychiatry</option>
+														<option value="50">Gynaecologic Oncology</option>
+														<option value="51">Gynocologic Reproductive Endocrinology and Infertility</option>
+														<option value="27">Hematological Pathology</option>
+														<option value="11">Hematology</option>
+														<option value="123">Hematopoietic Stem Cell Transplantation</option>
+														<option value="137">Hematopoietic Stem Cell Transplantation and Cellular Therapy</option>
+														<option value="124">Hyperbaric Medicine</option>
+														<option value="12">Infectious Diseases</option>
+														<option value="82">Intensive Care Medicine</option>
+														<option value="13">Internal Medicine</option>
+														<option value="103">Interventional Radiology</option>
+														<option value="52">Maternal-Fetal Medicine</option>
+														<option value="28">Medical Biochemistry</option>
+														<option value="43">Medical Genetics and Genomics</option>
+														<option value="29">Medical Microbiology</option>
+														<option value="14">Medical Oncology</option>
+														<option value="138">Neonatal Hemodynamics and Targeted Neonatal Echocardiography</option>
+														<option value="141">Neonatal Neurocritical Care</option>
+														<option value="46">Neonatal-Perinatal Medicine</option>
+														<option value="15">Nephrology</option>
+														<option value="125">Neuro-intervention</option>
+														<option value="16">Neurology</option>
+														<option value="139">Neuromuscular Medicine</option>
+														<option value="30">Neuropathology</option>
+														<option value="47">Neuroradiology</option>
+														<option value="33">Neurosurgery</option>
+														<option value="17">Nuclear Medicine</option>
+														<option value="34">Obstetrics and Gynecology</option>
+														<option value="18">Occupational Medicine</option>
+														<option value="77">Oncology</option>
+														<option value="35">Ophthalmology</option>
+														<option value="56">Oral and Maxillo-Facial Surgery</option>
+														<option value="36">Orthopedic Surgery</option>
+														<option value="37">Otolaryngology-Head and Neck Surgery</option>
+														<option value="54">Paediatric Cardiology</option>
+														<option value="73">Paediatric Critical Care Medicine</option>
+														<option value="68">Paediatric Emergency Medicine</option>
+														<option value="38">Paediatric General Surgery</option>
+														<option value="63">Pain Medicine</option>
+														<option value="90">Palliative Medicine</option>
+														<option value="126">Patient Safety and Quality Improvement</option>
+														<option value="127">Pediatric and Perinatal Pathology</option>
+														<option value="142">Pediatric Anesthesiology</option>
+														<option value="91">Pediatric Emergency Medicine</option>
+														<option value="92">Pediatric Hematology/Oncology</option>
+														<option value="104">Pediatric Radiology</option>
+														<option value="105">Pediatric Surgery</option>
+														<option value="128">Pediatric Urology</option>
+														<option value="19">Pediatrics</option>
+														<option value="20">Physical Medicine and Rehabilitation</option>
+														<option value="39">Plastic Surgery</option>
+														<option value="129">Prehospital and Transport Medicine</option>
+														<option value="21">Psychiatry</option>
+														<option value="93">Public Health and Preventative Medicine</option>
+														<option value="22">Radiation Oncology</option>
+														<option value="23">Respirology</option>
+														<option value="130">Retina</option>
+														<option value="24">Rheumatology</option>
+														<option value="131">Sleep Disorder Medicine</option>
+														<option value="132">Solid Organ Transplantation</option>
+														<option value="140">Spine Surgery</option>
+														<option value="133">Sport and Exercise Medicine</option>
+														<option value="72">Surgical Assist</option>
+														<option value="134">Targeted Neonatal Echocardiography</option>
+														<option value="40">Thoracic Surgery</option>
+														<option value="94">Transfusion Medicine</option>
+														<option value="135">Trauma General Surgery</option>
+														<option value="41">Urology</option>
+														<option value="42">Vascular Surgery</option>
+
+													</select><span style="color:Red;"></span>
+												</div>
+											</div><div class="PanelField">
+												<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl16" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL36" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input5_DropDown1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt5">Search Atlantic Registry Only</label><div class="PanelFieldValue">
+													<select name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input5$DropDown1" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input5_DropDown1">
+														<option selected="selected" value="">(Any)</option>
+														<option value="YES">Yes</option>
+
+													</select><span style="color:Red;"></span>
+												</div>
+											</div><input type="submit" name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$SubmitButton" value="Find" onclick="if (typeof(Page_ClientValidate) == &#39;function&#39;) { if (Page_ClientValidate(&#39;Sheet0&#39;) == false) { return false; }} this.disabled=true;__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$SubmitButton&#39;,&#39;&#39;);" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_SubmitButton" class=" TextButton" onfocus="RemoveGridTabindexFocus()" />
+										</div><input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$HiddenKeyField1" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_HiddenKeyField1" TabIndex="-1" value="code_id" />
+									</div>
+								</div>
+							</div>
+						</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_HideResultsMessagePanel" class="ListSearchPrompt">
+							Please enter your search criteria to view results<br />
+						</div>
+					</div>
+            <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_errorLabel" class="iMISUserMessageInformation"></div>
+            
+            
+        
+				</div>
+
+			</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    // Create the event handlers for PageRequestManager
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+    //fix for hitting back button in FF and button was disabled
+    jQuery(document).ready(function () {
+        var findButton = jQuery('input[id$=SubmitButton]');
+        if (findButton !== 'undefined') {
+            findButton.removeAttr("disabled");
+        }
+            var grid = jQuery("#ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid");
+        var gridHeight = grid.outerHeight();
+        var dropdownHeight = jQuery("#ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid .dropdown-menu.dropdown-menu-right").outerHeight();
+        if (gridHeight <= dropdownHeight) {
+            grid.css('overflow', 'inherit');
+        }
+
+    });
+    prm.add_initializeRequest(PageRequestManager_initializeRequest);
+    prm.add_beginRequest(PageRequestManager_beginRequest);
+    prm.add_endRequest(PageRequestManager_endRequest);
+
+    var uiId = '';
+    function PageRequestManager_initializeRequest(sender, args) {
+        if (sender.get_isInAsyncPostBack()) {
+            args.set_cancel(true);
+        }
+    }
+    function PageRequestManager_beginRequest(sender, args) {
+        var postbackElem = args.get_postBackElement();
+        uiId = postbackElem.id;
+        postbackElem.disabled = true;
+    }
+    function PageRequestManager_endRequest(sender, args) {
+        EndRequest();
+        var postBackFieldId = $get(uiId);
+        if (postBackFieldId != null && postBackFieldId != 'undefined')
+            postBackFieldId.disabled = false;
+        if (args.get_error() != undefined) {
+            var error = args.get_error().name;
+            if (error != 'undefined' && error == 'Sys.WebForms.PageRequestManagerServerErrorException')
+                args.set_errorHandled(true);
+
+            document.getElementById(uiId).focus();
+        }
+    }
+    //Runs mapping javascript after panel has been asynchronously updated
+    function EndRequest() {
+        if (typeof(initializeMap) == 'function') {
+            initializeMap();
+        }
+    }
+
+        // Executes when a query is clicked in the select menu.    
+        // Add or replace the selected query key in the url query string, and reload the page.
+    function querySelect(paramName, queryId) {
+            var newlocation = "";
+            var hash = window.location.hash; //need to check for anchors/hashtags and handle them carefully
+            //var paramName = "QueryMenuSelectedKey" + listerId;
+            if (window.location.search.length == 0)
+            {
+                newlocation = window.location + "?" + paramName + "=" + queryId;
+            }
+            else
+            {
+                // Add the key to the query string, or replace it if it already exists in the query string
+                var queryString = window.location.search.substring(1);
+                var paramPairs = queryString.split("&");
+                var newQueryString = "";
+                var isFound = new Boolean(false);
+                for (var i=0;i<paramPairs.length;i++)
+                {
+                    if (newQueryString.length > 0)
+                        newQueryString += "&";
+                    var pair = paramPairs[i].split("=");
+                    if (pair[0] == paramName)
+                    {
+                        newQueryString += paramName
+                        + "=" + queryId;
+                        isFound = true;
+                    }
+                    else
+                    {
+                            newQueryString += paramPairs[i];
+                    }
+                }
+                if (isFound == false) {
+                    // Param wasn't in query string, add it.
+                    if(hash.length == 0)
+                    {
+                        newlocation = window.location + "&" +
+                        paramName + "=" + queryId;
+                    }
+                    else
+                    {
+                        var url = window.location.href.substring(0, window.location.href.indexOf("?"));
+                        newlocation = url + "?" + newQueryString + "&" +
+                        paramName + "=" + queryId + hash;
+                    }
+                }
+                else
+                {
+                    var url = window.location.href.substring(0, window.location.href.indexOf("?"));
+                    newlocation = url + "?" + newQueryString + hash;
+                }                                                      
+            }
+        window.location = newlocation;
+    }
+
+    //]]>
+</script>
+		</div>
+	</div>
+</div><div>
+
+</div></div>
+				</div>
+				</div>
+			
+			</div>
+
+		</div>
+	</div>
+</div>	
+
+
+    
+    
+<div class="ContentRecordPageButtonPanel">
+
+	</div>
+                
+</div>                
+                
+                
+            </div>
+        <!-- 2021.1.119.45 --><div id="ctl00_RadAjaxManager1SU">
+	<span id="ctl00_RadAjaxManager1" style="display:none;"></span>
+</div><div id="ctl00_WindowManager1" style="display:none;">
+	<div id="ctl00_GenericWindow" style="display:none;">
+		<div id="ctl00_GenericWindow_C" style="display:none;">
+
+		</div><input id="ctl00_GenericWindow_ClientState" name="ctl00_GenericWindow_ClientState" type="hidden" />
+	</div><div id="ctl00_ObjectBrowser" style="display:none;">
+		<div id="ctl00_ObjectBrowser_C" style="display:none;">
+
+		</div><input id="ctl00_ObjectBrowser_ClientState" name="ctl00_ObjectBrowser_ClientState" type="hidden" />
+	</div><div id="ctl00_ObjectBrowserDialog" style="display:none;">
+		<div id="ctl00_ObjectBrowserDialog_C" style="display:none;">
+
+		</div><input id="ctl00_ObjectBrowserDialog_ClientState" name="ctl00_ObjectBrowserDialog_ClientState" type="hidden" />
+	</div><div id="ctl00_WindowManager1_alerttemplate" style="display:none;">
+		<div class="rwDialogPopup radalert">			
+			<div class="rwDialogText">
+			{1}				
+			</div>
+			
+			<div>
+				<a  onclick="$find('{0}').close(true);"
+				class="rwPopupButton" href="javascript:void(0);">
+					<span class="rwOuterSpan">
+						<span class="rwInnerSpan">##LOC[OK]##</span>
+					</span>
+				</a>				
+			</div>
+		</div>
+		</div><div id="ctl00_WindowManager1_prompttemplate" style="display:none;">
+		 <div class="rwDialogPopup radprompt">			
+			    <div class="rwDialogText">
+			    {1}				
+			    </div>		
+			    <div>
+				    <script type="text/javascript">
+				    function RadWindowprompt_detectenter(id, ev, input)
+				    {							
+					    if (!ev) ev = window.event;                
+					    if (ev.keyCode == 13)
+					    {															        
+					        var but = input.parentNode.parentNode.getElementsByTagName("A")[0];					        
+					        if (but)
+						    {							
+							    if (but.click) but.click();
+							    else if (but.onclick)
+							    {
+							        but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);							 
+							    }
+						    }
+					       return false;
+					    } 
+					    else return true;
+				    }	 
+				    </script>
+				    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+			    </div>
+			    <div>
+				    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"				
+					    class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			    </div>
+		    </div>				       
+		</div><div id="ctl00_WindowManager1_confirmtemplate" style="display:none;">
+		<div class="rwDialogPopup radconfirm">			
+			<div class="rwDialogText">
+			{1}				
+			</div>						
+			<div>
+				<a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+				<a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+			</div>
+		</div>		
+		</div><input id="ctl00_WindowManager1_ClientState" name="ctl00_WindowManager1_ClientState" type="hidden" />
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    var gCartCount;
+    var cartDiv = $get("CartItemCount");
+    if (cartDiv != null){
+        jQuery.ajax({
+            type: "POST",
+            url: gWebRoot + "/WebMethodUtilities.aspx/GetCartItemCount",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function(result) {
+                if (result.d != '' && result.d != null) {
+                    gCartCount = result.d;
+                    if (gCartCount != null) {
+                        cartDiv.innerHTML = gCartCount;
+                    }
+                }
+            },
+            async: true
+        });
+    }
+
+    function CheckForChildren() {
+        var contentRecordPageButtonPanelHasChildren = false;
+        var contentRecordPageButtonPanel = jQuery('div.ContentRecordPageButtonPanel');
+        for (var i = 0, max = contentRecordPageButtonPanel.length; i < max; i++) {
+            if (contentRecordPageButtonPanel[i].children.length > 0) {
+                contentRecordPageButtonPanelHasChildren = true;
+                break;
+            }
+        }
+        if (!contentRecordPageButtonPanelHasChildren) {
+            jQuery("Body").addClass("TemplateAreaEasyEditOn");
+        }
+    }
+    if (gIsEasyEditEnabled)
+        CheckForChildren();  
+    //]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+__Document_Head_Init('https://imis.cpsnl.ca/web/NoCookies.html', '', true);window.__TsmHiddenField = $get('ctl00_ScriptManager1_TSM');var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';Listers = new Array( $('ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid') );Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxManager, {"_updatePanels":"","ajaxSettings":[],"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"defaultLoadingPanelID":"AjaxStatusLoadingPanel","enableAJAX":true,"enableHistory":false,"links":[],"styles":[],"uniqueID":"ctl00$RadAjaxManager1","updatePanelsRenderMode":0}, null, null, $get("ctl00_RadAjaxManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_GenericWindow_ClientState","formID":"aspnetForm","height":"550px","iconUrl":"about:blank","localization":"{\"Close\":\"Close\",\"Maximize\":\"Maximize\",\"Minimize\":\"Minimize\",\"Reload\":\"Reload\",\"PinOn\":\"PinOn\",\"PinOff\":\"PinOff\",\"Restore\":\"Restore\",\"OK\":\"OK\",\"Cancel\":\"Cancel\",\"Yes\":\"Yes\",\"No\":\"No\"}","minimizeIconUrl":"about:blank","modal":true,"name":"GenericWindow","showContentDuringLoad":false,"skin":"MetroTouch","visibleStatusbar":false,"width":"800px"}, null, null, $get("ctl00_GenericWindow"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_ObjectBrowser_ClientState","formID":"aspnetForm","height":"550px","iconUrl":"about:blank","localization":"{\"Close\":\"Close\",\"Maximize\":\"Maximize\",\"Minimize\":\"Minimize\",\"Reload\":\"Reload\",\"PinOn\":\"PinOn\",\"PinOff\":\"PinOff\",\"Restore\":\"Restore\",\"OK\":\"OK\",\"Cancel\":\"Cancel\",\"Yes\":\"Yes\",\"No\":\"No\"}","minimizeIconUrl":"about:blank","modal":true,"name":"ObjectBrowser","showContentDuringLoad":false,"skin":"MetroTouch","visibleStatusbar":false,"width":"760px"}, null, null, $get("ctl00_ObjectBrowser"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":117,"clientStateFieldID":"ctl00_ObjectBrowserDialog_ClientState","formID":"aspnetForm","height":"400px","iconUrl":"about:blank","localization":"{\"Close\":\"Close\",\"Maximize\":\"Maximize\",\"Minimize\":\"Minimize\",\"Reload\":\"Reload\",\"PinOn\":\"PinOn\",\"PinOff\":\"PinOff\",\"Restore\":\"Restore\",\"OK\":\"OK\",\"Cancel\":\"Cancel\",\"Yes\":\"Yes\",\"No\":\"No\"}","minimizeIconUrl":"about:blank","modal":true,"name":"ObjectBrowserDialog","showContentDuringLoad":false,"skin":"MetroTouch","visibleStatusbar":false,"width":"600px"}, null, null, $get("ctl00_ObjectBrowserDialog"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"behaviors":117,"clientStateFieldID":"ctl00_WindowManager1_ClientState","formID":"aspnetForm","iconUrl":"","localization":"{\"Close\":\"Close\",\"Maximize\":\"Maximize\",\"Minimize\":\"Minimize\",\"Reload\":\"Reload\",\"PinOn\":\"PinOn\",\"PinOff\":\"PinOff\",\"Restore\":\"Restore\",\"OK\":\"OK\",\"Cancel\":\"Cancel\",\"Yes\":\"Yes\",\"No\":\"No\"}","minimizeIconUrl":"","name":"WindowManager1","skin":"MetroTouch","windowControls":"['ctl00_GenericWindow','ctl00_ObjectBrowser','ctl00_ObjectBrowserDialog']"}, null, {"child":"ctl00_GenericWindow"}, $get("ctl00_WindowManager1"));
+});
+//]]>
+</script>
+</form>
+
+        <!--jscript from Page.ResgisterStartupScript extention is loaded here -->
+        <Div><script type="text/javascript">Sys.Application.add_load(function () {{ MasterPageBase_Init(); }});</script>
+</Div><input name="ctl00$TemplateScripts$timeoutsoonmsg" type="hidden" id="timeoutsoonmsg" value="PGgyPllvdSBhcmUgYWJvdXQgdG8gYmUgc2lnbmVkIG91dDwvaDI+DQo8cD5Zb3Ugd2lsbCBiZSBzaWduZWQgb3V0IGluIDxzdHJvbmc+W1NlY29uZHNSZW1haW5pbmddPC9zdHJvbmc+IHNlY29uZHMgZHVlIHRvIGluYWN0aXZpdHkuIFlvdXIgY2hhbmdlcyB3aWxsIG5vdCBiZSBzYXZlZC4gVG8gY29udGludWUgd29ya2luZyBvbiB0aGUgd2Vic2l0ZSwgY2xpY2sgIlN0YXkgU2lnbmVkIEluIiBiZWxvdy48L3A+" /><input name="ctl00$TemplateScripts$stayLoggedInURL" type="hidden" id="stayLoggedInURL" value="L3dlYg==" /><input name="ctl00$TemplateScripts$logoutUrl" type="hidden" id="logoutUrl" value="aHR0cHM6Ly9pbWlzLmNwc25sLmNhL3dlYi9Bc2lDb21tb24vQ29udHJvbHMvU2hhcmVkL0Zvcm1zQXV0aGVudGljYXRpb24vTG9naW4uYXNweD9TZXNzaW9uVGltZW91dD0xJlJldHVyblVybD0lMmZXRUIlMmZDUFNOTCUyZlBoeXNpY2lhblNlYXJjaCUyZlBoeXNpY2lhbl9TZWFyY2hfTmV3LmFzcHglM2Y=" />	    
+        
+        <script id="ResizeContentScript" type="text/javascript">
+            //<![CDATA[
+            // Resizing initialization
+            addLoadEvent(EmptyMaster_Load);
+            function EmptyMaster_Load() {
+                // defined on Asi.Web.MasterPageBase.js
+                MasterPageBase_SetupComponents(null, null, null, 'ctl00_ContentPanel', 'ctl00_ButtonPanel', null, null);
+                Window_Load();
+            }
+            //]]>
+        </script>
+    </body>
+</html>
+
