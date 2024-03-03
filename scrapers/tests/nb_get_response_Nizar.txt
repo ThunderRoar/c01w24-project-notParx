@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Public directory</title>
+	<style>
+		.als-isuser .als-hideforuser {
+			display: none !important;
+		}
+	</style>
+	
+    <script type="text/javascript">
+			
+			window["__alsenums_"] = {
+				formAction: {
+					saveOnly: "SaveOnly",
+					saveOnlyFileError: "SaveOnlyFileError",
+					saveValidate: "SaveValidate",
+					submit: "Submit",
+					customSubmit: "CustomSubmit",
+					returnToClient: "ReturnToClient",
+					readyForReview: "ReadyForReview",
+					sendToReviewer: "SendToReviewer",
+					preapprove: "PreApprove",
+					approve: "Approve",
+					reject: "Reject",
+					unlock: "Unlock",
+					withdraw: "Withdraw",
+					adminWithdraw: "AdminWithdraw",
+					discontinue: "Discontinue",
+					awaitingDocuments: "AwaitingDocuments"
+				}, formStatusScd: {
+					new: "NEW",
+					submitted: "SUBMITTED",
+					corrected: "CORRECTED",
+					returned: "RETURNED",
+					approved: "APPROVED",
+					rejected: "REJECTED",
+					withdrawn: "WITHDRAWN",
+					unlocked: "UNLOCKED",
+					inReview: "INREVIEW",
+					ready: "READY"
+				}
+			};
+    </script>
+<link href="/assets/css/styles?v=m9W6Q53_1t6frTZwFVGijIYniNplOtZ4QeRaMl4qHSc1" rel="stylesheet"/>
+
+<script src="/bundles/js/jquery?v=7TxMnhxd_fI1jIPM3uuezKOVcdoj2criyCQNWCjxaho1"></script>
+
+<script src="/bundles/js/scripts?v=cSSADiP7EGAMHl_hSF2cf775vRx6hYDuPU76O4cazvM1"></script>
+
+	<link rel="stylesheet" href="/client.css">
+<script id="ajaxErrorContentTemplate" type="text/template">
+	<div>
+<form action="/Client/Account/SubmitTicket" data-ajax="true" data-ajax-failure="OnPartialViewError" data-ajax-loading="#BusyIndicator" data-ajax-mode="replace" data-ajax-success="OnPartialViewSuccess" data-ajax-update="#PageContent" id="fwkgenguid" method="post">			<input type="hidden" name="message" data-fwkAjaxErrorContentInput />
+			<input type="hidden" name="stacktrace" data-fwkAjaxErrorTraceInput />
+			<p data-fwkAjaxErrorContent></p>
+			<button data-fwkAjaxErrorReportBtn type="submit" style="background:none;border:none;text-decoration:underline;float:right;" onclick="$.gritter.removeAll();">
+				Report this issue
+			</button>
+</form>	</div>
+</script>
+<script type="text/javascript">
+	(function ($) {
+		$fwk.ajaxErrorContentTemplate = $("#ajaxErrorContentTemplate").html();
+	}(jQuery));
+</script>
+</head>
+<body class="no-skin als-white-background ">
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+		</script>
+		<div id="PageContent">
+			
+
+<style>
+    .als-hide-on-detail {
+        display:none!important;
+    }
+</style>
+<div id="publicdirectorycontainer" class="als_publicdirectory">
+	<style>
+  /* Controls background color of the empty space to the left and right of the centered content */
+  body {
+    background: #f3f3f3 !important;
+  }
+
+  /* Controls label font size on the detail view */
+  label {
+    font-size: 12px !important;
+    padding-top: 5px;
+  }
+
+  /* Controls the color of the header and footer colors */
+  .navbar {
+    background-color: rgb(87, 108, 157) !important;
+  }
+
+  .navbar-fixed-bottom {
+    background-color: rgb(87, 108, 157) !important;
+  }
+
+  /* Controls the color of the table background alternating colors as well as the hover color. Use the navbar color and add transparency */
+  .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: rgba(76,76,76,0.1);
+  }
+
+  .table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: rgba(76,76,76,0.3);
+  }
+
+  /* Controls the color of the detail card view background color */
+  .well {
+    background-color: rgba(255,255,255,0.1) !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 1px solid #4c4c4c;
+  }
+
+  #SearchFirstName {
+    font-size: 12px;
+  }
+
+  #SearchLastName {
+    font-size: 12px;
+    width: 165px;
+  }
+
+  .als-header-bar {
+    border: none;
+  }
+
+  .info-spacing {
+    padding: 0 12px;
+  }
+
+  .header-img {
+    width: 80px;
+    margin-top: 5px;
+    display: flex;
+    padding: 7px 2px 7px 5px;
+  }
+
+  .header-text {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1c5d63;
+    margin: 15px;
+    display: inline-block;
+    padding-top: 1%;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  .header-title {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000 !important;
+  }
+
+    .header-title::after {
+      content: '';
+      display: block;
+      width: 75px;
+      padding-top: 5px;
+      border-bottom: 4px solid #1c5d63;
+    }
+
+  .comment-icon {
+    color: #dd5a43;
+    cursor: pointer;
+  }
+
+    .comment-icon:hover {
+      color: darkred;
+    }
+
+  .condition-icon {
+    color: #ff892a;
+    cursor: pointer;
+  }
+
+    .condition-icon:hover {
+      color: darkgoldenrod
+    }
+
+  hr.directory {
+    width: 100%;
+    border-top: 1px solid #bdbdbd;
+  }
+
+  h5.directory {
+    color: #003b60;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 17px
+  }
+
+  h6.directory {
+    color: #135782;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  div.location-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 5px;
+    padding-right: 0px;
+  }
+
+  div.directory-container {
+    padding-left: 5px;
+    padding-right: 0px;
+  }
+
+  div.location {
+    margin-right: 5px;
+    min-width: 186px;
+    flex: 0 0 15%;
+  }
+
+  div.location-name {
+    display: flex;
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 5px;
+    min-height: 44px;
+  }
+
+    div.location-name span {
+      align-self: flex-end;
+    }
+
+  div.address {
+    display: flex;
+    padding: 5px 5px;
+    color: #0e76d9;
+  }
+
+  div.phone {
+    display: flex;
+    padding: 5px 5px;
+  }
+
+  div.icon {
+    vertical-align: top;
+    color: #094d8d;
+    font-size: 18px;
+    flex: 0 0 5px;
+  }
+
+  div.content {
+    display: inline-block;
+    margin-left: 5px;
+    padding-top: 3px;
+    flex: auto;
+  }
+
+  /*
+        Controls the width of the centered content. Set this to the width possible to minimize white space. If width of your content is greater than
+        the media query min-width you will need to adjust it so its lower or the container will shoot of the screen on mobile phones.
+    */
+
+  @media(min-width:768px) {
+    .container {
+      width: 750px;
+    }
+
+    .header-img {
+      width: 80px;
+      padding: 7px 2px 7px 5px;
+    }
+
+    .header-text {
+      font-size: 20px;
+    }
+  }
+
+  @media(min-width:992px) {
+    .container {
+      width: 825px;
+    }
+
+    .header-img {
+      width: 80px;
+      padding: 7px 2px 7px 5px;
+    }
+
+    .header-text {
+      font-size: 20px;
+    }
+  }
+
+  @media(min-width:1200px) {
+    .container {
+      width: 900px;
+    }
+
+    .header-img {
+      width: 90px;
+      padding: 9px 4px 9px 5px;
+    }
+
+    .header-text {
+      font-size: 24px;
+    }
+  }
+</style>
+<div class="navbar navbar-default als-printable-header als-header-bar als-centered" style="background-color: white!important;">
+  <div class="navbar-container" id="navbar-container">
+    <div class="navbar-buttons pull-right">
+      <form method="post">
+        <button type="submit" name="_als_culturechoice" value="fr-ca" class="btn-link">French</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-default als-printable-header als-header-bar als-centered" style="background-color: white !important; text-align: center;">
+  <div class="navbar-container" id="navbar-container" style="width:100%;">
+    <div class="navbar-header" style="width:100%;">
+      <a href="https://cpsnb.org/" class="navbar-brand als-navbar-brand" style="width:100%;">
+        <center>
+          <img style="width:600px;" src="https://resourcestest.alinityapp.com/Images/CPSNB/billingual_colour-logo.png" />
+        </center>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-default als-header-bar">
+  <div class="navbar-container container" id="navbar-container">
+    <div class="navbar-header" style="margin-left:12px!important;">
+      <a href="#" class="navbar-brand als-navbar-brand" style="font-size:20px;pointer-events:none;">
+        Find a Physician
+      </a>
+
+    </div>
+  </div>
+</div>
+<div class="row als-hide-on-detail">
+  <div class="col-xs-12" style="margin-top:10px; text-align:justify;">
+    <h6 class="directory info-spacing">What this service includes:</h6>
+    <p class="info-spacing">
+      This service allows you to search for physicians with active annual licences or temporary licences (locums), postgraduate trainees, medical students, and physician assistants. The directory includes the ability to search by Name, Region, City, Graduate year, Licence number, Specialty, and whether the member is on the Atlantic Registry.
+    </p>
+    <h6 class="directory info-spacing">What this service does not include:</h6>
+    <p class="info-spacing">
+      This service does not list information for physicians who do not have an active annual or temporary licence, or who have been suspended from practice.
+    </p>
+    <h6 class="directory info-spacing">Discipline History</h6>
+    <p class="info-spacing">
+      All complaints referred to a Board of Inquiry are considered public and a list of these matters is available on our website under “Disciplinary Hearings”. In addition, all decisions of a Board of Inquiry and of the Review Committee (that resulted in a licensing sanction) are public and are available on our website under “Disciplinary Actions”.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12" style="margin-top:10px; text-align:justify;">
+    <div id="MoreContentButton">
+      <button id="btn-morecontent" data-clicked-times="0" data-als-tab data-target="#UnderstandingRegInfoContainer" data-parent="#MoreContent" data-toggle="collapse" data-action="collapse" class="btn btn-sm btn-default btn-white" style="border-left: none; border-right: none; width:100%; text-align: left;">
+        <h5 class="directory"><i class="fa fa-chevron-right"></i> Instructions</h5>
+      </button>
+    </div>
+    <div id="MoreContent">
+      <div id="UnderstandingRegInfoContainer" class="collapsed collapse" style="height:0;">
+        <div class="info-spacing">
+          <p> Complete any or all fields to obtain information about active physicians in New Brunswick.</p>
+        </div>         
+        <button id="btn-collapse" data-clicked-times="0" data-als-tab data-target="#UnderstandingRegInfoContainer" data-parent="#MoreContent" data-toggle="collapse" data-action="collapse" class="btn btn-sm btn-default btn-white" style="border: none; width:100%; height:35px; text-align: center;">
+          <h5 class="directory"><i class="fas fa-chevron-up"></i></h5>
+        </button>
+        <hr class="directory" style="width: 95%; margin-top: 0px;" />
+      </div>
+    </div>
+  </div>
+</div>
+	<div class="breadcrumbs hidden-print">
+		<ul class="breadcrumb">
+			<li>
+<a class="btn btn-white btn-default btn-sm als-backbutton" data-ajax="true" data-ajax-failure="OnPartialViewError" data-ajax-loading="#BusyIndicator" data-ajax-mode="replace" data-ajax-success="OnPartialViewSuccess" data-ajax-update="#PageContent" href="/Client/PublicDirectory">					<i class="ace-icon fa fa-chevron-left"></i>
+</a>				Details
+			</li>
+			<li>Abdel Samad, Nizar N</li>
+		</ul>
+	</div>
+	<div class="page-content als-page-content">
+		<div class="row">
+			<div id="details" class="col-xs-12"></div>
+		</div>
+		<script id="detailtemplate" type="text/template">
+			<div class="row" style="margin-left: 15px; margin-right:15px; padding-bottom:5px;">
+  <section class="well well-lg col-sm-offset-1 col-sm-10" style="margin-bottom:0px;">
+    <small class="visible-xs" style="margin-bottom:5px;">
+      Status as of : [[_ct_]]
+      <span>
+        <br>
+        <span class="red visible-print">NOT A PRACTICE PERMIT</span>
+      </span>
+    </small>
+    <small class="pull-right hidden-xs">
+      Status as of : [[_ct_]]
+      <span>
+        <br>
+        <span class="red visible-print">NOT A PRACTICE PERMIT</span>
+      </span>
+    </small>
+    <div class="row">
+      <h4 style="margin-bottom:5px;" class="bolder">
+        &nbsp;&nbsp;[[_fun_]]          <span class="btn [[_atlr_]]" style="padding:0!important; border:none!important; background-color:transparent!important;" data-rel="popover" data-container="body" data-placement="bottom" data-html="true" data-title="Atlantic Registry" data-content='[[_z_]]'>
+          <i class="ace-icon fa fa-solid fa-badge-check bigger-120" style="margin: 0 !important; color: #14ad00;" title="Atlantic registry" />
+        </span>
+      </h4>
+      <p style="margin-bottom:0">
+        &nbsp;&nbsp;
+        <b>Initial registration: </b>[[_frd_]]
+      </p>
+    </div>
+    <hr class="directory" />
+    <div class="row">
+      <div class="col-xs-12">
+        <h5>Current Registration</h5>
+        <div class="row">
+          <div class="col-xs-3 col-md-">
+            <label class="als-tile-label als-ellipsis">                              Licence Type                     </label>                          [[_prl_]]
+          </div>
+          <div class="col-xs-3 col-md-3">
+            <label class="als-tile-label als-ellipsis">                              License Number                     </label>                          [[_rn_]]
+          </div>
+          <div class="col-xs-3 col-md-2">
+            <label class="als-tile-label als-ellipsis">                              Effective                     </label>                          [[_ef_]]
+          </div>
+          <div class="col-xs-3 col-md-2">
+            <label class="als-tile-label als-ellipsis">                              Expiry                          </label>                          [[_ex_]]
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-3 col-md-3">
+            <label class="als-tile-label als-ellipsis">                              Medical School                        </label>                          [[_mds_]]
+          </div>
+          <div class="col-xs-3 col-md-3">
+            <label class="als-tile-label als-ellipsis">                              Grad Year                       </label>                          [[_gy_]]
+          </div>
+          <div class="col-xs-3 col-md-2">
+            <label class="als-tile-label als-ellipsis">                              Atlantic Registry                      </label>                          [[_aanw_]]
+          </div>
+          <div class="col-xs-3 col-md-2">
+            <label class="als-tile-label als-ellipsis">                              Home Province                         </label>                          [[_hprov_]]
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="[[_nrv_]]">
+      <hr class="directory" />
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>Future Registration</h5>
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <label class="als-tile-label als-ellipsis">                                  Licence type                           </label>                              [[_nprl_]]
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <label class="als-tile-label als-ellipsis">                                  Effective                              </label>                              [[_nef_]]
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <label class="als-tile-label als-ellipsis">                                  Expiry                             </label>                              [[_nex_]]
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="[[_empv_]]">
+      <div class="row" style="padding-left: 12px;padding-right: 12px;">
+        <hr class="directory" />
+        <h5>Office Address</h5>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Address </th>
+            <th>Phone #</th>
+            <th>Fax #</th>
+          </tr>
+          [[_e_]]
+        </table>
+      </div>
+    </div>
+    <div class="[[_specv_]]">
+      <hr class="directory" />
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>Specializations</h5>
+          <div class="directory-container">                          [[_sp_]]                      </div>
+        </div>
+      </div>
+    </div>
+    <div class="[[_cv_]]">
+      <hr class="directory" />
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>Condition(s)</h5>
+          <div class="directory-container">                          [[_cd_]]                      </div>
+        </div>
+      </div>
+    </div>
+    <div class="[[_pdcv_]]">
+      <hr class="directory" />
+      <div class="row">
+        <div class="col-xs-12">
+          <h5>Disciplinary Actions</h5>
+          <div class="directory-container">                          [[_pdc_]]                      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+		</script>
+	</div>
+	<div class="row als-info-literal">
+  <div class="col-xs-12" style="margin-top:10px; padding-bottom: 35px; text-align:justify;">
+    <p class="info-spacing">
+      It is each member’s responsibility to ensure their information is accurate. Members can update their information through the profile update located on the member portal.
+    </p>
+    <p class="info-spacing">
+      This service is provided to members and the public to search for individual professionals they may wish to contact on a professional basis or to verify their status.
+      The information is not to be used for any commercial, marketing, or fundraising purposes. The address shown is the member's practice address.
+    </p>
+  </div>
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom als-footer no-padding hidden-print hidden-xs hidden-sm">
+  <img src="/assets/images/Alinity/justLogo_30.png" style="height:20px;">
+  <small>Alinity ©2023</small>
+</div>
+
+<script type="text/javascript">
+  (function ($) {
+    $("#btn-morecontent").click(function () {
+      $(this).find("svg").toggleClass("fa-chevron-right fa-chevron-down");
+    });
+    $("#btn-collapse").click(function () {
+      $("#btn-morecontent").click()
+    });
+  }(jQuery));
+</script>
+</div>
+<script type="text/javascript">
+    (function ($) {
+        if ($(".navbar").hasClass("als-centered")) {
+            $(".main-container").addClass("container");
+        }
+        $("#details").html($.fn.fwkParseStringTemplate($("#detailtemplate").html(), {"rn":"4156","fun":"Abdel Samad, Nizar N","rl":"Abdel Samad, Nizar N","prl":"Defined Licence","ef":"01-Jan-2024","ex":"31-Dec-2024","frd":"02-Oct-2009","cv":"","cd":"<ul style=\"margin-left:12px;margin-bottom:0;\"><li>Physician with a Defined License</li></ul>","specv":"","sp":"<ul style=\"margin-left:12px;margin-bottom:0;\"><li>Hematology, CPSNB Specialty Recognition (2010)</li><li>Hematology, Faculté de Médecine Laennec, Université Claude-Bernard-Lyon-I<li>Medical Oncology, CPSNB Specialty Recognition (2010)</li></ul>","ct":"03-Mar-2024 04:07","pdcv":"hidden","nrv":"hidden","e":"<tr><td>100 Arden Street<br/>Suite 304</br>Moncton, New Brunswick, Canada E1C 4B7</td><td>506-870-2404</td><td>506-870-2415</td></tr>","atlr":"hidden","z":"hidden","aanw":"No","hprov":"N/A","mds":"Lebanese University Faculty of Medical Sciences","gy":1998}));
+
+        $("[data-moreinfolink]").on("click", function () {
+            $("#BusyIndicator").show();
+            $.post("/Client/PublicDirectory/MoreInfo/9f49f3f9-6561-ee11-b024-000d3a844429", function (data) {
+                var data = JSON.parse(data);
+                
+                $("[data-moreinfolink]").replaceWith($.fn.fwkParseStringTemplate(data.Template, data.Data));
+                $("#BusyIndicator").hide();
+            });
+        });
+	}(jQuery));
+</script>
+		</div>
+		<div id="BusyIndicator" class="als-hidden als-busyindicator-background" style="z-index:999;">
+			<i class="ace-icon fas fa-cog ace-icon fa fa-spin dark bigger-300 als-busyindicator-spinner" style="position:absolute !important;"></i>
+		</div>
+	</div>
+
+	
+	<div id=BusyIndicator style="position:absolute;background-color: rgba(180, 180, 180, 0.70);top:0px;left:0px;width:100%;height:100%; z-index:999;" data-fwk_spinner class="hidden">
+		<div data-inlinespinnergear style="width:100%;position:relative; position: sticky; top: 60px; margin-top: 60px; ">
+			<div style="margin: auto;max-width:200px;text-align:center;">
+				<i class="ace-icon fas fa-cog ace-icon fa fa-spin dark bigger-300" style="color:#2F7EB8 !important;"></i>
+				<p style="color:white !important;background-color:rgba(47,126,184, 0.6);margin-top:8px;border-radius:8px;" data-fwk_spinnertext></p>
+			</div>
+		</div>
+	</div>	
+
+		<script type="text/javascript">
+			jQuery(function ($) {
+				$.fn.tap = null;
+			});
+	</script>
+<script src="/bundles/js/ace?v=4NMCCearb-AMH_A72z0Olhm01YqcWmFEXE7bVC7f1-41"></script>
+
+<script type="text/javascript">
+	(function ($) {
+		$("body").on("click", _hidePopover);
+		$("body").on("tap", _hidePopover);
+
+		function _hidePopover(e) {
+			if ($(e.target).closest(".popover-content").length == 0) {
+				
+				$("[data-rel=popover],[data-toggle=popover],[data-fwk_poptemplate],[data-fwk_popquery]").each(function (index, value) {					
+					if (!$(value).is(e.target) && $(value).has(e.target).length === 0 && $(value).data("bs.popover") != undefined) {
+						$(value).popover("hide");
+					}
+				});
+			}
+		}
+	}(jQuery));
+</script>
+	<script type="text/javascript">
+			function OnPartialViewSuccess(data, status, ajaxContext) {
+				var url = $fwk.combineUrlAndActualRouteHeader(this.url, ajaxContext.getResponseHeader("actualRoute"));
+
+				if (url !== undefined) {
+					$fwk.replaceHistoryState(url);
+				}
+
+				document.title = "Public directory"; 
+				$fwk.changeFavIcon("/favicon.ico"); 
+				$("html,body").scrollTop(0);
+			}
+
+			function OnPartialViewError(ajaxContext) {
+				$fwk.displayAjaxError(ajaxContext, "unknown error, please contact support");
+			}
+	</script>
+</body>
+</html>
