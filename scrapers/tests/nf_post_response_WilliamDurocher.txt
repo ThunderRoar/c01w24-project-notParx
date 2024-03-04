@@ -1,0 +1,219 @@
+1|#||4|226|updatePanel|ctl00_UserMessagesUpdatePanel|
+                                <!-- This provides a placeholder for any applicable User Messages that a page needs to display -->
+                                
+<div role="alert">
+
+</div>
+                            |25476|updatePanel|ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ListerPanel|
+            
+            <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid" data-gridId="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1" data-hiddenFieldId="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_HiddenKeyField1" data-keyColumnName="code_id" style="overflow:auto;">
+	<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$mHiddenCacheQueryId" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_mHiddenCacheQueryId" TabIndex="-1" /><input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$mHiddenQueryCached" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_mHiddenQueryCached" TabIndex="-1" value="False" /><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel" class="panel panel  FilterPanel FilterPanel">
+		<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_Head" class="panel-heading">
+
+		</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_BodyContainer" class="panel-body-container">
+			<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_DataSourcePanel_Body" class="panel-body">
+				<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_ParametersContainer">
+					<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_SubmitButton&#39;)">
+						<div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl01" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL23" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input0_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt0">Licence number</label><div class="PanelFieldValue">
+								<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input0$TextBox1" type="text" value="F 03818" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input0_TextBox1" /><span style="color:Red;"></span>
+							</div>
+						</div><div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl04" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL26" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input1_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt1">Last name</label><div class="PanelFieldValue">
+								<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input1$TextBox1" type="text" value="Durocher" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input1_TextBox1" /><span style="color:Red;"></span>
+							</div>
+						</div><div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl07" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL27" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input2_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt2">First name</label><div class="PanelFieldValue">
+								<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input2$TextBox1" type="text" value="William" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input2_TextBox1" /><span style="color:Red;"></span>
+							</div>
+						</div><div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl10" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL28" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input3_TextBox1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt3">City name starts with</label><div class="PanelFieldValue">
+								<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input3$TextBox1" type="text" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input3_TextBox1" /><span style="color:Red;"></span>
+							</div>
+						</div><div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl13" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL31" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input4_DropDown1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt4">Area of Practice</label><div class="PanelFieldValue">
+								<select name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input4$DropDown1" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input4_DropDown1">
+									<option selected="selected" value="">(Any)</option>
+									<option value="106">Acute Care Point of Care Ultrasonography (POCUS)</option>
+									<option value="107">Addiction Medicine</option>
+									<option value="108">Adolescent and Young Adult Oncology</option>
+									<option value="83">Adolescent Medicine</option>
+									<option value="109">Adult Cardiac Electrophysiology</option>
+									<option value="110">Adult Congenital Heart Disease</option>
+									<option value="111">Adult Echocardiography</option>
+									<option value="136">Adult Glomerular Disease</option>
+									<option value="112">Adult Hepatology</option>
+									<option value="113">Adult Interventional Cardiology</option>
+									<option value="114">Adult Thrombosis Medicine</option>
+									<option value="115">Advanced Heart Failure and Cardiac Transplantation</option>
+									<option value="116">Aerospace Medicine</option>
+									<option value="55">Anatomical &amp; Clinical Pathology</option>
+									<option value="25">Anatomical Pathology</option>
+									<option value="1">Anesthesiology</option>
+									<option value="117">Antimicrobial Stewardship</option>
+									<option value="118">Brachytherapy</option>
+									<option value="67">Cardiac Surgery</option>
+									<option value="2">Cardiology</option>
+									<option value="31">Cardiovascular and Thoracic Surgery</option>
+									<option value="101">Care of the Elderly</option>
+									<option value="102">Care of Under-Served Populations</option>
+									<option value="98">Child and Adolescent Psychiatry</option>
+									<option value="119">Child Maltreatment Pediatrics</option>
+									<option value="96">Clinical Associate</option>
+									<option value="3">Clinical Immunology and Allergy</option>
+									<option value="85">Clinical Pharmacology and Toxicology</option>
+									<option value="120">Clinician Educator</option>
+									<option value="48">Colorectal Surgery</option>
+									<option value="4">Community Medicine</option>
+									<option value="121">Consultation-Liaison Psychiatry</option>
+									<option value="45">Critical Care Medicine</option>
+									<option value="122">Cytopathology</option>
+									<option value="5">Dermatology</option>
+									<option value="87">Developmental Pediatrics</option>
+									<option value="6">Diagnostic Radiology</option>
+									<option value="7">Emergency Medicine</option>
+									<option value="8">Endocrinology and Metabolism</option>
+									<option value="58">Family Medicine</option>
+									<option value="69">Forensic Pathology</option>
+									<option value="61">Forensic Psychiatry</option>
+									<option value="9">Gastroenterology</option>
+									<option value="100">General Internal Medicine</option>
+									<option value="26">General Pathology</option>
+									<option value="32">General Surgery</option>
+									<option value="49">General Surgical Oncology</option>
+									<option value="10">Geriatric Medicine</option>
+									<option value="97">Geriatric Psychiatry</option>
+									<option value="50">Gynaecologic Oncology</option>
+									<option value="51">Gynocologic Reproductive Endocrinology and Infertility</option>
+									<option value="27">Hematological Pathology</option>
+									<option value="11">Hematology</option>
+									<option value="123">Hematopoietic Stem Cell Transplantation</option>
+									<option value="137">Hematopoietic Stem Cell Transplantation and Cellular Therapy</option>
+									<option value="124">Hyperbaric Medicine</option>
+									<option value="12">Infectious Diseases</option>
+									<option value="82">Intensive Care Medicine</option>
+									<option value="13">Internal Medicine</option>
+									<option value="103">Interventional Radiology</option>
+									<option value="52">Maternal-Fetal Medicine</option>
+									<option value="28">Medical Biochemistry</option>
+									<option value="43">Medical Genetics and Genomics</option>
+									<option value="29">Medical Microbiology</option>
+									<option value="14">Medical Oncology</option>
+									<option value="138">Neonatal Hemodynamics and Targeted Neonatal Echocardiography</option>
+									<option value="141">Neonatal Neurocritical Care</option>
+									<option value="46">Neonatal-Perinatal Medicine</option>
+									<option value="15">Nephrology</option>
+									<option value="125">Neuro-intervention</option>
+									<option value="16">Neurology</option>
+									<option value="139">Neuromuscular Medicine</option>
+									<option value="30">Neuropathology</option>
+									<option value="47">Neuroradiology</option>
+									<option value="33">Neurosurgery</option>
+									<option value="17">Nuclear Medicine</option>
+									<option value="34">Obstetrics and Gynecology</option>
+									<option value="18">Occupational Medicine</option>
+									<option value="77">Oncology</option>
+									<option value="35">Ophthalmology</option>
+									<option value="56">Oral and Maxillo-Facial Surgery</option>
+									<option value="36">Orthopedic Surgery</option>
+									<option value="37">Otolaryngology-Head and Neck Surgery</option>
+									<option value="54">Paediatric Cardiology</option>
+									<option value="73">Paediatric Critical Care Medicine</option>
+									<option value="68">Paediatric Emergency Medicine</option>
+									<option value="38">Paediatric General Surgery</option>
+									<option value="63">Pain Medicine</option>
+									<option value="90">Palliative Medicine</option>
+									<option value="126">Patient Safety and Quality Improvement</option>
+									<option value="127">Pediatric and Perinatal Pathology</option>
+									<option value="142">Pediatric Anesthesiology</option>
+									<option value="91">Pediatric Emergency Medicine</option>
+									<option value="92">Pediatric Hematology/Oncology</option>
+									<option value="104">Pediatric Radiology</option>
+									<option value="105">Pediatric Surgery</option>
+									<option value="128">Pediatric Urology</option>
+									<option value="19">Pediatrics</option>
+									<option value="20">Physical Medicine and Rehabilitation</option>
+									<option value="39">Plastic Surgery</option>
+									<option value="129">Prehospital and Transport Medicine</option>
+									<option value="21">Psychiatry</option>
+									<option value="93">Public Health and Preventative Medicine</option>
+									<option value="22">Radiation Oncology</option>
+									<option value="23">Respirology</option>
+									<option value="130">Retina</option>
+									<option value="24">Rheumatology</option>
+									<option value="131">Sleep Disorder Medicine</option>
+									<option value="132">Solid Organ Transplantation</option>
+									<option value="140">Spine Surgery</option>
+									<option value="133">Sport and Exercise Medicine</option>
+									<option value="72">Surgical Assist</option>
+									<option value="134">Targeted Neonatal Echocardiography</option>
+									<option value="40">Thoracic Surgery</option>
+									<option value="94">Transfusion Medicine</option>
+									<option value="135">Trauma General Surgery</option>
+									<option value="41">Urology</option>
+									<option value="42">Vascular Surgery</option>
+
+								</select><span style="color:Red;"></span>
+							</div>
+						</div><div class="PanelField">
+							<input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$ctl16" type="hidden" TabIndex="-1" value="e8504c22-b16e-4a4d-994f-cfaabb98e8a2.FS1.FL36" /><label for="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input5_DropDown1"  id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_prompt5">Search Atlantic Registry Only</label><div class="PanelFieldValue">
+								<select name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$Input5$DropDown1" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_Input5_DropDown1">
+									<option selected="selected" value="">(Any)</option>
+									<option value="YES">Yes</option>
+
+								</select><span style="color:Red;"></span>
+							</div>
+						</div><input type="submit" name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$SubmitButton" value="Find" onclick="if (typeof(Page_ClientValidate) == &#39;function&#39;) { if (Page_ClientValidate(&#39;Sheet0&#39;) == false) { return false; }} this.disabled=true;__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$SubmitButton&#39;,&#39;&#39;);if (typeof(Page_ClientValidate) == &#39;function&#39;) { if (Page_ClientValidate(&#39;Sheet0&#39;) == false) { return false; }} this.disabled=true;__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Sheet0$SubmitButton&#39;,&#39;&#39;);" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Sheet0_SubmitButton" class=" TextButton" onfocus="RemoveGridTabindexFocus()" />
+					</div><input name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$HiddenKeyField1" type="hidden" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_HiddenKeyField1" TabIndex="-1" value="code_id" />
+				</div>
+			</div>
+		</div>
+	</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_GridPanel1" style="clear:both;">
+		<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_TitlePanel" class="GridTitlePanel">
+			<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_TitleLabelHelper" class="Title"></div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_TopLeftPanel" class="FloatLeft">
+
+			</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_TopRightPanel" class="pull-right">
+
+			</div>
+		</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1" class="RadGrid RadGrid_MetroTouch" onfocus="RemoveGridTabindexFocus()" Translate="YES" style="clear:both;">
+
+		<!-- 2021.1.119.45 --><table class="rgMasterTable CaptionTextInvisible" summary="Grid table view level . Contains flat or hierarchical data represented in a tabular manner." id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00" style="width:100%;table-layout:auto;empty-cells:show;">
+			<colgroup>
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col  />
+		<col style="display:none;" />
+	</colgroup>
+<thead>
+				<tr>
+					<th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;LastName&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_2_Sort_Last_Name" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_2_Sort_Last_Name&#39;,&#39;&#39;)">Last Name</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;FirstName&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_3_Sort_First_Name" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_3_Sort_First_Name&#39;,&#39;&#39;)">First Name</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;Middle Name&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_4_Sort_Middle_Name" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_4_Sort_Middle_Name&#39;,&#39;&#39;)">Middle Name</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;Address&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_5_Sort_Address" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_5_Sort_Address&#39;,&#39;&#39;)">Address</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;Member Type&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_6_Sort_Member_Type" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_6_Sort_Member_Type&#39;,&#39;&#39;)">Member Type</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;Register&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_7_Sort_Register" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_7_Sort_Register&#39;,&#39;&#39;)">Register</a></th><th scope="col" class="rgHeader"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;Atlantic Registry Home Jurisdiction&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_8_Sort_Atlantic_Registry_Home_Jurisdiction" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_8_Sort_Atlantic_Registry_Home_Jurisdiction&#39;,&#39;&#39;)">Atlantic Registry Home Jurisdiction</a></th><th scope="col" class="rgHeader" style="display:none;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00&#39;), &#39;code_id&#39;); return false;" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00_ctl02_ctl01_btn_ResultsGrid_10_Sort_Hidden" title="Click here to sort" href="javascript:__doPostBack(&#39;ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00$ctl02$ctl01$btn_ResultsGrid_10_Sort_Hidden&#39;,&#39;&#39;)">Hidden</a></th>
+				</tr>
+			</thead><tbody>
+			<tr class="rgRow" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00__0">
+				<td><a title="Durocher" href="javascript:ShowDialog_NoReturnValue(&#39;/web/physiciandetails?ID=4476&#39;, null, &#39;90%25&#39;, &#39;90%25&#39;, &#39;&#39;, null, &#39;E&#39;, null, false, false, null, null);">Durocher</a></td><td>William</td><td>Paul</td><td>16 Outer Battery RdSt John'S, NL  A1A 1A7CANADA</td><td>Practicing</td><td>MEDICAL</td><td>&nbsp;</td><td style="display:none;">4476</td>
+			</tr>
+			</tbody>
+
+		</table><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_SharedCalendarContainer" style="display:none;">
+
+		</div><input id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ClientState" name="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ClientState" type="hidden" /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WEB/WebResource.axd?d=rZKqzmi5SJGIzk0JU2RZF70d8b84oP4H8B0FQ3nBeaEJNlh8WRz6VUcDLZWtbDApz7Y3idWlc6l2H8AQpdBgCKFIRSyXL5wLKLaqK2mmabFFPwYaCNO7QGSd0mT6Z_AqLXUfQhQDYQJu5rx95LBsPQ2&amp;t=637753415400000000' /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WEB/WebResource.axd?d=aOHonbuA_snKCkm5brkC7YyRaUxD2vsIlOwOzUFUsDAbcIw5J46ixojBr_RhknAt2g7qhcweRH4Siwztle4nD-OuMBCiNoniBTiBYNahNpveTkPcj3vpzhUFvs6217BNT09KXd2GWJYUSdF45l3MBu4FPn8P8d1LVrJz_0Ir4-21L_8bzkDlC2ExrnAcVLCn0&amp;t=637753415400000000' />	</div>
+		<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_BottomButtonPanel">
+			<div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_LeftBottomPanel" class="pull-left">
+
+			</div><div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_RightBottomPanel" class="pull-right">
+				<input type="image" name="ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$RefreshButton" id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_RefreshButton" title="Refresh the list of items" data-ajaxUpdatedControlID="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1" src="/web/AsiCommon/images/icon_refresh.gif" alt="Refresh" style="display:none;margin-right:2px;" />
+			</div>
+		</div>
+	</div>
+</div>
+            <div id="ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_errorLabel" class="iMISUserMessageInformation"></div>
+            
+            
+        |0|hiddenField|__EVENTTARGET||0|hiddenField|__EVENTARGUMENT||516|hiddenField|__VIEWSTATE|/wEPaA8FDzhkYzNiYjU4YTYzY2JjMBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgVhY3RsMDAkVGVtcGxhdGVCb2R5JFdlYlBhcnRNYW5hZ2VyMSRnd3BjaU5ld1F1ZXJ5TWVudUNvbW1vbiRjaU5ld1F1ZXJ5TWVudUNvbW1vbiRSZXN1bHRzR3JpZCRHcmlkMQVpY3RsMDAkVGVtcGxhdGVCb2R5JFdlYlBhcnRNYW5hZ2VyMSRnd3BjaU5ld1F1ZXJ5TWVudUNvbW1vbiRjaU5ld1F1ZXJ5TWVudUNvbW1vbiRSZXN1bHRzR3JpZCRSZWZyZXNoQnV0dG9uBRRjdGwwMCRXaW5kb3dNYW5hZ2VyMQUTY3RsMDAkR2VuZXJpY1dpbmRvdwUTY3RsMDAkT2JqZWN0QnJvd3NlcgUZY3RsMDAkT2JqZWN0QnJvd3NlckRpYWxvZ9guEhoaDnozVmx8aLtSmwaxFYMA2nXpeHLFnIC0GsQP|8|hiddenField|__VIEWSTATEGENERATOR|805979C7|0|asyncPostBackControlIDs|||72|postBackControlIDs||btnExportWord,,btnExportExcel,,btnExportPDF,,btnExportCSV,,btnExportXML,|151|updatePanelIDs||tctl00$UserMessagesUpdatePanel,,tctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ListerPanel,,tctl00$RadAjaxManager1SU,|0|childUpdatePanelIDs|||123|panelsToRefreshIDs||ctl00$UserMessagesUpdatePanel,,ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ListerPanel,|4|asyncPostBackTimeout||3600|27|formAction||./Physician_Search_New.aspx|20|pageTitle||Physician Search New|178|scriptBlock|ScriptContentNoTags|var table = document.getElementById('ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00'); if(table != null){ table.focus();}|440|scriptBlock|ScriptPath|/WEB/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl00_ScriptManager1_TSM&compress=1&_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2021.1.119.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3aa3561803-43fa-48b8-8632-66948071f7a3%3a16e4e7cd%3a33715776%3a58366029%3aed16cbdc%3af7645509%3a24ee1bba%3af46195d3%3a874f8ea2%3ab2e06756%3a92fe8ea0%3a4877f69a%3afa31b949%3ac128760b%3a19620875%3a490a9d4e%3abd8f85e4|75|scriptStartupBlock|ScriptContentNoTags|__Document_Head_Init('https://imis.cpsnl.ca/web/NoCookies.html', '', true);|59|scriptStartupBlock|ScriptContentNoTags|window.__TsmHiddenField = $get('ctl00_ScriptManager1_TSM');|120|scriptStartupBlock|ScriptContentNoTags|Listers = new Array( $('ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid') );|62|scriptStartupBlock|ScriptContentNoTags|if(typeof ($telerik)!='undefined'){$telerik.registerSkins();};|373|scriptStartupBlock|ScriptContentNoTags|window['ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_jsmanager']=new Asi_Web_BusinessDataGrid2({"GridClientId":"ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1","IsMultiSelect":false,"TrackItemSelectionAcrossPostbacks":false,"IsSelectedByDefault":false,"DeltaKeys":""});|6293|scriptStartupBlock|ScriptContentNoTags|Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0,"AllowRowSelect":true,"EnableDragToSelectRows":true},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"MetroTouch","SortingSettings":{"SortToolTip":"Click here to sort","SortedAscToolTip":"Sorted asc","SortedDescToolTip":"Sorted desc","SortedBackColor":{"R":0,"G":0,"B":0,"A":0,"IsKnownColor":false,"IsEmpty":true,"IsNamedColor":false,"IsSystemColor":false,"Name":"0"},"EnableSkinSortStyles":true,"ViewState":{}},"UniqueID":"ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1","_activeRowIndex":"","_clientKeyValues":{"0":{"code_id":"4476"}},"_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"yyyy-MM-dd h:mm:ss tt","_editIndexes":"[]","_embeddedSkin":true,"_enableAriaSupport":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00\",\"UniqueID\":\"ctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon$ResultsGrid$Grid1$ctl00\",\"PageSize\":20,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":1,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":false,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"goToPageTextBoxClientID\":\"\",\"changePageSizeTextBoxClientID\":\"\",\"IsItemInserted\":false,\"clientDataKeyNames\":[\"code_id\"],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"LastName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridHyperLinkColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"SortExpression\":\"LastName\",\"DataTypeName\":\"System.String\",\"DataTextField\":\"LastName\",\"DataTextFormatString\":\"\",\"DataNavigateUrlFields\":[\"code_id\"],\"DataNavigateUrlFormatString\":\"javascript:ShowDialog_NoReturnValue(\\u0027/web/physiciandetails?ID={0}\\u0027, null, \\u002790%25\\u0027, \\u002790%25\\u0027, \\u0027\\u0027, null, \\u0027E\\u0027, null, false, false, null, null);\",\"Display\":true},{\"UniqueName\":\"FirstName\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"FirstName\",\"DataTypeName\":\"System.String\",\"DataField\":\"FirstName\",\"Display\":true},{\"UniqueName\":\"Middle Name\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"Middle Name\",\"DataTypeName\":\"System.String\",\"DataField\":\"Middle Name\",\"Display\":true},{\"UniqueName\":\"Address\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"Address\",\"DataTypeName\":\"System.String\",\"DataField\":\"Address\",\"Display\":true},{\"UniqueName\":\"Member Type\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"Member Type\",\"DataTypeName\":\"System.String\",\"DataField\":\"Member Type\",\"Display\":true},{\"UniqueName\":\"Register\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"Register\",\"DataTypeName\":\"System.String\",\"DataField\":\"Register\",\"Display\":true},{\"UniqueName\":\"Atlantic Registry Home Jurisdiction\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"Atlantic Registry Home Jurisdiction\",\"DataTypeName\":\"System.String\",\"DataField\":\"Atlantic Registry Home Jurisdiction\",\"Display\":true},{\"UniqueName\":\"code_id\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"SortExpression\":\"code_id\",\"DataTypeName\":\"System.String\",\"DataField\":\"code_id\",\"Display\":false}]}]","_masterClientID":"ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_ClientState","expandItems":{},"renderMode":1}, {"gridCreated":window['ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_jsmanager'].OnGridCreated,"rowCreated":window['ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_jsmanager'].OnRowCreated,"rowDeselected":window['ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_jsmanager'].OnRowDeselected,"rowSelected":window['ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1_jsmanager'].OnRowSelected}, null, $get("ctl00_TemplateBody_WebPartManager1_gwpciNewQueryMenuCommon_ciNewQueryMenuCommon_ResultsGrid_Grid1"));
+});
+|146|hiddenField|__ClientContext|{"baseUrl":"/WEB/","isAnonymous":true,"loggedInPartyId":"3","selectedPartyId":"3","websiteRoot":"https://imis.cpsnl.ca/web/","virtualDir":"/WEB/"}|0|hiddenField|ctl00_ScriptManager1_TSM||36|hiddenField|PageInstanceKey|5c6da2ba-819a-4b35-bb23-8eb296002522|108|hiddenField|__RequestVerificationToken|yVh2EqK03EfguxhjpE1K508vh9T4l-048GbjkTdeeW8HAo_u32CntvPLa5Y_aKt1iiu4sR2LP9Ecava8wb_A2gzKbG5Xi1OeogIC9-QT6bw1|41|hiddenField|TemplateUserMessagesID|ctl00_TemplateUserMessages_ctl00_Messages|5|hiddenField|PageIsDirty|false|1|hiddenField|IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f$ciNewContentHtml_d3d797ebd20b4e6da9f5c0cd2ae7d19f|1|1|hiddenField|IsControlPostBackctl00$TemplateBody$WebPartManager1$gwpciNewQueryMenuCommon$ciNewQueryMenuCommon|1|1|hiddenField|IsControlPostBackctl00$TemplateBody$ContentPage1|1|

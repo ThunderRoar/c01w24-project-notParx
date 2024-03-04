@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js ie8" lang="en">
+<!--<![endif]-->
+<head>
+
+    <!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Physician Directory  - CPSA
+</title><link rel="icon" href="../Content/Theme/images/favIco_32x32.png" sizes="32x32" /><link rel="icon" href="../Content/Theme/images/favIco_192x192.png" sizes="192x192" /><link rel="apple-touch-icon-precomposed" href="../Content/Theme/images/favIco_180x180.png" /><meta name="msapplication-TileImage" content="../Content/Theme/images/favIco_270x270.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli&amp;display=swap" /><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" /><link rel="stylesheet" href="Content/Theme/css/style.css?v=2.0" /><link rel="stylesheet" media="print" href="Content/Theme/css/print.css" />
+
+    <!-- JS -->
+    <!-- browser compatibility check -->
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/modernizr/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/vendor/respond.min.js"></script>
+    <!--[if !lt IE 9]><!-->
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/foundation.min.js"></script>
+    <![endif]-->
+
+	<!-- lt IE 9 backwards compatibility, add to modernizr -->
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../Content/Theme/js/bower_components/foundation/js/foundation3.min.js"></script>
+		<script src="../Content/Theme/js/bower_components/foundation/js/vendor/rem.min.js"></script>		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+		<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+		<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+		<link rel="stylesheet" href="../Content/Theme/css/ieFix.css" />	
+	<![endif]-->
+    <script type="text/javascript" src="../Content/Theme/js/floatl.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../Content/Theme/js/scripts.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99002683-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99002683-1');
+    </script>
+</head>
+<body>
+    <form method="post" action="./" id="ctl01" data-abide="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="Scripts/WebForms/MsAjax/MicrosoftAjax.js" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4424DBE6" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+        
+        <div class="mainWrapper">
+            <div class="header" role="banner">
+                <div class="row">
+                    <div class="small-12 column">
+                        <div class="logo">
+                            <a href="https://cpsa.ca/">
+                                <img alt="Logo" src="../Content/Theme/Images/logo.png" />
+
+                            </a>
+                        </div>
+                        <div class="mobileTrigger"></div>
+                        <div class="mainNav">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- body-->
+            <div class="mainContent">
+                
+    
+<div class="x-breadcrumb-wrap">
+    <div class=" row">
+        <div class="x-breadcrumbs column small-12">
+            <a href="https://cpsa.ca"><span class="home"><i class="x-icon-home"></i></span></a><span class="delimiter"><i class="x-icon-angle-right"></i></span><span class="current">Physician directory</span>
+        </div>
+    </div>
+</div>
+<div class="pageHeader">
+    <h1>Physician Directory</h1>
+</div>
+<div>
+	
+    <div class="mainSearch">
+        <div id="MainContent_physicianSearchView_UpdatePanel1">
+		
+                <div class="row">
+                    <div class="medium-12 columns">
+                        <label>Physician Name</label>
+                        <div class="medium-6 columns" style="margin-left:-10px;">
+                            <div class="floatl firstName">
+                                <label class="floatlLabel">First name</label>
+                                <input name="ctl00$MainContent$physicianSearchView$txtFirstName" type="search" id="MainContent_physicianSearchView_txtFirstName" class="floatlInput" placeholder="First Name" />
+                            </div>
+                        </div>
+                        <div class="medium-6 columns">
+                            <div class="floatl lastName">
+                                <label class="floatlLabel">Last name</label>
+                                <input name="ctl00$MainContent$physicianSearchView$txtLastName" type="search" id="MainContent_physicianSearchView_txtLastName" class="floatlInput" placeholder="Last Name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>City/Town</label>
+                        <input name="ctl00$MainContent$physicianSearchView$txtCity" type="text" id="MainContent_physicianSearchView_txtCity" class="form-control" />
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Postal Code <a data-reveal-id="modeInfo2" class="infoModal">?</a><small>First 3 characters only</small></label>
+                        <div id="modeInfo2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                            <h2>Postal Code</h2>
+                            <p>Postal code works best for searches in Edmonton, Red Deer & Calgary (cities with multiple postal codes)</p>
+                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                        </div>
+                        <input name="ctl00$MainContent$physicianSearchView$txtPostalCode" type="text" maxlength="3" id="MainContent_physicianSearchView_txtPostalCode" class="regtext" />
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Practice Type</label>
+                        <span id="MainContent_physicianSearchView_rblPractice" class="practiceSel"><span class="radBtn"><input id="MainContent_physicianSearchView_rblPractice_0" type="radio" name="ctl00$MainContent$physicianSearchView$rblPractice" value="" checked="checked" /><label for="MainContent_physicianSearchView_rblPractice_0">All</label></span><span class="radBtn"><input id="MainContent_physicianSearchView_rblPractice_1" type="radio" name="ctl00$MainContent$physicianSearchView$rblPractice" value="FAMILY" /><label for="MainContent_physicianSearchView_rblPractice_1">Family Physician</label></span><span class="radBtn"><input id="MainContent_physicianSearchView_rblPractice_2" type="radio" name="ctl00$MainContent$physicianSearchView$rblPractice" value="SPECIALIST" /><label for="MainContent_physicianSearchView_rblPractice_2">Specialist</label></span></span>
+                    </div>
+                    <div class="medium-6 columns disciplinePanel">
+                        <div class="overlay"></div>
+                        <label>Practice Discipline <a data-reveal-id="modeInfo1" class="infoModal">?</a></label>
+                        <div id="modeInfo1" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                            <h2>Practice Discipline </h2>
+                            <p>A practice discipline is a branch of medicine in which a physician has specific training or experience, such as Family Medicine, Surgery, Obstetrics, Psychiatry, etc. A physician is not a “specialist” unless indicated on their practice profile.</p>
+                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                        </div>
+                        <select name="ctl00$MainContent$physicianSearchView$ddDiscipline" id="MainContent_physicianSearchView_ddDiscipline" class="dropdown">
+			<option value="">Select One...</option>
+			<option value="POCU">Acute Care Point of Care Ultrasonography (POCUS)</option>
+			<option value="ADCN">Addiction Medicine</option>
+			<option value="AYAO">Adolescent and Young Adult Oncology</option>
+			<option value="AMED">Adolescent Medicine</option>
+			<option value="ACE">Adult Cardiac Electrophysiology</option>
+			<option value="AE">Adult Echocardiography</option>
+			<option value="HEPA">Adult Hepatology</option>
+			<option value="AIS">Adult Interventional Cardiology</option>
+			<option value="ATHM">Adult Thrombosis Medicine</option>
+			<option value="AHFC">Advanced Heart Failure and Cardiac Transplantation</option>
+			<option value="AM">Aerospace Medicine</option>
+			<option value="ANAP">Anatomical Pathology</option>
+			<option value="ANES">Anesthesiology</option>
+			<option value="BRTH">Brachytherapy</option>
+			<option value="CAAM">CAC (Addiction Medicine)</option>
+			<option value="CACE">CAC (Care of the Elderly)</option>
+			<option value="CAEM">CAC (Emergency Medicine)</option>
+			<option value="CAES">CAC (Enhanced Surgical Skills)</option>
+			<option value="CACA">CAC (Family Practice Anesthesia)</option>
+			<option value="CAOS">CAC (Obstetrical Surgical Skills)</option>
+			<option value="CAPC">CAC (Palliative Care)</option>
+			<option value="CASE">CAC (Sport and Exercise Medicine)</option>
+			<option value="CS">Cardiac Surgery</option>
+			<option value="CARD">Cardiology</option>
+			<option value="CVTS">Cardiovascular &amp; Thoracic Surgery</option>
+			<option value="CVD">Cardiovascular Disease</option>
+			<option value="CAPS">Child and Adolescent Psychiatry</option>
+			<option value="CMP">Child Maltreatment Pediatrics</option>
+			<option value="CCE">Clinical Cardiac Electrophysiology</option>
+			<option value="CI&amp;A">Clinical Immunology &amp; Allergy</option>
+			<option value="CONM">Clinical Oncology and Nuclear Medicine</option>
+			<option value="CLPA">Clinical Pathology</option>
+			<option value="CPHA">Clinical Pharmacology</option>
+			<option value="CPT">Clinical Pharmacology and Toxicology</option>
+			<option value="CE">Clinician Educator</option>
+			<option value="CSUR">Colorectal Surgery</option>
+			<option value="CM">Community Medicine</option>
+			<option value="CRIT">Critical Care Medicine</option>
+			<option value="CYTO">Cytopathology</option>
+			<option value="DERM">Dermatology</option>
+			<option value="DERP">Dermatopathology</option>
+			<option value="DEVP">Developmental Pediatrics</option>
+			<option value="DRAD">Diagnostic Radiology</option>
+			<option value="EMMS">Emergency Medical Services</option>
+			<option value="EM">Emergency Medicine</option>
+			<option value="ENDO">Endocrinology &amp; Metabolism</option>
+			<option value="CCFP">Family Medicine</option>
+			<option value="FMAD">Family Medicine (Addiction Medicine)</option>
+			<option value="FMCE">Family Medicine (Care of the Elderly)</option>
+			<option value="CCEM">Family Medicine (Emergency Medicine)</option>
+			<option value="FMSS">Family Medicine (Enhanced Surgical Skills)</option>
+			<option value="FMAN">Family Medicine (Family Practice Anesthesia)</option>
+			<option value="FOSS">Family Medicine (Obstetrical Surgical Skills)</option>
+			<option value="FMPC">Family Medicine (Palliative Care)</option>
+			<option value="FMSE">Family Medicine (Sport and Exercise Medicine)</option>
+			<option value="FP">Forensic Pathology</option>
+			<option value="FPSY">Forensic Psychiatry</option>
+			<option value="GE">Gastroenterology</option>
+			<option value="GIM">General Internal Medicine</option>
+			<option value="-">General Practice</option>
+			<option value="GS">General Surgery</option>
+			<option value="GSO">General Surgical Oncology</option>
+			<option value="GM">Geriatric Medicine</option>
+			<option value="GPS">Geriatric Psychiatry</option>
+			<option value="GONC">Gynecologic Oncology</option>
+			<option value="GREI">Gynecologic Reproductive Endocrinology &amp; Infertility</option>
+			<option value="HEMP">Hematological Pathology</option>
+			<option value="HEM">Hematology</option>
+			<option value="HIST">Histopathology</option>
+			<option value="HMED">Hyperbaric Medicine</option>
+			<option value="ID">Infectious Diseases</option>
+			<option value="IM">Internal Medicine</option>
+			<option value="ICAR">Interventional Cardiology</option>
+			<option value="IRAD">Interventional Radiology</option>
+			<option value="MFM">Maternal-Fetal Medicine</option>
+			<option value="MBIO">Medical Biochemistry</option>
+			<option value="MGEN">Medical Genetics and Genomics</option>
+			<option value="MMIC">Medical Microbiology</option>
+			<option value="MONC">Medical Oncology</option>
+			<option value="NONS">N/A</option>
+			<option value="NPM">Neonatal-Perinatal Medicine</option>
+			<option value="NEPH">Nephrology</option>
+			<option value="NEUR">Neurology (Adult and Pediatric)</option>
+			<option value="NP">Neuropathology</option>
+			<option value="NRAD">Neuroradiology</option>
+			<option value="NS">Neurosurgery</option>
+			<option value="NUCM">Nuclear Medicine</option>
+			<option value="O&amp;G">Obstetrics &amp; Gynecology</option>
+			<option value="OCCM">Occupational Medicine</option>
+			<option value="OPH">Ophthalmology</option>
+			<option value="ORTH">Orthopedic Surgery</option>
+			<option value="OTO">Otolaryngology - Head and Neck Surgery</option>
+			<option value="PMED">Pain Medicine</option>
+			<option value="PALL">Palliative Medicine</option>
+			<option value="PATH">Pathology, General</option>
+			<option value="PEAN">Pediatric Anesthesiology</option>
+			<option value="PEDC">Pediatric Cardiology</option>
+			<option value="PEM">Pediatric Emergency Medicine</option>
+			<option value="PEND">Pediatric Endocrinology</option>
+			<option value="PGE">Pediatric Gastroenterology</option>
+			<option value="PEDH">Pediatric Hematology &amp; Oncology</option>
+			<option value="PNEP">Pediatric Nephrology</option>
+			<option value="PEDN">Pediatric Neurology</option>
+			<option value="PEOC">Pediatric Oncology</option>
+			<option value="PEPM">Pediatric Palliative Medicine</option>
+			<option value="PR">Pediatric Radiology</option>
+			<option value="PRES">Pediatric Respirology</option>
+			<option value="PGS">Pediatric Surgery</option>
+			<option value="PEDU">Pediatric Urology</option>
+			<option value="PED">Pediatrics</option>
+			<option value="PM&amp;R">Physical Medicine &amp; Rehabilitation</option>
+			<option value="PHAS">Physician Assistant</option>
+			<option value="PS">Plastic Surgery</option>
+			<option value="PSY">Psychiatry</option>
+			<option value="PHPM">Public Health and Preventive Medicine</option>
+			<option value="RADO">Radiation Oncology</option>
+			<option value="RESP">Respirology</option>
+			<option value="RHEU">Rheumatology</option>
+			<option value="SLDM">Sleep Disorder Medicine</option>
+			<option value="SLP">Sleep Medicine</option>
+			<option value="SOTP">Solid Organ Transplantation</option>
+			<option value="SEMD">Sport and Exercise Medicine</option>
+			<option value="TS">Thoracic Surgery</option>
+			<option value="TM">Transfusion Medicine</option>
+			<option value="TGS">Trauma General Surgery</option>
+			<option value="DTHM">Tropical Medicine and Hygiene</option>
+			<option value="UROL">Urology</option>
+			<option value="VS">Vascular Surgery</option>
+
+		</select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Gender</label>
+                        <span id="MainContent_physicianSearchView_rblGender" class="genderSel"><span class="radBtn"><input id="MainContent_physicianSearchView_rblGender_0" type="radio" name="ctl00$MainContent$physicianSearchView$rblGender" value="" checked="checked" /><label for="MainContent_physicianSearchView_rblGender_0">No preference</label></span><span class="radBtn"><input id="MainContent_physicianSearchView_rblGender_1" type="radio" name="ctl00$MainContent$physicianSearchView$rblGender" value="Female" /><label for="MainContent_physicianSearchView_rblGender_1">Female</label></span><span class="radBtn"><input id="MainContent_physicianSearchView_rblGender_2" type="radio" name="ctl00$MainContent$physicianSearchView$rblGender" value="Male" /><label for="MainContent_physicianSearchView_rblGender_2">Male</label></span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>CPSA Approval<a data-reveal-id="modeInfo4" class="infoModal">?</a></label>
+                        <div id="modeInfo4" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                            <h2>CPSA Approval</h2>
+                            <p>Approval means an approval of the physician by the CPSA to perform a particular procedure or use a particular technology in a medical office setting.  Only a small number of office-based procedures and technologies require specific approval from the CPSA. Approval is based on the training and experience of the physician. These approvals do not necessarily apply to the hospital setting, which is the responsibility of Alberta Health Services.</p>
+                            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                        </div>
+                        <select name="ctl00$MainContent$physicianSearchView$ddApprovals" id="MainContent_physicianSearchView_ddApprovals" class="dropdown">
+			<option value="">Select One...</option>
+			<option value="CertifiedExaminer">Certified Examiner</option>
+			<option value="InjuryManagementConsultant">Injury Management Consultant</option>
+
+		</select>
+                    </div>
+                    <div class="medium-6 columns">
+                        <label>Language <small>Other than English</small></label>
+                        <div class="revealDd">
+                            <select name="ctl00$MainContent$physicianSearchView$ddLanguage" id="MainContent_physicianSearchView_ddLanguage" class="dropdown">
+			<option value="">Select One...</option>
+			<option value="Afrikaans">Afrikaans</option>
+			<option value="Akan">Akan</option>
+			<option value="Albanian">Albanian</option>
+			<option value="AmericanSignLanguage">American Sign Language</option>
+			<option value="Amharic">Amharic</option>
+			<option value="Arabic">Arabic</option>
+			<option value="Armenian">Armenian</option>
+			<option value="Ashanti">Ashanti</option>
+			<option value="Assyrian">Assyrian</option>
+			<option value="Azari">Azari</option>
+			<option value="Baluchi">Baluchi</option>
+			<option value="Basque">Basque</option>
+			<option value="Bengali">Bengali</option>
+			<option value="Bicolano">Bicolano</option>
+			<option value="Bini">Bini</option>
+			<option value="Blackfoot">Blackfoot</option>
+			<option value="Bosnian">Bosnian</option>
+			<option value="Bulgarian">Bulgarian</option>
+			<option value="Burmese">Burmese</option>
+			<option value="Cantonese">Cantonese</option>
+			<option value="Catalan">Catalan</option>
+			<option value="Cebuano">Cebuano</option>
+			<option value="Chinese">Chinese</option>
+			<option value="Coorgi">Coorgi</option>
+			<option value="Cree">Cree</option>
+			<option value="Croatian">Croatian</option>
+			<option value="Czech">Czech</option>
+			<option value="Danish">Danish</option>
+			<option value="Dutch">Dutch</option>
+			<option value="EsperantoInternationalLanguage">Esperanto (International Language)</option>
+			<option value="Estonian">Estonian</option>
+			<option value="Fijian">Fijian</option>
+			<option value="Filipino">Filipino</option>
+			<option value="Finnish">Finnish</option>
+			<option value="Flemish">Flemish</option>
+			<option value="French">French</option>
+			<option value="Gaelic">Gaelic</option>
+			<option value="German">German</option>
+			<option value="Greek">Greek</option>
+			<option value="Gujarati">Gujarati</option>
+			<option value="HaitianCreole">Haitian Creole</option>
+			<option value="Hausa">Hausa</option>
+			<option value="Hebrew">Hebrew</option>
+			<option value="Hindi">Hindi</option>
+			<option value="Hungarian">Hungarian</option>
+			<option value="Icelandic">Icelandic</option>
+			<option value="Igbo">Igbo</option>
+			<option value="Indonesian">Indonesian</option>
+			<option value="Irish">Irish</option>
+			<option value="Isoko">Isoko</option>
+			<option value="Italian">Italian</option>
+			<option value="Japanese">Japanese</option>
+			<option value="Kachi">Kachi</option>
+			<option value="Kanar">Kanar</option>
+			<option value="Kannada">Kannada</option>
+			<option value="Khmer">Khmer</option>
+			<option value="Kiswahili">Kiswahili</option>
+			<option value="Korean">Korean</option>
+			<option value="KurdishKurmanjiKurdi">Kurdish (Kurmanji / Kurdi)</option>
+			<option value="Kutchhi">Kutchhi</option>
+			<option value="Latvian">Latvian</option>
+			<option value="Lithuanian">Lithuanian</option>
+			<option value="Macedonian">Macedonian</option>
+			<option value="Malay">Malay</option>
+			<option value="Malayalam">Malayalam</option>
+			<option value="Maltese">Maltese</option>
+			<option value="Mandarin">Mandarin</option>
+			<option value="Marathi">Marathi</option>
+			<option value="Mauritian">Mauritian</option>
+			<option value="Melanesian">Melanesian</option>
+			<option value="Memhni">Memhni</option>
+			<option value="Nepali">Nepali</option>
+			<option value="Norwegian">Norwegian</option>
+			<option value="Pakistani">Pakistani</option>
+			<option value="Pashtu">Pashtu</option>
+			<option value="PersianFarsi">Persian (Farsi)</option>
+			<option value="Polish">Polish</option>
+			<option value="Portuguese">Portuguese</option>
+			<option value="Punjabi">Punjabi</option>
+			<option value="RomanianRumanian">Romanian/Rumanian</option>
+			<option value="Russian">Russian</option>
+			<option value="SaraikiorSeraiki">Saraiki (or Seraiki)</option>
+			<option value="Serbian">Serbian</option>
+			<option value="Serbo-Croatian">Serbo-Croatian</option>
+			<option value="Setswana">Setswana</option>
+			<option value="Shona">Shona</option>
+			<option value="Sidhi">Sidhi</option>
+			<option value="SignLanguage">Sign Language</option>
+			<option value="Sindhi">Sindhi</option>
+			<option value="Sinhalese">Sinhalese</option>
+			<option value="Siswati">Siswati</option>
+			<option value="Slovak">Slovak</option>
+			<option value="Slovenian">Slovenian</option>
+			<option value="Somali">Somali</option>
+			<option value="Sotho">Sotho</option>
+			<option value="Spanish">Spanish</option>
+			<option value="Swahili">Swahili</option>
+			<option value="Swedish">Swedish</option>
+			<option value="Tagalog">Tagalog</option>
+			<option value="Taiwanese">Taiwanese</option>
+			<option value="Tamil">Tamil</option>
+			<option value="Telugu">Telugu</option>
+			<option value="Tibetan">Tibetan</option>
+			<option value="Toy-sun-ese">Toy-sun-ese</option>
+			<option value="Tsonga">Tsonga</option>
+			<option value="Tswana">Tswana</option>
+			<option value="Turkish">Turkish</option>
+			<option value="Ukrainian">Ukrainian</option>
+			<option value="Urdu">Urdu</option>
+			<option value="Urhobo">Urhobo</option>
+			<option value="Vietnamese">Vietnamese</option>
+			<option value="Visayan">Visayan</option>
+			<option value="Welsh">Welsh</option>
+			<option value="Xhosa">Xhosa</option>
+			<option value="Yiddish">Yiddish</option>
+			<option value="Yoruba">Yoruba</option>
+			<option value="Zulu">Zulu</option>
+
+		</select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 columns">
+                        <label>Display Active Only</label>
+                        <div class="chkBoxes">
+                            <input id="MainContent_physicianSearchView_chckActiveOnly" type="checkbox" name="ctl00$MainContent$physicianSearchView$chckActiveOnly" />
+                            <label for="MainContent_physicianSearchView_chckActiveOnly">Yes</label>
+                        </div>
+                    </div>
+                </div>
+
+            
+	</div>
+        <div class="row collapse searchBtns">
+            <div class="medium-6 columns right text-right">
+                <input type="button" name="ctl00$MainContent$physicianSearchView$btnSearch" value="Search" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$physicianSearchView$btnSearch&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" id="MainContent_physicianSearchView_btnSearch" class="button runSearch" />
+            </div>
+            <div class="medium-6 columns left">
+                <input type="button" name="ctl00$MainContent$physicianSearchView$btnClear" value="Reset Form" onclick="javascript:__doPostBack(&#39;ctl00$MainContent$physicianSearchView$btnClear&#39;,&#39;&#39;)" id="MainContent_physicianSearchView_btnClear" class="button" />
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="resultsSection">
+    <div id="MainContent_physicianSearchView_ResultsPanel">
+	
+            <div class="row resultsHeader">
+                <div class="small-12 columns">
+                    <h2>Results: 0 matches</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="small-12 column resultsTable">
+                    <div>
+		<table cellspacing="0" rules="all" border="1" id="MainContent_physicianSearchView_gvResults">
+			<tr class="alert-panel">
+				<td><p>There are no physicians in Alberta that match all of the search criteria entered.</p><h3>Suggestions</h3><ul><li>review your search criteria</li><li>check your spelling on all entries</li><li>remove some of the search criteria to make it less specific</li></ul></td>
+			</tr>
+		</table>
+	</div>
+                </div>
+            </div>
+        
+</div>
+    <div class="row">
+        <div class="small-12 medium-6 columns">
+            <a href="../PrinterFriendlyResults.aspx" target="_blank" class="printBtn button">Print Preview of Search Results</a>
+        </div>
+        <div class="small-12 medium-6 column text-right">
+            <a id="MainContent_physicianSearchView_Button" class="button searchAgainBtn" UseSubmitBehavior="false" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$physicianSearchView$Button&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Search Again</a>
+        </div>
+    </div>
+</div>
+<div class="loading">
+    <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="252.36" height="400" viewBox="0 0 252.36 400">
+        <g>
+            <path d="M108.46,109.94a44.44,44.44,0,0,1,0-88.88" />
+            <path d="M143.9,110.06a44.44,44.44,0,0,1,0,88.88" />
+            <path d="M108.46,288.94a44.44,44.44,0,0,1,0-88.88" />
+            <path d="M143.9,290.06a44.44,44.44,0,0,1,0,88.88" />
+        </g>
+        <g class="l1">
+            <path d="M108.46,109.94a44.44,44.44,0,0,1,0-88.88" />
+            <path d="M143.9,110.06a44.44,44.44,0,0,1,0,88.88" />
+            <path d="M108.46,288.94a44.44,44.44,0,0,1,0-88.88" />
+            <path d="M143.9,290.06a44.44,44.44,0,0,1,0,88.88" />
+        </g>
+    </svg>
+</div>
+
+<script type="text/javascript" src="../Content/Theme/js/inputs.js"></script>
+<script type="text/javascript" src="../Content/Theme/js/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="../Content/Theme/js/typeheadCustom.js"></script>
+
+<script>
+    new Floatl($('.lastName'));
+    new Floatl($('.firstName'));
+
+
+</script>
+
+
+            </div>
+        </div>
+        <!-- footer-->
+        <footer>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="footer-bottom">
+                        <div class="col-6">
+                            <p>
+                                <small>&copy; 2024  - CPSA</small>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <span>Contact Us</span>
+                            <ul>
+                                <li><span>Phone: </span><a href="tel:780-423-4764">780-423-4764</a> or <a href="tel:1-800-561-3899">1-800-561-3899</a> (in Canada) </li>
+                                <li style="margin-left:10px;"><span>Email: </span><a href="mailto:support@cpsa.ca">support@cpsa.ca</a></li>
+                            </ul>
+                            <p>Regular business hours are 8:15 a.m. to 4:15 p.m. MT, Monday to Friday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <div class="browserDetectWrapper">
+        <div class="browserDetect">
+            <h2>Your browser is out of date</h2>
+            <p>
+                PLEASE NOTE: It has known security flaws and may not display all features of this and other websites. Please visit <a href="http://browsehappy.com" target="_blank">Here</a> to learn how to update your browser.
+            </p>
+            <a class="overlay-close">Close &#215;</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../Content/Theme/js/bower_components/fastclick/lib/fastclick.js"></script>
+</body>
+</html>
