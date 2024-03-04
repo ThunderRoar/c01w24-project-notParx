@@ -52,12 +52,12 @@ class NfTests(unittest.TestCase):
     def test_practicing_status(self, mock_post, mock_get):
         # Test for a physician with practicing status
         result = site8.perform_search("F 01923", "John", "Abbatt")
-        self.assertEqual(result, "Non-Practicing")
+        self.assertEqual(result, "INACTIVE")
 
     @mock.patch('site8.requests.Session.get', side_effect=mocked_requests_get)
     @mock.patch('site8.requests.Session.post', side_effect=mocked_requests_post)
     def test_non_practicing_status(self, mock_post, mock_get):
         result = site8.perform_search("F 03818", "William", "Durocher")
-        self.assertEqual(result, "Practicing")
+        self.assertEqual(result, "VERIFIED")
 if __name__ == '__main__':
     unittest.main()

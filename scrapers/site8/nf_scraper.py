@@ -23,9 +23,9 @@ def is_physician_practicing(soup):
             status = status_cell.get_text(strip=True)
             # Return False if 'Non-Practicing', True if 'Practicing'
             if "Non-Practicing" in status:
-                return "Non-Practicing"
+                return "INACTIVE"
             elif "Practicing" in status:
-                return "Practicing"
+                return "VERIFIED"
     # Return None if no conclusive status is found
     return None
 
@@ -94,7 +94,7 @@ def perform_search(license_number, first_name, last_name):
             soup = BeautifulSoup(response.text, 'html.parser')
             return is_physician_practicing(soup)
         else:
-            return f"ERROR: Search failed with status code {response.status_code}."
+            return "NOT FOUND"
 
 # Main execution
 if __name__ == "__main__":
@@ -105,4 +105,3 @@ if __name__ == "__main__":
 
     # Perform the search and print the result
     result = perform_search(license_num, first_name, last_name)
-    print("Practicing Status:", "Practicing" if result else "Non-Practicing" if result is not None else "Unknown")
