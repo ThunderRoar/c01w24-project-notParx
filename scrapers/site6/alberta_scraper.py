@@ -82,7 +82,7 @@ def parse_results_page(soup, first_name, last_name):
     """
     results = filter_results(soup, first_name, last_name)
     if results is False:
-        return "Non-Practicing"
+        return "NOT FOUND"
     elif isinstance(results, list):
         for result in results:
             result_name = result[0].split(", ")
@@ -90,11 +90,11 @@ def parse_results_page(soup, first_name, last_name):
                 # print(result[1])
                 status = open_profile_and_analyze(result[1])
                 # print(status)
-                return("Practicing" if status else "Non-Practicing")
-        return "Non-Practicing"
+                return("VERIFIED" if status else "INACTIVE")
+        return "NOT FOUND"
     else:
         status = open_profile_and_analyze(results[0][1])
-        return("Practicing" if status else "Non-Practicing")
+        return("VERIFIED" if status else "INACTIVE")
 
 def get_status(last_name: str, first_name: str):
     """
@@ -112,7 +112,7 @@ def get_status(last_name: str, first_name: str):
         url = "https://search.cpsa.ca/"
         initial_req = session.get(url)
         if initial_req.status_code != 200:
-            return "ERROR: Could not get initial page"
+            return "NOT FOUND"
         
         soup = BeautifulSoup(initial_req.text, 'html.parser')
         # with open("scrapers/tests/alberta_get_response.txt", 'w', encoding="utf-8") as f:
@@ -145,7 +145,7 @@ def get_status(last_name: str, first_name: str):
         # with open("scrapers/tests/alberta_post_response_WilliamA.txt", 'w', encoding="utf-8") as f:
         #     f.write(search_req.text)
         if search_req.status_code != 200:
-            return "ERROR: Could not post search"
+            return "NOT FOUND"
 
         search_soup = BeautifulSoup(search_req.text, 'html.parser')
         return parse_results_page(search_soup, first_name, last_name)
