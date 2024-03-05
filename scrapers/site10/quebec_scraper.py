@@ -16,8 +16,7 @@ def getStatus(last_name: str, number: str):
         options.add_argument("--headless")
         options.add_argument("window-size=1920,1080")
 
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(options=options, service=service)
+        driver = webdriver.Chrome(options=options)
         driver.get(url)
 
         button = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/main/article/section[2]/div/div/table/tbody')
