@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -12,8 +14,10 @@ def getStatus(last_name: str, number: str):
     try:
         options = Options()
         options.add_argument("--headless")
+        options.add_argument("window-size=1920,1080")
+        service = Service(ChromeDriverManager().install())
 
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(options=options, service=service)
         driver.get(url)
 
         button = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/main/article/section[2]/div/div/table/tbody')
@@ -32,6 +36,8 @@ def getStatus(last_name: str, number: str):
 
     except (TimeoutException, NoSuchElementException):
             return "NOT FOUND"
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
      print(getStatus(last_name='Lam', number='96332')) # Verified

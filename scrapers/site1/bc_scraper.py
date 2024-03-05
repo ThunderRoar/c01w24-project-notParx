@@ -21,6 +21,7 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--log-level=3')
+        options.add_argument("window-size=1920,1080")
         browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
         browser.get("https://www.cpsbc.ca/public/registrant-directory")
@@ -28,6 +29,7 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         # Form filling
         adv_search = browser.find_element(By.CLASS_NAME, "option")
         adv_search.click()
+        
 
         last_name = browser.find_element(By.ID, "edit-ps-last-name")
         last_name.send_keys(lastName)
