@@ -15,7 +15,8 @@ def submit_search_form(driver, surname):
     surname_input = driver.find_element(By.ID, 'ctl01_HomePageSearch_Search_TB_Search')
     surname_input.send_keys(surname)
     search_button = driver.find_element(By.ID, 'ctl01_HomePageSearch_Search_Btn_Search')
-    search_button.click()
+    actions = webdriver.ActionChains(driver)
+    actions.move_to_element(search_button).click().perform()
 
     wait = WebDriverWait(driver, 10)
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.ng-table-responsive')))
