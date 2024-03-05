@@ -99,3 +99,9 @@ def get_status(last_name: str, first_name: str, number: str):
         return parse_prescriber_page(soup, last_name, first_name)
     except:
         return "ERROR"
+
+if __name__ == "__main__":
+    # Sanity tests
+    print(get_status("Edwards", "Bonnie", 30722)) # 'VERIFIED'
+    print(get_status("Aaen", "Gregory", 89942)) # 'INACTIVE'    
+    print(get_status("Pins", "Gregory", 54111)) # 'NOT FOUND' 
