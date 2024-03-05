@@ -5,10 +5,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
+from selenium.webdriver.chrome.options import Options
 
 def initialize_webdriver():
     service = Service(ChromeDriverManager().install())
-    return webdriver.Chrome(service=service)
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("window-size=1920,1080")
+    return webdriver.Chrome(options=options, service=service)
 
 def submit_search_form(driver, surname):
     driver.get("https://www.cps.sk.ca/imis/CPSS/physician_summary/search/search_results.aspx")
@@ -70,10 +74,12 @@ def getStatus(firstName: str, lastName: str):
         for doctor in doctors_data:
             if doctor['FirstName'] == firstName and doctor['LastName'] == lastName:
                 status = check_status_on_register(driver, doctor['ProfileLink'])
-        driver.quit()
+                break
         return status
     except (NoSuchElementException, TimeoutException, ElementClickInterceptedException):
         return "NOT FOUND"
+    finally:
+        driver.quit()
 
 def main():
     driver = initialize_webdriver()
@@ -92,4 +98,4 @@ if __name__ == "__main__":
     print(getStatus('Shreya', 'Moodley')) # INACTIVE
     print(getStatus('Brittni', 'Webster')) # VERIFIED
     print(getStatus('abc123', 'abc123')) # NOT FOUND
-    main()
+    # main()
