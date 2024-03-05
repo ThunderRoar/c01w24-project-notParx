@@ -21,14 +21,14 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         options.add_argument('--log-level=3')
+        options.add_argument("window-size=1920,1080")
         browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
 
         browser.get("https://www.cpsbc.ca/public/registrant-directory")
 
         # Form filling
         adv_search = browser.find_element(By.CLASS_NAME, "option")
-        actions = webdriver.ActionChains(browser)
-        actions.move_to_element(adv_search).click().perform()
+        adv_search.click()
         
 
         last_name = browser.find_element(By.ID, "edit-ps-last-name")
@@ -38,8 +38,7 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         license_num.send_keys(firstName)
 
         search_btn = browser.find_element(By.CLASS_NAME, "ps-submit")
-        actions = webdriver.ActionChains(browser)
-        actions.move_to_element(search_btn).click().perform()
+        search_btn.click()
 
         # Delay for the website to process data
         time.sleep(1)
