@@ -27,7 +27,9 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
 
         # Form filling
         adv_search = browser.find_element(By.CLASS_NAME, "option")
-        adv_search.click()
+        actions = webdriver.ActionChains(browser)
+        actions.move_to_element(adv_search).click().perform()
+        
 
         last_name = browser.find_element(By.ID, "edit-ps-last-name")
         last_name.send_keys(lastName)
@@ -36,7 +38,8 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
         license_num.send_keys(firstName)
 
         search_btn = browser.find_element(By.CLASS_NAME, "ps-submit")
-        search_btn.click()
+        actions = webdriver.ActionChains(browser)
+        actions.move_to_element(search_btn).click().perform()
 
         # Delay for the website to process data
         time.sleep(1)

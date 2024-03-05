@@ -17,7 +17,8 @@ def getStatus(last_name: str, number: str):
         driver.get(url)
 
         button = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/main/article/section[2]/div/div/table/tbody')
-        button.click()
+        actions = webdriver.ActionChains(driver)
+        actions.move_to_element(button).click().perform()
 
         wait = WebDriverWait(driver, 10)
         wait.until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@class='c-modal']")))
