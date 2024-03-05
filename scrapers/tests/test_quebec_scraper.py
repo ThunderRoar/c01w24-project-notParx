@@ -24,8 +24,7 @@ class TestGetStatus(unittest.TestCase):
 
         # Patching the selenium methods
         with patch('site10.webdriver.Chrome') as mock_driver_class,\
-             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located'),\
-             patch('site10.webdriver.ActionChains'):
+             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located'):
             
             mock_driver_class.return_value = mock_driver
 
@@ -45,8 +44,7 @@ class TestGetStatus(unittest.TestCase):
 
         # patching the selenium methods
         with patch('site10.webdriver.Chrome') as mock_driver_class,\
-             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located'),\
-             patch('site10.webdriver.ActionChains'):
+             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located'):
             
             # return the mock when calling 'webdriver.Chrome(options=options)'
             mock_driver_class.return_value = mock_driver
@@ -65,8 +63,7 @@ class TestGetStatus(unittest.TestCase):
 
         # patching the selenium methods
         with patch('site10.webdriver.Chrome') as mock_driver_class,\
-             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located') as mock_timeout,\
-             patch('site10.webdriver.ActionChains'):
+             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located') as mock_timeout:
             mock_timeout.side_effect = TimeoutException()
 
             # return the mock when calling 'webdriver.Chrome(options=options)'
@@ -86,8 +83,7 @@ class TestGetStatus(unittest.TestCase):
 
         # patching the selenium methods
         with patch('site10.webdriver.Chrome') as mock_driver_class,\
-             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located') as mock_timeout,\
-             patch('site10.webdriver.ActionChains'):
+             patch('site10.webdriver.support.expected_conditions.visibility_of_element_located') as mock_timeout:
             mock_timeout.side_effect = NoSuchElementException()
 
             # return the mock when calling 'webdriver.Chrome(options=options)'

@@ -15,13 +15,13 @@ def getStatus(last_name: str, number: str):
         options = Options()
         options.add_argument("--headless")
         options.add_argument("window-size=1920,1080")
+        service = Service(ChromeDriverManager().install())
 
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(options=options, service=service)
         driver.get(url)
 
         button = driver.find_element(By.XPATH, '//*[@id="__nuxt"]/div/div/main/article/section[2]/div/div/table/tbody')
-        actions = webdriver.ActionChains(driver)
-        actions.move_to_element(button).click().perform()
+        button.click()
 
         wait = WebDriverWait(driver, 10)
         wait.until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@class='c-modal']")))

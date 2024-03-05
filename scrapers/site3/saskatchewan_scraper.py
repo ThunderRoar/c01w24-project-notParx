@@ -19,8 +19,7 @@ def submit_search_form(driver, surname):
     surname_input = driver.find_element(By.ID, 'ctl01_HomePageSearch_Search_TB_Search')
     surname_input.send_keys(surname)
     search_button = driver.find_element(By.ID, 'ctl01_HomePageSearch_Search_Btn_Search')
-    actions = webdriver.ActionChains(driver)
-    actions.move_to_element(search_button).click().perform()
+    search_button.click()
 
     wait = WebDriverWait(driver, 10)
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '.ng-table-responsive')))
@@ -99,4 +98,4 @@ if __name__ == "__main__":
     print(getStatus('Shreya', 'Moodley')) # INACTIVE
     print(getStatus('Brittni', 'Webster')) # VERIFIED
     print(getStatus('abc123', 'abc123')) # NOT FOUND
-    main()
+    # main()
