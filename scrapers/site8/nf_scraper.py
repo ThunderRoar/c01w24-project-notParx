@@ -96,7 +96,7 @@ def perform_search(license_number, first_name, last_name):
         else:
             return "NOT FOUND"
 
-# Main execution
+# Main execution (Sanity test)
 if __name__ == "__main__":
     # Replace with actual search terms
     license_num = "F 03818"
@@ -105,3 +105,4 @@ if __name__ == "__main__":
 
     # Perform the search and print the result
     result = perform_search(license_num, first_name, last_name)
+    print(result) # VERIFIED
