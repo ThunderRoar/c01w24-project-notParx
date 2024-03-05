@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 
 def initialize_webdriver():
     service = Service(ChromeDriverManager().install())
@@ -54,23 +54,26 @@ def check_status_on_register(driver, profile_url):
         if status_element.text == "On the Register" :
             return "VERIFIED"
         return "INACTIVE"
-    except (TimeoutException, NoSuchElementException):
+    except (TimeoutException, NoSuchElementException, ElementClickInterceptedException):
         print("Timed out waiting for the status element to load")
         return "NOT FOUND"
 
 # Get status for person in table with first and last name
 # Search parameter is 'Last Name', but we need 'First Name' to verify a specific person
 def getStatus(firstName: str, lastName: str):
-    driver = initialize_webdriver()
-    submit_search_form(driver, lastName)
-    doctors_data = scrape_table_data(driver)
+    try: 
+        driver = initialize_webdriver()
+        submit_search_form(driver, lastName)
+        doctors_data = scrape_table_data(driver)
 
-    status = "NOT FOUND"
-    for doctor in doctors_data:
-        if doctor['FirstName'] == firstName and doctor['LastName'] == lastName:
-            status = check_status_on_register(driver, doctor['ProfileLink'])
-    driver.quit()
-    return status
+        status = "NOT FOUND"
+        for doctor in doctors_data:
+            if doctor['FirstName'] == firstName and doctor['LastName'] == lastName:
+                status = check_status_on_register(driver, doctor['ProfileLink'])
+        driver.quit()
+        return status
+    except (NoSuchElementException, TimeoutException, ElementClickInterceptedException):
+        return "NOT FOUND"
 
 def main():
     driver = initialize_webdriver()
