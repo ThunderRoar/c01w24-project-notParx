@@ -1,0 +1,47 @@
+services:
+
+  green:
+    container_name: green_service
+    build:
+      context: ./backend/green_service
+      dockerfile: Docker_green_service
+      target: greenservice
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=Docker
+
+  prescriber:
+    container_name: prescriber_service
+    build:
+      context: ./backend/prescriber_service
+      dockerfile: Docker_prescriber_service
+      target: prescriberservice
+    ports:
+      - "8001:8001"
+    environment:
+      - ENV=Docker
+
+  prescription:
+    container_name: prescription_service
+    build:
+      context: ./backend/prescription_service
+      dockerfile: Docker_prescription_service
+      target: prescriptionservice
+    ports:
+      - "8002:8002"
+    environment:
+      - ENV=Docker
+
+  user:
+    container_name: user_service
+    build:
+      context: ./backend/user_service
+      dockerfile: Docker_user_service
+      target: userservice
+    ports:
+      - "8003:8003"
+    environment:
+      - ENV=Docker
+
+  
