@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   workflow_dispatch:
   push:
-    branches: [main, dev]
+    branches: [main, dev, NOT-33/containers]
 
 jobs:
   docker-build-and-push:
