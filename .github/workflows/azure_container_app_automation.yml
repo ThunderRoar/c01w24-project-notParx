@@ -6,7 +6,7 @@ on:
     branches: [main, dev]
 
 jobs:
-  build-and-push:
+  azure-push:
     runs-on: ubuntu-latest
 
     steps:
