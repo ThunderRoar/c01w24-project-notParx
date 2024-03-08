@@ -1,10 +1,10 @@
 services:
 
-  green:
-    image: raoshreyas/green_service:latest
+  green_service:
+    # image: raoshreyas/green_service:latest
     container_name: green_service
     build:
-      context: ./backend/green_service
+      context: ./green_service
       dockerfile: Docker_green_service
       target: greenservice
     ports:
@@ -12,11 +12,11 @@ services:
     environment:
       - ENV=Docker
 
-  prescriber:
-    image: raoshreyas/prescriber_service:latest
+  prescriber_service:
+    # image: raoshreyas/prescriber_service:latest
     container_name: prescriber_service
     build:
-      context: ./backend/prescriber_service
+      context: ./prescriber_service
       dockerfile: Docker_prescriber_service
       target: prescriberservice
     ports:
@@ -24,11 +24,11 @@ services:
     environment:
       - ENV=Docker
 
-  prescription:
-    image: raoshreyas/prescription_service:latest
+  prescription_service:
+    # image: raoshreyas/prescription_service:latest
     container_name: prescription_service
     build:
-      context: ./backend/prescription_service
+      context: ./prescription_service
       dockerfile: Docker_prescription_service
       target: prescriptionservice
     ports:
@@ -36,11 +36,11 @@ services:
     environment:
       - ENV=Docker
 
-  user:
-    image: raoshreyas/user_service:latest
+  user_service:
+    # image: raoshreyas/user_service:latest
     container_name: user_service
     build:
-      context: ./backend/user_service
+      context: ./user_service
       dockerfile: Docker_user_service
       target: userservice
     ports:
