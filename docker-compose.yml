@@ -1,6 +1,7 @@
 services:
 
   green:
+    image: raoshreyas/green_service:latest
     container_name: green_service
     build:
       context: ./backend/green_service
@@ -12,6 +13,7 @@ services:
       - ENV=Docker
 
   prescriber:
+    image: raoshreyas/prescriber_service:latest
     container_name: prescriber_service
     build:
       context: ./backend/prescriber_service
@@ -23,6 +25,7 @@ services:
       - ENV=Docker
 
   prescription:
+    image: raoshreyas/prescription_service:latest
     container_name: prescription_service
     build:
       context: ./backend/prescription_service
@@ -34,6 +37,7 @@ services:
       - ENV=Docker
 
   user:
+    image: raoshreyas/user_service:latest
     container_name: user_service
     build:
       context: ./backend/user_service
