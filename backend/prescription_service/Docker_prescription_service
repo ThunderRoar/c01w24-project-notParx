@@ -12,9 +12,7 @@ RUN pip install --upgrade pip
 COPY requirements.txt /usr/src/prescription_service/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY ./entrypoint.sh /usr/src/prescription_service/entrypoint.sh
-
-RUN chmod +x ./entrypoint.sh
+COPY entrypoint.sh /usr/src/prescription_service/entrypoint.sh
 
 COPY . /usr/src/prescription_service
 
