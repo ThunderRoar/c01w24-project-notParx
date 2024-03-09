@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy entrypoint.sh script
-COPY entrypoint.sh /usr/src/prescription_service/entrypoint.sh
+COPY entrypoint.sh .
 
 # Copy the rest of the application code
 COPY . /usr/src/prescription_service
@@ -27,4 +27,4 @@ COPY . /usr/src/prescription_service
 RUN chmod +x entrypoint.sh
 
 # Set the entrypoint for the container
-ENTRYPOINT ["/usr/src/prescription_service/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
