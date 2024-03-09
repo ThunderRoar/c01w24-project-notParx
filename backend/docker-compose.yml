@@ -47,5 +47,3 @@ services:
       - "8003:8003"
     environment:
       - ENV=Docker
-
-  
