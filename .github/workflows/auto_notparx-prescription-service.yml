@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_88490041474843e6a058749b21212097 }}/prescription-service:${{ github.sha }}
-          file: .\Docker_prescription_service
+          file: backend\prescription_service\Docker_prescription_service
 
   deploy:
     runs-on: ubuntu-latest
