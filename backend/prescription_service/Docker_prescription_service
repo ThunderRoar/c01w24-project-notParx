@@ -14,11 +14,13 @@ WORKDIR /usr/src/prescription_service
 RUN pip install --upgrade pip
 
 # Copy requirements.txt and install dependencies
-COPY requirements.txt .
+COPY ./prescription_service/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy entrypoint.sh script
-COPY entrypoint.sh .
+COPY ./prescription_service/entrypoint.sh .
+
+# VOLUME entrypoint.sh
 
 # Copy the rest of the application code
 COPY . /usr/src/prescription_service
