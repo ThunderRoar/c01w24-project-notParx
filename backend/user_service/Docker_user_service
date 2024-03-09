@@ -1,21 +1,30 @@
 FROM python:3.11-alpine AS userservice
 
+# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Expose port 8003
 EXPOSE 8003
 
-WORKDIR /user_service 
+# Set the working directory inside the container
+WORKDIR /usr/src/user_service 
 
+# Upgrade pip
 RUN pip install --upgrade pip
 
-COPY requirements.txt /user_service
-
+# Copy requirements.txt and install dependencies
+COPY ./backend/user_service/requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . /user_service 
+# Copy entrypoint.sh script
+COPY ./backend/user_service/entrypoint.sh /usr/local/bin/entrypoint.sh
 
-RUN python manage.py migrate
+# Copy the rest of the application code
+COPY ./backend/user_service /usr/src/user_service
 
-ENTRYPOINT ["python3"]
-CMD ["manage.py", "runserver", "0.0.0.0:8003"]
+# Set the entrypoint script to be executable
+RUN chmod +x entrypoint.sh
+
+# Set the entrypoint for the container
+ENTRYPOINT ["./entrypoint.sh"]
