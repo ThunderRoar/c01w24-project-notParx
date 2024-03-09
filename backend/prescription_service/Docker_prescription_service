@@ -18,7 +18,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy entrypoint.sh script
-COPY entrypoint.sh .
+COPY ./entrypoint.sh /usr/src/prescription_service/entrypoint.sh
 
 # Copy the rest of the application code
 COPY . .
