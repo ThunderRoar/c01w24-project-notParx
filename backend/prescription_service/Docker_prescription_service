@@ -13,7 +13,7 @@ COPY requirements.txt /prescription_service
 
 RUN pip install -r requirements.txt
 
-COPY . /prescription_service 
+COPY . ./ 
 
 RUN python manage.py migrate
 
