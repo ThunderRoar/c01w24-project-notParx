@@ -29,4 +29,4 @@ COPY ./backend/prescription_service /usr/src/prescription_service
 RUN chmod +x entrypoint.sh
 
 # Set the entrypoint for the container
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
