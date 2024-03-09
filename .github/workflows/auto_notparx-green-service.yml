@@ -1,4 +1,4 @@
-name: notparx-prescription-service - Build and deploy container app to Azure Web App
+name: notparx-green-service - Build and deploy container app to Azure Web App
 
 on:
   workflow_dispatch:
@@ -19,15 +19,15 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: https://notparx.azurecr.io/
-          username: ${{ secrets.AzureAppService_ContainerUsername_88490041474843e6a058749b21212097 }}
-          password: ${{ secrets.AzureAppService_ContainerPassword_8ac6c0f38e3b45fb903e25d4a3c033d0 }}
+          username: ${{ secrets.AzureAppService_ContainerUsername_5ae312a53ed24027bfc0437e0706f885 }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_2bc7d1410c1f41889e4d7321ae49175b }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_88490041474843e6a058749b21212097 }}/prescription-service:${{ github.sha }}
-          file: ./backend/prescription_service/Docker_prescription_service
+          tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5ae312a53ed24027bfc0437e0706f885 }}/green-service:${{ github.sha }}
+          file: ./backend/green_service/Docker_green_service
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "notparx-prescription-service"
+          app-name: "notparx-green-service"
           slot-name: "production"
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_3b3f4e15080543da9701e77395f3d78e }}
-          images: "notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_88490041474843e6a058749b21212097 }}/prescription-service:${{ github.sha }}"
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_2c69db7978734ace855100ad1c22b43b }}
+          images: "notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5ae312a53ed24027bfc0437e0706f885 }}/green-service:${{ github.sha }}"
