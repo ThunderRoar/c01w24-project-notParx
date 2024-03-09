@@ -23,7 +23,7 @@ COPY ./backend/prescription_service/entrypoint.sh .
 # VOLUME entrypoint.sh
 
 # Copy the rest of the application code
-COPY . /usr/src/prescription_service
+COPY ./backend/prescription_service /usr/src/prescription_service
 
 # Set the entrypoint script to be executable
 RUN chmod +x entrypoint.sh
