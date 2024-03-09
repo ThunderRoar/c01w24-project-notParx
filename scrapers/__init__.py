@@ -8,3 +8,5 @@ from .site7 import *
 from .site8 import *
 from .site9 import *
 from .site10 import *
+
+from function_app import *

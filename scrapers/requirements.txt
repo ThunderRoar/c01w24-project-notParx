@@ -29,7 +29,7 @@ setuptools==69.1.1
 azure-functions
 azure-functions-worker
 # Additional packages
-onnxruntime==1.17.1
+onnxruntime==1.16.3
 
 # Azure blob storage
 azure-storage-blob

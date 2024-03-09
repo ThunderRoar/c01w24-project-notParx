@@ -1,36 +1,39 @@
 import azure.functions as func
 import logging
-import csv
-
-import site1
-import site2
-import site3
-import site4
-import site5
-import site6
-import site7
-import site8
-import site9
-import site10
-
-import uuid
-from io import BytesIO
-from io import StringIO
-
-# Disable webdriver manager logs
-import os
-os.environ['WDM_LOG'] = '0'
-
-from azure.identity.aio import DefaultAzureCredential
-from azure.storage.blob.aio import BlobServiceClient, BlobClient, ContainerClient
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-# TODO restart on hitting 9 min time limit.
-
 @app.route(route="verifier")
+@app.function_name(name="verifier")
 async def verifier(req: func.HttpRequest) -> func.HttpResponse:
+    # Note: imports have to be here or azure breaks
+    import csv
+    
+    import site1
+    import site2
+    import site3
+    import site4
+    import site5
+    import site6
+    import site7
+    import site8
+    import site9
+    import site10
+
+
+    import uuid
+    from io import StringIO
+
+    # Disable webdriver manager logs
+    import os
+    os.environ['WDM_LOG'] = '0'
+
+    from azure.identity.aio import DefaultAzureCredential
+    from azure.storage.blob.aio import BlobServiceClient, BlobClient, ContainerClient
+
     logging.info('Python HTTP trigger function received a request.')
+
+    # TODO restart on hitting 9 min time limit.
 
     # Create the BlobServiceClient object
     credential = "DefaultEndpointsProtocol=https;AccountName=c01notparxstorage;AccountKey=Fuw30RV6+p+7SE4Qb09s0SwyCnScqhdfCZgvVnUoQ01y9eYPmnW0Bs8HRmkfbMSXWd3RPSD6VEoX+AStE2/1Ag==;EndpointSuffix=core.windows.net"
