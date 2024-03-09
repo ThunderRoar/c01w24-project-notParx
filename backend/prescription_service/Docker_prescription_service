@@ -9,14 +9,14 @@ WORKDIR /usr/src/prescription_service
 
 RUN pip install --upgrade pip
 
-COPY requirements.txt /usr/src/prescription_service/requirements.txt
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY entrypoint.sh /usr/src/prescription_service/entrypoint.sh
+COPY entrypoint.sh .
 
-COPY . /usr/src/prescription_service
+COPY . ./
 
-ENTRYPOINT [ "/usr/src/prescription_service/entrypoint.sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
 
 # ENTRYPOINT ["python3"]
 # CMD ["manage.py", "runserver", "0.0.0.0:8002"]
