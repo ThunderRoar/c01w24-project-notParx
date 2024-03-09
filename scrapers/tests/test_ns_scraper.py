@@ -50,19 +50,19 @@ class NSTests(unittest.TestCase):
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_verified(self, mock_get, mock_post):
-        self.assertEqual(site9.get_status("Ley", "David", 10819), 'VERIFIED')
+        self.assertEqual(site9.get_status("David", "Ley", 10819), 'VERIFIED')
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_inactive1(self, mock_get, mock_post):
-        self.assertEqual(site9.get_status("Abriel", "David", 6371), 'INACTIVE')
+        self.assertEqual(site9.get_status("David", "Abriel", 6371), 'INACTIVE')
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_inactive2(self, mock_get, mock_post):
-        self.assertEqual(site9.get_status("Bent", "Wilfrid", 5492), 'INACTIVE')   
+        self.assertEqual(site9.get_status("Wilfrid", "Bent", 5492), 'INACTIVE')   
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_not_found(self, mock_get, mock_post):
-        self.assertEqual(site9.get_status("Finley", "Allen", 7959), 'NOT FOUND')   
+        self.assertEqual(site9.get_status("Allen", "Finley", 7959), 'NOT FOUND')   

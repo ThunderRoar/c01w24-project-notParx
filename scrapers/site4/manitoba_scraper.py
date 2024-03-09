@@ -1,7 +1,7 @@
 import requests
 import re
 
-def get_user_status(firstname: str, lastname: str):
+def get_status(firstname: str, lastname: str, licensenumber=""):
     initial_api_url = f"https://member.cpsm.mb.ca/api/physicianprofile/searchresult?lastname={lastname}&firstname={firstname}&fieldofpractice=&city=&postalcode=&wheelchairaccess=&languages="
     
     try: 
@@ -60,12 +60,12 @@ def check_status(memberClass: str):
 
 
 if __name__ == "__main__":
-    print(get_user_status("Emily", "Saganski"))   # VERIFIED
+    print(get_status("Emily", "Saganski"))   # VERIFIED
     print()
-    print(get_user_status("Stuart", "Koensgen"))  # NOT FOUND
+    print(get_status("Stuart", "Koensgen"))  # NOT FOUND
     print()
-    print(get_user_status("Marina", "Rountree-James"))  # VERIFIED
+    print(get_status("Marina", "Rountree-James"))  # VERIFIED
     print()
-    print(get_user_status("Kim", "Rosing"))  # VERFIED
+    print(get_status("Kim", "Rosing"))  # VERFIED
 
 

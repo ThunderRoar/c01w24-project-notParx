@@ -30,3 +30,8 @@ azure-functions
 azure-functions-worker
 # Additional packages
 onnxruntime==1.17.1
+
+# Azure blob storage
+azure-storage-blob
+azure-identity
+aiohttp
