@@ -6,7 +6,7 @@ name: Build and deploy container app to Azure Web App - notparx-prescription-ser
 on:
   push:
     branches:
-      - NOT-33/containers
+      - [main, dev, NOT-33/containers]
   workflow_dispatch:
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_88490041474843e6a058749b21212097 }}/prescription-service:${{ github.sha }}
-        file: ./Dockerfile
+        file: ../../backend/prescription_service/Dockerfile_prescription_service
 
   deploy:
     runs-on: ubuntu-latest
