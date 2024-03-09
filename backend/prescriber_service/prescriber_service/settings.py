@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-llpyrzf)7^0^jfhs84*3)#$hqnome6)mze37)81-voxg7yg!fj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['notparx-prescriber-service.azurewebsites.net']
 
 
 # Application definition

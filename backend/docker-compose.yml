@@ -1,7 +1,7 @@
 services:
 
   green_service:
-    # image: raoshreyas/green_service:latest
+    image: notparx.azurecr.io/green_service:latest
     container_name: green_service
     build:
       context: ./green_service
@@ -13,7 +13,7 @@ services:
       - ENV=Docker
 
   prescriber_service:
-    # image: raoshreyas/prescriber_service:latest
+    image: notparx.azurecr.io/prescriber_service:latest
     container_name: prescriber_service
     build:
       context: ./prescriber_service
@@ -25,7 +25,7 @@ services:
       - ENV=Docker
 
   prescription_service:
-    # image: raoshreyas/prescription_service:latest
+    image: notparx.azurecr.io/prescription_service:latest
     container_name: prescription_service
     build:
       context: ./prescription_service
@@ -37,7 +37,7 @@ services:
       - ENV=Docker
 
   user_service:
-    # image: raoshreyas/user_service:latest
+    image: notparx.azurecr.io/user_service:latest
     container_name: user_service
     build:
       context: ./user_service
