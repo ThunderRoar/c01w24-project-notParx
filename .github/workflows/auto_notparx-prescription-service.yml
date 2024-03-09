@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.AzureAppService_ContainerPassword_8ac6c0f38e3b45fb903e25d4a3c033d0 }}
       
       - name: CD docker dir
-       run: cd ./backend/prescription_service
+        run: cd ./backend/prescription_service
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
