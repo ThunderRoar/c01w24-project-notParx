@@ -1,13 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App - notparx-prescriber-service
+name: notparx-prescriber-service - Build and deploy container app to Azure Web App
 
 on:
-  push:
-    branches:
-      - NOT-33/containers
   workflow_dispatch:
+  push:
+    branches: [main, dev, NOT-33/containers]
 
 jobs:
   build:
@@ -31,7 +30,7 @@ jobs:
       with:
         push: true
         tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_0b349a7e284e43699a7948791845925f }}/prescriber-service:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./backend/prescriber_service/Docker_prescriber_service
 
   deploy:
     runs-on: ubuntu-latest
