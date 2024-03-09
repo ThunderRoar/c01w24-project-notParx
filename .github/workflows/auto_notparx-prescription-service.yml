@@ -6,7 +6,8 @@ name: Build and deploy container app to Azure Web App - notparx-prescription-ser
 on:
   workflow_dispatch:
   push:
-    branches: [main, dev, NOT-33/containers]
+    branches: 
+      - NOT-33/containers
 
 jobs:
   build:
