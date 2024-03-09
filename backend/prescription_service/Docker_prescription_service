@@ -5,11 +5,11 @@ ENV PYTHONUNBUFFERED 1
 
 EXPOSE 8002
 
-WORKDIR /prescription_service 
+WORKDIR /usr/src/prescription_service 
 
 RUN pip install --upgrade pip
 
-COPY requirements.txt /prescription_service
+COPY requirements.txt . 
 
 RUN pip install -r requirements.txt
 
