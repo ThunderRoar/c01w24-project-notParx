@@ -1,0 +1,30 @@
+FROM python:3.11-alpine AS greenservice
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Expose port 8000
+EXPOSE 8000
+
+# Set the working directory inside the container
+WORKDIR /usr/src/green_service
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Copy the requirements.txt and install dependencies
+COPY ./backend/green_service/requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy the entrypoint.sh script
+COPY ./backend/green_service/entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Copy the rest of the application code
+COPY ./backend/green_service /usr/src/green_service
+
+# Set the entrypoint script to be executable
+RUN chmod +x entrypoint.sh
+
+# Set the entrypoint for the container
+ENTRYPOINT ["./entrypoint.sh"]
