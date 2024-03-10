@@ -37,12 +37,12 @@ jobs:
           python -m unittest
           cd ..
 
-      - name: 'Deploy to Azure Functions'
+      - name: "Deploy to Azure Functions"
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'C01notParx-verifer'
-          slot-name: 'Production'
+          app-name: "C01notParx-verifer"
+          slot-name: "Production"
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1A212ADC7DB64C83BC9C04A8A2C2A4C3 }}
           scm-do-build-during-deployment: true
