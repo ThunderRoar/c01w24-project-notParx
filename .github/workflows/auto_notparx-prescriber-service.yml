@@ -3,7 +3,7 @@ name: notparx-prescriber-service - Build and deploy container app to Azure Web A
 on:
   workflow_dispatch:
   push:
-    branches: [main, dev, NOT-33/containers]
+    branches: [main, dev]
 
 jobs:
   build:
