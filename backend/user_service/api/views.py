@@ -62,9 +62,9 @@ class RegisterPerscriber(APIView):
         id = request.data["provDocID"]
 
         # Check if they've been verified
-        client = MongoClient('mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5')
-        db = client['test_db']
-        collection = db['VerifiedIDs']
+        client = MongoClient('mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/')
+        db = client['NotParxDB']
+        collection = db['api_verified_ids']
         result = collection.find_one({'provDocID': id})
 
         # Haven't been verified
@@ -96,7 +96,7 @@ class RegisterPerscriber(APIView):
                 }
 
             return Response(response, status=status.HTTP_201_CREATED)
-        return Response({'error': 'Invalid ID or already signed up'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error': 'Already signed up'}, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginPerscriber(APIView):
     permission_classes = [AllowAny]

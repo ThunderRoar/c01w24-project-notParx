@@ -78,10 +78,10 @@ WSGI_APPLICATION = "user_service.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'test_db',
+        'NAME': 'NotParxDB',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5',  # Specify the MongoDB host here
+            'host': 'mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/',  # Specify the MongoDB host here
             'port': 27017,  # Default MongoDB port
         }
     }
