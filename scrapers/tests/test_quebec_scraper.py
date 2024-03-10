@@ -28,7 +28,7 @@ class TestGetStatus(unittest.TestCase):
             
             mock_driver_class.return_value = mock_driver
 
-            status = site10.getStatus('LastName', 'Number')
+            status = site10.get_status('firstName', 'LastName', 'Number')
             self.assertEqual(status, "VERIFIED")
     
     def test_inactive(self):
@@ -49,7 +49,7 @@ class TestGetStatus(unittest.TestCase):
             # return the mock when calling 'webdriver.Chrome(options=options)'
             mock_driver_class.return_value = mock_driver
 
-            status = site10.getStatus('LastName', 'Number')
+            status = site10.get_status('firstName', 'LastName', 'Number')
             self.assertEqual(status, "INACTIVE")
     def test_not_found_timeout(self):
         # Mock for driver
@@ -69,7 +69,7 @@ class TestGetStatus(unittest.TestCase):
             # return the mock when calling 'webdriver.Chrome(options=options)'
             mock_driver_class.return_value = mock_driver
 
-            status = site10.getStatus('LastName', 'Number')
+            status = site10.get_status('FirstName', 'LastName', 'Number')
             self.assertEqual(status, "NOT FOUND")
     def test_not_found_noElement(self):
         # Mock for driver
@@ -89,7 +89,7 @@ class TestGetStatus(unittest.TestCase):
             # return the mock when calling 'webdriver.Chrome(options=options)'
             mock_driver_class.return_value = mock_driver
 
-            status = site10.getStatus('LastName', 'Number')
+            status = site10.get_status('firstName', 'LastName', 'Number')
             self.assertEqual(status, "NOT FOUND")
     
 if __name__ == '__main__':
