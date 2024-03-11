@@ -29,7 +29,7 @@ def is_physician_practicing(soup):
     # Return None if no conclusive status is found
     return None
 
-def perform_search(license_number, first_name, last_name):
+def get_status(first_name, last_name, license_number):
     """
     Performs a search on the CPSNL website with the given license number, 
     first name, and last name, and returns the practicing status.
@@ -45,7 +45,11 @@ def perform_search(license_number, first_name, last_name):
     """
     # The URL of the search page
     initial_url = "https://imis.cpsnl.ca/WEB/CPSNL/PhysicianSearch/Physician_Search_New.aspx"
-    
+    # License number format should be "F ##..". Need to add space after F if not present.
+    license_number = license_number.strip()
+    if license_number[1] != " ":
+        license_number = license_number[0] + " " + license_number[1:]
+
     # Create a persistent session to handle cookies
     with requests.Session() as session:
         # Initial GET request to obtain the necessary hidden tokens
@@ -92,7 +96,8 @@ def perform_search(license_number, first_name, last_name):
         if response.status_code == 200:
             # Parse the response and check the practicing status
             soup = BeautifulSoup(response.text, 'html.parser')
-            return is_physician_practicing(soup)
+            res = is_physician_practicing(soup)
+            return res if res is not None else "NOT FOUND"
         else:
             return "NOT FOUND"
 
@@ -103,6 +108,13 @@ if __name__ == "__main__":
     first_name = "William"
     last_name = "Durocher"
 
+    result = get_status(first_name, last_name, license_num)
+    print(result) # VERIFIED
+
+    license_num = "F06707"
+    first_name = "Amy"
+    last_name = "Pieroway"
+
     # Perform the search and print the result
-    result = perform_search(license_num, first_name, last_name)
+    result = get_status(first_name, last_name, license_num)
     print(result) # VERIFIED

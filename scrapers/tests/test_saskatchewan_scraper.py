@@ -88,7 +88,7 @@ class TestSaskatchewanScraper(unittest.TestCase):
             mock_scrape.return_value = [{'FirstName': 'John', 'LastName': 'Doe', 'ProfileLink': 'http://example.com'}]
             mock_check_status.return_value = "VERIFIED"
 
-            status = site3.saskatchewan_scraper.getStatus("John", "Doe")
+            status = site3.saskatchewan_scraper.get_status("John", "Doe")
             self.assertEqual(status, "VERIFIED")
 
 if __name__ == '__main__':

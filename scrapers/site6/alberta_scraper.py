@@ -96,7 +96,7 @@ def parse_results_page(soup, first_name, last_name):
         status = open_profile_and_analyze(results[0][1])
         return("VERIFIED" if status else "INACTIVE")
 
-def get_status(last_name: str, first_name: str):
+def get_status(first_name: str, last_name: str, license_number=""):
     """
     Retrieves the practicing status of a physician based on their last and first name.
 
@@ -152,5 +152,5 @@ def get_status(last_name: str, first_name: str):
 
 # Entry point for script execution
 if __name__ == "__main__":
-    status = get_status("Atherton", "William")
+    status = get_status("William", "Atherton")
     print(status)

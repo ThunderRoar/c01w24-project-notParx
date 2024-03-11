@@ -1,0 +1,49 @@
+services:
+
+  green_service:
+    image: notparx.azurecr.io/green_service:latest
+    container_name: green_service
+    build:
+      context: ./green_service
+      dockerfile: Docker_green_service
+      target: greenservice
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=Docker
+
+  prescriber_service:
+    image: notparx.azurecr.io/prescriber_service:latest
+    container_name: prescriber_service
+    build:
+      context: ./prescriber_service
+      dockerfile: Docker_prescriber_service
+      target: prescriberservice
+    ports:
+      - "8001:8001"
+    environment:
+      - ENV=Docker
+
+  prescription_service:
+    image: notparx.azurecr.io/prescription_service:latest
+    container_name: prescription_service
+    build:
+      context: ./prescription_service
+      dockerfile: Docker_prescription_service
+      target: prescriptionservice
+    ports:
+      - "8002:8002"
+    environment:
+      - ENV=Docker
+
+  user_service:
+    image: notparx.azurecr.io/user_service:latest
+    container_name: user_service
+    build:
+      context: ./user_service
+      dockerfile: Docker_user_service
+      target: userservice
+    ports:
+      - "8003:8003"
+    environment:
+      - ENV=Docker

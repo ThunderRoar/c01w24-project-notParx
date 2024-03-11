@@ -9,7 +9,7 @@ from selenium.common.exceptions import WebDriverException
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from site1 import confirm_user, get_user_info
+from site1 import confirm_user, get_status
 
 class TestGetUserInfo(unittest.TestCase):
 
@@ -20,7 +20,7 @@ class TestGetUserInfo(unittest.TestCase):
         mock_element = MagicMock()
         mock_element.text = "Amanpreet Gill"
         mock_browser.find_element.side_effect = [mock_element, MagicMock(text="Practising")]
-        result = get_user_info("Amanpreet", "Gill")
+        result = get_status("Amanpreet", "Gill")
         self.assertEqual(result, "VERIFIED")
 
     @patch('site1.webdriver')
@@ -30,7 +30,7 @@ class TestGetUserInfo(unittest.TestCase):
         mock_element = MagicMock()
         mock_element.text = "Sorry, there are no matching results found. Please try another search."
         mock_browser.find_element.return_value = mock_element
-        result = get_user_info("Aalto", "Anu")
+        result = get_status("Aalto", "Anu")
         self.assertEqual(result, "NOT FOUND")
 
     @patch('site1.webdriver')
@@ -40,7 +40,7 @@ class TestGetUserInfo(unittest.TestCase):
         mock_element = MagicMock()
         mock_element.text = "Davey Gin"
         mock_browser.find_element.side_effect = [mock_element, MagicMock(text="Not practising")]
-        result = get_user_info("Davey", "Gin")
+        result = get_status("Davey", "Gin")
         self.assertEqual(result, "VERIFIED")
 
     @patch('site1.webdriver')
@@ -50,7 +50,7 @@ class TestGetUserInfo(unittest.TestCase):
         mock_element = MagicMock()
         mock_element.text = "Sorry, there are no matching results found. Please try another search."
         mock_browser.find_element.return_value = mock_element
-        result = get_user_info("Anthony", "Keen")
+        result = get_status("Anthony", "Keen")
         self.assertEqual(result, "NOT FOUND")
 
     def test_confirm_user(self):
