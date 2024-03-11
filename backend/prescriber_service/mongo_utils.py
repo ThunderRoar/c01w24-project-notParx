@@ -1,13 +1,13 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId  # Important for handling MongoDB's default _id field
+from django.conf import settings
 import os
 
-uri = 'mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/'
 # MONGO_URI = os.environ.get("MONGO_URI")
-MONGO_URI = uri
+MONGO_URI = settings.MONGO_URI
 DATABASE_NAME = "CSV_DB"
 
-client = MongoClient(uri)
+client = MongoClient(MONGO_URI)
 db = client[DATABASE_NAME]
 csv_files_collection = db["CSV_collections"]
 

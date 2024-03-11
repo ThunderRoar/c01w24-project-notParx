@@ -12,10 +12,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Azure Storage settings
-AZURE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=c01notparxstorage;AccountKey=wicKQp1qeaDmnpi56DOMHustLAnpfay9cKGW7tMwJVO07Y0gZbuzYbEGImLY4nvDpvCOgTUK1MkM+AStKXQVrw==;EndpointSuffix=core.windows.net'
+AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING')
 AZURE_CONTAINER_NAME = 'csv-container'
+
+MONGO_URI = os.getenv('MONGO_URI')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
