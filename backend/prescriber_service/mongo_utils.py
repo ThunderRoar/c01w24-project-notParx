@@ -42,3 +42,22 @@ def update_csv_status(csv_file_id, status, can_download=None, new_file_location=
     except Exception as e:
         print(e)  # For debugging, consider using proper logging in production
         return False
+
+def get_csv_status_by_id(csv_file_id):
+    """Retrieve the status of a CSV file from MongoDB by its _id."""
+    try:
+        document = csv_files_collection.find_one({'_id': ObjectId(csv_file_id)}, {'current_status': 1, '_id': 0})
+        return document['current_status'] if document else None
+    except Exception as e:
+        print(e)  # Log error for debugging
+        return None
+    
+
+def get_all_csv_metadata():
+    """Retrieve all CSV file metadata documents from MongoDB."""
+    try:
+        documents = csv_files_collection.find({})
+        return list(documents)
+    except Exception as e:
+        print(e)  # Log error for debugging
+        return []

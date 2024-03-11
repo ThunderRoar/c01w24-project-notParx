@@ -61,3 +61,24 @@ def blob_exists(blob_name):
         # For any other exceptions, log and handle appropriately.
         print(e)
         return False
+    
+
+def get_blob_download_url(blob_name):
+    """
+    Generates a SAS token for downloading a blob.
+    """
+    blob_service_client = BlobServiceClient.from_connection_string(settings.AZURE_CONNECTION_STRING)
+    blob_client = blob_service_client.get_blob_client(container=settings.AZURE_CONTAINER_NAME, blob=blob_name)
+
+    # Generate SAS token for blob
+    from datetime import datetime, timedelta
+    from azure.storage.blob import generate_blob_sas, BlobSasPermissions
+
+    sas_token = generate_blob_sas(account_name=blob_client.account_name,
+                                  container_name=blob_client.container_name,
+                                  blob_name=blob_name,
+                                  account_key=blob_service_client.credential.account_key,
+                                  permission=BlobSasPermissions(read=True),
+                                  expiry=datetime.utcnow() + timedelta(hours=1))  # Token valid for 1 hour
+
+    return f"{blob_client.url}?{sas_token}"
