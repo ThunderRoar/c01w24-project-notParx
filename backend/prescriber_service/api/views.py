@@ -13,13 +13,12 @@ class CSVUploadView(APIView):
         file = request.FILES.get('file')
         if file:
             # Generate a unique file name
-            file_name = file.name
-            #file_name = str(uuid.uuid4()) + '.csv'
+            file_name = str(uuid.uuid4()) + '.csv'
             
             # Upload the file to Azure Blob Storage
             file_url = upload_file_to_blob(file, file_name)
 
-            # Prepare metadata for MongoDB and Django ORM
+            # Prepare metadata for MongoDB
             file_metadata = {
                 'file_name': file_name,
                 'current_status': 'In Progress',
@@ -29,14 +28,22 @@ class CSVUploadView(APIView):
             }
 
             # Insert file metadata into MongoDB
-            insert_csv_file_metadata(file_metadata)
+            mongo_db_id = insert_csv_file_metadata(file_metadata)
 
-            # Create a Django model instance for the uploaded file
-            csv_file = CSVFile(**file_metadata)
+            # Create a Django model instance for the uploaded file, excluding MongoDB-specific fields
+            csv_file = CSVFile(
+                file_name=file.name,
+                current_status='In Progress',
+                can_download=False,
+                file_location_old=file_url,
+            )
             csv_file.save()
 
-            # Serialize the model instance to return as a response
+            # Add the MongoDB id to the response data manually
             serializer = CSVFileSerializer(csv_file)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            response_data = serializer.data
+            response_data['mongo_id'] = str(mongo_db_id)  # Convert ObjectId to string for JSON serialization
+
+            return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)

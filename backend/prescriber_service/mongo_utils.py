@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import os
 
-uri = 'mongodb+srv://NotParxUsername:<password>@atlascluster.fo3q3yw.mongodb.net/?retryWrites=true&w=majority'
+uri = 'mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/'
 # MONGO_URI = os.environ.get("MONGO_URI")
 MONGO_URI = uri
 DATABASE_NAME = "CSV_DB"
