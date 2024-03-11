@@ -3,12 +3,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import CSVFile
 from .serializers import CSVFileSerializer
-from azure_utils import upload_file_to_blob
-from mongo_utils import insert_csv_file_metadata
+from azure_utils import upload_file_to_blob, blob_exists, list_blobs_in_container
+from mongo_utils import insert_csv_file_metadata, get_csv_metadata_by_id, update_csv_status
 import uuid
 
 class CSVUploadView(APIView):
-
+    """
+    Handles the upload of a CSV file to Azure Blob Storage and saves its metadata in MongoDB.
+    """
     def post(self, request, format=None):
         file = request.FILES.get('file')
         if file:
@@ -47,3 +49,22 @@ class CSVUploadView(APIView):
             return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
+
+class CSVStatusUpdateView(APIView):
+
+    def post(self, request, csv_file_id, format=None):
+        # Validate or fetch the CSV metadata by the provided id
+        csv_metadata = get_csv_metadata_by_id(csv_file_id)
+        
+        if not csv_metadata:
+            return Response({'error': 'CSV file not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        file_name = csv_metadata['file_name']
+        
+        # Check if the file exists in Azure Blob Storage
+        if blob_exists(file_name):
+            # Update the status in MongoDB if the file exists
+            update_csv_status(csv_file_id, 'Uploaded')
+            return Response({'status': 'Uploaded'}, status=status.HTTP_200_OK)
+        else:
+            return Response({'status': 'Not uploaded'}, status=status.HTTP_404_NOT_FOUND)

@@ -15,3 +15,12 @@ def list_blobs_in_container():
     container_client = blob_service_client.get_container_client(settings.AZURE_CONTAINER_NAME)
     
     return [blob.name for blob in container_client.list_blobs()]
+
+def blob_exists(blob_name):
+    blob_service_client = BlobServiceClient.from_connection_string(settings.AZURE_CONNECTION_STRING)
+    blob_client = blob_service_client.get_blob_client(container=settings.AZURE_CONTAINER_NAME, blob=blob_name)
+    try:
+        blob_client.get_blob_properties()
+        return True
+    except Exception as e:
+        return False
