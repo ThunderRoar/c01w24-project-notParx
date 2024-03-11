@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+# Azure Storage settings
+AZURE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=c01notparxstorage;AccountKey=wicKQp1qeaDmnpi56DOMHustLAnpfay9cKGW7tMwJVO07Y0gZbuzYbEGImLY4nvDpvCOgTUK1MkM+AStKXQVrw==;EndpointSuffix=core.windows.net'
+AZURE_CONTAINER_NAME = 'csv-container'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +30,7 @@ SECRET_KEY = "django-insecure-llpyrzf)7^0^jfhs84*3)#$hqnome6)mze37)81-voxg7yg!fj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['notparx-prescriber-service.azurewebsites.net', 'localhost']
+ALLOWED_HOSTS = ['notparx-prescriber-service.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "api",
 ]
 
 MIDDLEWARE = [
