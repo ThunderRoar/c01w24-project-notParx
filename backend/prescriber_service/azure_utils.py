@@ -1,4 +1,4 @@
-from azure.storage.blob import BlobServiceClient, BlobNotFoundError
+from azure.storage.blob import BlobServiceClient
 from django.conf import settings
 # from azure.core.exceptions import BlobNotFoundError
 
@@ -54,9 +54,9 @@ def blob_exists(blob_name):
         # Attempt to get blob properties to check existence.
         blob_client.get_blob_properties()
         return True
-    except BlobNotFoundError:
-        # If the blob is not found, return False.
-        return False
+    # except BlobNotFoundError:
+    #     # If the blob is not found, return False.
+    #     return False
     except Exception as e:
         # For any other exceptions, log and handle appropriately.
         print(e)

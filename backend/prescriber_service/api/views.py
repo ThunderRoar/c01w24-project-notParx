@@ -20,7 +20,7 @@ class CSVUploadView(APIView):
             # Prepare metadata
             file_metadata = {
                 'file_name': file.name,
-                'date_uploaded': datetime.now(),
+                'date_uploaded': datetime.datetime.now(),
                 'current_status': 'In Progress',
                 'can_download': False,
                 'file_location_old': file.name,  # Original file name

@@ -9,7 +9,8 @@ class CSVFile(models.Model):
     current_status = models.CharField(max_length=100, default='In Progress')
     can_download = models.BooleanField(default=False)
     file_location_old = models.CharField(max_length=255, blank=True)
-    new_file_location = models.CharField(max_length=255, blank=True)  # Renamed field
+    new_file_location = models.CharField(max_length=255, blank=True) 
+    _id = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return self.file_name
