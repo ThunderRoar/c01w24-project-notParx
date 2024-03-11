@@ -1,0 +1,49 @@
+name: notparx-prescriber-service - Build and deploy container app to Azure Web App
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to registry
+        uses: docker/login-action@v2
+        with:
+          registry: https://notparx.azurecr.io/
+          username: ${{ secrets.AzureAppService_ContainerUsername_0b349a7e284e43699a7948791845925f }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_4568eb3e356846d3a706c803b86a86e4 }}
+
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_0b349a7e284e43699a7948791845925f }}/prescriber-service:${{ github.sha }}
+          file: ./backend/prescriber_service/Docker_prescriber_service
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: "production"
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "notparx-prescriber-service"
+          slot-name: "production"
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_c4c0573ea18f4167bdbb2b1b0dee4664 }}
+          images: "notparx.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_0b349a7e284e43699a7948791845925f }}/prescriber-service:${{ github.sha }}"

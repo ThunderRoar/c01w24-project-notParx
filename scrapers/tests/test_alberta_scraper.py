@@ -64,12 +64,12 @@ class AlbertaTests(unittest.TestCase):
         @mock.patch('requests.post', side_effect=mocked_requests_post)
         @mock.patch('requests.get', side_effect=mocked_requests_get)
         def test_inactive(self, mock_post, mock_get):
-            self.assertEqual(site6.get_status("Amanie", "John"), 'VERIFIED')
+            self.assertEqual(site6.get_status("John", "Amanie"), 'VERIFIED')
         
         @mock.patch('requests.post', side_effect=mocked_requests_post)
         @mock.patch('requests.get', side_effect=mocked_requests_get)
         def test_verified(self, mock_post, mock_get):
-            self.assertEqual(site6.get_status("Atherton", "William"), 'INACTIVE')
+            self.assertEqual(site6.get_status("William", "Atherton"), 'INACTIVE')
 
 if __name__ == "__main__":
     unittest.main()

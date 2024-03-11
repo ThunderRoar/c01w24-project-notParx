@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 ## Return prescriber status given last name, first name, and license number in the College of Physicians and Surgeons of Nova Scotia
-def get_status(last_name: str, first_name: str, number: str):
+def get_status(first_name: str, last_name: str, number: str):
     ## Generate session
     url = "https://cpsnsphysiciansearch.azurewebsites.net/"
     
@@ -76,7 +76,7 @@ def get_status(last_name: str, first_name: str, number: str):
 
 if __name__ == "__main__":
     ## Sanity Tests
-    print(get_status("Ley", "David", 10819)) # Verified
-    print(get_status("Abriel", "David", 6371)) # Inactive
-    print(get_status("Bent", "Wilfrid", 5492)) # Inactive
-    print(get_status("Finley", "Allen", 7959)) # Not Found
+    print(get_status("David", "Ley", 10819)) # Verified
+    print(get_status("David", "Abriel", 6371)) # Inactive
+    print(get_status("Wilfrid", "Bent", 5492)) # Inactive
+    print(get_status("Allen", "Finley", 7959)) # Not Found

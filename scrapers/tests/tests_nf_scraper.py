@@ -51,13 +51,20 @@ class NfTests(unittest.TestCase):
     @mock.patch('site8.requests.Session.post', side_effect=mocked_requests_post)
     def test_practicing_status(self, mock_post, mock_get):
         # Test for a physician with practicing status
-        result = site8.perform_search("F 01923", "John", "Abbatt")
+        result = site8.get_status("John", "Abbatt", "F 01923")
         self.assertEqual(result, "INACTIVE")
 
     @mock.patch('site8.requests.Session.get', side_effect=mocked_requests_get)
     @mock.patch('site8.requests.Session.post', side_effect=mocked_requests_post)
     def test_non_practicing_status(self, mock_post, mock_get):
-        result = site8.perform_search("F 03818", "William", "Durocher")
+        result = site8.get_status("William", "Durocher", "F 03818")
+        self.assertEqual(result, "VERIFIED")
+
+    @mock.patch('site8.requests.Session.get', side_effect=mocked_requests_get)
+    @mock.patch('site8.requests.Session.post', side_effect=mocked_requests_post)
+    def test_unspaced_license_number(self, mock_post, mock_get):
+        # Test that a license number with no space after the first letter gets converted
+        result = site8.get_status("William", "Durocher", "F03818")
         self.assertEqual(result, "VERIFIED")
 if __name__ == '__main__':
     unittest.main()
