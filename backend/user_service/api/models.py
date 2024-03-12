@@ -6,6 +6,10 @@ class User(models.Model):
     firstName = models.CharField(max_length=128)
     lastName = models.CharField(max_length=128)
     address = models.CharField(max_length=128)
+    city = models.CharField(max_length=128)
+    province = models.CharField(max_length=128)
+    language = models.CharField(max_length=128)
+    email = models.CharField(max_length=128)
     dpass = models.BooleanField(default=False)
     actionRequired = models.BooleanField(default=False)
     perscribersID = models.JSONField(default=list)
@@ -13,7 +17,7 @@ class User(models.Model):
     def __str__(self):
         return self.username
 
-class Perscriber(models.Model):
+class Prescriber(models.Model):
     provDocID = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=128)
 

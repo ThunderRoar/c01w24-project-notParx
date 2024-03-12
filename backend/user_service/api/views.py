@@ -12,26 +12,28 @@ class RegisterUser(APIView):
     
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
+        try:
+            if serializer.is_valid():
+                serializer.save()
 
-        if serializer.is_valid():
-            serializer.save()
-
-            payload = {
-                'username': request.data["username"],
-                'user_type': "User",
-            }
-
-            token = jwt.encode(payload, 'secret_key', algorithm='HS256')
-
-            # decoded_token = jwt.decode(token, 'secret_key', algorithms=['HS256'])
-
-            response = {
-                'message': 'User registered successfully',
-                'token': token
+                payload = {
+                    'username': request.data["username"],
+                    'user_type': "User",
                 }
 
-            return Response(response, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                token = jwt.encode(payload, 'secret_key', algorithm='HS256')
+
+                # decoded_token = jwt.decode(token, 'secret_key', algorithms=['HS256'])
+
+                response = {
+                    'message': 'User registered successfully',
+                    'token': token
+                    }
+
+                return Response(response, status=status.HTTP_201_CREATED)
+            return Response({"error": "Ensure input is of right format"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception:
+            return Response({"error": "Username has already been used"}, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginUser(APIView):
     permission_classes = [AllowAny]
@@ -39,7 +41,7 @@ class LoginUser(APIView):
     def post(self, request, format=None):
         username = request.data.get('username')
         password = request.data.get('password')
-        
+
         user = User.objects.filter(username=username).first()
         if user and user.password == password:
             payload = {
@@ -55,11 +57,20 @@ class LoginUser(APIView):
             return Response(response, status=status.HTTP_200_OK)
         return Response({'error': 'Invalid username or password'}, status=status.HTTP_400_BAD_REQUEST)
 
-class RegisterPerscriber(APIView):
+class RegisterPrescriber(APIView):
     permission_classes = [AllowAny]
     
     def post(self, request, format=None):
-        id = request.data["provDocID"]
+        id = request.data.get("provDocID")
+        email = request.data.get("email")
+        password = request.data.get("password")
+        language = request.data.get("language")
+        city = request.data.get("city")
+        address = request.data.get("address")
+        if email is None or password is None or language is None or city is None or address is None or id is None:
+            return  Response({"error": "Incorrect request, not all fields sent"}, status=status.HTTP_400_BAD_REQUEST)
+        if email == "" or password == "" or language == "" or city == "" or address == "" or id == "":
+            return Response({"error": "Not all fields have been filled"}, status=status.HTTP_400_BAD_REQUEST)
 
         # Check if they've been verified
         client = MongoClient('mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/')
@@ -71,50 +82,52 @@ class RegisterPerscriber(APIView):
         if result is None:
             return Response({'error': 'Invalid ID'}, status=status.HTTP_400_BAD_REQUEST)
 
-        collection = db['api_perscriber']
+        collection = db['api_prescriber']
+        prescriber = collection.find_one({'provDocID': id})
 
-        perscriber = collection.find_one({'provDocID': id})
-        if (perscriber is not None) and (perscriber["email"] == "") and (perscriber["password"] == ""):
+        if (prescriber is not None) and (prescriber["email"] == "") and (prescriber["password"] == ""):
             # do stuff
-            email = request.data["email"]
-            password = request.data["password"]
             result = collection.update_one(
                 {'provDocID': id},
-                {'$set': {'email': email, 'password': password}}
+                {'$set': {'email': email, 
+                          'password': password, 
+                          'language': language,
+                          'city': city,
+                          'address': address}}
             )
 
             payload = {
                 'provDocID': id,
-                'user_type': "Perscriber",
+                'user_type': "Prescriber",
             }
 
             token = jwt.encode(payload, 'secret_key', algorithm='HS256')
 
             response = {
-                'message': 'Perscriber registered successfully',
+                'message': 'Prescriber registered successfully',
                 'token': token
                 }
 
             return Response(response, status=status.HTTP_201_CREATED)
         return Response({'error': 'Already signed up'}, status=status.HTTP_400_BAD_REQUEST)
 
-class LoginPerscriber(APIView):
+class LoginPrescriber(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, format=None):
         provDocID = request.data.get('username')
         password = request.data.get('password')
         
-        user = Perscriber.objects.filter(provDocID=provDocID).first()
+        user = Prescriber.objects.filter(provDocID=provDocID).first()
         if user and user.password == password:
             payload = {
                 'username': provDocID,
-                'user_type': "Perscriber",
+                'user_type': "Prescriber",
             }
 
             token = jwt.encode(payload, 'secret_key', algorithm='HS256')
             response = {
-                'message': 'Perscriber logged in successfully',
+                'message': 'Prescriber logged in successfully',
                 'token': token
                 }
             return Response(response, status=status.HTTP_200_OK)
