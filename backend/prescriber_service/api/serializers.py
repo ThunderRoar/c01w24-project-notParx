@@ -4,7 +4,19 @@ from .models import *
 class PrescriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prescriber
-        fields = ['firstName', 'lastName', 'province', 'college', 'licenseNum', 'status', 'provDocID']
+        fields = ['firstName',
+                  'lastName',
+                  'email',
+                  'province',
+                  'college',
+                  'licenseNum',
+                  'status',
+                  'password',
+                  'provDocID',
+                  'prescriptions',
+                  'language',
+                  'city',
+                  'address']
 
 class VerifiedPrescriberIDSerializer(serializers.ModelSerializer):
     class Meta:

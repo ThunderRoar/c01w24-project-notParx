@@ -6,9 +6,9 @@ from .models import *
 from .serializers import *
 from pymongo import MongoClient
 
-# Create a unique provider code for each verified prescriber and upload the provided presciber into the database.
+# Create a unique provider code for each verified prescriber and upload them into the database.
 # Parameter: first name, last name, province, college, license number, status
-# Return: the unique provider code if verified, else ''
+# Return: the unique provider code if verified
 class CreateProviderCode(APIView):
   permission_classes = [AllowAny]
 
@@ -74,11 +74,17 @@ class CreateProviderCode(APIView):
         document = {
           "firstName": firstName,
           "lastName": lastName,
+          "email": '',
           "province": province,
           "college": college,
           "licenseNum": licenseNum,
           "status": presStatus,
-          "provDocID": provDocID
+          "password": '',
+          "provDocID": provDocID,
+          "prescriptions": [],
+          "language": '',
+          "city": '',
+          "address": ''
         }
         presciberCollection.insert_one(document)
 
@@ -88,22 +94,7 @@ class CreateProviderCode(APIView):
         }
         return Response(response, status=status.HTTP_201_CREATED)
       else:
-        # Upload prescriber
-        document = {
-          "firstName": firstName,
-          "lastName": lastName,
-          "province": province,
-          "college": college,
-          "licenseNum": licenseNum,
-          "status": presStatus,
-        }
-        presciberCollection.insert_one(document)
-
-        response = {
-          'message': 'Prescriber uploaded successfully, no ID generated',
-          'provDocID': ''
-        }
-        return Response(response, status=status.HTTP_200_OK)
+        return Response({'error': 'Prescriber not verified'}, status=status.HTTP_400_BAD_REQUEST)
 
     except Exception as e:
       return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
