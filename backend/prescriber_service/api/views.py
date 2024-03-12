@@ -44,18 +44,26 @@ class CSVUploadView(APIView):
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
 
 class CSVStatusUpdateView(APIView):
-    """API view to update the status of an uploaded CSV file."""
-    def post(self, request, csv_file_id, format=None):
-        csv_metadata = get_csv_metadata_by_id(csv_file_id)
+    """
+    API view to update the status of an uploaded CSV file.
+    This view expects a unique Azure Blob Storage file name (new_file_name),
+    not the MongoDB _id.
+    """
+    def post(self, request, new_file_name, format=None):
+        # Find the CSV metadata by the new_file_name
+        csv_metadata = get_csv_metadata_by_new_file_name(new_file_name)
         if not csv_metadata:
             return Response({'error': 'CSV file not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        # Use new_file_location to check if the file exists in Azure Blob Storage
-        if blob_exists(csv_metadata['new_file_location']):
-            update_csv_status(csv_file_id, 'Uploaded')
+        # Check if the file exists in Azure Blob Storage
+        if blob_exists(new_file_name):
+            # Update the status in MongoDB if the file exists
+            # Use the MongoDB _id to update the status
+            update_csv_status(csv_metadata['_id'], 'Uploaded')
             return Response({'status': 'Uploaded'}, status=status.HTTP_200_OK)
         else:
             return Response({'status': 'Not uploaded'}, status=status.HTTP_404_NOT_FOUND)
+
 
 class CSVFileStatusView(APIView):
     """

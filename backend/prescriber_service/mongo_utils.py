@@ -16,14 +16,15 @@ def insert_csv_file_metadata(document):
     print(document)  # For debugging, consider using proper logging in production
     return csv_files_collection.insert_one(document).inserted_id
 
-def get_csv_metadata_by_id(csv_file_id):
-    """Retrieve a document from MongoDB by its _id."""
+
+def get_csv_metadata_by_new_file_name(new_file_name):
+    """Retrieve a document from MongoDB by the new file name used in Azure Blob Storage."""
     try:
-        # Ensure _id is treated as an ObjectId for querying
-        return csv_files_collection.find_one({'_id': ObjectId(csv_file_id)})
+        return csv_files_collection.find_one({'new_file_location': new_file_name})
     except Exception as e:
-        print(e)  # For debugging, consider using proper logging in production
+        print(e)
         return None
+
 
 def update_csv_status(csv_file_id, status, can_download=None, new_file_location=None):
     """Update the status and potentially other fields of a document in MongoDB."""
