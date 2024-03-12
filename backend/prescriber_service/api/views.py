@@ -25,8 +25,6 @@ class CreateProviderCode(APIView):
     except Exception as e:
       return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-    # print("hello" + firstName + lastName + province + college + licenseNum + presStatus)
-
     try:
       # Connect to MongoDB
       client = MongoClient('mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/')
