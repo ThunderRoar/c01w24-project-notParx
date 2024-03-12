@@ -12,7 +12,7 @@ class User(models.Model):
     email = models.CharField(max_length=128)
     dpass = models.BooleanField(default=False)
     actionRequired = models.BooleanField(default=False)
-    perscribersID = models.JSONField(default=list)
+    prescribersID = models.JSONField(default=list)
 
     def __str__(self):
         return self.username
