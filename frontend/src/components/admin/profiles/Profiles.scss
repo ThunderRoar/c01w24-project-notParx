@@ -1,0 +1,47 @@
+.admin-verification-component {
+    .verif-header {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem;
+    }
+    .content {
+        background-color: #FDFDFF;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+        border-radius: .85rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        .controls {
+            display: flex;
+            justify-content: right;
+            flex-direction: row;
+            .upload-button {
+                margin: 2rem 2rem 0rem 0rem;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+                background-color: #749769;
+                color: #F9FFF8;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            }
+        }
+        .table-container {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            .table-cont {
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+                border-radius: .85rem;
+                .table {
+                    background-color: #FDFDFF;
+                    .table-header {
+                        background-color: #749769;
+                        .header-row {
+                            color: #F9FFF8 !important;
+                        }
+                    }
+                    .table-row {
+                        background-color: #F1FAEF;
+                    }
+                }
+            }
+        }
+    }
+}
