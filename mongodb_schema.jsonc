@@ -1,0 +1,83 @@
+{
+    "Users": {
+        "Patients": {
+            "PatientID1":
+            {
+                "FirstName": "String", // Patient's first name.
+                "LastName": "String", // Patient's last name.
+                "Address": "String", // Patient's home address.
+                "PrescriberIDs": [
+                    "String"
+                ], // Array of IDs corresponding to prescribers (PrescriberID1) who have prescribed medication to the patient.
+                "ReceivedDiscoveryPass": "Boolean", // A boolean flad indicating if any prescription comes with a discovery pass and has been shiped by the Admin
+                "ActionNeeded": "Boolean" // A boolean flag if the address is not present and discovery pass has been prescribed
+            }
+            // More Painet objects
+        },
+        "Prescribers": {
+            "PrescriberID1":
+            {
+                "FirstName": "String", // Prescriber's first name.
+                "LastName": "String", // Prescriber's last name.
+                "Email": "String", // Prescriber's email address.
+                "Province": "String", // The province or state where the prescriber is licensed to practice.
+                "College": "String", // Name of the college where their information is stored
+                "LicenseNo": "String", // Goverment decided license number
+                "Status": "String", // The status of the prescriber, which could be 'Verified', 'Inactive', or 'Not-found'.
+                "ProvincePrescriberID": "String", // USER_Name -- as described by the logic
+                "Prescriptions": [
+                    "String"
+                ] // An array of strings storing all PrescriptionID1 that are given by the prescriber
+            }
+            // More Prescriber objects
+        },
+        "Admins": {
+            // Only 1 Admin
+            "AdminID":
+            {
+                "FirstName": "String", // Admin's first name.
+                "LastName": "String", // Admin's last name.
+                "UserName": "String" // The system username for the admin, used for logging into the system.
+            }
+        },
+        "VerifiedPrescriberIDs": [
+                    "String"
+                ] // A list to store and verify prescriber IDs. The details need to be defined based on system requirements.
+
+    },
+
+    
+    "CSVs": {
+        "CSVFileID1":
+        {
+            "FileName": "String", // Name of the CSV file as saved in the system.
+            "DateUploaded": "Date", // The date and time when the CSV file was uploaded to the system.
+            "CurrentStatus": "String", // The current status of the CSV file processing, e.g., 'Complete', 'InProgress'.
+            "CanDownload": "Boolean", // A boolean flag indicating whether the CSV file can be downloaded by the user.
+            "FileLocationOld": "String", // The old location of the CSV file in the database storage, linked to the file ID.
+            "FileLocationWithStatus": "String" // The location of the CSV file along with its status in the database storage, linked to the file ID.
+        }
+        // More CSV file objects
+    },
+    "Prescriptions": {
+        "PrescriptionID1":
+        {
+            "PatientID": "String", // Identifier of the patient to whom the prescription is assigned.
+            "PatientMatched": "Boolean", // A boolean indicating whether the prescription has been matched to a system or not.
+            "PrescriberCode": "String", // A code that uniquely identifies the prescriber within the prescription record.
+            "DateOfPrescription": "Date", // The date on which the prescription was written.
+            "DescriptionOfPrescription": "String", // The actual prescription.
+            "DiscoryPassPrescribed": "Boolean", // A boolean indicating whether a discovery pass comes with the prescription.
+            "Status": "String" // The processing status of the prescription, e.g., 'PA Not Logged Yet', 'Complete', or 'PA Logged with Rules'.
+            // 'PA Not Logged Yet' - Paitent had not logged yet.
+            // 'Complete' - PA logged with matching prescriptions and no discovery pass was attached
+            // 'PA Logged' - PA logged with matching prescription with discovery pass but the pass is not yet shipped(also after checking if everything including address present for Paitent)
+            // 'Complete with discovery pass' - PA logged and discovery pass has been shipped(by admin)(manually)(also after checking if everything including address present for Paitent)
+        }
+        // More Prescription objects
+    },
+    "GreenResources" : {
+        // Direct API
+        // Decide later if storing anything
+    }
+}
