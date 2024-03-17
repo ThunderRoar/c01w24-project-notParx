@@ -22,3 +22,8 @@ class VerifiedPrescriberIDSerializer(serializers.ModelSerializer):
     class Meta:
         model = VerifiedPrescriberID
         fields = ['provDocID', 'province', 'initials', 'number']
+
+class CSVFileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CSVFile
+        fields = '__all__'
