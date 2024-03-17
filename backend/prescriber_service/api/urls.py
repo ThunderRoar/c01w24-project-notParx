@@ -12,4 +12,5 @@ urlpatterns = [
     path('files/', CSVFileListView.as_view(), name='file-list'),
     path('update-status/<str:new_file_name>/', CSVStatusUpdateView.as_view(), name='update-csv-status'),
     path('createID/', views.CreateProviderCode.as_view(), name='createID'),
+  path('getPrescriberProfiles/', views.GetPrescriberProfiles.as_view(), name='getPrescriberProfiles')
 ]

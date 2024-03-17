@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,6 +7,7 @@ from .models import *
 from .serializers import *
 import jwt
 from pymongo import MongoClient
+from django.conf import settings
 
 class RegisterUser(APIView):
     permission_classes = [AllowAny]
@@ -166,3 +168,34 @@ class LoginAdmin(APIView):
                 }
             return Response(response, status=status.HTTP_200_OK)
         return Response({'error': 'Invalid username or password'}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetUserProfiles(APIView):
+  permission_classes = [AllowAny]
+    
+  def get(self, request, format=None):
+    if (request.method == 'GET'):
+      client = MongoClient(settings.MONGO_URI)
+      db = client['NotParxDB']
+      collection = db['api_user']
+      data = collection.find()
+
+
+      response = []
+      for i in data:
+        response.append({
+            "username": i.get("username"),
+            "password": i.get("password"),
+            "firstName": i.get("firstName"),
+            "lastName": i.get("lastName"),
+            "email": i.get("email"),
+            "address": i.get("address"),
+            "city": i.get("city"),
+            "province": i.get("province"),
+            "language": i.get("language"),
+            "dpass": i.get("dpass"),
+            "actionRequired": i.get("actionRequired"),
+            "prescribersID": i.get("prescribersID")
+        })
+      return JsonResponse(response, safe=False)
+    
+    return Response({"error": "Error occured"}, status=status.HTTP_400_BAD_REQUEST)
