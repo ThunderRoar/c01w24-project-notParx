@@ -124,8 +124,8 @@ class CSVUploadView(APIView):
                 'date_uploaded': datetime.datetime.now(),
                 'current_status': 'In Progress',
                 'can_download': False,
-                'file_location_old': file.name,  # Original file name
-                'new_file_location': unique_file_name,  # Azure Blob Storage unique file name
+                'file_location_old': unique_file_name,  # Original file name
+                'new_file_location': "",  # Will be updated later (processed file name)
             }
 
             # Insert file metadata into MongoDB
@@ -145,6 +145,7 @@ class CSVUploadView(APIView):
             return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
+        
     def initiate_verification_process(self, csv_name):
         """Starts an asynchronous GET request to trigger the verification process."""
         def verify_csv():
@@ -166,6 +167,7 @@ class CSVStatusUpdateView(APIView):
     API view to update the status of an uploaded CSV file.
     This view expects a unique Azure Blob Storage file name (new_file_name),
     not the MongoDB _id.
+    TODO: THis should expect the MongoDB _id instead of the new_file_name.
     """
     def post(self, request, new_file_name, format=None):
         # Find the CSV metadata by the new_file_name
@@ -185,7 +187,7 @@ class CSVStatusUpdateView(APIView):
 
 class CSVFileStatusView(APIView):
     """
-    API view to check the status of a CSV file stored in MongoDB.
+    API view to check the status of a CSV file stored in MongoDB
     """
     def get(self, request, csv_file_id, format=None):
         status = get_csv_status_by_id(csv_file_id)
@@ -198,6 +200,7 @@ class CSVFileStatusView(APIView):
 class BlobDownloadView(APIView):
     """
     API view to get the download URL of a file stored in Azure Blob Storage.
+    TODO: This should be handling old and updated files seperately. 
     """
     def get(self, request, blob_name, format=None):
         download_url = get_blob_download_url(blob_name)
