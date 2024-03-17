@@ -33,7 +33,7 @@ class CreateProviderCode(APIView):
 
     try:
       # Connect to MongoDB
-      client = MongoClient('mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/')
+      client = MongoClient('settings.MONGO_URI')
       db = client['NotParxDB']
       verifiedIDCollection = db['api_verified_ids']
       presciberCollection = db['api_prescriber']
