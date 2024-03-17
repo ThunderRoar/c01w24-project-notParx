@@ -34,7 +34,9 @@
                     .table-header {
                         background-color: #749769;
                         .header-row {
-                            color: #F9FFF8 !important;
+                            th {
+                                color: #F9FFF8 !important;
+                            }
                         }
                     }
                     .table-row {
