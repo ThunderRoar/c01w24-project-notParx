@@ -62,3 +62,29 @@ def get_all_csv_metadata():
     except Exception as e:
         print(e)  # Log error for debugging
         return []
+    
+def get_csv_metadata_by_old_file_name(old_file_name):
+    """Retrieve a document from MongoDB by the old file name."""
+    try:
+        return csv_files_collection.find_one({'file_location_old': old_file_name})
+    except Exception as e:
+        print(e)
+        return None
+    
+def get_csv_metadata_by_id(csv_file_id):
+    """
+    Retrieve a document from MongoDB using its _id.
+    
+    Args:
+    csv_file_id (str): The string representation of the MongoDB ObjectId.
+    
+    Returns:
+    dict: The document corresponding to the _id, or None if not found.
+    """
+    try:
+        # Convert the string ID to ObjectId
+        document = csv_files_collection.find_one({'_id': ObjectId(csv_file_id)})
+        return document
+    except Exception as e:
+        print(f"Error retrieving document by _id: {e}")
+        return None
