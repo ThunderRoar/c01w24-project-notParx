@@ -11,6 +11,10 @@ from .serializers import CSVFileSerializer
 from azure_utils import upload_file_to_blob, blob_exists, list_blobs_in_container, get_blob_download_url
 from mongo_utils import insert_csv_file_metadata, update_csv_status, get_csv_status_by_id, get_all_csv_metadata, get_csv_metadata_by_new_file_name
 import uuid
+from django.conf import settings
+import requests
+import threading
+
 
 # Create a unique provider code for each verified prescriber and upload them into the database.
 # Parameter: first name, last name, province, college, license number, status
@@ -33,7 +37,7 @@ class CreateProviderCode(APIView):
 
     try:
       # Connect to MongoDB
-      client = MongoClient('settings.MONGO_URI')
+      client = MongoClient(settings.MONGO_URI)
       db = client['NotParxDB']
       verifiedIDCollection = db['api_verified_ids']
       presciberCollection = db['api_prescriber']
@@ -131,14 +135,31 @@ class CSVUploadView(APIView):
             csv_file = CSVFile(**file_metadata)
             csv_file.save()
 
+            # Trigger the Azure function asynchronously
+            self.initiate_verification_process(unique_file_name)
+
             # Prepare response
             serializer = CSVFileSerializer(csv_file)
             response_data = serializer.data
             response_data['mongo_id'] = str(mongo_db_id)  # Include MongoDB ID in the response
-
             return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
+    def initiate_verification_process(self, csv_name):
+        """Starts an asynchronous GET request to trigger the verification process."""
+        def verify_csv():
+            encoded_csv_name = requests.utils.quote(csv_name)
+            url = f'https://c01notparx-verifer.azurewebsites.net/api/verifier?csv_name={encoded_csv_name}'
+            try:
+                requests.get(url, timeout=10)
+            except requests.RequestException as e:
+                print(f"Error initiating verification for {csv_name}: {e}")
+
+        # Start the GET request in a new thread
+        thread = threading.Thread(target=verify_csv)
+        thread.start()
+
+
 
 class CSVStatusUpdateView(APIView):
     """
