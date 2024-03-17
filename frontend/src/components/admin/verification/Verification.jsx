@@ -8,6 +8,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import UploadCsv from './UploadCsv/UploadCsv';
+import ReactPopup from 'reactjs-popup';
 
 const Verification = () => {
 
@@ -36,47 +38,60 @@ const Verification = () => {
         { id: 'download', label: 'Download' },
     ];
 
+    const [showPopup, setShowPopup] = React.useState(false);
+
+    const handleUploadClick = () => {
+        setShowPopup(true);  // Open the popup
+    };
+
+    const handlePopupClose = () => {
+        setShowPopup(false); // Close the popup
+    };
+
     return (
         <div className='admin-verification-component'>
-        <div className='verif-header'> Your CSVs </div>
-        <div className='content'>
-            <div className='controls'>
-                <Button className='upload-button'>
-                    <span>Upload CSV</span>
-                </Button>
-            </div>
-            <div className='table-container'>
-                <TableContainer className='table-cont'>
-                    <Table className='table'>
-                        <TableHead className='table-header'>
-                            <TableRow className='header-row'>
-                                {columns.map((column) => (
-                                <TableCell key={column.id}>{column.label}</TableCell>
-                                ))}
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {sampleData.map((row) => (
-                                <TableRow className='table-row' key={row.id}>
+            <div className='verif-header'> Your CSVs </div>
+            <div className='content'>
+                <div className='controls'>
+                    <Button className='upload-button' onClick={handleUploadClick}>
+                        <span>Upload CSV</span>
+                    </Button>
+                </div>
+                <div className='table-container'>
+                    <TableContainer className='table-cont'>
+                        <Table className='table'>
+                            <TableHead className='table-header'>
+                                <TableRow className='header-row'>
                                     {columns.map((column) => (
-                                        <TableCell key={column.id}>{row[column.id]}</TableCell>
+                                    <TableCell key={column.id}>{column.label}</TableCell>
                                     ))}
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-                <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]} // Options for rows per page
-                    component="div"
-                    count={sampleData.length} 
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
+                            </TableHead>
+                            <TableBody>
+                                {sampleData.map((row) => (
+                                    <TableRow className='table-row' key={row.id}>
+                                        {columns.map((column) => (
+                                            <TableCell key={column.id}>{row[column.id]}</TableCell>
+                                        ))}
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[5, 10, 25]} // Options for rows per page
+                        component="div"
+                        count={sampleData.length} 
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onPageChange={handleChangePage}
+                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
+                </div>
             </div>
-        </div>
+            <ReactPopup open={showPopup} closeOnDocumentClick={true} onClose={handlePopupClose}>
+                <UploadCsv onClose={handlePopupClose} /> 
+            </ReactPopup>
         </div>
     );
 };
