@@ -160,7 +160,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                     "licenseNum": license_id,
                     "status": status
                 }
-                requests.post("GENERATE_ID_URL", data = body)
+                requests.post(GENERATE_ID_URL, data = body)
 
             base_res[i][STATUS_IND] = status
             print(f"row i={i} status: {status}")
