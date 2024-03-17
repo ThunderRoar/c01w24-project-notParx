@@ -16,12 +16,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Azure Storage settings
-AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING')
-AZURE_CONTAINER_NAME = 'csv-container'
-
-MONGO_URI = os.getenv('MONGO_URI')
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,6 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Azure Storage settings
+AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING')
+AZURE_CONTAINER_NAME = 'csv-container'
+MONGO_URI = os.getenv('MONGO_URI')
+
 SECRET_KEY = os.getenv('PRESCRIBER_SERVICE_URL_DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
