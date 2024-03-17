@@ -47,7 +47,7 @@ const UploadCsv = ({ onClose }) => {
                     onDragOver={handleDragOver}
                     onDrop={handleDrop}>
                     <UploadFileIcon className='upload-icon' />
-                    <p>Drop your files here or <a href="#" onClick={(e) => fileInputRef.current.click()}>browse</a></p>
+                    <p>Drop your files here or <a className='direct-upload' href="#" onClick={(e) => fileInputRef.current.click()}>browse</a></p>
                     <input type="file" ref={fileInputRef} style={{ display: 'none' }} 
                         onChange={(event) => setSelectedFile(event.target.files[0])} />
                 </div>
