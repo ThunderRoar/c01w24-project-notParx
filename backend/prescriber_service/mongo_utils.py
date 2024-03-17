@@ -25,24 +25,23 @@ def get_csv_metadata_by_new_file_name(new_file_name):
         print(e)
         return None
 
-
-def update_csv_status(csv_file_id, status, can_download=None, new_file_location=None):
-    """Update the status and potentially other fields of a document in MongoDB."""
+def update_csv_status(csv_file_id, status, new_file_location=None):
+    """Update the status and optionally the new file location of a document in MongoDB."""
     update_fields = {'current_status': status}
-    if can_download is not None:
-        update_fields['can_download'] = can_download
     if new_file_location:
         update_fields['new_file_location'] = new_file_location
-    
+
     try:
         csv_files_collection.update_one(
-            {'_id': ObjectId(csv_file_id)},  # Ensure _id is treated as an ObjectId
+            {'_id': ObjectId(csv_file_id)},
             {'$set': update_fields}
         )
         return True
     except Exception as e:
-        print(e)  # For debugging, consider using proper logging in production
+        print(e)
         return False
+
+
 
 def get_csv_status_by_id(csv_file_id):
     """Retrieve the status of a CSV file from MongoDB by its _id."""

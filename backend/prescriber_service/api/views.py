@@ -126,7 +126,6 @@ class CSVUploadView(APIView):
                 'file_name': file.name,
                 'date_uploaded': datetime.datetime.now(),
                 'current_status': 'In Progress',
-                'can_download': False,
                 'file_location_old': unique_file_name,  # Original file name
                 'new_file_location': "",  # Will be updated later (processed file name)
             }
@@ -167,48 +166,41 @@ class CSVUploadView(APIView):
 
 class CSVStatusUpdateView(APIView):
     """
-    API view to update the status of an uploaded CSV file.
+    API view to update the status of an uploaded CSV file based on the processing outcome.
     Expects JSON data containing 'old_file_name' and 'status'.
     'status' should be either 'processed' or 'not processed'.
     If 'processed', 'new_file_name' is expected.
     """
     def post(self, request, format=None):
-        # Extract data from the request body
         old_file_name = request.data.get('old_file_name')
         process_status = request.data.get('status')
         new_file_name = request.data.get('new_file_name', '')  # Default to empty string if not provided
 
-        # Validate the inputs
         if not old_file_name or not process_status:
             return Response({'error': 'Missing data.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Determine the process status
         if process_status not in ['processed', 'not processed']:
             return Response({'error': 'Invalid status provided.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Find the CSV metadata by the old file name
         csv_metadata = get_csv_metadata_by_old_file_name(old_file_name)
         if not csv_metadata:
             return Response({'error': 'CSV file not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        # Check if the file exists in Azure Blob Storage if 'processed'
         if process_status == 'processed':
             if not new_file_name or not blob_exists(new_file_name):
                 return Response({'error': 'New file does not exist in Azure Blob Storage.'}, status=status.HTTP_404_NOT_FOUND)
 
-            # Update the status in MongoDB to 'Uploaded' and set the new file location
+            # If processed successfully, update the document with the new file location and status 'Uploaded'
             update_result = update_csv_status(
                 csv_metadata['_id'],
                 'Uploaded',
-                can_download=True,
                 new_file_location=new_file_name
             )
         else:
-            # If 'not processed', just update the status in MongoDB to 'Failed'
+            # If not processed, update the document status to 'Failed'
             update_result = update_csv_status(
                 csv_metadata['_id'],
-                'Failed',
-                can_download=False
+                'Failed'
             )
 
         if update_result:
@@ -245,7 +237,7 @@ class BlobDownloadView(APIView):
         
         # Generate a download URL for the determined blob
         download_url = get_blob_download_url(blob_name_to_download)
-        
+
         if download_url:
             return Response({'download_url': download_url}, status=status.HTTP_200_OK)
         else:
