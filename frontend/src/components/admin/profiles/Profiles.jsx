@@ -15,12 +15,58 @@ import Tab from '@mui/material/Tab';
 const Profiles = () => {
     const [prescriberPage, setPrescriberPage] = React.useState(0);
     const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5); 
+    const [prescriberDBdata, setPrescriberDBdata] = React.useState([]);
+    const [patientDBdata, setPatientDBdata] = React.useState([]);
+
+    React.useEffect(() => {
+        const handleGetPrescribers = async () => {
+            try {
+                await fetch('https://notparx-prescriber-service.azurewebsites.net/api/getPrescriberProfiles/', {
+                    method: 'GET',
+                })
+                .then (async response => {
+                    if (response.ok) {
+                        let data = await response.json();
+                        console.log(data);
+                        setPrescriberDBdata(data);
+                    } else {
+                        console.log('Error fetching prescribers: ', response.statusText);
+                    }
+                })
+            } catch(error) {
+                console.error('Error fetching prescriber: ', error);
+            }
+        };
+
+        const handleGetPatients = async () => {
+            try {
+                await fetch('https://notparx-user-service.azurewebsites.net/api/getUserProfiles/', {
+                    method: 'GET',
+                })
+                .then (async response => {
+                    if (response.ok) {
+                        let data = await response.json();
+                        console.log(data);
+                        setPatientDBdata(data);
+                    } else {
+                        console.log('Error fetching patients: ', response.statusText);
+                    }
+                })
+            } catch(error) {
+                console.error('Error fetching patients: ', error);
+            }
+        };
+
+        handleGetPrescribers();
+        handleGetPatients();
+    }, [])
+
 
     const [patientPage, setPatientPage] = React.useState(0);
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
-
+    
     const [selectedTab, setSelectedTab] = React.useState(0); // State for selected tab
-
+    
     // Separate Data for Prescribers and Patients
     const prescriberData = [ 
         { 
@@ -40,10 +86,30 @@ const Profiles = () => {
         },
     ];
 
-    const columns = [ // Sample columns - add depending on what api returns
-        { id: 'code', label: 'Code' },
-        { id: 'first', label: 'First Name' },
-        { id: 'last', label: 'Last Name' },
+    const prescriberColumns = [ // Sample columns - add depending on what api returns
+        { id: 'provDocID', label: 'Code' },
+        { id: 'firstName', label: 'First Name' },
+        { id: 'lastName', label: 'Last Name' },
+        { id: 'email', label: 'Email' },
+        { id: 'address', label: 'Address' },
+        { id: 'city', label: 'City' },
+        { id: 'province', label: 'Prov' },
+        { id: 'college', label: 'Licensing College' },
+        { id: 'licenseNum', label: 'License#' },
+        // { id: '', label: 'Prescriptions'},
+        // { id: "prescriptionButton", label: ''}
+    ];
+
+    const patientColumns = [
+        { id: 'firstName', label: 'First Name' },
+        { id: 'lastName', label: 'Last Name' },
+        { id: 'email', label: 'Email' },
+        { id: 'address', label: 'Address' },
+        { id: 'city', label: 'City' },
+        { id: 'province', label: 'Prov' },
+        { id: 'language', label: 'Language' },
+        { id: 'dpass', label: 'Discovery Pass'},
+        { id: 'actionRequired', label: 'Action Required' }
     ];
 
     const handlePrescriberPageChange = (event, newPage) => {
@@ -81,29 +147,57 @@ const Profiles = () => {
                     <TableContainer className='table-cont'>
                         <Table className='table'>
                             <TableHead className='table-header'>
-                                <TableRow className='header-row'>
-                                    {columns.map((column) => (
+                                {selectedTab === 0 ? (
+                                    <TableRow className='header-row'>
+                                    {prescriberColumns.map((column) => (
                                         <TableCell key={column.id}>{column.label}</TableCell>
                                     ))}
-                                </TableRow>
+
+                                    <TableCell key = "prescriptionButton"> 
+                                    </TableCell>
+
+                                    </TableRow>
+                                ) : (
+                                    <TableRow className='header-row'>
+                                    {patientColumns.map((column) => (
+                                        <TableCell key={column.id}>{column.label}</TableCell>
+                                    ))}
+
+                                    <TableCell key = "prescriptionButton"> 
+                                    </TableCell>
+
+                                    </TableRow>
+                                )}
+                                
                             </TableHead>
                             <TableBody>
                                 {selectedTab === 0 ? (
-                                    prescriberData.map((row) => (
+                                    prescriberDBdata.slice(prescriberPage * prescriberRowsPerPage,
+                                        prescriberPage * prescriberRowsPerPage + prescriberRowsPerPage).map((row) => (
                                         <TableRow className='table-row' key={row.id}>
                                             {/* Render prescriber columns */}
-                                            {columns.map((column) => (
+                                            {prescriberColumns.map((column) => (
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
+                                            <TableCell key = "prescriptionButton"> 
+                                                <Button className='upload-button' onClick={() => {}}><span>View Prescriptions</span>
+                                                </Button>
+                                            </TableCell>
                                         </TableRow>
                                     ))
                                 ) : (
-                                    patientData.map((row) => (
+                                    patientDBdata.slice(patientPage * prescriberRowsPerPage,
+                                        patientPage * patientRowsPerPage + patientRowsPerPage).map((row) => (
                                         <TableRow className='table-row' key={row.id}>
                                             {/* Render patient columns */}
-                                            {columns.map((column) => (
+                                            {patientColumns.map((column) => (
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
+
+                                            <TableCell key = "prescriptionButton"> 
+                                                <Button className='upload-button' onClick={() => {}}><span>View Prescriptions</span>
+                                                </Button>
+                                            </TableCell>
                                         </TableRow>
                                     ))
                                 )}
@@ -114,7 +208,7 @@ const Profiles = () => {
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
-                            count={prescriberData.length} 
+                            count={prescriberDBdata.length} 
                             rowsPerPage={prescriberRowsPerPage}
                             page={prescriberPage}
                             onPageChange={handlePrescriberPageChange}
@@ -125,7 +219,7 @@ const Profiles = () => {
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
-                            count={patientData.length} 
+                            count={patientDBdata.length} 
                             rowsPerPage={patientRowsPerPage}
                             page={patientPage}
                             onPageChange={handlePatientPageChange}
