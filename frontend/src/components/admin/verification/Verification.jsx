@@ -10,11 +10,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import UploadCsv from './UploadCsv/UploadCsv';
 import ReactPopup from 'reactjs-popup';
+import axios from 'axios';
 
 const Verification = () => {
 
     const [rowsPerPage, setRowsPerPage] = React.useState(5); 
     const [page, setPage] = React.useState(0);
+    const [files, setFiles] = React.useState([]);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -25,11 +27,31 @@ const Verification = () => {
         setPage(0); // Reset page to 0 when rows per page change
     };
 
-    const sampleData = [
-        { id: 1, name: 'Item 1', date: '14 Feb 2024', status: 'Complete', download: true },
-        { id: 2, name: 'Item 2', date: '15 Feb 2024', status: 'Failed', download: true },
-        { id: 3, name: 'Item 3', date: '16 Feb 2024', status: 'In Progress', download: false },
-    ];
+    React.useEffect(() => {
+        axios.get("https://notparx-prescriber-service.azurewebsites.net/api/files/")
+            .then(res => {
+                const flist = res.data;
+                for (let i = 0; i < flist.length; i ++) {
+                    const f = flist[i];
+                    const file = {
+                        name: f["file_name"],
+                        date: f["date_uploaded"],
+                        status: f["current_status"],
+                        download: Boolean(f["new_file_location"]).toString()
+                    };
+                    setFiles(prevFiles => [...prevFiles, file]);
+                }
+            })
+            .catch(err => {
+
+            });
+    }, []);
+    
+    // const sampleData = [
+    //     { id: 1, name: 'Item 1', date: '14 Feb 2024', status: 'Complete', download: true },
+    //     { id: 2, name: 'Item 2', date: '15 Feb 2024', status: 'Failed', download: true },
+    //     { id: 3, name: 'Item 3', date: '16 Feb 2024', status: 'In Progress', download: false },
+    // ];
     
     const columns = [
         { id: 'name', label: 'Name' },
@@ -68,8 +90,8 @@ const Verification = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {sampleData.map((row) => (
-                                    <TableRow className='table-row' key={row.id}>
+                                {files.map((row, id) => (
+                                    <TableRow className='table-row' key={id}>
                                         {columns.map((column) => (
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
@@ -81,7 +103,7 @@ const Verification = () => {
                     <TablePagination
                         rowsPerPageOptions={[5, 10, 25]} // Options for rows per page
                         component="div"
-                        count={sampleData.length} 
+                        count={files.length} 
                         rowsPerPage={rowsPerPage}
                         page={page}
                         onPageChange={handleChangePage}
