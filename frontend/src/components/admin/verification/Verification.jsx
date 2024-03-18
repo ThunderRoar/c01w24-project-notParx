@@ -28,23 +28,32 @@ const Verification = () => {
     };
 
     React.useEffect(() => {
-        axios.get("https://notparx-prescriber-service.azurewebsites.net/api/files/")
-            .then(res => {
-                const flist = res.data;
-                for (let i = 0; i < flist.length; i ++) {
-                    const f = flist[i];
-                    const file = {
-                        name: f["file_name"],
-                        date: f["date_uploaded"],
-                        status: f["current_status"],
-                        download: Boolean(f["new_file_location"]).toString()
-                    };
-                    setFiles(prevFiles => [...prevFiles, file]);
-                }
-            })
-            .catch(err => {
+        const getFiles = async () => {
+            axios.get("https://notparx-prescriber-service.azurewebsites.net/api/files/")
+                .then(res => {
+                    const flist = res.data;
+                    const newFiles = [];
+                    for (let f of flist) {
+                        const file = {
+                            name: f["file_name"],
+                            date: f["date_uploaded"],
+                            status: f["current_status"],
+                            download: Boolean(f["new_file_location"]).toString()
+                        };
+                        newFiles.push(file);
+                    }
+                    setFiles(newFiles);
+                })
+                .catch(err => {
+                    console.error('Error fetching file list: ', err);
+                });
+        };
+        
+        getFiles();
 
-            });
+        return () => {
+            setFiles([]);
+        };
     }, []);
     
     // const sampleData = [
