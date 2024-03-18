@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-d!jhf-6ve8b06c*+743it4q_wi+ygd0z6=sywm=g2(5-45_l#d"
+# Azure Storage settings
+AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING')
+AZURE_CONTAINER_NAME = 'csv-container'
+MONGO_URI = os.getenv('MONGO_URI')
+
+SECRET_KEY = os.getenv('USER_SERVICE_URL_DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['notparx-user-service.azurewebsites.net', 'localhost']
+ALLOWED_HOSTS = ['notparx-user-service.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -74,12 +85,25 @@ WSGI_APPLICATION = "user_service.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'NotParxDB',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://NotParxUsername:NotParxPassword123@atlascluster.fo3q3yw.mongodb.net/',  # Specify the MongoDB host here
+            'port': 27017,  # Default MongoDB port
+        }
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
