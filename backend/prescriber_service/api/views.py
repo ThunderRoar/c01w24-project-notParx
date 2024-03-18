@@ -2,6 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
+from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser
+
 from .models import *
 from .serializers import *
 from pymongo import MongoClient
@@ -9,7 +12,7 @@ import datetime
 from .models import CSVFile
 from .serializers import CSVFileSerializer
 from azure_utils import upload_file_to_blob, blob_exists, list_blobs_in_container, get_blob_download_url
-from mongo_utils import insert_csv_file_metadata, update_csv_status, get_csv_status_by_id, get_all_csv_metadata, get_csv_metadata_by_new_file_name
+from mongo_utils import insert_csv_file_metadata, update_csv_status, get_csv_status_by_id, get_all_csv_metadata, get_csv_metadata_by_new_file_name, get_csv_metadata_by_old_file_name, get_csv_metadata_by_id
 import uuid
 from django.conf import settings
 import requests
@@ -123,9 +126,8 @@ class CSVUploadView(APIView):
                 'file_name': file.name,
                 'date_uploaded': datetime.datetime.now(),
                 'current_status': 'In Progress',
-                'can_download': False,
-                'file_location_old': file.name,  # Original file name
-                'new_file_location': unique_file_name,  # Azure Blob Storage unique file name
+                'file_location_old': unique_file_name,  # Original file name
+                'new_file_location': "",  # Will be updated later (processed file name)
             }
 
             # Insert file metadata into MongoDB
@@ -145,6 +147,7 @@ class CSVUploadView(APIView):
             return Response(response_data, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
+        
     def initiate_verification_process(self, csv_name):
         """Starts an asynchronous GET request to trigger the verification process."""
         def verify_csv():
@@ -163,29 +166,52 @@ class CSVUploadView(APIView):
 
 class CSVStatusUpdateView(APIView):
     """
-    API view to update the status of an uploaded CSV file.
-    This view expects a unique Azure Blob Storage file name (new_file_name),
-    not the MongoDB _id.
+    API view to update the status of an uploaded CSV file based on the processing outcome.
+    Expects JSON data containing 'old_file_name' and 'status'.
+    'status' should be either 'processed' or 'not processed'.
+    If 'processed', 'new_file_name' is expected.
     """
-    def post(self, request, new_file_name, format=None):
-        # Find the CSV metadata by the new_file_name
-        csv_metadata = get_csv_metadata_by_new_file_name(new_file_name)
+    def post(self, request, format=None):
+        old_file_name = request.data.get('old_file_name')
+        process_status = request.data.get('status')
+        new_file_name = request.data.get('new_file_name', '')  # Default to empty string if not provided
+
+        if not old_file_name or not process_status:
+            return Response({'error': 'Missing data.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if process_status not in ['processed', 'not processed']:
+            return Response({'error': 'Invalid status provided.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        csv_metadata = get_csv_metadata_by_old_file_name(old_file_name)
         if not csv_metadata:
             return Response({'error': 'CSV file not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        # Check if the file exists in Azure Blob Storage
-        if blob_exists(new_file_name):
-            # Update the status in MongoDB if the file exists
-            # Use the MongoDB _id to update the status
-            update_csv_status(csv_metadata['_id'], 'Uploaded')
-            return Response({'status': 'Uploaded'}, status=status.HTTP_200_OK)
+        if process_status == 'processed':
+            if not new_file_name or not blob_exists(new_file_name):
+                return Response({'error': 'New file does not exist in Azure Blob Storage.'}, status=status.HTTP_404_NOT_FOUND)
+
+            # If processed successfully, update the document with the new file location and status 'Uploaded'
+            update_result = update_csv_status(
+                csv_metadata['_id'],
+                'Uploaded',
+                new_file_location=new_file_name
+            )
         else:
-            return Response({'status': 'Not uploaded'}, status=status.HTTP_404_NOT_FOUND)
+            # If not processed, update the document status to 'Failed'
+            update_result = update_csv_status(
+                csv_metadata['_id'],
+                'Failed'
+            )
+
+        if update_result:
+            return Response({'status': 'Update successful'}, status=status.HTTP_200_OK)
+        else:
+            return Response({'status': 'Update failed'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class CSVFileStatusView(APIView):
     """
-    API view to check the status of a CSV file stored in MongoDB.
+    API view to check the status of a CSV file stored in MongoDB using MongoDB's _id.
     """
     def get(self, request, csv_file_id, format=None):
         status = get_csv_status_by_id(csv_file_id)
@@ -197,10 +223,21 @@ class CSVFileStatusView(APIView):
 
 class BlobDownloadView(APIView):
     """
-    API view to get the download URL of a file stored in Azure Blob Storage.
+    API view to download a file stored in Azure Blob Storage.
+    Expects MongoDB _id to determine the correct file to download.
     """
-    def get(self, request, blob_name, format=None):
-        download_url = get_blob_download_url(blob_name)
+    def get(self, request, csv_file_id, format=None):
+        # Retrieve the file metadata from MongoDB using its _id
+        csv_metadata = get_csv_metadata_by_id(csv_file_id)
+        if not csv_metadata:
+            return Response({'error': 'File not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Determine which file to download: new file if available and exists, otherwise old file
+        blob_name_to_download = csv_metadata.get('new_file_location') if csv_metadata.get('new_file_location') and blob_exists(csv_metadata.get('new_file_location')) else csv_metadata.get('file_location_old')
+        
+        # Generate a download URL for the determined blob
+        download_url = get_blob_download_url(blob_name_to_download)
+
         if download_url:
             return Response({'download_url': download_url}, status=status.HTTP_200_OK)
         else:
