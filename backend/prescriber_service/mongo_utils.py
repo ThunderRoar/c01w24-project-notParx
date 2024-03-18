@@ -5,11 +5,11 @@ import os
 
 # MONGO_URI = os.environ.get("MONGO_URI")
 MONGO_URI = settings.MONGO_URI
-DATABASE_NAME = "CSV_DB"
+DATABASE_NAME = "NotParxDB"
 
 client = MongoClient(MONGO_URI)
 db = client[DATABASE_NAME]
-csv_files_collection = db["CSV_collections"]
+csv_files_collection = db["api_csvfile"]
 
 def insert_csv_file_metadata(document):
     """Insert a new document into the MongoDB collection."""

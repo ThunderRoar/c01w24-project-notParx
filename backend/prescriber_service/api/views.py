@@ -135,18 +135,15 @@ class CSVUploadView(APIView):
             # Insert file metadata into MongoDB
             mongo_db_id = insert_csv_file_metadata(file_metadata)
 
-            # Optionally, create a Django model instance
-            csv_file = CSVFile(**file_metadata)
-            csv_file.save()
-
             # Trigger the Azure function asynchronously
             self.initiate_verification_process(unique_file_name)
 
             # Prepare response
-            serializer = CSVFileSerializer(csv_file)
-            response_data = serializer.data
-            response_data['mongo_id'] = str(mongo_db_id)  # Include MongoDB ID in the response
-            return Response(response_data, status=status.HTTP_201_CREATED)
+            # serializer = CSVFileSerializer(csv_file)
+            # response_data = serializer.data
+            # response_data['mongo_id'] = str(mongo_db_id)  # Include MongoDB ID in the response
+            # return Response(response_data, status=status.HTTP_201_CREATED)
+            return Response({"mongoid":str(mongo_db_id)}, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
         
