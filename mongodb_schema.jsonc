@@ -53,8 +53,9 @@
             "FileName": "String", // Name of the CSV file as saved in the system.
             "DateUploaded": "Date", // The date and time when the CSV file was uploaded to the system.
             "CurrentStatus": "String", // The current status of the CSV file processing, e.g., 'Complete', 'InProgress'.
+            "CanDownload": "Boolean", // A boolean flag indicating whether the CSV file can be downloaded by the user.
             "FileLocationOld": "String", // The old location of the CSV file in the database storage, linked to the file ID.
-            "newFileStatus": "String" // The new location of the CSV file in the database storage which is updated with status
+            "FileLocationWithStatus": "String" // The location of the CSV file along with its status in the database storage, linked to the file ID.
         }
         // More CSV file objects
     },
