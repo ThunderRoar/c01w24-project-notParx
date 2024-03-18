@@ -64,7 +64,7 @@ def check_status_on_register(driver, profile_url):
 
 # Get status for person in table with first and last name
 # Search parameter is 'Last Name', but we need 'First Name' to verify a specific person
-def getStatus(firstName: str, lastName: str):
+def get_status(firstName: str, lastName: str, licenseNumber = ""):
     try: 
         driver = initialize_webdriver()
         submit_search_form(driver, lastName)
@@ -72,7 +72,7 @@ def getStatus(firstName: str, lastName: str):
 
         status = "NOT FOUND"
         for doctor in doctors_data:
-            if doctor['FirstName'] == firstName and doctor['LastName'] == lastName:
+            if firstName in doctor['FirstName'] and doctor['LastName'] == lastName:
                 status = check_status_on_register(driver, doctor['ProfileLink'])
                 break
         return status
@@ -95,7 +95,8 @@ def main():
         driver.quit()
 
 if __name__ == "__main__":
-    print(getStatus('Shreya', 'Moodley')) # INACTIVE
-    print(getStatus('Brittni', 'Webster')) # VERIFIED
-    print(getStatus('abc123', 'abc123')) # NOT FOUND
+    print(get_status('Ben', 'Thistlewood')) # INACTIVE
+    # print(get_status('Shreya', 'Moodley')) # INACTIVE
+    # print(get_status('Brittni', 'Webster')) # VERIFIED
+    # print(get_status('abc123', 'abc123')) # NOT FOUND
     # main()

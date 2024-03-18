@@ -42,8 +42,8 @@ def parse_prescriber_page(soup, last_name: str, first_name: str):
     # Only reachable if there is no information on prescriber status
     return "ERROR"
 
-## Return prescriber status given last name, first name, and license number in the College of Physicians and Surgeons of Ontario
-def get_status(last_name: str, first_name: str, number: str):
+## Return prescriber status given first name, last name, and license number in the College of Physicians and Surgeons of Ontario
+def get_status(first_name: str, last_name: str, number: str):
     ## Generate session
     url = "https://doctors.cpso.on.ca/?refine=true&search=quick"
     
@@ -102,6 +102,6 @@ def get_status(last_name: str, first_name: str, number: str):
 
 if __name__ == "__main__":
     # Sanity tests
-    print(get_status("Edwards", "Bonnie", 30722)) # 'VERIFIED'
-    print(get_status("Aaen", "Gregory", 89942)) # 'INACTIVE'    
-    print(get_status("Pins", "Gregory", 54111)) # 'NOT FOUND' 
+    print(get_status("Bonnie", "Edwards", 30722)) # 'VERIFIED'
+    print(get_status("Gregory", "Aaen", 89942)) # 'INACTIVE'    
+    print(get_status("Gregory", "Pins", 54111)) # 'NOT FOUND' 

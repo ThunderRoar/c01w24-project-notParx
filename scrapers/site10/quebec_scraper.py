@@ -8,12 +8,15 @@ from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 
-def getStatus(last_name: str, number: str):
-    url = 'https://www.cmq.org/fr/bottin/medecins?number=' + number + '&lastname=' + last_name
+def get_status(first_name:str, last_name: str, number: str):
+    while len(number) < 5:
+        number = "0" + number
+    url = 'https://www.cmq.org/fr/bottin/medecins?number=' + number + '&lastname=' + last_name + "&firstname=" + first_name
 
     try:
         options = Options()
         options.add_argument("--headless")
+        options.add_argument('--log-level=3')
         options.add_argument("window-size=1920,1080")
         service = Service(ChromeDriverManager().install())
 
@@ -40,8 +43,11 @@ def getStatus(last_name: str, number: str):
         driver.quit()
 
 if __name__ == "__main__":
-     print(getStatus(last_name='Lam', number='96332')) # Verified
-     print(getStatus(last_name='Li', number='15332')) # Verified
-     print(getStatus(last_name='Auger Labadie', number='27959')) # Not Found
-     print(getStatus(last_name='Li', number='15333')) # Not Found
-     print(getStatus(last_name='Shalaby', number='77587')) # Inactive
+    print(get_status(first_name = "Ali", last_name='Lopez Sarmiento', number='4426')) # Verified
+    print(get_status(first_name = "Alo", last_name='Lopez Sarmiento', number='4426')) # Not found
+    print(get_status(first_name = "Alexia", last_name='Lam', number='96332')) # Not found
+    print(get_status(first_name = "Annie", last_name='Li', number='15332')) # Verified
+    print(get_status(first_name = "B", last_name='Li', number='15332')) # Not found
+    #  print(get_status(first_name = "Alexia", last_name='Auger Labadie', number='27959')) # Not Found
+    #  print(get_status(first_name = "Alexia", last_name='Li', number='15333')) # Not Found
+    print(get_status(first_name = "", last_name='Shalaby', number='77587')) # Inactive

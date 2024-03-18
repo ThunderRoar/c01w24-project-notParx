@@ -47,14 +47,14 @@ class OntarioTests(unittest.TestCase):
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_verified(self, mock_get, mock_post):
-        self.assertEqual(site2.get_status("Edwards", "Bonnie", 30722), 'VERIFIED')
+        self.assertEqual(site2.get_status("Bonnie", "Edwards", 30722), 'VERIFIED')
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_inactive(self, mock_get, mock_post):
-        self.assertEqual(site2.get_status("Aaen", "Gregory", 89942), 'INACTIVE')    
+        self.assertEqual(site2.get_status("Gregory", "Aaen", 89942), 'INACTIVE')    
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
     @mock.patch('requests.post', side_effect=mocked_requests_post)
     def test_not_found(self, mock_get, mock_post):
-        self.assertEqual(site2.get_status("Pins", "Gregory", 54111), 'NOT FOUND')   
+        self.assertEqual(site2.get_status("Gregory", "Pins", 54111), 'NOT FOUND')   

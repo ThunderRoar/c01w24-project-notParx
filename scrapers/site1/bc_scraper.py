@@ -13,7 +13,7 @@ def confirm_user(word1, word2, text):
 def confirm_status(text):
     return "not practising" in text.lower()
 
-def get_user_info(firstName: str, lastName: str, licence_num=""):
+def get_status(firstName: str, lastName: str, licence_num=""):
     user_status = False
     browser = None
 
@@ -69,12 +69,12 @@ def get_user_info(firstName: str, lastName: str, licence_num=""):
 
 
 if __name__ == "__main__":
-    print(get_user_info("Amanpreet", "Gill")) # VERIFIED
+    print(get_status("Amanpreet", "Gill")) # VERIFIED
     print()
-    print(get_user_info("Aalto", "Anu")) # NOT FOUND 
+    print(get_status("Aalto", "Anu")) # NOT FOUND 
     print()
-    print(get_user_info("Davey", "Gin")) # VERFIED
+    print(get_status("Davey", "Gin")) # VERFIED
     print()
-    print(get_user_info("Ian", "Gillespie")) # VERFIED
+    print(get_status("Ian", "Gillespie")) # VERFIED
     print()
-    print(get_user_info("Anthony", "Keen")) # NOT FOUND
+    print(get_status("Anthony", "Keen")) # NOT FOUND

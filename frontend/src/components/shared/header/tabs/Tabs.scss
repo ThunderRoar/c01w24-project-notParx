@@ -1,0 +1,10 @@
+.tab {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.5rem;
+    color: #000000;
+    text-decoration: none;
+    &.active {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,30 @@
+FROM python:3.11-alpine AS prescriptionservice
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Expose port 8002
+EXPOSE 8002
+
+# Set the working directory inside the container
+WORKDIR /usr/src/prescription_service 
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Copy requirements.txt and install dependencies
+COPY ./backend/prescription_service/requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy entrypoint.sh script
+COPY ./backend/prescription_service/entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Copy the rest of the application code
+COPY ./backend/prescription_service /usr/src/prescription_service
+
+# Set the entrypoint script to be executable
+RUN chmod +x entrypoint.sh
+
+# Set the entrypoint for the container
+ENTRYPOINT ["./entrypoint.sh"]
