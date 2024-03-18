@@ -114,6 +114,8 @@ class CreateProviderCode(APIView):
     
 
 class CSVUploadView(APIView):
+    permission_classes = [AllowAny]
+
     """API view to handle CSV file uploads."""
     def post(self, request, format=None):
         file = request.FILES.get('file')
@@ -133,18 +135,15 @@ class CSVUploadView(APIView):
             # Insert file metadata into MongoDB
             mongo_db_id = insert_csv_file_metadata(file_metadata)
 
-            # Optionally, create a Django model instance
-            csv_file = CSVFile(**file_metadata)
-            csv_file.save()
-
             # Trigger the Azure function asynchronously
             self.initiate_verification_process(unique_file_name)
 
             # Prepare response
-            serializer = CSVFileSerializer(csv_file)
-            response_data = serializer.data
-            response_data['mongo_id'] = str(mongo_db_id)  # Include MongoDB ID in the response
-            return Response(response_data, status=status.HTTP_201_CREATED)
+            # serializer = CSVFileSerializer(csv_file)
+            # response_data = serializer.data
+            # response_data['mongo_id'] = str(mongo_db_id)  # Include MongoDB ID in the response
+            # return Response(response_data, status=status.HTTP_201_CREATED)
+            return Response({"mongoid":str(mongo_db_id)}, status=status.HTTP_201_CREATED)
         else:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
         
@@ -165,6 +164,8 @@ class CSVUploadView(APIView):
 
 
 class CSVStatusUpdateView(APIView):
+    permission_classes = [AllowAny]
+
     """
     API view to update the status of an uploaded CSV file based on the processing outcome.
     Expects JSON data containing 'old_file_name' and 'status'.
@@ -210,6 +211,8 @@ class CSVStatusUpdateView(APIView):
 
 
 class CSVFileStatusView(APIView):
+    permission_classes = [AllowAny]
+
     """
     API view to check the status of a CSV file stored in MongoDB using MongoDB's _id.
     """
@@ -222,6 +225,8 @@ class CSVFileStatusView(APIView):
         
 
 class BlobDownloadView(APIView):
+    permission_classes = [AllowAny]
+
     """
     API view to download a file stored in Azure Blob Storage.
     Expects MongoDB _id to determine the correct file to download.
@@ -245,6 +250,8 @@ class BlobDownloadView(APIView):
         
 
 class CSVFileListView(APIView):
+    permission_classes = [AllowAny]
+
     """
     API view to list all CSV files stored.
     """
