@@ -15,12 +15,37 @@ import Tab from '@mui/material/Tab';
 const Profiles = () => {
     const [prescriberPage, setPrescriberPage] = React.useState(0);
     const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5); 
+    const [prescriberDBdata, setPrescriberDBdata] = React.useState([]);
+
+    React.useEffect(() => {
+        const handleGetPrescribers = async () => {
+            try {
+                await fetch('https://notparx-prescriber-service.azurewebsites.net/api/getPrescriberProfiles/', {
+                    method: 'GET',
+                })
+                .then (async response => {
+                    if (response.ok) {
+                        let data = await response.json();
+                        console.log(data);
+                        setPrescriberDBdata(data);
+                    } else {
+                        console.log('Error fetching prescribers: ', response.statusText);
+                    }
+                })
+            } catch(error) {
+                console.error('Error fetching prescriber: ', error);
+            }
+        };
+
+        handleGetPrescribers()
+    }, [])
+
 
     const [patientPage, setPatientPage] = React.useState(0);
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
-
+    
     const [selectedTab, setSelectedTab] = React.useState(0); // State for selected tab
-
+    
     // Separate Data for Prescribers and Patients
     const prescriberData = [ 
         { 
@@ -41,9 +66,16 @@ const Profiles = () => {
     ];
 
     const columns = [ // Sample columns - add depending on what api returns
-        { id: 'code', label: 'Code' },
-        { id: 'first', label: 'First Name' },
-        { id: 'last', label: 'Last Name' },
+        { id: 'provDocID', label: 'Code' },
+        { id: 'firstName', label: 'First Name' },
+        { id: 'lastName', label: 'Last Name' },
+        { id: 'email', label: 'Email' },
+        { id: 'address', label: 'Address' },
+        { id: 'city', label: 'City' },
+        { id: 'province', label: 'Prov' },
+        { id: 'college', label: 'Licensing College' },
+        { id: 'licenseNum', label: 'License #' },
+        { id: '', label: 'Prescriptions'}
     ];
 
     const handlePrescriberPageChange = (event, newPage) => {
@@ -89,7 +121,7 @@ const Profiles = () => {
                             </TableHead>
                             <TableBody>
                                 {selectedTab === 0 ? (
-                                    prescriberData.map((row) => (
+                                    prescriberDBdata.map((row) => (
                                         <TableRow className='table-row' key={row.id}>
                                             {/* Render prescriber columns */}
                                             {columns.map((column) => (
@@ -114,7 +146,7 @@ const Profiles = () => {
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
-                            count={prescriberData.length} 
+                            count={prescriberDBdata.length} 
                             rowsPerPage={prescriberRowsPerPage}
                             page={prescriberPage}
                             onPageChange={handlePrescriberPageChange}
