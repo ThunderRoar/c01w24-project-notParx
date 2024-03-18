@@ -55,7 +55,7 @@
             "CurrentStatus": "String", // The current status of the CSV file processing, e.g., 'Complete', 'InProgress'.
             "CanDownload": "Boolean", // A boolean flag indicating whether the CSV file can be downloaded by the user.
             "FileLocationOld": "String", // The old location of the CSV file in the database storage, linked to the file ID.
-            "FileLocationWithStatus": "String" // The location of the CSV file along with its status in the database storage, linked to the file ID.
+            "newFileLocation": "String" // The location of the CSV file along with its status in the database storage, linked to the file ID.
         }
         // More CSV file objects
     },
