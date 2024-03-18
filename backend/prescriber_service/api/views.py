@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -111,6 +112,38 @@ class CreateProviderCode(APIView):
 
     except Exception as e:
       return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class GetPrescriberProfiles(APIView):
+  permission_classes = [AllowAny]
+    
+  def get(self, request, format=None):
+    if (request.method == 'GET'):        
+      client = MongoClient(settings.MONGO_URI)
+      db = client['NotParxDB']
+      collection = db['api_prescriber']
+      data = collection.find()
+
+      response = []
+      for i in data:
+        response.append({
+            "firstName": i.get("firstName"),
+            "lastName": i.get("lastName"),
+            "email": i.get("email"),
+            "province": i.get("province"),
+            "college": i.get("college"),
+            "licenseNum": i.get("licenseNum"),
+            "status": i.get("status"),
+            "password": i.get("password"),
+            "provDocID": i.get("provDocID"),
+            "prescriptions": i.get("prescriptions"),
+            "language": i.get("language"),
+            "city": i.get("city"),
+            "address": i.get("address")
+        })
+      return JsonResponse(response, safe=False)
+    
+    return Response({"error": "Error occured"}, status=status.HTTP_400_BAD_REQUEST)
+
     
 
 class CSVUploadView(APIView):
