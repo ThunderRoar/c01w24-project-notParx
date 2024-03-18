@@ -37,8 +37,8 @@ const Verification = () => {
                         const file = {
                             name: f["file_name"],
                             date: f["date_uploaded"],
-                            status: f["current_status"],
-                            download: Boolean(f["new_file_location"]).toString()
+                            status: f["current_status"] === "Uploaded" ? "Processed" : f["current_status"] ,
+                            _id: f["_id"]
                         };
                         newFiles.push(file);
                     }
@@ -66,7 +66,6 @@ const Verification = () => {
         { id: 'name', label: 'Name' },
         { id: 'date', label: 'Date Uploaded' },
         { id: 'status', label: 'Status' },
-        { id: 'download', label: 'Download' },
     ];
 
     const [showPopup, setShowPopup] = React.useState(false);
@@ -78,6 +77,41 @@ const Verification = () => {
     const handlePopupClose = () => {
         setShowPopup(false); // Close the popup
     };
+
+    // Download a particular CSV file from a row
+    const handleDownloadCSV = (fileId, originalName) => {
+        axios.get("https://notparx-prescriber-service.azurewebsites.net/api/download/" + fileId)
+                .then(res => {
+                    if (res.status === 200) {
+                        const data = res.data;
+                        console.log(data["download_url"]);
+
+                        // Download file from azure URL and force browser to save it to downloads.
+                        fetch(data["download_url"], {method: 'GET'}).then(res2 =>
+                            res2.blob()).then( blob => {
+                                const url = window.URL.createObjectURL(
+                                    new Blob([blob]),
+                                );
+                                // Create a temporary link elem, click it, and cleanup
+                                const link = document.createElement('a');
+                                link.href = url;
+                                link.setAttribute(
+                                    'download',
+                                    originalName,
+                                );
+                                document.body.appendChild(link);
+                                link.click();
+                                link.parentNode.removeChild(link);
+                            })
+                    }
+                    else {
+                        console.error('Error fetching file: ', res.statusText);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching file: ', err);
+                });
+    }
 
     return (
         <div className='admin-verification-component'>
@@ -96,14 +130,21 @@ const Verification = () => {
                                     {columns.map((column) => (
                                     <TableCell key={column.id}>{column.label}</TableCell>
                                     ))}
+                                    <TableCell key={"downloadButton"}></TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {files.map((row, id) => (
+                                {files.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, id) => (
                                     <TableRow className='table-row' key={id}>
                                         {columns.map((column) => (
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
+                                        <TableCell key={"downloadButton"}>
+                                        <Button className='upload-button' onClick={() => handleDownloadCSV(row["_id"], row["name"])}>
+                                            <span>Download CSV</span>
+                                        </Button>
+                                        </TableCell>
+
                                     </TableRow>
                                 ))}
                             </TableBody>
