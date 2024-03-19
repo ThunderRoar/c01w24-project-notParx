@@ -5,9 +5,11 @@
 name: Build and deploy Python project to Azure Function App - C01notParx-verifer
 
 on:
-  push:
-    branches: [main, dev, NOT-17/verifier]
   workflow_dispatch:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [dev]
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'scrapers' # set this to the path to your web app project, defaults to the repository root
