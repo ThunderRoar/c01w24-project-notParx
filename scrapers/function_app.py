@@ -99,6 +99,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     LICENSING_IND=-1
     COLLEGE_IND=-1
     STATUS_IND=-1
+    PRESCRIBER_IND=-1
     try:
         for i in range(len(base[0])):
             col = base[0][i]
@@ -114,6 +115,8 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                 COLLEGE_IND = i
             if col is not None and col.strip() == "Status":
                 STATUS_IND = i
+            if col is not None and col.strip() == "Code":
+                PRESCRIBER_IND = i
     except:
         logging.info('Failed to parse csv headers')
         update_job_failed(blob_name)
@@ -131,9 +134,15 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     
     base_res = []
     base_res.append(base[0][:])
+
+    # Optional columns that may need to be added if not already by the uploader
     if STATUS_IND == -1:
         base_res[0].append("Status")
         STATUS_IND = len(base_res[0]) - 1
+    
+    if PRESCRIBER_IND == -1:
+        base_res[0].append("Code")
+        PRESCRIBER_IND = len(base_res[0]) - 1
     
     scraping_strategy = {
         "BC": site1,
@@ -152,11 +161,14 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     for i in range(1,len(base)):
         try:
             base_res.append(base[i][:])
-            while len(base_res[i]) <  max([FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND, STATUS_IND]) + 1:
+            while len(base_res[i]) <  max([FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND, STATUS_IND, PRESCRIBER_IND]) + 1:
                 base_res[i].append("")
             
             # If row already has something in status column, don't reprocess it
             if base_res[i][STATUS_IND] != "":
+                continue
+            
+            if base_res[i][PRESCRIBER_IND] != "":
                 continue
 
             first_name = base_res[i][FIRST_NAME_IND].strip()
@@ -165,6 +177,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
             license_id = base_res[i][LICENSING_IND].strip()
             college = base_res[i][COLLEGE_IND].strip()
             status = "ERROR"
+            prescriber_id = ""
 
             # Verify row
             if province not in scraping_strategy:
@@ -182,16 +195,28 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                     "licenseNum": license_id,
                     "status": status
                 }
-                requests.post(GENERATE_ID_URL, data = body)
+                response_prescriber_id = requests.post(GENERATE_ID_URL, data = body)
+
+                if response_prescriber_id.ok:
+                    prescriber_id = response_prescriber_id.json()['provDocID']
+                    base_res[i][PRESCRIBER_IND] = prescriber_id
+                    print(f"row i={i}       status: {status}      unique_prescriber_id: {prescriber_id}")
 
             base_res[i][STATUS_IND] = status
+            # Debugging print of status
             print(f"row i={i} status: {status}")
+
 
         except Exception as e:
             logging.info(f'Error during row i={i}. Error: {str(e)}')
+            
             while len(base_res[i]) < STATUS_IND + 1:
                 base_res[i].append("")
             base_res[i][STATUS_IND] = "ERROR"
+
+            while len(base_res[i]) < PRESCRIBER_IND + 1:
+                base_res[i].append("")
+            base_res[i][PRESCRIBER_IND] = ""
 
     
     # Job complete - upload new csv
