@@ -6,9 +6,9 @@ import os
 
 # Define a class that inherits from FPDF which is used to create the PDF
 class PDF(FPDF):       
-    def add_content(self, name, activity_plan, prescription_code, patient_initials):
+    def add_content(self, name, activity_plan, prescriber_code, patient_initials):
         # Store data for use in footer
-        self.prescription_code = prescription_code
+        self.prescriber_code = prescriber_code
         self.current_date = datetime.now().strftime('%y%m%d')
         self.patient_initials = patient_initials
         
@@ -38,7 +38,7 @@ class PDF(FPDF):
         box_width = page_width / 3  # Divide the page width by three for the three boxes
 
         # Draw the first box for the prescription number
-        self.cell(w=box_width, h=10, text=f'Prescription #: {self.prescription_code}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
+        self.cell(w=box_width, h=10, text=f'Prescriber #: {self.prescriber_code}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
 
         # Draw the second box for the date
         self.cell(w=box_width, h=10, text=f'Date: {self.current_date}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
@@ -50,7 +50,7 @@ class PDF(FPDF):
 
 
 # Function to create the PDF document
-def create_pdf(name, activity_plan, prescription_code, patient_initials):
+def create_pdf(name, activity_plan, prescriber_code, patient_initials):
     # Create an instance of the PDF class
     pdf = PDF()
     
@@ -62,10 +62,7 @@ def create_pdf(name, activity_plan, prescription_code, patient_initials):
     pdf.set_author('Health Professional')
 
     # Add the content to the PDF
-    pdf.add_content(name, activity_plan, prescription_code, patient_initials)
+    pdf.add_content(name, activity_plan, prescriber_code, patient_initials)
     return pdf
-    # Save the PDF to the current directory
-    pdf_file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/prescription_service/prescription.pdf' # Path to the PDF file
-    pdf.output(pdf_file_path)
     
 # create_pdf('Shreyas Rao', 'Play cricket with Alankrit', 'ABC123', 'SR')
