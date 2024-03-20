@@ -2,6 +2,10 @@ import './LoginBox.scss';
 import * as React from 'react';
 import loginImage from '../../resources/img/LoginText.png';
 import { useNavigate } from 'react-router-dom';
+import "@fontsource/ubuntu";
+import "@fontsource/ubuntu/400.css";
+import "@fontsource/ubuntu/400-italic.css";
+import { FaRegCircle, FaCircle } from "react-icons/fa";
 
 const LoginBox = () => {
 
@@ -16,8 +20,9 @@ const LoginBox = () => {
     const [city, setCity] = React.useState('');
     const [address, setAddress] = React.useState('');
     const [provDocID, setProvDocID] = React.useState('');
-    const [province, setProvince] = React.useState('')
-
+    const [province, setProvince] = React.useState('');
+    const [boxHeight, setBoxHeight] = React.useState(400);
+    const [boxWidth, setBoxWidth] = React.useState(350);
 
     const login = 'login'
     const signUp = 'signUp'
@@ -28,13 +33,32 @@ const LoginBox = () => {
     const navigate = useNavigate()
 
     const typeSwitchClicked = (buttonId) => {
+        if (currentView === signUp) {
+            if (buttonId === prescriber) {
+                setBoxHeight(650)
+            } else {
+                setBoxHeight(710)
+            }
+        }
         setActiveButton(buttonId);
     };
 
     const switchViewClicked = (buttonID) => {
-        if (buttonID === 'login') {
+        if (activeButton === admin) {
+            setActiveButton(patient)
+        }
+
+        if (buttonID === 'login') { // Sign up view
+            if (activeButton === prescriber) {
+                setBoxHeight(650)
+            } else {
+                setBoxHeight(710)
+            }
+            setBoxWidth(350)
             setCurrentView('signUp')
-        } else {
+        } else { // Login View
+            setBoxHeight(400)
+            setBoxWidth(350)
             setCurrentView('login')
         }
     }
@@ -173,7 +197,7 @@ const LoginBox = () => {
             </div>
             <div className='login-component'>
                     <div className='content'>
-                        <div className='table-container'>
+                        <div className='table-container' style={{height: `${boxHeight}px`, width: `${boxWidth}px`}}>
                             {currentView === login && (<h2>Log in</h2>)}
                             {currentView === signUp && (<h2>Sign Up</h2>)}
                             <p>Who are you?</p>
@@ -181,18 +205,30 @@ const LoginBox = () => {
                                 <button
                                     className={`type-button ${activeButton === patient ? 'active' : ''}`}
                                     onClick={() => typeSwitchClicked(patient)} >
-                                    Patient
+                                        <div className='row'>
+                                            {activeButton === patient && (<FaRegCircle strokeWidth={35} size={15} color="white" />)}
+                                            {activeButton !== patient && (<FaCircle size={15} color="#E3EAE1" />)}
+                                            <text style={{marginLeft: `5px`}}>Patient</text>
+                                        </div>
                                 </button>
                                 <button
                                     className={`type-button ${activeButton === prescriber ? 'active' : ''}`}
                                     onClick={() => typeSwitchClicked(prescriber)} >
-                                    Prescriber
+                                    <div className='row'>
+                                            {activeButton === prescriber && (<FaRegCircle strokeWidth={35} size={15} color="white" />)}
+                                            {activeButton !== prescriber && (<FaCircle size={15} color="#E3EAE1" />)}
+                                            <text style={{marginLeft: `5px`}}>Prescriber</text>
+                                        </div>
                                 </button>
                                 {currentView === login && (
                                     <button
                                         className={`type-button ${activeButton === admin ? 'active' : ''}`}
                                         onClick={() => typeSwitchClicked(admin)} >
-                                        Admin
+                                        <div className='row'>
+                                            {activeButton === admin && (<FaRegCircle strokeWidth={35} size={15} color="white" />)}
+                                            {activeButton !== admin && (<FaCircle size={15} color="#E3EAE1" />)}
+                                            <text style={{marginLeft: `5px`}}>Admin</text>
+                                        </div>
                                     </button>
                                 )}
                             </div>
@@ -200,43 +236,70 @@ const LoginBox = () => {
                                 <>
                                 {activeButton === prescriber && (
                                     <>
-                                    <p>Unique PaRx ID</p>
+                                    <small>Unique PaRx ID</small>
                                     <input type="text" className="input-field" placeholder="Unique PaRx ID" value={provDocID} onChange={handleProvDocIDChange}/>
                                     </>
                                 )}
 
                                 {activeButton === patient && (
-                                    <>
-                                    <p>First Name</p>
-                                    <input type="text" className="input-field" placeholder="First Name" value={firstName} onChange={handleFirstNameChange}/>
-                                    <p>Last Name</p>
-                                    <input type="text" className="input-field" placeholder="Last Name" value={lastName} onChange={handleLastNameChange}/>
-                                    </>
+                                    <div className='row-input'>
+                                        <div className='column'>
+                                            <small>First Name</small>
+                                            <input type="text" className="input-field" placeholder="First Name" value={firstName} onChange={handleFirstNameChange}/>
+                                        </div>
+                                        <div className='column'>
+                                            <small>Last Name</small>
+                                            <input type="text" className="input-field" placeholder="Last Name" value={lastName} onChange={handleLastNameChange}/>
+                                        </div>
+                                    </div>
                                 )}
-                                <p>Email</p>
+                                <small>Email</small>
                                 <input type="text" className="input-field" placeholder="Email" value={email} onChange={handleEmailChange}/>
-                                <p>Language</p>
+                                <small>Language</small>
                                 <input type="text" className="input-field" placeholder="Language" value={language} onChange={handleLanguageChange}/>
                                 {activeButton === patient && (
+                                    <div className='row-input'>
+                                        <div className='column'>
+                                            <small>Province</small>
+                                            <div style={{marginTop: `12px`}}>
+                                                <select value={province} onChange={handleProvinceChange}>
+                                                    <option value='AB'>AB</option>
+                                                    <option value='BC'>BC</option>
+                                                    <option value='ON'>ON</option>
+                                                    <option value='MB'>MB</option>
+                                                    <option value='NB'>NB</option>
+                                                    <option value='NL'>NL</option>
+                                                    <option value='NS'>NS</option>
+                                                    <option value='PE'>PE</option>
+                                                    <option value='QC'>QC</option>
+                                                    <option value='SK'>SK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className='column'>
+                                            <small>City</small>
+                                            <input type="text" className="input-field" placeholder="City" value={city} onChange={handleCityChange}/>
+                                        </div>
+                                    </div>
+                                )}
+                                {activeButton === prescriber && (
                                     <>
-                                    <p>Province</p>
-                                    <input type="text" className="input-field" placeholder="Province" value={province} onChange={handleProvinceChange}/>
+                                    <small>City</small>
+                                    <input type="text" className="input-field" placeholder="City" value={city} onChange={handleCityChange}/>
                                     </>
                                 )}
-                                <p>City</p>
-                                <input type="text" className="input-field" placeholder="City" value={city} onChange={handleCityChange}/>
-                                <p>Address</p>
+                                <small>Address</small>
                                 <input type="text" className="input-field" placeholder="Address" value={address} onChange={handleAddressChange}/>
                                 </>
                             )}
                             {(currentView === login || (currentView === signUp && activeButton === patient)) && (
                                 <>
-                                <p>Username</p>
+                                <small>Username</small>
                                 <input type="text" className="input-field" placeholder="Username" value={username} onChange={handleUsernameChange}/>
                                 </>
                             )}
-                            <p>Password</p>
-                            <input type="text" className="input-field" placeholder="Password" value={password} onChange={handlePasswordChange}/>
+                            <small>Password</small>
+                            <input type="password" className="input-field" placeholder="Password" value={password} onChange={handlePasswordChange}/>
                             <div className='row'>
                             {currentView === signUp && (
                                 <button className='custom-button' onClick={() => signUpClicked()}>
@@ -268,40 +331,3 @@ const LoginBox = () => {
 };
 
 export default LoginBox;
-
-
-// {currentView === 'signUp' && (
-//     <div className='content'>
-//         <div className='table-container'>
-//             <h2>Sign Up</h2>
-//             <p>Who are you?</p>
-//             <div className='button-group'>
-//                 <button
-//                     className={`type-button ${activeButton === 'Patient' ? 'active' : ''}`}
-//                     onClick={() => typeSwitchClicked('Patient')} >
-//                     Patient
-//                 </button>
-//                 <button
-//                     className={`type-button ${activeButton === 'Prescriber' ? 'active' : ''}`}
-//                     onClick={() => typeSwitchClicked('Prescriber')} >
-//                     Prescriber
-//                 </button>
-//             </div>
-
-//             <p>Username</p>
-//             <input type="text" className="input-field" placeholder="Username" value={username} onChange={handleUsernameChange}/>
-//             <p>Password</p>
-//             <input type="text" className="input-field" placeholder="Password" value={password} onChange={handlePasswordChange}/>
-//             <div className='row'>
-//                 <button className='custom-button' onClick={() => loginClicked()}>
-//                     <span>Get Started</span>
-//                 </button>
-//             </div> 
-//             <div className='row'>
-//                 <button className='switch-screen-button' onClick={() => switchViewClicked('signUp')}>
-//                     <span>Use an existing account</span>
-//                 </button>
-//             </div> 
-//         </div>
-//     </div>
-// )}
