@@ -2,13 +2,14 @@ from fpdf import FPDF
 from fpdf import YPos
 from fpdf import XPos
 from datetime import datetime
+import os
 
 # Define a class that inherits from FPDF which is used to create the PDF
 class PDF(FPDF):       
     def add_content(self, name, activity_plan, prescription_code, patient_initials):
         # Store data for use in footer
         self.prescription_code = prescription_code
-        self.current_date = datetime.now().strftime('%y%m%d')  # Current date in YYMMDD format
+        self.current_date = datetime.now().strftime('%y%m%d')
         self.patient_initials = patient_initials
         
         # Add name
@@ -46,7 +47,6 @@ class PDF(FPDF):
         self.cell(w=box_width, h=10, text=f'Patient Initials: {self.patient_initials}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
 
         self.ln(10)
-        # self.cell(w=0, h=10, text=f'Prescription #: {self.prescription_code} - {self.current_date} - {self.patient_initials}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
 
 
 # Function to create the PDF document
@@ -63,8 +63,9 @@ def create_pdf(name, activity_plan, prescription_code, patient_initials):
 
     # Add the content to the PDF
     pdf.add_content(name, activity_plan, prescription_code, patient_initials)
+    return pdf
+    # Save the PDF to the current directory
+    pdf_file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/prescription_service/prescription.pdf' # Path to the PDF file
+    pdf.output(pdf_file_path)
     
-    # Save the PDF to a file
-    pdf.output('Outdoor_Activity_Plan.pdf')
-
-create_pdf('Shreyas Rao', 'Play cricket with Alankrit', 'ABC123', 'SR')
+# create_pdf('Shreyas Rao', 'Play cricket with Alankrit', 'ABC123', 'SR')
