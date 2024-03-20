@@ -1,20 +1,10 @@
-# Correcting the deprecation warning by removing the 'ln' parameter and managing new line manually
-
 from fpdf import FPDF
 from fpdf import YPos
 from fpdf import XPos
 from datetime import datetime
 
 # Define a class that inherits from FPDF which is used to create the PDF
-class PDF(FPDF):
-    def footer(self):
-        # Ensure the footer is at the bottom of the page
-        self.set_y(-15)
-        # Set the font for the footer
-        self.set_font('Helvetica', 'I', 8)
-        # Add a footer with the Prescription #, Date, and Patient's Initials
-       
-
+class PDF(FPDF):       
     def add_content(self, name, activity_plan, prescription_code, patient_initials):
         # Store data for use in footer
         self.prescription_code = prescription_code
@@ -28,8 +18,7 @@ class PDF(FPDF):
 
         # Add date
         self.cell(text=f'Date: {self.current_date}', align='L', w = 0, h = 10, border = 0)
-        self.ln(10)
-        self.ln(40)
+        self.ln(20)
 
         # Add Outdoor Activity Plan
         self.cell(text='Outdoor Activity Plan:', align='L', w = 0, h = 10, border = 0)
@@ -37,7 +26,7 @@ class PDF(FPDF):
         self.multi_cell(text=f"{activity_plan}", align='C', w = 0, h = 10, border = 0)
 
         # Simulate space before the footer
-        self.ln(150)
+        self.ln(180)
 
         # Add a line for Health Professional's Signature
         self.cell(0, 10, '________________________________________')
@@ -78,5 +67,4 @@ def create_pdf(name, activity_plan, prescription_code, patient_initials):
     # Save the PDF to a file
     pdf.output('Outdoor_Activity_Plan.pdf')
 
-# Uncomment the below line to run the function with example data
 create_pdf('Shreyas Rao', 'Play cricket with Alankrit', 'ABC123', 'SR')
