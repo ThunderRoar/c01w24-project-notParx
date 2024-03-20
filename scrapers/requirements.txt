@@ -35,3 +35,6 @@ onnxruntime==1.16.3
 azure-storage-blob
 azure-identity
 aiohttp
+
+# Extra scraping dependency
+chompjs==1.2.3
