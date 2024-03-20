@@ -20,6 +20,8 @@ function Router() {
             <Route path="/admin/profiles" element={<Profiles />} /> */}
         <Route path="/patient" element={<Patient />} />
         <Route path="/prescriber" element={<Prescriber />} /> 
+        {/* <Route path="/prescriber/green-resources" element={<GreenResources />} />  */}
+        {/* <Route path="/patient/green-resources" element={<GreenResources />} />  */}
     </Routes>
   );
 }
