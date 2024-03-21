@@ -147,8 +147,10 @@ const LoginBox = () => {
                 },
                 body: JSON.stringify({ username, password })
                 });
+                const responseData = await response.json();
                 if (response.ok) {
                     console.log("Login Success")
+                    localStorage.setItem('token', responseData.token)
                     navigate('/Patient')
                 } else {
                     setLoginError(true)
@@ -162,8 +164,11 @@ const LoginBox = () => {
                 },
                 body: JSON.stringify({ username, password })
                 });
+                const responseData = await response.json();
+
                 if (response.ok) {
                     console.log("Login Success")
+                    localStorage.setItem('token', responseData.token)
                     navigate('/Prescriber')
                 } else {
                     setLoginError(true)
@@ -177,8 +182,11 @@ const LoginBox = () => {
                 },
                 body: JSON.stringify({ username, password })
                 });
+                const responseData = await response.json();
+
                 if (response.ok) {
                     console.log("Login Success")
+                    localStorage.setItem('token', responseData.token)
                     navigate('/Admin')
                 } else {
                     setLoginError(true)
@@ -209,6 +217,7 @@ const LoginBox = () => {
 
                 if (response.ok) {
                     console.log("Patient Register Success")
+                    localStorage.setItem('token', responseData.token)
                     navigate('/Patient')
                 } else if (responseData.error === "Username has already been used"){
                     setUsernameExistsError(true)
@@ -229,6 +238,7 @@ const LoginBox = () => {
 
                 if (response.ok) {
                     console.log("Prescriber Register Success")
+                    localStorage.setItem('token', responseData.token)
                     navigate('/Prescriber')
                 } else if (responseData.error === "Already signed up"){
                     setPrescriberAlreadySignedUp(true)
