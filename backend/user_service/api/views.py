@@ -20,6 +20,7 @@ class RegisterUser(APIView):
 
                 payload = {
                     'username': request.data["username"],
+                    'email': request.data["email"],
                     'user_type': "User",
                 }
 
@@ -48,6 +49,7 @@ class LoginUser(APIView):
         if user and user.password == password:
             payload = {
                 'username': username,
+                'email': user.email,
                 'user_type': "User",
             }
 
@@ -100,6 +102,7 @@ class RegisterPrescriber(APIView):
 
             payload = {
                 'provDocID': id,
+                'email': email,
                 'user_type': "Prescriber",
             }
 
@@ -124,6 +127,7 @@ class LoginPrescriber(APIView):
         if user and user.password == password:
             payload = {
                 'username': provDocID,
+                'email': user.email,
                 'user_type': "Prescriber",
             }
 
