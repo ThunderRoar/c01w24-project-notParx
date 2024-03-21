@@ -6,6 +6,7 @@ import "@fontsource/ubuntu";
 import "@fontsource/ubuntu/400.css";
 import "@fontsource/ubuntu/400-italic.css";
 import { FaRegCircle, FaCircle } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
 
 const LoginBox = () => {
 
@@ -23,6 +24,7 @@ const LoginBox = () => {
     const [province, setProvince] = React.useState('');
     const [boxHeight, setBoxHeight] = React.useState(400);
     const [boxWidth, setBoxWidth] = React.useState(350);
+    const [showPassword, setShowPassword] = React.useState(false)
 
     const login = 'login'
     const signUp = 'signUp'
@@ -101,6 +103,10 @@ const LoginBox = () => {
 
     const handleProvinceChange = (event) => {
         setProvince(event.target.value)
+    }
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword)
     }
 
     const loginClicked = async () => {
@@ -299,7 +305,18 @@ const LoginBox = () => {
                                 </>
                             )}
                             <small>Password</small>
-                            <input type="password" className="input-field" placeholder="Password" value={password} onChange={handlePasswordChange}/>
+                            <div className='password-input-container'>
+                                <input
+                                    type={showPassword ? 'text' : 'password'}
+                                    className='input-field'
+                                    placeholder="Password"
+                                />
+                                <button className='password-toggle-button' onClick={toggleShowPassword}>
+                                    <IoEyeOutline/>
+                                </button>
+                            </div>
+                            
+                            
                             <div className='row'>
                             {currentView === signUp && (
                                 <button className='custom-button' onClick={() => signUpClicked()}>
