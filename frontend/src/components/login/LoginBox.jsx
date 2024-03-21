@@ -25,7 +25,14 @@ const LoginBox = () => {
     const [boxHeight, setBoxHeight] = React.useState(400);
     const [boxWidth, setBoxWidth] = React.useState(350);
     const [showPassword, setShowPassword] = React.useState(false)
+    const [loginError, setLoginError] = React.useState(false)
+    const [apiError, setApiError] = React.useState(false)
+    const [emailError, setEmailError] = React.useState(false)
+    const [usernameExistsError, setUsernameExistsError] = React.useState(false)
+    const [invalidFieldsError, setInvalidFieldsError] = React.useState(false)
+    const [prescriberAlreadySignedUp, setPrescriberAlreadySignedUp] = React.useState(false)
 
+    const emailRegex = /^[\w.!#$%&*+-/=?^_{|}~]+@[a-zA-Z0-9-]+\.[A-z]+$/;
     const login = 'login'
     const signUp = 'signUp'
     const prescriber = 'Prescriber'
@@ -35,6 +42,7 @@ const LoginBox = () => {
     const navigate = useNavigate()
 
     const typeSwitchClicked = (buttonId) => {
+        removeErrors()
         if (currentView === signUp) {
             if (buttonId === prescriber) {
                 setBoxHeight(650)
@@ -46,6 +54,7 @@ const LoginBox = () => {
     };
 
     const switchViewClicked = (buttonID) => {
+        removeErrors()
         if (activeButton === admin) {
             setActiveButton(patient)
         }
@@ -109,7 +118,25 @@ const LoginBox = () => {
         setShowPassword(!showPassword)
     }
 
+    const removeErrors = () => {
+        setLoginError(false)
+        setApiError(false)
+        setEmailError(false)
+        setUsernameExistsError(false)
+        setInvalidFieldsError(false)
+        setPrescriberAlreadySignedUp(false)
+    }
+
+    const checkValidEmail = () => {
+        if (!emailRegex.test(email)) {
+            setEmailError(true)
+            return false
+        }
+        return true
+    }
+
     const loginClicked = async () => {
+        removeErrors()
 
         try {
             if (activeButton === patient) {
@@ -124,7 +151,8 @@ const LoginBox = () => {
                     console.log("Login Success")
                     navigate('/Patient')
                 } else {
-                  console.error("Login Fail");
+                    setLoginError(true)
+                    console.error(response.error);
                 }
             } else if (activeButton === prescriber) {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/loginPrescriber/', {
@@ -138,7 +166,8 @@ const LoginBox = () => {
                     console.log("Login Success")
                     navigate('/Prescriber')
                 } else {
-                  console.error("Login Fail");
+                    setLoginError(true)
+                    console.error("Login Fail");
                 }
             } else {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/loginAdmin/', {
@@ -152,15 +181,21 @@ const LoginBox = () => {
                     console.log("Login Success")
                     navigate('/Admin')
                 } else {
-                  console.error("Login Fail");
+                    setLoginError(true)
+                    console.error("Login Fail");
                 }
             }
           } catch (error) {
-            console.error("Login Error");
+                setApiError(true)
+                console.error("Login Error");
           }
     }
 
     const signUpClicked = async () => {
+        removeErrors()
+        if (!checkValidEmail()) {
+            return
+        }
         try {
             if (activeButton === patient) {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/registerUser/', {
@@ -170,11 +205,17 @@ const LoginBox = () => {
                 },
                 body: JSON.stringify({ username, password, firstName, lastName, address, city, province, language, email })
                 });
+                const responseData = await response.json();
+
                 if (response.ok) {
                     console.log("Patient Register Success")
                     navigate('/Patient')
+                } else if (responseData.error === "Username has already been used"){
+                    setUsernameExistsError(true)
+                    console.error("Patient Register Fail");
                 } else {
-                  console.error("Patient Register Fail");
+                    setInvalidFieldsError(true)
+                    console.log("Patient Register Fail")
                 }
             } else {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/registerPrescriber/', {
@@ -184,20 +225,57 @@ const LoginBox = () => {
                 },
                 body: JSON.stringify({ provDocID, password, address, city, language, email })
                 });
+                const responseData = await response.json();
+
                 if (response.ok) {
                     console.log("Prescriber Register Success")
                     navigate('/Prescriber')
+                } else if (responseData.error === "Already signed up"){
+                    setPrescriberAlreadySignedUp(true)
+                    console.error("Presciber Register Fail");
                 } else {
-                  console.error("Prescriber Register Fail");
+                    setInvalidFieldsError(true)
+                    console.log("Presciber Register Fail")
                 }
             }
           } catch (error) {
-            console.error("Register Error");
+                setInvalidFieldsError(true)
+                console.error("Register Error");
           }
     }
 
     return (
         <div className='screen-container'>
+            {loginError && (
+                <div className='login-error-popup'>
+                    Invalid username or password. Please try again.
+                </div>
+            )}
+            {apiError && (
+                <div className='login-error-popup'>
+                    Something went wrong. Please try again.
+                </div>
+            )}
+            {emailError && (
+                <div className='signup-error-popup'>
+                    Please enter a valid email.
+                </div>
+            )}
+            {usernameExistsError && (
+                <div className='signup-error-popup'>
+                    Username already exists. Please enter a new username.
+                </div>
+            )}
+            {invalidFieldsError && (
+                <div className='signup-error-popup'>
+                    Please ensure all fields have been filled out and are correct, then try again.
+                </div>
+            )}
+            {prescriberAlreadySignedUp && (
+                <div className='signup-error-popup'>
+                    Account already exists with this PaRx ID.
+                </div>
+            )}
             <div className='image-container'>
                 <img src={loginText} alt=''/>
             </div>
@@ -306,11 +384,7 @@ const LoginBox = () => {
                             )}
                             <small>Password</small>
                             <div className='password-input-container'>
-                                <input
-                                    type={showPassword ? 'text' : 'password'}
-                                    className='input-field'
-                                    placeholder="Password"
-                                />
+                                <input type={showPassword ? 'text' : 'password'} className='input-field' placeholder="Password" value={password} onChange={handlePasswordChange}/>
                                 <button className='password-toggle-button' onClick={toggleShowPassword}>
                                     <IoEyeOutline/>
                                 </button>
@@ -319,12 +393,12 @@ const LoginBox = () => {
                             
                             <div className='row'>
                             {currentView === signUp && (
-                                <button className='custom-button' onClick={() => signUpClicked()}>
+                                <button className='get-started-button' onClick={() => signUpClicked()}>
                                     <span>Get Started</span>
                                 </button>
                             )}
                             {currentView === login && (
-                                <button className='custom-button' onClick={() => loginClicked()}>
+                                <button className='get-started-button' onClick={() => loginClicked()}>
                                     <span>Get Started</span>
                                 </button>
                             )}

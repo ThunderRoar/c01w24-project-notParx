@@ -54,8 +54,8 @@
     }
 }
 
-.custom-button {
-    padding: 0.5rem 2rem 0.5rem 2rem;
+.get-started-button {
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 10px;
@@ -138,4 +138,28 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: #749769;
+    font-size: 20px;
+}
+
+.login-error-popup {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #ffadad;
+    border: 2px solid #ff0000;
+    border-radius: 3px;
+}
+
+.signup-error-popup {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #ffadad;
+    border: 2px solid #ff0000;
+    border-radius: 3px;
 }
