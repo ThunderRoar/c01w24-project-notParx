@@ -2,63 +2,59 @@ import os
 import sys
 import unittest
 import requests
-from unittest.mock import patch, MagicMock
-from selenium.common.exceptions import WebDriverException
+import unittest.mock as mock
 
 # Add parent directoy to sys paths
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-from site1 import confirm_user, get_status
+# from site1 import confirm_user, get_status
+import site1
+
+def mocked_requests_get(*args, **kwargs):
+    class MockResponse:
+        def __init__(self):
+            with open(os.path.dirname(os.path.abspath(__file__)) + "/bc_get_response.txt", 'r', encoding="utf-8") as f:
+                self.text = f.read()
+            self.cookies = {}
+    
+    return MockResponse()
+
+def mocked_requests_post(*args, **kwargs):
+    class MockResponse:
+        def __init__(self, file_name):
+            with open(file_name, 'r', encoding="utf-8") as f:
+                self.text = f.read()
+    
+    assert kwargs["data"]["form_build_id"] == "form-s5oOzyxEnbHQs1dK5VhIFAl-p_kA3Suoba7JsP5IBNg"
+    
+    if kwargs["data"]["ps_last_name"] == "Gill" and kwargs["data"]["ps_first_name"] == "Amanpreet":
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/BC_post_response_Amanpreet.txt")
+    
+    if kwargs["data"]["ps_last_name"] == "Zhou" and kwargs["data"]["ps_first_name"] == "Jian":
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/BC_post_response_Zhou.txt")
+    
+    if kwargs["data"]["ps_last_name"] == "Keen" and kwargs["data"]["ps_first_name"] == "Anthony":
+        return MockResponse(os.path.dirname(os.path.abspath(__file__)) + "/BC_post_response_Anthony.txt")
+    
+    # Couldn't find given args
+    assert False
 
 class TestGetUserInfo(unittest.TestCase):
+    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    @mock.patch('requests.post', side_effect=mocked_requests_post)
+    def test_verified(self, mock_get, mock_post):
+        self.assertEqual(site1.get_status("Amanpreet", "Gill", ''), 'VERIFIED')
 
-    @patch('site1.webdriver')
-    def test_get_user_info_verified(self, mock_webdriver):
-        mock_browser = MagicMock()
-        mock_webdriver.Chrome.return_value = mock_browser
-        mock_element = MagicMock()
-        mock_element.text = "Amanpreet Gill"
-        mock_browser.find_element.side_effect = [mock_element, MagicMock(text="Practising")]
-        result = get_status("Amanpreet", "Gill")
-        self.assertEqual(result, "VERIFIED")
+    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    @mock.patch('requests.post', side_effect=mocked_requests_post)
+    def test_inactive(self, mock_get, mock_post):
+        self.assertEqual(site1.get_status("Jian", "Zhou", ''), 'INACTIVE')    
 
-    @patch('site1.webdriver')
-    def test_get_user_info_not_found(self, mock_webdriver):
-        mock_browser = MagicMock()
-        mock_webdriver.Chrome.return_value = mock_browser
-        mock_element = MagicMock()
-        mock_element.text = "Sorry, there are no matching results found. Please try another search."
-        mock_browser.find_element.return_value = mock_element
-        result = get_status("Aalto", "Anu")
-        self.assertEqual(result, "NOT FOUND")
-
-    @patch('site1.webdriver')
-    def test_get_user_info_practising(self, mock_webdriver):
-        mock_browser = MagicMock()
-        mock_webdriver.Chrome.return_value = mock_browser
-        mock_element = MagicMock()
-        mock_element.text = "Davey Gin"
-        mock_browser.find_element.side_effect = [mock_element, MagicMock(text="Not practising")]
-        result = get_status("Davey", "Gin")
-        self.assertEqual(result, "VERIFIED")
-
-    @patch('site1.webdriver')
-    def test_get_user_info_browser_error(self, mock_webdriver):
-        mock_browser = MagicMock()
-        mock_webdriver.Chrome.return_value = None
-        mock_element = MagicMock()
-        mock_element.text = "Sorry, there are no matching results found. Please try another search."
-        mock_browser.find_element.return_value = mock_element
-        result = get_status("Anthony", "Keen")
-        self.assertEqual(result, "NOT FOUND")
-
-    def test_confirm_user(self):
-        text = "Amanpreet Gill"
-        self.assertTrue(confirm_user("Amanpreet", "Gill", text))
-        self.assertTrue(confirm_user("Gill", "Amanpreet", text))
-        self.assertFalse(confirm_user("Anu", "Aalto", text))
-        self.assertFalse(confirm_user("Aalto", "Anu", text))
+    @mock.patch('requests.get', side_effect=mocked_requests_get)
+    @mock.patch('requests.post', side_effect=mocked_requests_post)
+    def test_not_found(self, mock_get, mock_post):
+        self.assertEqual(site1.get_status("Anthony", "Keen", ''), 'NOT FOUND')   
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+<noscript><meta http-equiv="Refresh" content="0; URL=/big_pipe/no-js?destination=/public/registrant-directory/search-result" />
+</noscript><script>var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://matomo.cpsbc.ca/" : "https://matomo.cpsbc.ca/");_paq.push(["setSiteId", "1"]);_paq.push(["setTrackerUrl", u+"matomo.php"]);if (!window.matomo_search_results_active) {_paq.push(["trackPageView"]);}_paq.push(["setIgnoreClasses", ["no-tracking","colorbox"]]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src="/files/matomo/matomo.js?sap1v6";s.parentNode.insertBefore(g,s);})();</script>
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/college/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon" size="180x180" href="/themes/custom/college/images/apple-touch-icon.png" />
+<link rel="icon" type="image/png" size="32x32" href="/themes/custom/college/images/favicon-32x32.png" />
+<link rel="icon" type="image/png" size="16x16" href="/themes/custom/college/images/favicon-16x16.png" />
+<link rel="manifest" href="/themes/custom/college/images/site.webmanifest" />
+<script src="/files/google_tag/cpsbcca_gtm_tz8pqwn/google_tag.script.js?sap1v6" defer></script>
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.icon_color = "white,#323232";</script>
+
+    <title>Registrant directory search results | College of Physicians and Surgeons of BC</title>
+    <link rel="stylesheet" media="all" href="/files/css/css_zwSKju-uGJF3O9oj-ADT2k9GfAGqvIz_vs2fKx5Ma8M.css?delta=0&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY" />
+<link rel="stylesheet" media="all" href="/files/css/css_EUbcspjrKXxjd4W-zOiuVQzMPf9rnskseA6xBBkzau8.css?delta=1&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" />
+<link rel="stylesheet" media="all" href="//cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.min.css" integrity="sha512-FW7xwIsGt3iCswNR3o4kcXqkKDvN8Q7obwdxFODRT+L6XkRtScLElfvobA7bjiC2iTgG/sRaBUqdrhqx0RTauw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" media="all" href="/files/css/css_J76VPocjZbfamBtfo-HETgf9Qgs_vPgUFOeeZa5pa3Y.css?delta=5&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY" />
+
+    
+  </head>
+  <body class="theme-college path-public">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ8PQWN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="layout-container">
+        
+        <header class="bg-white py-1 pt-lg-3 pb-lg-0">
+  <div class="container-wide">     <div class="row align-items-center">
+
+            <div class="col">
+        <nav class="navbar navbar-expand-lg px-0 py-2 py-lg-0 navbar-light">
+
+          <div class="d-flex justify-content-between mt-lg-n3">
+                          <div id="block-college-branding" class="block block-system block-system-branding-block">
+  
+    
+        <a href="/" rel="home" class="site-logo d-none d-lg-block">
+      <img src="/themes/custom/college/logo.svg" alt="Home" />
+    </a>
+    <a href="/" rel="home" class="site-logo d-block d-lg-none">
+      <img src="/themes/custom/college/images/mobile-logo.svg" alt="Home"/>
+    </a>
+      </div>
+
+            
+            <button class="navbar-toggler align-items-center align-self-center shadow-none outline-none collapsed ml-auto text-uppercase" type="button" data-toggle="collapse" data-target="#mobile__menu"
+                    aria-controls="mobile__menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-text-open">Menu</span>
+              <span class="navbar-text-close">Close</span>
+              <span class="navbar-toggler-icon mx-1"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="mobile__menu">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-lg-end">
+
+              <div class="col-12 d-block d-lg-none order-0 header__search">
+                <div class="block block-cpsbc-core block-cpbc-keyword-search-mobile">
+      <div class="views-element-container"><div class="view view-search-global view-id-search_global view-display-id-block_utility_nav_search js-view-dom-id-966f46bc15f019103aa5e984ef4470d63edd6e3b1c8302ee8a2bf7e9d31c5f43">
+  
+    
+      <div class="view-filters">
+      <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-global-block-utility-nav-search" action="/search" method="get" id="views-exposed-form-search-global-block-utility-nav-search" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+    <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-text form-item-text form-no-label main-form-element">
+                <input placeholder="I am looking for" data-drupal-selector="edit-text" data-search-api-autocomplete-search="search_global" class="form-autocomplete form-control" data-autocomplete-path="/search_api_autocomplete/search_global?display=block_utility_nav_search&amp;&amp;filter=text" type="text" id="edit-text--3" name="text" value="" size="30" maxlength="128" />
+
+                  </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--3"><input data-drupal-selector="edit-submit-search-global-3" type="submit" id="edit-submit-search-global--3" value="Search" class="button js-form-submit form-submit btn btn-secondary">
+</div>
+
+</div>
+
+</form>
+
+    </div>
+          </div>
+</div>
+
+  </div>
+
+              </div>
+
+              <div class="col-12 col-lg-auto order-2 order-lg-1 header__utility-menu">
+                <div class="mx-2 mx-lg-0">
+                  <nav role="navigation" aria-labelledby="block-utility-menu" id="block-utility" class="block block-menu navigation menu--utility">
+            
+  <h2 class="visually-hidden" id="block-utility-menu">Utility</h2>
+  
+
+        
+
+      <ul class="nav navbar-nav justify-content-lg-end flex-column-reverse flex-lg-row utility-navigation-menu-wrapper">
+      <li class="nav-item order-1 d-none d-lg-flex">
+      <a role="button" aria-expanded="false" aria-controls="searchCollapse" data-toggle="collapse"
+        class="px-3 nav-link utility-search-toggle collapsed showBtn" href="#searchCollapse">
+        <i class="fas fa-search mr-0"></i> Search
+      </a>
+      <div class="collapse width" id="searchCollapse">
+        <div class="views-element-container"><div class="view view-search-global view-id-search_global view-display-id-block_utility_nav_search js-view-dom-id-6ad221402aa594d4e08b46f667cbada0214aea7e0791240846c046248b937f3e">
+  
+    
+      <div class="view-filters">
+      <form class="views-exposed-form" data-drupal-selector="views-exposed-form-search-global-block-utility-nav-search" action="/search" method="get" id="views-exposed-form-search-global-block-utility-nav-search" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+    <div class="js-form-item form-item js-form-type-search-api-autocomplete form-type-search-api-autocomplete js-form-item-text form-item-text form-no-label main-form-element">
+                <input placeholder="I am looking for" data-drupal-selector="edit-text" data-search-api-autocomplete-search="search_global" class="form-autocomplete form-control" data-autocomplete-path="/search_api_autocomplete/search_global?display=block_utility_nav_search&amp;&amp;filter=text" type="text" id="edit-text" name="text" value="" size="30" maxlength="128" />
+
+                  </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-search-global" type="submit" id="edit-submit-search-global" value="Search" class="button js-form-submit form-submit btn btn-secondary">
+</div>
+
+</div>
+
+</form>
+
+    </div>
+          </div>
+</div>
+
+      </div>
+    </li>
+    <li class="nav-item order-2 my-2 my-lg-0">
+      <div class="block block-cpsbc-core block-cpsbc-user-login-block d-block d-lg-inline-block">
+  
+    
+        <a class="px-lg-3 nav-link" href="https://www.cpsbc.ca/user/login">
+    <i class="fas fa-user mr-0"></i> Login
+  </a>
+
+  </div>
+
+    </li>
+              <li class="order-1 nav-item my-2 my-lg-0">
+
+                                    
+            
+            <a class="nav-link"  href="/contact-us"       >
+      <div class="d-flex align-items-center">
+                  <i class="fa fa-envelope mr-1"></i>
+                Contact
+      </div>
+      </a>
+      
+            </li>
+              <li class="order-2 nav-item my-2 my-lg-0">
+
+                                    
+            
+            <a class="nav-link  btn px-3 mr-lg-3 d-inline-block btn-outline-primary"  href="/public/complaints"       >
+      <div class="d-flex align-items-center">
+                File a complaint
+      </div>
+      </a>
+      
+            </li>
+              <li class="order-3 nav-item my-2 my-lg-0">
+
+                                    
+            
+            <a class="nav-link btn btn-secondary d-inline-block font-weight-light px-3"  href="/public/registrant-directory"       >
+      <div class="d-flex align-items-center">
+                Registrant directory
+      </div>
+      </a>
+      
+            </li>
+      </ul>
+    
+
+
+  </nav>
+
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-auto order-1 order-lg-2 header__main-menu">
+                <nav role="navigation" aria-labelledby="block-college-main-menu-menu" id="block-college-main-menu" class="block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-college-main-menu-menu">Main navigation</h2>
+  
+
+        
+          <ul class="nav navbar-nav justify-content-lg-end flex-lg-nowrap nav-lg-justified">
+  
+                                                                                                                                                                                  
+                        
+              
+                            <li class="nav-item dropdown-main d-lg-flex flex-lg-column transition__ease-all">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 text-lg-center pt-lg-3 pb-lg-4 no-icon" >
+                                    Public
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-8-6v24h24V-6z"/>
+        <path fill="currentColor" fill-rule="nonzero" d="M.59 1.41L5.17 6 .59 10.59 2 12l6-6-6-6z"/>
+    </g>
+</svg>                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+    <div class="dropdown-menu--main">
+    <div class="row flex-column flex-lg-row no-gutters">
+      <div class="col-12 col-lg-8">
+        <div class="p-lg-4">
+                <ul class="dropdown-menu border-0">
+        
+                                                                                                                                                                                  
+                        
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/public/registrant-directory" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">search</span>
+                                    Registrant directory
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/public/public-resources" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">collections_bookmark</span>
+                                    Public resources
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/public/public-engagement" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">menu_book</span>
+                                    Public engagement
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+            
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/public/complaints" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">chat</span>
+                                    Complaints
+                </a>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                              
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/public/complaints/how-to-submit-complaint" >
+                                    Complaint about clinical care or conduct
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/public/complaints/complaint-about-sexual-misconduct" >
+                                    Complaint about sexual misconduct
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/public/complaints/practice-conditions" >
+                                    Practice conditions
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/public/unlicensed-practice" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">domain_disabled</span>
+                                    Unlicensed practice
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+                </div>
+      </div>
+
+            <div class="col d-none d-lg-block menu-contact-block-main-wrapper bg-light">
+        <div class="p-lg-4">
+          <div class="row no-gutters">
+
+            <div class="col-auto icons-block pr-3">
+              <span class="material-icons">mail</span>
+            </div>
+
+            <div class="col contacts-info-block font-sm">
+              <div class="row mb-3">
+                <div class="col"><strong class="font-md">Contact</strong></div>
+              </div>
+
+                            <div class="row mb-3">
+                <div class="col-4"><strong>Address</strong></div>
+                <div class="col">300–669 Howe Street<br/>Vancouver BC V6C 0B4 Canada</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Telephone</strong></div>
+                <div class="col"><a href="tel:604-733-7758" class="text-dark">604-733-7758</a><br /><a href="/contact-us/translation-service">Translation service available</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Toll Free</strong></div>
+                <div class="col"><a href="tel:1-800-461-3008" class="text-dark">1-800-461-3008</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Fax</strong></div>
+                <div class="col">604-733-3503</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Hours</strong></div>
+                <div class="col">Monday to Friday<br/>8:30 a.m. to 4:30 p.m.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+                
+              </li>
+
+              
+            
+              
+                            <li class="nav-item dropdown-main d-lg-flex flex-lg-column transition__ease-all">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 text-lg-center pt-lg-3 pb-lg-4 no-icon" >
+                                    Registrants
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-8-6v24h24V-6z"/>
+        <path fill="currentColor" fill-rule="nonzero" d="M.59 1.41L5.17 6 .59 10.59 2 12l6-6-6-6z"/>
+    </g>
+</svg>                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+    <div class="dropdown-menu--main">
+    <div class="row flex-column flex-lg-row no-gutters">
+      <div class="col-12 col-lg-8">
+        <div class="p-lg-4">
+                <ul class="dropdown-menu border-0">
+        
+                                                                                                                              
+                        
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">perm_contact_calendar</span>
+                                    Current registrants
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                                                                                                            
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/registration-and-licensing" >
+                                    Registration and licensing
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/pmc" >
+                                    Professional medical corporations
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/cpd" >
+                                    Continuing professional development
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/health-monitoring" >
+                                    Health monitoring
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/duty-report-guide" >
+                                    Duty to report guide
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/current-registrants/exam-preparation" >
+                                    Exam preparation
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/registrants/standards-guidelines" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">assignment_turned_in</span>
+                                    Standards and guidelines
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+            
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column pr-lg-0">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">fact_check</span>
+                                    Programs
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                              
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/programs/drug-programs" >
+                                    Drug Programs
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/programs/ppep" >
+                                    Physician Practice Enhancement Program
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/registrants/programs/pomdra" >
+                                    Physician Office Medical Device Reprocessing Assessments
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+                </div>
+      </div>
+
+            <div class="col d-none d-lg-block menu-contact-block-main-wrapper bg-light">
+        <div class="p-lg-4">
+          <div class="row no-gutters">
+
+            <div class="col-auto icons-block pr-3">
+              <span class="material-icons">mail</span>
+            </div>
+
+            <div class="col contacts-info-block font-sm">
+              <div class="row mb-3">
+                <div class="col"><strong class="font-md">Contact</strong></div>
+              </div>
+
+                            <div class="row mb-3">
+                <div class="col-4"><strong>Address</strong></div>
+                <div class="col">300–669 Howe Street<br/>Vancouver BC V6C 0B4 Canada</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Telephone</strong></div>
+                <div class="col"><a href="tel:604-733-7758" class="text-dark">604-733-7758</a><br /><a href="/contact-us/translation-service">Translation service available</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Toll Free</strong></div>
+                <div class="col"><a href="tel:1-800-461-3008" class="text-dark">1-800-461-3008</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Fax</strong></div>
+                <div class="col">604-733-3503</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Hours</strong></div>
+                <div class="col">Monday to Friday<br/>8:30 a.m. to 4:30 p.m.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+                
+              </li>
+
+              
+            
+              
+                            <li class="nav-item dropdown-main d-lg-flex flex-lg-column transition__ease-all">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 text-lg-center pt-lg-3 pb-lg-4 no-icon" >
+                                    Accredited facilities
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-8-6v24h24V-6z"/>
+        <path fill="currentColor" fill-rule="nonzero" d="M.59 1.41L5.17 6 .59 10.59 2 12l6-6-6-6z"/>
+    </g>
+</svg>                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+    <div class="dropdown-menu--main">
+    <div class="row flex-column flex-lg-row no-gutters">
+      <div class="col-12 col-lg-8">
+        <div class="p-lg-4">
+                <ul class="dropdown-menu border-0">
+        
+                                                                                                                                                        
+                        
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/accredited-facilities/facility-directory" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">location_city</span>
+                                    Facility directory
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/accredited-facilities/dap" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">bookmarks</span>
+                                    Diagnostic Accreditation Program
+                </a>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                                                                                                                                                                
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/diagnostic-imaging" >
+                                    Diagnostic imaging
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/laboratory-medicine" >
+                                    Laboratory medicine
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/neurodiagnostics" >
+                                    Neurodiagnostics
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/neurodiagnostics-community" >
+                                    Neurodiagnostics (community)
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/pulmonary-function" >
+                                    Pulmonary function
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/spirometry-community" >
+                                    Spirometry (community)
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/polysomnography" >
+                                    Polysomnography
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/dap/home-sleep-apnea-testing" >
+                                    Home sleep apnea testing
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+                              </span>
+              
+            
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 align-items-start d-flex align-items-center"  href="/accredited-facilities/nhmsfap" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">business</span>
+                                    Non-Hospital Medical and Surgical Facilities Accreditation Program
+                </a>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                                                                                                            
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/standards" >
+                                    Standards, guidelines and policies
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/credentialing" >
+                                    Credentialing and privileging
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/new-facilities" >
+                                    Building or renovating a facility
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/existing-facilities" >
+                                    Existing facilities
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/forms" >
+                                    Forms for accredited facilities
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/accredited-facilities/nhmsfap/complaints" >
+                                    Non-hospital facility complaints
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/accredited-facilities/assessors" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">supervised_user_circle</span>
+                                    Assessors
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+                </div>
+      </div>
+
+            <div class="col d-none d-lg-block menu-contact-block-main-wrapper bg-light">
+        <div class="p-lg-4">
+          <div class="row no-gutters">
+
+            <div class="col-auto icons-block pr-3">
+              <span class="material-icons">mail</span>
+            </div>
+
+            <div class="col contacts-info-block font-sm">
+              <div class="row mb-3">
+                <div class="col"><strong class="font-md">Contact</strong></div>
+              </div>
+
+                            <div class="row mb-3">
+                <div class="col-4"><strong>Address</strong></div>
+                <div class="col">300–669 Howe Street<br/>Vancouver BC V6C 0B4 Canada</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Telephone</strong></div>
+                <div class="col"><a href="tel:604-733-7758" class="text-dark">604-733-7758</a><br /><a href="/contact-us/translation-service">Translation service available</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Toll Free</strong></div>
+                <div class="col"><a href="tel:1-800-461-3008" class="text-dark">1-800-461-3008</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Fax</strong></div>
+                <div class="col">604-733-3503</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Hours</strong></div>
+                <div class="col">Monday to Friday<br/>8:30 a.m. to 4:30 p.m.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+                
+              </li>
+
+              
+            
+              
+                            <li class="nav-item dropdown-main d-lg-flex flex-lg-column transition__ease-all">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 text-lg-center pt-lg-3 pb-lg-4 no-icon" >
+                                    About
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-8-6v24h24V-6z"/>
+        <path fill="currentColor" fill-rule="nonzero" d="M.59 1.41L5.17 6 .59 10.59 2 12l6-6-6-6z"/>
+    </g>
+</svg>                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+    <div class="dropdown-menu--main">
+    <div class="row flex-column flex-lg-row no-gutters">
+      <div class="col-12 col-lg-8">
+        <div class="p-lg-4">
+                <ul class="dropdown-menu border-0">
+        
+                                                                                                                                                                                                            
+                        
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/about/mission-mandate-and-values" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">star_outline</span>
+                                    Mission, mandate and values
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">people_alt</span>
+                                    Governance
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                    
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/governance/board" >
+                                    Board
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/governance/committees" >
+                                    Committees
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/about/laws-and-legislation" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">verified_user</span>
+                                    Laws and legislation
+                </a>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                          
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/laws-and-legislation/bylaw-amendments" >
+                                    Bylaw amendments
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+                              </span>
+              
+            
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/about/foi" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">info</span>
+                                    Freedom of information
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">language</span>
+                                    Corporate
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                                                                                                  
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/corporate/corporate-policies" >
+                                    Corporate policies
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/corporate/cultural-safety-and-humility" >
+                                    Cultural safety and humility
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/corporate/senior-management-team" >
+                                    Senior management team
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/corporate/strategic-plan" >
+                                    Strategic Plan
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/about/corporate/college-rebrand" >
+                                    College rebrand
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/about/careers" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">group_add</span>
+                                    Careers
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+                </div>
+      </div>
+
+            <div class="col d-none d-lg-block menu-contact-block-main-wrapper bg-light">
+        <div class="p-lg-4">
+          <div class="row no-gutters">
+
+            <div class="col-auto icons-block pr-3">
+              <span class="material-icons">mail</span>
+            </div>
+
+            <div class="col contacts-info-block font-sm">
+              <div class="row mb-3">
+                <div class="col"><strong class="font-md">Contact</strong></div>
+              </div>
+
+                            <div class="row mb-3">
+                <div class="col-4"><strong>Address</strong></div>
+                <div class="col">300–669 Howe Street<br/>Vancouver BC V6C 0B4 Canada</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Telephone</strong></div>
+                <div class="col"><a href="tel:604-733-7758" class="text-dark">604-733-7758</a><br /><a href="/contact-us/translation-service">Translation service available</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Toll Free</strong></div>
+                <div class="col"><a href="tel:1-800-461-3008" class="text-dark">1-800-461-3008</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Fax</strong></div>
+                <div class="col">604-733-3503</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Hours</strong></div>
+                <div class="col">Monday to Friday<br/>8:30 a.m. to 4:30 p.m.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+                
+              </li>
+
+              
+            
+              
+                            <li class="nav-item dropdown-main d-lg-flex flex-lg-column transition__ease-all pr-lg-0">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 text-lg-center pt-lg-3 pb-lg-4 no-icon" >
+                                    News
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-8-6v24h24V-6z"/>
+        <path fill="currentColor" fill-rule="nonzero" d="M.59 1.41L5.17 6 .59 10.59 2 12l6-6-6-6z"/>
+    </g>
+</svg>                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+    <div class="dropdown-menu--main">
+    <div class="row flex-column flex-lg-row no-gutters">
+      <div class="col-12 col-lg-8">
+        <div class="p-lg-4">
+                <ul class="dropdown-menu border-0">
+        
+                                                                                                                                                                                  
+                        
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/news" >
+                                      <i class="fas fa-newspaper d-none d-lg-inline mr-3"></i>
+                                    News announcements
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/news/public-notifications" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">gavel</span>
+                                    Public notifications
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/news/hearing-notifications" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">sms_failed</span>
+                                    Hearing notifications
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+            
+                              <span>
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 dropdown-sub flex-lg-column">
+
+                                                                                
+                                
+                                <span class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">assignment</span>
+                                    Publications
+                </span>
+                
+                                <button type="button" class="btn btn-sm text-link bg-transparent border-0 shadow-none d-flex d-lg-none align-items-center justify-content-center p-lg-0">
+                                      <span class="btn-dropdown_plus text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C11.45 7 11 7.45 11 8V11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13H11V16C11 16.55 11.45 17 12 17C12.55 17 13 16.55 13 16V13H16C16.55 13 17 12.55 17 12C17 11.45 16.55 11 16 11H13V8C13 7.45 12.55 7 12 7ZM4 12C4 16.41 7.59 20 12 20C16.41 20 20 16.41 20 12C20 7.59 16.41 4 12 4C7.59 4 4 7.59 4 12Z" fill="#0047D1"/>
+</svg>
+</span>
+                    <span class="btn-dropdown_minus text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM5 10C5 10.55 5.45 11 6 11H14C14.55 11 15 10.55 15 10C15 9.45 14.55 9 14 9H6C5.45 9 5 9.45 5 10ZM2 10C2 14.41 5.59 18 10 18C14.41 18 18 14.41 18 10C18 5.59 14.41 2 10 2C5.59 2 2 5.59 2 10Z" fill="white"/>
+</svg>
+</span>
+                                    <span class="sr-only">Dropdown Toggle</span>
+                </button>
+                            
+          <ul class="dropdown-menu">
+        
+                                                                                                    
+                        
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/news/publications/annual-report" >
+                                    Annual Report
+                </a>
+                
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-2 py-lg-0 flex-grow-1 no-icon"  href="/news/publications/college-connector" >
+                                    College Connector
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+                
+              </li>
+
+              
+            
+              
+                            <li class="dropdown-item d-lg-flex p-0 py-lg-1 pr-lg-0">
+
+                                                                                
+                                
+                                <a class="nav-link d-flex py-3 py-lg-0 flex-grow-1 d-flex align-items-center"  href="/news/media-centre" >
+                                      <span class="material-icons d-none d-lg-inline mr-3">video_library</span>
+                                    Media centre
+                </a>
+                
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+                </div>
+      </div>
+
+            <div class="col d-none d-lg-block menu-contact-block-main-wrapper bg-light">
+        <div class="p-lg-4">
+          <div class="row no-gutters">
+
+            <div class="col-auto icons-block pr-3">
+              <span class="material-icons">mail</span>
+            </div>
+
+            <div class="col contacts-info-block font-sm">
+              <div class="row mb-3">
+                <div class="col"><strong class="font-md">Contact</strong></div>
+              </div>
+
+                            <div class="row mb-3">
+                <div class="col-4"><strong>Address</strong></div>
+                <div class="col">300–669 Howe Street<br/>Vancouver BC V6C 0B4 Canada</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Telephone</strong></div>
+                <div class="col"><a href="tel:604-733-7758" class="text-dark">604-733-7758</a><br /><a href="/contact-us/translation-service">Translation service available</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Toll Free</strong></div>
+                <div class="col"><a href="tel:1-800-461-3008" class="text-dark">1-800-461-3008</a></div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4"><strong>Fax</strong></div>
+                <div class="col">604-733-3503</div>
+              </div>
+              <div class="row">
+                <div class="col-4"><strong>Hours</strong></div>
+                <div class="col">Monday to Friday<br/>8:30 a.m. to 4:30 p.m.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+                
+              </li>
+
+                              </span>
+              
+                      </ul>
+          
+        
+
+
+  </nav>
+
+              </div>
+            </div>
+
+          </div>
+
+        </nav>
+      </div>
+      
+    </div>
+  </div>
+</header>
+    
+  
+    <main role="main">
+      <a id="main-content" tabindex="-1"></a>
+        <div class="container">
+    <div class="row">
+              <div class="col-12 mb-8 directory_search--results">
+            <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div><span data-big-pipe-placeholder-id="callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D&amp;token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA">
+</span>
+<div id="block-college-content" class="block block-system block-system-main-block">
+  
+    
+      <div class="row">
+  <div class="col-12 py-2 block block-system block-system-breadcrumb-block bg-light-extend-left bg-light-extend-right">
+    <nav role="navigation" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">Public</li>
+        <li class="breadcrumb-item">
+          <a href="/public/registrant-directory">Registrant directory</a>
+        </li>
+        <li class="breadcrumb-item">Search results</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-lg py-3 py-lg-4">
+    <h1 class="mb-0 pt-lg-2 pb-lg-3">Registrant directory search results</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div id="form-main-wrapper"><form class="cpsbc-directory-form search-registrant-form" autocomplete="off" data-drupal-selector="cpsbc-directory-form" action="/public/registrant-directory/search-result" method="post" id="cpsbc-directory-form" accept-charset="UTF-8">
+  <form class="cpsbc-directory-form search-registrant-form" autocomplete="off" data-drupal-selector="cpsbc-directory-form">
+  <input autocomplete="off" data-drupal-selector="form-s5oozyxenbhqs1dk5vhifal-p-ka3suoba7jsp5ibng" type="hidden" name="form_build_id" value="form-s5oOzyxEnbHQs1dK5VhIFAl-p_kA3Suoba7JsP5IBNg" class="form-control" />
+
+  
+  <input data-drupal-selector="edit-cpsbc-directory-form" type="hidden" name="form_id" value="cpsbc_directory_form" class="form-control" />
+
+  <div class="row">
+
+    <div class="results-form-wrapper col-12 col-lg-4 pb-1 mb-4">
+      <a class="mobile-filters-toggle d-lg-none" data-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
+        <span class="toggler-text">Show filters</span>
+        <span class="material-icons">filter_list</span>
+      </a>
+
+      <div class="collapse d-lg-block" id="filters">
+        <div class="text-white ps-form__container--full">
+          <div class="d-none d-lg-block bg-mid-blue title-block-wrapper py-3 px-4 rounded-top">
+            <h6 class="d-none d-lg-block font-weight-bold mb-0 text-center text-uppercase">Search options</h6>
+          </div>
+          <div class="bg-primary search-results-fields-wrapper p-4 rounded-bottom">
+              <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-ps-last-name form-item-ps-last-name main-form-element">
+          <label for="edit-ps-last-name">Registrant Last Name</label>
+                <input placeholder="e.g.  Smith" data-drupal-selector="edit-ps-last-name" type="text" id="edit-ps-last-name" name="ps_last_name" value="Gill" size="60" maxlength="128" class="form-control" />
+
+                  </div>
+  <div class="mt-lg-4 mt-4 mb-4 mb-lg-0 js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-ps-first-name form-item-ps-first-name main-form-element">
+          <label for="edit-ps-first-name">Registrant First Name</label>
+                <input placeholder="e.g. John" data-drupal-selector="edit-ps-first-name" type="text" id="edit-ps-first-name" name="ps_first_name" value="Amanpreet" size="60" maxlength="128" class="form-control" />
+
+                  </div>
+  <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-ps-ci-to form-item-ps-ci-to main-form-element">
+          <label for="edit-ps-ci-to">City/Town</label>
+                <input placeholder="e.g. Vancouver" autocorrect="off" autocomplete="off" data-cpsbc-autocomplete="cpsbc-directory-city" data-drupal-selector="edit-ps-ci-to" class="form-autocomplete form-search form-control" data-autocomplete-path="/cpsbc-directory-autocomplete/cities" type="search" id="edit-ps-ci-to" name="ps_ci_to" value="" size="60" maxlength="128" />
+
+                  </div>
+<div class="ps-form__container--advanced js-form-wrapper form-wrapper" data-drupal-selector="edit-ps-advance-container" id="edit-ps-advance-container"><fieldset data-drupal-selector="edit-practicetypesearch" id="edit-practicetypesearch--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+    <span class="fieldset-legend"><span>Practice Type</span>
+          <a href="#" data-html="true" data-toggle="tooltip" data-placement="auto" title="The area of medicine in which the registrant is licensed to practice.">
+            <span class="material-icons">info</span>
+          </a></span>
+  </legend>
+  <div class="fieldset-wrapper">
+                <div id="edit-practicetypesearch" class="form-radios"><div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-a" type="radio" id="edit-practicetypesearch-a" name="PracticeTypeSearch" value="A" checked="checked" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-a" class="option custom-control-label">All</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-g" type="radio" id="edit-practicetypesearch-g" name="PracticeTypeSearch" value="G" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-g" class="option custom-control-label">Family physicians</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-s" type="radio" id="edit-practicetypesearch-s" name="PracticeTypeSearch" value="S" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-s" class="option custom-control-label">Specialists</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-p" type="radio" id="edit-practicetypesearch-p" name="PracticeTypeSearch" value="P" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-p" class="option custom-control-label">Podiatric surgeons</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-u" type="radio" id="edit-practicetypesearch-u" name="PracticeTypeSearch" value="U" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-u" class="option custom-control-label">USA certified physicians</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-x" type="radio" id="edit-practicetypesearch-x" name="PracticeTypeSearch" value="X" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-x" class="option custom-control-label">Associate physicians</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-e" type="radio" id="edit-practicetypesearch-e" name="PracticeTypeSearch" value="E" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-e" class="option custom-control-label">Educational registrants</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-practicetypesearch form-item-practicetypesearch custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-practicetypesearch-o" type="radio" id="edit-practicetypesearch-o" name="PracticeTypeSearch" value="O" class="form-radio custom-control-input" />
+  <label for="edit-practicetypesearch-o" class="option custom-control-label">Physician assistants</label>
+</div>
+</div>
+
+          </div>
+</fieldset>
+  <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-certificationtypes form-item-certificationtypes main-form-element">
+          <label for="edit-certificationtypes">Specialty</label>
+                <select data-drupal-selector="edit-certificationtypes" id="edit-certificationtypes" name="CertificationTypes" class="form-select custom-select"><option value="0" selected="selected">All</option><option value="M71">Adolescent Medicine</option><option value="M45">Anatomical Pathology</option><option value="M01">Anesthesiology</option><option value="S20">Cardiac Surgery</option><option value="M05">Cardiology</option><option value="S18">Cardiothoracic Surgery</option><option value="S01">Cardiovascular and Thoracic Surgery</option><option value="M75">Child and Adolescent Psychiatry</option><option value="M06">Clinical Immunology</option><option value="M07">Clinical Immunology and Allergy</option><option value="M76">Clinical Pharmacology and Toxicology</option><option value="M66">Clinician Investigator Program</option><option value="S02">Colorectal Surgery</option><option value="M09">Community Medicine</option><option value="M10">Critical Care Medicine</option><option value="M11">Dermatology</option><option value="M77">Developmental Pediatrics</option><option value="M42">Diagnostic and Clinical Pathology</option><option value="M46">Diagnostic and Molecular Pathology</option><option value="M57">Diagnostic Radiology</option><option value="M14">Emergency Medicine</option><option value="M12">Endocrinology and Metabolism</option><option value="M78">Forensic Pathology</option><option value="M79">Forensic Psychiatry</option><option value="M15">Gastroenterology</option><option value="M72">General Internal Medicine</option><option value="M41">General Pathology</option><option value="S03">General Surgery</option><option value="S04">General Surgical Oncology</option><option value="M16">Geriatric Medicine</option><option value="M80">Geriatric Psychiatry</option><option value="S06">Gynecologic Oncology</option><option value="S08">Gynecologic Reproductive Endocrinology and Infertility</option><option value="M43">Hematological Pathology</option><option value="M17">Hematology</option><option value="M18">Infectious Diseases</option><option value="M19">Internal Medicine</option><option value="M87">Interventional Radiology</option><option value="S10">Maternal-Fetal Medicine</option><option value="M23">Medical Biochemistry</option><option value="M24">Medical Genetics</option><option value="M88">Medical Genetics and Genomics</option><option value="M25">Medical Microbiology</option><option value="M26">Medical Oncology</option><option value="M28">Neonatal-Perinatal Medicine</option><option value="M27">Nephrology</option><option value="M29">Neurology</option><option value="M31">Neuropathology</option><option value="M32">Neuroradiology</option><option value="S05">Neurosurgery</option><option value="M33">Nuclear Medicine</option><option value="S07">Obstetrics and Gynecology</option><option value="M34">Occupational Medicine</option><option value="S09">Ophthalmology</option><option value="S11">Orthopedic Surgery</option><option value="S13">Otolaryngology - Head and Neck Surgery</option><option value="M81">Pain Medicine</option><option value="M67">Palliative Medicine</option><option value="M35">Pediatric Cardiology</option><option value="M68">Pediatric Emergency Medicine</option><option value="M70">Pediatric Hematology/Oncology</option><option value="M36">Pediatric Radiology</option><option value="S15">Pediatric Surgery</option><option value="M37">Pediatrics</option><option value="M49">Physical Medicine and Rehabilitation</option><option value="S17">Plastic Surgery</option><option value="M51">Psychiatry</option><option value="M53">Public Health and Preventive Medicine</option><option value="M55">Radiation Oncology</option><option value="M63">Respirology</option><option value="M65">Rheumatology</option><option value="M59">Therapeutic Radiology</option><option value="S19">Thoracic Surgery</option><option value="S21">Urology</option><option value="S23">Vascular Surgery</option></select>
+                  </div>
+<fieldset data-drupal-selector="edit-status" id="edit-status--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+    <span class="fieldset-legend">Status</span>
+  </legend>
+  <div class="fieldset-wrapper">
+                <div id="edit-status" class="form-radios"><div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-status form-item-status custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-status-a" type="radio" id="edit-status-a" name="status" value="A" checked="checked" class="form-radio custom-control-input" />
+  <label for="edit-status-a" class="option custom-control-label">All</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-status form-item-status custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-status-y" type="radio" id="edit-status-y" name="status" value="Y" class="form-radio custom-control-input" />
+  <label for="edit-status-y" class="option custom-control-label">Practising</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-status form-item-status custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-status-n" type="radio" id="edit-status-n" name="status" value="N" class="form-radio custom-control-input" />
+  <label for="edit-status-n" class="option custom-control-label">Not practising</label>
+</div>
+</div>
+
+          </div>
+</fieldset>
+<fieldset data-drupal-selector="edit-gender" id="edit-gender--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper">
+      <legend>
+    <span class="fieldset-legend">Gender</span>
+  </legend>
+  <div class="fieldset-wrapper">
+                <div id="edit-gender" class="form-radios"><div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-gender form-item-gender custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-gender-" type="radio" id="edit-gender-" name="gender" value="" checked="checked" class="form-radio custom-control-input" />
+  <label for="edit-gender-" class="option custom-control-label">All</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-gender form-item-gender custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-gender-m" type="radio" id="edit-gender-m" name="gender" value="M" class="form-radio custom-control-input" />
+  <label for="edit-gender-m" class="option custom-control-label">Male</label>
+</div>
+<div class="js-form-item form-item js-form-type-radio form-type-radio js-form-item-gender form-item-gender custom-control custom-radio main-form-element">
+  
+<input data-drupal-selector="edit-gender-f" type="radio" id="edit-gender-f" name="gender" value="F" class="form-radio custom-control-input" />
+  <label for="edit-gender-f" class="option custom-control-label">Female</label>
+</div>
+</div>
+
+          </div>
+</fieldset>
+  <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-languages form-item-languages main-form-element">
+          <label for="edit-languages"><span>Languages spoken</span>
+          <a href="#" data-html="true" data-toggle="tooltip" data-placement="auto" title="All registrants in BC speak English. Some may also speak another language. Select your preferred language.">
+            <span class="material-icons">info</span>
+          </a></label>
+                <select data-drupal-selector="edit-languages" id="edit-languages" name="Languages" class="form-select custom-select"><option value="0" selected="selected">English</option><option value="A01">Afrikaans</option><option value="A09">Akan (Twi)</option><option value="A10">Albanian</option><option value="S16">American Sign Language</option><option value="A12">Amharic</option><option value="A06">Arabic</option><option value="A08">Armenian</option><option value="A13">Assyrian Neo-Aramaic</option><option value="A15">Azerbaijani</option><option value="B15">Belarusan</option><option value="B01">Bengali</option><option value="B16">Bikol</option><option value="B18">Bosnian</option><option value="B06">Bulgarian</option><option value="B11">Burmese</option><option value="C01">Cantonese</option><option value="C04">Castellano</option><option value="C05">Catalan</option><option value="C14">Cebuano</option><option value="C16">Chaochow</option><option value="S06">Croatian</option><option value="C11">Czech</option><option value="D01">Danish</option><option value="D02">Dari</option><option value="D06">Dutch</option><option value="E07">Edo</option><option value="E01">Estonian</option><option value="F02">Fijian</option><option value="F06">Finnish</option><option value="F11">Foochow</option><option value="F16">French</option><option value="F17">Frisian</option><option value="F26">Fukien</option><option value="F18">Fulah (Pular, Pulaar, Fulfulde)</option><option value="G18">Ganda (Luganda)</option><option value="G06">German</option><option value="G11">Greek</option><option value="G16">Gujarati</option><option value="H28">Haitian Creole</option><option value="H01">Hakka</option><option value="H11">Hebrew</option><option value="H16">Hindi</option><option value="H21">Hokkien</option><option value="H26">Hungarian</option><option value="I01">Icelandic</option><option value="I17">Igbo</option><option value="I18">Ilocano</option><option value="I06">Indonesian</option><option value="G01">Irish</option><option value="I21">Italian</option><option value="J01">Japanese</option><option value="K06">Kannada</option><option value="K28">Kashmiri</option><option value="K30">Khmer (Cambodian)</option><option value="K11">Kikuyu (Gikuyu)</option><option value="K19">Konkani</option><option value="K21">Korean</option><option value="K32">Kurdish</option><option value="K26">Kutchi</option><option value="L06">Latvian</option><option value="L24">Lingala</option><option value="L11">Lithuanian</option><option value="M12">Macedonian</option><option value="M13">Malagasy</option><option value="M01">Malay</option><option value="M14">Malayalam</option><option value="M03">Maltese</option><option value="M06">Mandarin</option><option value="M11">Marathi</option><option value="N01">Nepali</option><option value="N12">Norwegian</option><option value="P17">Pampangan (Kapampangan, Pampango)</option><option value="P02">Pashto</option><option value="P01">Persian (Farsi)</option><option value="P06">Polish</option><option value="P11">Portuguese</option><option value="P16">Punjabi (Panjabi)</option><option value="R01">Romanian</option><option value="R06">Russian</option><option value="S60">Scottish Gaelic</option><option value="S01">Serbian</option><option value="S44">Serbo-Croatian</option><option value="S45">Shanghainese</option><option value="S46">Shona</option><option value="S48">Sindhi</option><option value="S21">Sinhala (Sinhalese)</option><option value="S26">Slovak</option><option value="S49">Slovene (Slovenian)</option><option value="S31">Spanish</option><option value="S36">Swahili (Kiswahili)</option><option value="S41">Swedish</option><option value="T01">Tagalog (Pilipino, Filipino)</option><option value="T28">Taishanese (Toishanese)</option><option value="T06">Taiwanese</option><option value="T11">Tamil</option><option value="T16">Telugu</option><option value="T29">Teochow</option><option value="T22">Thai</option><option value="T32">Tigrigna</option><option value="T26">Turkish</option><option value="U01">Ukrainian</option><option value="U06">Urdu</option><option value="U07">Uyghur</option><option value="U08">Uzbek</option><option value="V01">Vietnamese</option><option value="W01">Welsh</option><option value="X02">Xhosa (isiXhosa)</option><option value="Y01">Yiddish</option><option value="Y03">Yoruba</option><option value="Z01">Zulu (isiZulu)</option></select>
+                  </div>
+  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-msp-number form-item-msp-number main-form-element">
+          <label for="edit-msp-number">MSP number</label>
+                <input placeholder="e.g. 12345" data-drupal-selector="edit-msp-number" type="text" id="edit-msp-number" name="msp_number" value="" size="60" maxlength="128" class="form-control" />
+
+                  </div>
+</div>
+  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-pagination-info form-item-pagination-info form-no-label main-form-element">
+                <input class="form-pagination visually-hidden form-control" data-drupal-selector="edit-pagination-info" type="text" id="edit-pagination-info" name="pagination_info" value="1" size="60" maxlength="128" />
+
+                  </div>
+<input autocomplete="off" data-drupal-selector="form-s5oozyxenbhqs1dk5vhifal-p-ka3suoba7jsp5ibng" type="hidden" name="form_build_id" value="form-s5oOzyxEnbHQs1dK5VhIFAl-p_kA3Suoba7JsP5IBNg" class="form-control" />
+<input data-drupal-selector="edit-cpsbc-directory-form" type="hidden" name="form_id" value="cpsbc_directory_form" class="form-control" />
+
+            <div class="ps_advanced--actions mt-3 d-flex flex-wrap justify-content-end">
+              <input class="btn btn-link text-link text-reset button js-form-submit form-submit" data-progress-type="untilredirect" data-drupal-selector="edit-ps-clear-all" type="submit" id="edit-ps-clear-all" name="clear_all" value="Clear all">
+<input class="ps-submit mw-auto mr-0 button js-form-submit form-submit btn btn-secondary" data-drupal-selector="edit-ps-submit" type="submit" id="edit-ps-submit" name="op" value="Search">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-main-wrapper col-12 col-lg-8">
+      
+        <div class="row align-items-end mb-1">
+
+                      <div class="col-12 mb-1">
+              <div class="d-flex justify-content-end align-items-end">
+                <div class="save-pdf-wrapper"><div data-drupal-selector="edit-save-pdf" id="edit-save-pdf" class="js-form-wrapper form-wrapper"><input class="btn btn-outline-primary mr-3 d-none d-lg-block button js-form-submit form-submit" data-drupal-selector="edit-button" type="submit" id="edit-button" name="op" value="Save results as PDF">
+<span class="material-icons">picture_as_pdf</span><input class="btn btn-outline-primary d-lg-none button js-form-submit form-submit" data-drupal-selector="edit-mobile-btn" type="submit" id="edit-mobile-btn" name="op" value="Save results">
+<span class="material-icons">picture_as_pdf</span></div>
+</div>
+                  <div class="per-page-toggle d-none d-lg-block js-form-item form-item js-form-type-select form-type-select js-form-item-results-per-page form-item-results-per-page main-form-element">
+          <label for="edit-results-per-page">Results per page</label>
+                <select data-progress-type="untilredirect" data-drupal-selector="edit-results-per-page" id="edit-results-per-page" name="results_per_page" class="form-select custom-select"><option value="5">5</option><option value="10" selected="selected">10</option><option value="20">20</option></select>
+                  </div>
+
+                  <div class="per-page-toggle d-lg-none js-form-item form-item js-form-type-select form-type-select js-form-item-results-per-page-mobile form-item-results-per-page-mobile main-form-element">
+          <label for="edit-results-per-page-mobile">Results per page</label>
+                <select data-progress-type="untilredirect" data-drupal-selector="edit-results-per-page-mobile" id="edit-results-per-page-mobile" name="results_per_page_mobile" class="form-select custom-select"><option value="5">5 per page</option><option value="10" selected="selected">10 per page</option><option value="20">20 per page</option></select>
+                  </div>
+
+              </div>
+            </div>
+          
+                      <div class="col-12 my-4">
+              <h3 class="font-weight-bold m-0 total-search-results-block-wrapper">
+                <span class="text-mid-blue">1</span>
+                <span class="text-gray-400">registrant(s) found</span>
+              </h3>
+            </div>
+          
+        </div>
+
+              
+    <div class="shadow shadow-hover rounded result-item">
+
+      <div class="ps-contact__title d-md-flex flex-wrap align-items-start justify-content-between mb-lg-2">
+        <div>
+          <h5 class="mb-0">
+            <a href="/public/registrant-directory/search-result/340327/Gill%2CAmanpreet">
+              Gill, Amanpreet Kaur <span class="material-icons">arrow_forward</span>
+            </a>
+          </h5>
+        </div>
+
+                  <div class="align-self-end code-block mt-2"><strong>MSP </strong> 67775</div>
+              </div>
+
+                        <div class="ps-contact__element mt-2">
+            <strong>Registration status: </strong> Practising
+          </div>
+        
+                  <div class="ps-contact__element mt-2">
+            <strong>Registration class: </strong> Full
+          </div>
+        
+                  <div class="ps-contact__element mt-2">
+            <span class="element-label"><strong>Practice type:</strong></span>
+            <span>
+                              Family practice
+                          </span>
+          </div>
+              
+                        <div class="border-top pt-2 mt-3">
+            <div class="ps-contact__element mt-2 d-flex">
+              <strong>Address:</strong>
+              <span class="ml-1">
+                <span>Aldergrove Medical Centre</span><br>                                <span>#110-3113 272 Street, Aldergrove, BC, V4W3R9, Canada</span>
+              </span>
+            </div>
+
+                        <div class="ps-contact__element mt-2 d-flex">
+              <strong>Phone:</strong>
+              <span class="ml-1">(604) 625-2001</span>
+            </div>
+            
+            
+          </div>
+              
+    </div>
+  
+
+
+                  <div class="d-md-flex justify-content-between align-items-center">
+            <nav class="pager text-uppercase" aria-label="Page navigation">
+              <ul class="pager__items js-pager__items">
+                                                                
+                                                                                                                    
+                
+                
+                                                    <li class="pager__item is-active">
+                    <a href="/public/registrant-directory/search-result?pageNumber=1"
+                       aria-label="Current page">1</a>
+                  </li>
+                
+                
+                              </ul>
+            </nav>
+
+              <div class="per-page-toggle d-none d-lg-block js-form-item form-item js-form-type-select form-type-select js-form-item-footer-results-per-page form-item-footer-results-per-page main-form-element">
+          <label for="edit-footer-results-per-page">Results per page</label>
+                <select data-progress-type="untilredirect" data-drupal-selector="edit-footer-results-per-page" id="edit-footer-results-per-page" name="footer_results_per_page" class="form-select custom-select"><option value="5">5</option><option value="10" selected="selected">10</option><option value="20">20</option></select>
+                  </div>
+
+              <div class="per-page-toggle d-lg-none js-form-item form-item js-form-type-select form-type-select js-form-item-footer-results-per-page-mobile form-item-footer-results-per-page-mobile main-form-element">
+          <label for="edit-footer-results-per-page-mobile">Results per page</label>
+                <select data-progress-type="untilredirect" data-drupal-selector="edit-footer-results-per-page-mobile" id="edit-footer-results-per-page-mobile" name="footer_results_per_page_mobile" class="form-select custom-select"><option value="5">5 per page</option><option value="10" selected="selected">10 per page</option><option value="20">20 per page</option></select>
+                  </div>
+
+          </div>
+        
+          </div>
+
+  </div>
+</form>
+
+</form>
+</div>
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+          </div>
+  </div>
+
+    </main>
+  
+    
+    <footer class="shadow-lg">
+  <div class="footer bg-mid-blue pt-4 pb-3 pb-lg-4 text-white">
+    <div class="container pb-2">
+
+      <div class="row footer--top mb-4">
+                  <div class="col-12 col-lg">
+            <div class="border-bottom pb-4 pb-lg-3 pb-xl-4">
+                <div class="region region-footer-top">
+    <span data-big-pipe-placeholder-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=cpsbccontactinfoblock&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=er2WlnVU5U0IH9A-FZV1mI_gKHe3zj7HmO_F2TAsv-w">
+</span>
+  </div>
+
+            </div>
+          </div>
+              </div>
+
+      <div class="row footer--bottom">
+                  <div class="col-12 col-md-6 col-lg mb-3 mb-lg-0">
+              <div class="region region-footer-one">
+    <nav role="navigation" aria-labelledby="block-publicfootermenu-menu" id="block-publicfootermenu" class="block block-menu navigation menu--public">
+      
+  <h2 id="block-publicfootermenu-menu">Public</h2>
+  
+
+        
+
+              <ul class="navbar-nav">
+                    <li class="nav-item">
+                          <a href="/public/complaints/how-to-submit-complaint" class="nav-link" data-drupal-link-system-path="node/114">File a complaint about care or conduct</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/public/complaints/complaint-about-sexual-misconduct" class="nav-link" data-drupal-link-system-path="node/24">File a complaint about sexual misconduct</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/public/registrant-directory" class="nav-link" data-drupal-link-system-path="node/20">Find a registrant&#039;s contact information</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+        
+                  <div class="col-12 col-md-6 col-lg mb-3 mb-lg-0">
+              <div class="region region-footer-two">
+    <nav role="navigation" aria-labelledby="block-physician-menu" id="block-physician" class="block block-menu navigation menu--physician">
+      
+  <h2 id="block-physician-menu">Registrants</h2>
+  
+
+        
+
+              <ul class="navbar-nav">
+                    <li class="nav-item">
+                          <a href="/dashboard" class="nav-link" data-drupal-link-system-path="node/105">Renew your licence</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/registrants/current-registrants/registration-and-licensing/cpc" class="nav-link" data-drupal-link-system-path="node/18381">Request a certificate of professional conduct</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/registrants/standards-guidelines" class="nav-link" data-drupal-link-system-path="node/35">Practice standards and professional guidelines</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/dashboard" class="nav-link" data-drupal-link-system-path="node/105">Track your application</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+        
+                  <div class="col-12 col-md-6 col-lg mb-3 mb-lg-0">
+              <div class="region region-footer-three">
+    <nav role="navigation" aria-labelledby="block-about-menu" id="block-about" class="block block-menu navigation menu--about">
+      
+  <h2 id="block-about-menu">About</h2>
+  
+
+        
+
+              <ul class="navbar-nav">
+                    <li class="nav-item">
+                          <a href="/about/mission-mandate-and-values" class="nav-link" data-drupal-link-system-path="node/49">Mission, mandate and values</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/about/governance/board" class="nav-link" data-drupal-link-system-path="node/51">Governance</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/about/corporate/senior-management-team" class="nav-link" data-drupal-link-system-path="node/57">Corporate</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/about/careers" class="nav-link" data-drupal-link-system-path="node/60">Careers</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+        
+                  <div class="col-12 col-md-6 col-lg">
+              <div class="region region-footer-four">
+    <nav role="navigation" aria-labelledby="block-news-menu" id="block-news" class="block block-menu navigation menu--news">
+      
+  <h2 id="block-news-menu">News</h2>
+  
+
+        
+
+              <ul class="navbar-nav">
+                    <li class="nav-item">
+                          <a href="/news" class="nav-link" data-drupal-link-system-path="node/6">News announcements</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/news/public-notifications" class="nav-link" data-drupal-link-system-path="node/63">Public notifications</a>
+              </li>
+                <li class="nav-item">
+                          <a href="/news/publications/college-connector" class="nav-link" data-drupal-link-system-path="node/112">College Connector</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+        <div
+      class="footer-territorial-acknowledgement-statement bg-darker-dark-blue text-white pt-5">
+      <div class="container">
+        <div class="text-center border-bottom pb-4">
+          <p>The College of Physicians and Surgeons of BC is located on the unceded and traditional territory of the Coast Salish peoples, including the territories of the hən̓q̓əmin̓əm̓ speaking peoples―the xʷməθkʷəy̓əm (Musqueam) and sel̓íl̓witulh (Tsleil-Waututh) Nations, and the Sḵwx̱wú7mesh-ulh Sníchim speaking peoples―the Sḵwx̱wú7mesh (Squamish) Nation.&nbsp;</p><p>We acknowledge the rights and title of BC First Nations whose territories span across the province. These territories recognize that laws, governance, and health systems tied to lands and waters have existed here since time immemorial.</p>
+        </div>
+      </div>
+    </div>
+  
+  <div class="footer-copyright bg-darker-dark-blue text-white py-4 py-lg-3">
+    <div class="container">
+      <div class="row align-items-center flex-column-reverse flex-lg-row">
+
+                <div class="col-lg-auto order-lg-1 mb-3 mb-lg-0">
+          <div class="d-flex align-items-center">
+              <div class="region region-footer-bottom">
+    <div id="block-content5cd22bac-fd4d-49be-84c8-d7271d7aafca" class="block block-block-content block-block-content5cd22bac-fd4d-49be-84c8-d7271d7aafca">
+  
+    
+      
+            <ul class="list-inline"><li class="list-inline-item"><a href="https://twitter.com/cpsbc_ca" target="_blank"><i class="fa-twitter fab"> </i></a></li>
+	<li class="list-inline-item"><a href="https://www.facebook.com/cpsbc.ca" target="_blank"><i class="fa-facebook-f fab"> </i></a></li>
+	<li class="list-inline-item"><a href="https://www.linkedin.com/company/college-of-physicians-and-surgeons-of-british-columbia" target="_blank"><i class="fa-linkedin-in fab"> </i></a></li>
+	<li class="list-inline-item"><a href="/news/rss" target="_blank"><i class="fa-rss fas"> </i></a></li>
+</ul>
+      
+  </div>
+<nav role="navigation" aria-labelledby="block-footercopyright-menu" id="block-footercopyright" class="block block-menu navigation menu--footer">
+            
+  <h2 class="visually-hidden" id="block-footercopyright-menu">Footer Copyright</h2>
+  
+
+        
+
+              <ul class="list-inline">
+                    <li class="list-inline-item">
+                          <a href="/terms-use" class="nav-link py-0 px-0" data-drupal-link-system-path="node/17829">Terms of use</a>
+              </li>
+                <li class="list-inline-item">
+                          <a href="/privacy-policy" class="nav-link py-0 px-0" data-drupal-link-system-path="node/17391">Privacy</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+          </div>
+        </div>
+        
+        <div class="col-lg order-lg-0 text-center text-lg-left pb-3 pb-lg-0">
+          <p class="mb-0">Copyright &copy; 2024 <br class="d-block d-lg-none"/> College of Physicians and Surgeons of BC</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+</footer>
+  
+</div>
+
+  </div>
+
+    
+    
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"public\/registrant-directory\/search-result","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany.front,big_pipe\/big_pipe,classy\/base,classy\/messages,college\/bootstrap,college\/global-theming,core\/drupal.ajax,core\/drupal.autocomplete,core\/internal.jquery.form,core\/normalize,cpsbc_directory\/cpsbc_directory,matomo\/matomo,search_api_autocomplete\/search_api_autocomplete,system\/base,views\/views.module","theme":"college","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/public\/registrant-directory\/search-result?ajax_form=1":true,"\/public\/registrant-directory\/search-result":true},"bigPipePlaceholderIds":{"callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=cpsbccontactinfoblock\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=er2WlnVU5U0IH9A-FZV1mI_gKHe3zj7HmO_F2TAsv-w":true,"callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages\u0026args%5B0%5D\u0026token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA":true},"matomo":{"disableCookies":false,"trackMailto":true},"ajax":{"edit-footer-results-per-page-mobile":{"callback":"::resultsPerPage","event":"change","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"footer_results_per_page_mobile"}},"edit-footer-results-per-page":{"callback":"::resultsPerPage","event":"change","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"footer_results_per_page"}},"edit-results-per-page-mobile":{"callback":"::resultsPerPage","event":"change","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"results_per_page_mobile"}},"edit-results-per-page":{"callback":"::resultsPerPage","event":"change","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"results_per_page"}},"edit-mobile-btn":{"callback":"::savePdfSubmit","event":"mousedown","keypress":true,"prevent":"click","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Save results"}},"edit-button":{"callback":"::savePdfSubmit","event":"mousedown","keypress":true,"prevent":"click","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Save results as PDF"}},"edit-ps-submit":{"callback":"::searchPhysicianDirectory","method":"replaceWith","wrapper":"form-main-wrapper","path":"directory\/search","event":"mousedown","keypress":true,"prevent":"click","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Search"}},"edit-ps-clear-all":{"callback":"::onFormClear","wrapper":"form-main-wrapper","method":"replaceWith","path":"directory\/search","event":"mousedown","keypress":true,"prevent":"click","url":"\/public\/registrant-directory\/search-result?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"clear_all","_triggering_element_value":"Clear all"}}},"chosen":{"selector":"main select:visible, select[name=\u0022CertificationTypes\u0022], select[name=\u0022Languages\u0022], select[name=\u0022search_option\u0022], main select.chosen-select, .security-questions-form select.form-select","minimum_single":0,"minimum_multiple":0,"minimum_width":200,"use_relative_width":false,"options":{"disable_search":false,"disable_search_threshold":0,"allow_single_deselect":false,"search_contains":false,"placeholder_text_multiple":"Choose some options","placeholder_text_single":"Choose an option","no_results_text":"No results match","max_shown_results":null,"inherit_select_classes":true}},"search_api_autocomplete":{"search_global":{"auto_submit":true,"min_length":2}},"cpsbc":{"isPortal":false},"user":{"uid":0,"permissionsHash":"583f0ccac94bb0a558db34be936218a74286efa4ae49f60215c9fd55ee461d3c"}}</script>
+<script src="/files/js/js_4o1FOpTrBg4kuzB5ksSrKK-ZHHCQ2yqjDeh0DpmBGhk.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY"></script>
+<script src="https://static.addtoany.com/menu/page.js" async></script>
+<script src="/files/js/js_x9PN8_3zo_jseEftFkOOMWKXV5ahRwb5ri1GIbRFV9I.js?scope=footer&amp;delta=2&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY"></script>
+<script src="//kit.fontawesome.com/c3d6d56454.js" async defer crossorigin="anonymous"></script>
+<script src="/files/js/js_sub5OGkRjryikA7Kr0FZyh4bMOnOt3-kBhottzglTfs.js?scope=footer&amp;delta=4&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.min.js" integrity="sha512-ITRmpfbrvyJMfI1gck3tVWu64CibL+Kz4P0PBrd5SMV1HKQ5DMkDrx5+S4x460IPHM0a4lYQYJngUGmXGdXIuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw-init.min.js" integrity="sha512-w/1hLca9Fyn6iwnkMxUU55d/OlcA65RnP4v6kJ8NssnzHeHnJBeOzuHEkJ67zpt0ksiH1LQn8FKYZc/TT1O/aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/files/js/js_0oLLmRl7cm5lgOyPdP1Au5VbNYkoAwE8N50KQ13QVlQ.js?scope=footer&amp;delta=7&amp;language=en&amp;theme=college&amp;include=eJx1keF2wyAIhV_IxUfKQaWWTsUB6ZY9fbMl65ld90fhE-6BK6RkDG31cATTSbiZiyzoL28LyuoqGFf2--V0VcPqAyi6WEB1HeKKqpBRd4XGUqHQJ7pda17IUzOUBmW6oihxe_b0imvktIlyKZjR58IByoudsVLLu_a9-N6_8yRL32jCwEuLOELSXuAHGoQAoTxkh96kZ6pD88E7K9nX3KMwFM73eQOzqQl0F7uGOCcSjMay-of86SrTabNtkO_CWTZnd1gY0kWHAmjt77bHX4yFF_gYwWIcufaChu5K-K7--5wqp2XzRhEknmfoNP8u9f9wFyjPnfrmwRHcAHUh7XY"></script>
+
+<script type="application/vnd.drupal-ajax" data-big-pipe-event="start"></script>
+    <script type="application/vnd.drupal-ajax" data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder&amp;args%5B0%5D=cpsbccontactinfoblock&amp;args%5B1%5D=full&amp;args%5B2%5D&amp;token=er2WlnVU5U0IH9A-FZV1mI_gKHe3zj7HmO_F2TAsv-w">
+    [{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5Cblock%5CBlockViewBuilder%3A%3AlazyBuilder\u0026args%5B0%5D=cpsbccontactinfoblock\u0026args%5B1%5D=full\u0026args%5B2%5D\u0026token=er2WlnVU5U0IH9A-FZV1mI_gKHe3zj7HmO_F2TAsv-w\u0022]","data":"\u003Cdiv id=\u0022block-cpsbccontactinfoblock\u0022 class=\u0022block block-cpsbc-core block-cpsbc-core-contact-info-block\u0022\u003E\n  \n    \n      \u003Cdiv class=\u0022row align-items-md-center\u0022\u003E\n      \u003Cdiv class=\u0022col-12 col-md-6 col-lg-5 pb-2 pb-lg-0\u0022\u003E\n              \u003Cdiv class=\u0022address-block-wrapper\u0022\u003E\n          \u003Cp\u003E300\u2013669 Howe Street\u003Cbr \/\u003E\r\nVancouver BC  V6C 0B4 Canada\u003C\/p\u003E\n        \u003C\/div\u003E\n          \u003C\/div\u003E\n    \u003Cdiv class=\u0022col-12 col-md-6 col-lg-7 text-left text-lg-right\u0022\u003E\n      \u003Cdiv class=\u0022d-flex align-items-start flex-column flex-xl-row flex-wrap justify-content-start justify-content-xl-end pl-lg-5 pl-xl-4\u0022\u003E\n        \u003Cdiv class=\u0022d-block d-lg-inline-block contact-info-item\u0022\u003E\n          \u003Cspan\u003E\n                          \u003Cstrong\u003ETelephone\u003C\/strong\u003E 604-733-7758\u003Cbr\/\u003E\n                      \u003C\/span\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\u0022d-block d-lg-inline-block contact-info-item my-1 my-lg-0\u0022\u003E\n          \u003Cspan\u003E\n                          \u003Cstrong\u003EToll Free\u003C\/strong\u003E 1-800-461-3008\u003Cbr\/\u003E\n                      \u003C\/span\u003E\n        \u003C\/div\u003E\n        \u003Cdiv class=\u0022d-block d-lg-inline-block contact-info-item\u0022\u003E\n          \u003Cspan\u003E\n                          \u003Cstrong\u003EFax\u003C\/strong\u003E 604-733-3503\n                      \u003C\/span\u003E\n        \u003C\/div\u003E\n      \u003C\/div\u003E\n\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\n  \u003C\/div\u003E\n","settings":null}]
+    </script>    <script type="application/vnd.drupal-ajax" data-big-pipe-replacement-for-placeholder-with-id="callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D&amp;token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA">
+    [{"command":"insert","method":"replaceWith","selector":"[data-big-pipe-placeholder-id=\u0022callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages\u0026args%5B0%5D\u0026token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA\u0022]","data":"","settings":null}]
+    </script>
+<script type="application/vnd.drupal-ajax" data-big-pipe-event="stop"></script>
+</body>
+</html>
