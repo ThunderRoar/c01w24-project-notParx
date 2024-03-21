@@ -7,6 +7,7 @@ import "@fontsource/ubuntu/400.css";
 import "@fontsource/ubuntu/400-italic.css";
 import { FaRegCircle, FaCircle } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
+import { FiLoader } from "react-icons/fi";
 
 const LoginBox = () => {
 
@@ -21,7 +22,7 @@ const LoginBox = () => {
     const [city, setCity] = React.useState('');
     const [address, setAddress] = React.useState('');
     const [provDocID, setProvDocID] = React.useState('');
-    const [province, setProvince] = React.useState('');
+    const [province, setProvince] = React.useState('AB');
     const [boxHeight, setBoxHeight] = React.useState(400);
     const [boxWidth, setBoxWidth] = React.useState(350);
     const [showPassword, setShowPassword] = React.useState(false)
@@ -31,6 +32,7 @@ const LoginBox = () => {
     const [usernameExistsError, setUsernameExistsError] = React.useState(false)
     const [invalidFieldsError, setInvalidFieldsError] = React.useState(false)
     const [prescriberAlreadySignedUp, setPrescriberAlreadySignedUp] = React.useState(false)
+    const [loading, setLoading] = React.useState(false)
 
     const emailRegex = /^[\w.!#$%&*+-/=?^_{|}~]+@[a-zA-Z0-9-]+\.[A-z]+$/;
     const login = 'login'
@@ -137,6 +139,7 @@ const LoginBox = () => {
 
     const loginClicked = async () => {
         removeErrors()
+        setLoading(true)
 
         try {
             if (activeButton === patient) {
@@ -193,18 +196,22 @@ const LoginBox = () => {
                     console.error("Login Fail");
                 }
             }
-          } catch (error) {
+        } catch (error) {
                 setApiError(true)
                 console.error("Login Error");
-          }
+        } finally {
+            setLoading(false)
+        }
     }
 
     const signUpClicked = async () => {
         removeErrors()
-        if (!checkValidEmail()) {
-            return
-        }
+        setLoading(true)
         try {
+            if (!checkValidEmail()) {
+                return
+            }
+
             if (activeButton === patient) {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/registerUser/', {
                 method: 'POST',
@@ -224,7 +231,8 @@ const LoginBox = () => {
                     console.error("Patient Register Fail");
                 } else {
                     setInvalidFieldsError(true)
-                    console.log("Patient Register Fail")
+                    console.error("Patient Register Error")
+                    console.log(response.error)
                 }
             } else {
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/registerPrescriber/', {
@@ -248,10 +256,12 @@ const LoginBox = () => {
                     console.log("Presciber Register Fail")
                 }
             }
-          } catch (error) {
+        } catch (error) {
                 setInvalidFieldsError(true)
                 console.error("Register Error");
-          }
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -337,7 +347,7 @@ const LoginBox = () => {
 
                                 {activeButton === patient && (
                                     <div className='row-input'>
-                                        <div className='column'>
+                                        <div className='column' style={{marginRight: `12px`}}>
                                             <small>First Name</small>
                                             <input type="text" className="input-field" placeholder="First Name" value={firstName} onChange={handleFirstNameChange}/>
                                         </div>
@@ -355,7 +365,7 @@ const LoginBox = () => {
                                     <div className='row-input'>
                                         <div className='column'>
                                             <small>Province</small>
-                                            <div style={{marginTop: `12px`}}>
+                                            <div style={{marginTop: `12px`, marginRight: `50px`}}>
                                                 <select value={province} onChange={handleProvinceChange}>
                                                     <option value='AB'>AB</option>
                                                     <option value='BC'>BC</option>
@@ -370,7 +380,7 @@ const LoginBox = () => {
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className='column'>
+                                        <div className='column2'>
                                             <small>City</small>
                                             <input type="text" className="input-field" placeholder="City" value={city} onChange={handleCityChange}/>
                                         </div>
@@ -400,19 +410,23 @@ const LoginBox = () => {
                                 </button>
                             </div>
                             
-                            
-                            <div className='row'>
-                            {currentView === signUp && (
+                            {loading && (
+                                <div className='get-started-button'>
+                                    <center>
+                                        <FiLoader></FiLoader>
+                                    </center>
+                                </div>
+                            )}
+                            {!loading && currentView === signUp && (
                                 <button className='get-started-button' onClick={() => signUpClicked()}>
                                     <span>Get Started</span>
                                 </button>
                             )}
-                            {currentView === login && (
+                            {!loading && currentView === login && (
                                 <button className='get-started-button' onClick={() => loginClicked()}>
                                     <span>Get Started</span>
                                 </button>
                             )}
-                            </div> 
                             <div className='row'>
                             {currentView === login && (
                                 <button className='switch-screen-button' onClick={() => switchViewClicked(login)}>

@@ -49,13 +49,19 @@
         .column {
             display: flex;
             flex-direction: column;
-            margin-right: 30px;
+        }
+
+        .column2 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
     }
 }
 
 .get-started-button {
     width: 100%;
+    box-sizing: border-box;
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 10px;
@@ -74,6 +80,7 @@
 
 .input-field {
     width: 100%;
+    box-sizing: border-box;
     padding: 7px;
     margin-bottom: 7px;
     margin-top: 7px;
