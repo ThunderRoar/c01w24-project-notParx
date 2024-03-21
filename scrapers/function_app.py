@@ -85,10 +85,19 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     download_stream = await download_client.download_blob()
     data = await download_stream.readall()
     
-    base = []
-    reader = csv.reader(data.decode("utf-8").splitlines())
-    for row in reader:
-        base.append(row)
+    try:
+        base = []
+        reader = csv.reader(data.decode("utf-8-sig").splitlines())
+        for row in reader:
+            base.append(row)
+    except Exception as e:
+        print(e)
+        print("Decoding input csv failed. Potentially not utf-8 encoded. Quitting")
+        update_job_failed(blob_name)
+        return func.HttpResponse(
+             "Decoding input csv failed. Potentially not utf-8 encoded. Quitting",
+             status_code=500
+        )
 
     print(base)
 
@@ -128,7 +137,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     if -1 in [FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND]:
         update_job_failed(blob_name)
         return func.HttpResponse(
-             "Missing required csv headers (First Name, Last Name, Province, Licensing College, Licensing #)",
+             "Missing required csv headers (First Name, Last Name, Province, Licensing College, Licence #)",
              status_code=400
         )
     
