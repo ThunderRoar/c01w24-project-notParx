@@ -1,0 +1,565 @@
+{
+    "$type": "Asi.Soa.Core.DataContracts.PagedResult`1[[Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts]], Asi.Contracts",
+    "Items": {
+        "$type": "System.Collections.Generic.List`1[[Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts]], mscorlib",
+        "$values": [
+            {
+                "$type": "Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts",
+                "EntityTypeName": "9",
+                "PrimaryParentEntityTypeName": "Party",
+                "PrimaryParentIdentity": {
+                    "$type": "Asi.Soa.Core.DataContracts.IdentityData, Asi.Contracts",
+                    "EntityTypeName": "Party",
+                    "IdentityElements": {
+                        "$type": "System.Collections.ObjectModel.Collection`1[[System.String, mscorlib]], mscorlib",
+                        "$values": [
+                            "e863dbe0-82e6-4ad1-810d-b69bb48ad77a"
+                        ]
+                    }
+                },
+                "Properties": {
+                    "$type": "Asi.Soa.Core.DataContracts.GenericPropertyDataCollection, Asi.Contracts",
+                    "$values": [
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ResultRow",
+                            "Value": "1"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Chapter",
+                            "Value": "SASKATOON"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Company",
+                            "Value": "Jim Pattison Children's Hospital\rEmergency Medicine"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ContactKey",
+                            "Value": "e863dbe0-82e6-4ad1-810d-b69bb48ad77a"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullName",
+                            "Value": "Dr. Brittni Vachelle Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "MemberType",
+                            "Value": "PHY"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Country",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Email",
+                            "Value": "brittni.webster@usask.ca"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FirstName",
+                            "Value": "Brittni"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ID",
+                            "Value": "9603"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "LastName",
+                            "Value": "Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Language(s)",
+                            "Value": "English"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Website",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Phone",
+                            "Value": "(306) 655-1362"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "City",
+                            "Value": "Saskatoon"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Zip",
+                            "Value": "S7N 0W8"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullAddress",
+                            "Value": "103 Hospital Drive\rSaskatoon, SK  S7N 0W8"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "mapID",
+                            "Value": "9603"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "memDesc",
+                            "Value": "Physician Member"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureNum",
+                            "Value": {
+                                "$type": "System.Int32",
+                                "$value": 6030
+                            }
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureLogo",
+                            "Value": "/images/Profile/9603_236702.png"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "AddressPurpose",
+                            "Value": "Office"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Status",
+                            "Value": "On the Register"
+                        }
+                    ]
+                }
+            },
+            {
+                "$type": "Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts",
+                "EntityTypeName": "9",
+                "PrimaryParentEntityTypeName": "Party",
+                "PrimaryParentIdentity": {
+                    "$type": "Asi.Soa.Core.DataContracts.IdentityData, Asi.Contracts",
+                    "EntityTypeName": "Party",
+                    "IdentityElements": {
+                        "$type": "System.Collections.ObjectModel.Collection`1[[System.String, mscorlib]], mscorlib",
+                        "$values": [
+                            "eb09837b-7bc4-4efa-86e3-8f52f9aff30d"
+                        ]
+                    }
+                },
+                "Properties": {
+                    "$type": "Asi.Soa.Core.DataContracts.GenericPropertyDataCollection, Asi.Contracts",
+                    "$values": [
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ResultRow",
+                            "Value": "2"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Chapter",
+                            "Value": "SOUTH_WEST"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Company",
+                            "Value": "Kliniek on Main"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ContactKey",
+                            "Value": "eb09837b-7bc4-4efa-86e3-8f52f9aff30d"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullName",
+                            "Value": "Dr. Tamara Ann Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "MemberType",
+                            "Value": "PHY"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Country",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Email",
+                            "Value": "taw555@mail.usask.ca"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FirstName",
+                            "Value": "Tamara"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ID",
+                            "Value": "10815"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "LastName",
+                            "Value": "Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Language(s)",
+                            "Value": "English"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Website",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Phone",
+                            "Value": "(306) 694-1440"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "City",
+                            "Value": "Moose Jaw"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Zip",
+                            "Value": "S6H 0W2"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullAddress",
+                            "Value": "351 Main Street North\rMoose Jaw, SK  S6H 0W2"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "mapID",
+                            "Value": "10815"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "memDesc",
+                            "Value": "Physician Member"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureNum",
+                            "Value": {
+                                "$type": "System.Int32",
+                                "$value": 2865
+                            }
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureLogo",
+                            "Value": "/images/Profile/10815_78393.png"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "AddressPurpose",
+                            "Value": "Office"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Status",
+                            "Value": "On the Register"
+                        }
+                    ]
+                }
+            },
+            {
+                "$type": "Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts",
+                "EntityTypeName": "9",
+                "PrimaryParentEntityTypeName": "Party",
+                "PrimaryParentIdentity": {
+                    "$type": "Asi.Soa.Core.DataContracts.IdentityData, Asi.Contracts",
+                    "EntityTypeName": "Party",
+                    "IdentityElements": {
+                        "$type": "System.Collections.ObjectModel.Collection`1[[System.String, mscorlib]], mscorlib",
+                        "$values": [
+                            "19e0923c-eac0-43b8-8eb5-79e67a54d714"
+                        ]
+                    }
+                },
+                "Properties": {
+                    "$type": "Asi.Soa.Core.DataContracts.GenericPropertyDataCollection, Asi.Contracts",
+                    "$values": [
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ResultRow",
+                            "Value": "3"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Chapter",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Company",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ContactKey",
+                            "Value": "19e0923c-eac0-43b8-8eb5-79e67a54d714"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullName",
+                            "Value": "Dr. David McGowan Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "MemberType",
+                            "Value": "PHY"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Country",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Email",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FirstName",
+                            "Value": "David"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ID",
+                            "Value": "3543"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "LastName",
+                            "Value": "Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Language(s)"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Website",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Phone",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "City",
+                            "Value": "Langley"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Zip",
+                            "Value": "V3A 4G5"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullAddress",
+                            "Value": "103 - 20644 Fraser Highway\rLangley, BC  V3A 4G5"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "mapID",
+                            "Value": "3543"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "memDesc",
+                            "Value": "Physician Member"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureNum",
+                            "Value": {
+                                "$type": "System.Int32",
+                                "$value": 10022
+                            }
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureLogo",
+                            "Value": "/images/Profile/default_profile.png"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "AddressPurpose",
+                            "Value": "Office"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Status",
+                            "Value": "No Longer on the Register"
+                        }
+                    ]
+                }
+            },
+            {
+                "$type": "Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts",
+                "EntityTypeName": "9",
+                "PrimaryParentEntityTypeName": "Party",
+                "PrimaryParentIdentity": {
+                    "$type": "Asi.Soa.Core.DataContracts.IdentityData, Asi.Contracts",
+                    "EntityTypeName": "Party",
+                    "IdentityElements": {
+                        "$type": "System.Collections.ObjectModel.Collection`1[[System.String, mscorlib]], mscorlib",
+                        "$values": [
+                            "cedce13f-5bc7-4762-91cd-7e73e8241a5c"
+                        ]
+                    }
+                },
+                "Properties": {
+                    "$type": "Asi.Soa.Core.DataContracts.GenericPropertyDataCollection, Asi.Contracts",
+                    "$values": [
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ResultRow",
+                            "Value": "4"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Chapter",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Company",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ContactKey",
+                            "Value": "cedce13f-5bc7-4762-91cd-7e73e8241a5c"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullName",
+                            "Value": "Laurisa Ann Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "MemberType",
+                            "Value": "PHY"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Country",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Email",
+                            "Value": "laurisawebster@gmail.com"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FirstName",
+                            "Value": "Laurisa"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "ID",
+                            "Value": "12943"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "LastName",
+                            "Value": "Webster"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Language(s)"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Website",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Phone",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "City",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Zip",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "FullAddress",
+                            "Value": ""
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "mapID",
+                            "Value": "12943"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "memDesc",
+                            "Value": "Physician Member"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureNum",
+                            "Value": {
+                                "$type": "System.Int32",
+                                "$value": 12472
+                            }
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "PictureLogo",
+                            "Value": "/images/Profile/default_profile.png"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "AddressPurpose",
+                            "Value": "Office"
+                        },
+                        {
+                            "$type": "Asi.Soa.Core.DataContracts.GenericPropertyData, Asi.Contracts",
+                            "Name": "Status",
+                            "Value": "No Longer on the Register"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "Offset": 0,
+    "Limit": 21,
+    "Count": 4,
+    "TotalCount": 4,
+    "NextPageLink": null,
+    "HasNext": false,
+    "NextOffset": 0
+}

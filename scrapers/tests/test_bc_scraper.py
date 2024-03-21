@@ -1,14 +1,12 @@
 import os
 import sys
 import unittest
-import requests
 import unittest.mock as mock
 
 # Add parent directoy to sys paths
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
-# from site1 import confirm_user, get_status
 import site1
 
 def mocked_requests_get(*args, **kwargs):
