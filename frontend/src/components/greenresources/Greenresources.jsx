@@ -6,18 +6,22 @@ import parkIcon from '../../resources/img/park_icon.png';
 import dogParkIcon from '../../resources/img/dogParkicon.png';
 import gardenIcon from '../../resources/img/gardenIcon.png';
 import homeIcon from '../../resources/img/homeIcon.png';
+import curIcon from '../../resources/img/placeholder.png';
 
 import React from 'react';
 import { useState, useEffect } from 'react';
-// import { GoogleMap, Marker, InfoWindow, useLoadScript } from '@react-google-maps/api';
-// import { formatRelative } from "date-fns";
+
 import { MapContainer, TileLayer, useMap, Marker, useMapEvents, Popup } from "react-leaflet";
+import "leaflet-control-geocoder/dist/Control.Geocoder.css";
+import "leaflet-control-geocoder/dist/Control.Geocoder.js";
+
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { Icon, divIcon, icon } from "leaflet";
+import L, { Icon, divIcon, icon } from "leaflet";
 import axios from 'axios';
 
+import LeafletControlGeocoder from './LeafletControlGeocoder';
 
-const GreenResources = () => {
+const GreenResources = (props) => {
     const [position, setPosition] = useState(null);
     
     const [parks, setParks] = useState([]);
@@ -36,6 +40,12 @@ const GreenResources = () => {
 
     const HomeIcon = new Icon({
         iconUrl: homeIcon,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const CurrentLocation = new Icon({
+        iconUrl: curIcon,
         iconSize: [30, 30],
         popupAnchor:  [-0, -0],
     });
@@ -71,6 +81,7 @@ const GreenResources = () => {
         'dog_park': DogParkIcon,
         'home': HomeIcon,
         'university': UniversityIcon,
+        "current": CurrentLocation,
     };
 
     useEffect(() => {
@@ -144,6 +155,7 @@ const GreenResources = () => {
     // }, [parks, searchQuery, region]);
 
     const handleSearchChange = (e) => {
+        console.log(e.target.value);
         setSearchQuery(e.target.value);
     }
 
@@ -156,10 +168,6 @@ const GreenResources = () => {
     const handleRegionChange = (e) => {
         setRegion(e.target.value);
     }
-
-    // const handleMapClick = (e) => {
-    //     setPosition(e.latlng);
-    // }
 
 
     function LocationMarker() {
@@ -197,7 +205,7 @@ const GreenResources = () => {
                     </div>
 
                     <div className='map-search-bar'>
-                        <input type='text' placeholder='Search Here...' value={searchQuery} onChange={handleSearchChange} />
+                        <input type='text' placeholder='Search Here...' value={searchQuery} onChange={handleSearchChange} />                       
                     </div>
 
                     <div className='map-find-button'>
@@ -219,6 +227,8 @@ const GreenResources = () => {
                         
                         {/* Use the below if user wants to know where they are currenly */}
                         <LocationMarker/>
+                        <LeafletControlGeocoder/>
+                        
 
                         <MarkerClusterGroup 
                             chunkedLoading
