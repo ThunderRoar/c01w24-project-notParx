@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import decodeToken from '../../token_handling/tokenHandling.js';
+import Header from '../shared/header/header';
+import './Patient.scss';
 
 const Patient = () => {
 
@@ -20,8 +22,12 @@ const Patient = () => {
       navigate('/Admin')
     }
   });
-  
-  return <div className="patient-component">Patient Area (Under Development)</div>;
+
+  return (
+    <div className="patient-component">
+      <Header tabs={[]} />
+    </div>
+  );
 };
 
 export default Patient;

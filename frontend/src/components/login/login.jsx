@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';import './login.scss';
+import { useNavigate } from 'react-router-dom';
+import './login.scss';
 import decodeToken from '../../token_handling/tokenHandling.js';
 import LoginBox from './LoginBox.jsx';
 import LoginHeader from './LoginHeader.jsx';

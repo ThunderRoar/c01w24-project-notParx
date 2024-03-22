@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import decodeToken from '../../token_handling/tokenHandling.js';
+import Header from '../shared/header/header';
+import './Prescriber.scss'
 
 const Prescriber = () => {
 
@@ -20,7 +22,11 @@ const Prescriber = () => {
     }
   });
 
-  return <div className="prescriber-component">Prescriber Area (Under Development)</div>;
+  return (
+    <div className="prescriber-component">
+      <Header tabs={[]} />
+    </div>
+  );
 };
 
 export default Prescriber;

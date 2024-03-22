@@ -15,14 +15,41 @@
             padding-right: 2rem !important; 
         }
     }
-    .account-icon {
-        font-size: 2.7rem;
-        padding: 2rem;
-        &.hide {
-            display: none;
+    .dropdown {
+        position: fixed;
+        align-items: center;
+        top: 10px;
+        right: 50px;
+
+        .account-icon {
+            font-size: 2.7rem;
+            padding: 2rem;
+            &:hover {
+                cursor: pointer;
+            }
         }
-        &:hover {
-            cursor: pointer;
+
+        .dropdown-info {
+            position: fixed;
+            font-family: "Ubuntu";
+            top: 100px;
+            background-color: #dbd9d9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            width: 150px;
+            height: 150;
+            right: 30px;
+            text-align: center;
+
+            .logout-button {
+                background-color: transparent;
+                font-family: "Ubuntu";
+                padding: 10px;
+                border: none;
+                font-size: 16px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
         }
     }
+    
 }
