@@ -5,9 +5,12 @@ import json
 def get_status(firstName: str, lastName: str, licenseNumber = ""):
     
     # Generate session and search token
-    s = requests.Session()
-    r= s.get("https://www.cps.sk.ca/imis/")
-    soup = BeautifulSoup(r.text, "html.parser")
+    try:
+        req = requests.get("https://www.cps.sk.ca/imis/")
+    except:
+        return "ERROR"
+    cookies = requests.utils.dict_from_cookiejar(req.cookies)
+    soup = BeautifulSoup(req.text, "html.parser")
     inp = soup.find("input", {"id": "__RequestVerificationToken"})
     token = inp["value"]
     headers = {
@@ -15,7 +18,7 @@ def get_status(firstName: str, lastName: str, licenseNumber = ""):
     }
 
     # Make and parse search results to determine status
-    r = s.get(f"https://www.cps.sk.ca/iMIS/api/iqa?QueryName=$/CPSS/PhysicianSearch/PhysicianSearchResults&parameter=&parameter=&parameter=&parameter=&parameter=&parameter=&parameter=%22{lastName}%22&parameter=&parameter=&limit=21", headers = headers)
+    r = requests.get(f"https://www.cps.sk.ca/iMIS/api/iqa?QueryName=$/CPSS/PhysicianSearch/PhysicianSearchResults&parameter=&parameter=&parameter=&parameter=&parameter=&parameter=&parameter=%22{lastName}%22&parameter=&parameter=&limit=21", headers = headers, cookies = cookies)
     resp_json = json.loads(r.text)
     search_results = resp_json["Items"]["$values"]
     for candidate in search_results:

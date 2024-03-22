@@ -1,5 +1,6 @@
 import unittest
 import unittest.mock as mock
+from unittest.mock import patch, MagicMock
 import os
 import sys
 
@@ -8,6 +9,7 @@ parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 
 import site3
+import requests
 
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
@@ -15,7 +17,7 @@ def mocked_requests_get(*args, **kwargs):
             with open(os.path.dirname(os.path.abspath(__file__)) + filename, 'r', encoding="utf-8") as f:
                 self.text = f.read()
             self.cookies = {}
-    
+
     if args[0] == "https://www.cps.sk.ca/imis/":
         return MockResponse("/sk_get_token_response.txt")
 
@@ -33,7 +35,9 @@ def mocked_requests_get(*args, **kwargs):
 
 class TestSaskatchewanScraper(unittest.TestCase):
     @mock.patch('requests.get', side_effect=mocked_requests_get)
-    def test_verified(self, mock_get):
+    # @mock.patch('requests.Session', autospec=True)
+    def test_verified(self, mock_S):
+        # mock_S.get.side_effect = mocked_requests_get
         self.assertEqual(site3.get_status("Brittni", "Webster", ''), 'VERIFIED')
 
     @mock.patch('requests.get', side_effect=mocked_requests_get)
