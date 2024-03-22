@@ -3,13 +3,18 @@ from bs4 import BeautifulSoup
 import json
 
 def get_status(firstName: str, lastName: str, licenseNumber = ""):
-    
+    # Old way to generate session. Keep in case manual cookies fail
+    # s = requests.Session()
+    # r= s.get("https://www.cps.sk.ca/imis/")
+
     # Generate session and search token
     try:
         req = requests.get("https://www.cps.sk.ca/imis/")
     except:
         return "ERROR"
     cookies = requests.utils.dict_from_cookiejar(req.cookies)
+
+    print(req.text)
     soup = BeautifulSoup(req.text, "html.parser")
     inp = soup.find("input", {"id": "__RequestVerificationToken"})
     token = inp["value"]
