@@ -14,7 +14,6 @@ def get_status(firstName: str, lastName: str, licenseNumber = ""):
         return "ERROR"
     cookies = requests.utils.dict_from_cookiejar(req.cookies)
 
-    print(req.text)
     soup = BeautifulSoup(req.text, "html.parser")
     inp = soup.find("input", {"id": "__RequestVerificationToken"})
     token = inp["value"]
