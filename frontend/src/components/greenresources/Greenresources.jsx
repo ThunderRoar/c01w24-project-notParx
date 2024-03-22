@@ -1,24 +1,77 @@
 import './Greenresources.scss';
 import "leaflet/dist/leaflet.css";
 import educationBuilding from '../../resources/img/university_icon.png';
+import natureReserve from '../../resources/img/nature_reserve.png';
+import parkIcon from '../../resources/img/park_icon.png';
+import dogParkIcon from '../../resources/img/dogParkicon.png';
+import gardenIcon from '../../resources/img/gardenIcon.png';
+import homeIcon from '../../resources/img/homeIcon.png';
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 // import { GoogleMap, Marker, InfoWindow, useLoadScript } from '@react-google-maps/api';
 // import { formatRelative } from "date-fns";
 import { MapContainer, TileLayer, useMap, Marker, useMapEvents, Popup } from "react-leaflet";
-import L from "leaflet";
+import MarkerClusterGroup from 'react-leaflet-cluster';
+import { Icon, divIcon, icon } from "leaflet";
 import axios from 'axios';
 
 
 const GreenResources = () => {
-    // const [mapCenter, setMapCenter] = ([43.7830999, -79.189901]);
-    // const [mapZoom, setMapZoom] = (12);
-    const [position, setPosition] = useState(null)
+    const [position, setPosition] = useState(null);
+    
     const [parks, setParks] = useState([]);
+    const [selectedOption, setSelectedOption] = useState('park');
+
     const [filteredParks, setFilteredParks] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [region, setRegion] = useState('');
-    const [selectedOption, setSelectedOption] = useState('Nature Reserve');
+
+
+    const UniversityIcon = new Icon({
+        iconUrl: educationBuilding,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const HomeIcon = new Icon({
+        iconUrl: homeIcon,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const NatureReserve = new Icon({
+        iconUrl: natureReserve,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const ParkIcon = new Icon({
+        iconUrl: parkIcon,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const DogParkIcon = new Icon({
+        iconUrl: dogParkIcon,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const GardenIcon = new Icon({
+        iconUrl: gardenIcon,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const iconMappings = {
+        'nature_reserve': NatureReserve,
+        'garden': GardenIcon,
+        'park': ParkIcon,
+        'dog_park': DogParkIcon,
+        'home': HomeIcon,
+        'university': UniversityIcon,
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,7 +100,7 @@ const GreenResources = () => {
         fetchData();
     }, []);
 
-    useEffect(() => {
+    const userSelection = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('https://overpass-api.de/api/interpreter', {
@@ -66,37 +119,38 @@ const GreenResources = () => {
                 });
                 setParks(response.data.elements);
                 console.log(response.data.elements);
-                console.log(selectedOption);
             } catch (error) {
                 console.error('Error fetching park data:', error);
             }
         };
 
         fetchData();
-    }, [selectedOption]);
+    };
 
-    useEffect(() => {
-        const filter = parks.filter(park => {
-            if (region && park.tags.name && park.tags.name.toLowerCase().includes(region.toLowerCase())) {
-                return true;
-            }
+    // useEffect(() => {
+    //     const filter = parks.filter(park => {
+    //         if (region && park.tags.name && park.tags.name.toLowerCase().includes(region.toLowerCase())) {
+    //             return true;
+    //         }
 
-            // If user has searched something
-            if (searchQuery) {
-                const searchReq = searchQuery.toLowerCase().split(' ');
-                return searchReq.some(term => park.tags.name.toLowerCase().includes(term));
-            }
-            return true;
-        })
-        setFilteredParks(filter);
-    }, [parks, searchQuery, region]);
+    //         // If user has searched something
+    //         if (searchQuery) {
+    //             const searchReq = searchQuery.toLowerCase().split(' ');
+    //             return searchReq.some(term => park.tags.name.toLowerCase().includes(term));
+    //         }
+    //         return true;
+    //     })
+    //     setFilteredParks(filter);
+    // }, [parks, searchQuery, region]);
 
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
     }
 
     const handleFilterChange = (e) => {
+        console.log(e.target.value);
         setSelectedOption(e.target.value);
+        userSelection();
     }
 
     const handleRegionChange = (e) => {
@@ -120,23 +174,11 @@ const GreenResources = () => {
         })
       
         return position === null ? null : (
-          <Marker position={position}>
+          <Marker position={position} icon={iconMappings['home']}>
             <Popup>You are here</Popup>
           </Marker>
         )
     }
-
-    const universityIcon = L.icon({
-        iconUrl: educationBuilding,
-        iconSize: [30, 30],
-        popupAnchor:  [-0, -0],
-    });
-
-    // const parkIcon = L.icon({
-    //     iconUrl: educationBuilding,
-    //     iconSize: [30, 30],
-    //     popupAnchor:  [-0, -0],
-    // });
 
     return (
         <div className='map-component'>
@@ -146,10 +188,10 @@ const GreenResources = () => {
                     <div className='map-filter'>
                         
                         <select onChange={handleFilterChange}>
-                            <option>Nature Reserve</option>
-                            <option>Garden</option>
-                            <option>Park</option>
-                            <option>Dog Park</option>
+                            <option value={"park"}>Park</option>
+                            <option value={"nature_reserve"}><image></image>Nature Reserve</option>
+                            <option value={"garden"}>Garden</option>
+                            <option value={"dog_park"}>Dog Park</option>
                         </select>
 
                     </div>
@@ -169,20 +211,25 @@ const GreenResources = () => {
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
 
-                        <Marker position={[43.7830999, -79.189901]} icon={universityIcon}>
+                        <Marker position={[43.7830999, -79.189901]} icon={iconMappings['university']}>
                             <Popup>
                                 UTSC
                             </Popup>
                         </Marker>
                         
-                        {/* Use the below if user wants to know where they are currenly
-                        <LocationMarker/> */}
+                        {/* Use the below if user wants to know where they are currenly */}
+                        <LocationMarker/>
 
-                        {parks.map(park => (
-                            <Marker key={park.id} position={[park.lat, park.lon]}>
-                                <Popup>{park.tags.name}</Popup>
-                            </Marker>
-                        ))}
+                        <MarkerClusterGroup 
+                            chunkedLoading
+                        >
+                            {parks.map(park => (
+                                <Marker key={park.id} position={[park.lat, park.lon]} icon={iconMappings[selectedOption]}>
+                                    <Popup>{park.tags.name}</Popup>
+                                </Marker>
+                            ))}
+                        </MarkerClusterGroup>
+                        
                     </MapContainer>
                 </div>
             </div>
