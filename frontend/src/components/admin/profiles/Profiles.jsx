@@ -8,15 +8,19 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab'; 
+import decodeToken from '../../../token_handling/tokenHandling.js';
+import { useNavigate } from 'react-router-dom';
 
 const Profiles = () => {
     const [prescriberPage, setPrescriberPage] = React.useState(0);
     const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5); 
     const [prescriberDBdata, setPrescriberDBdata] = React.useState([]);
     const [patientDBdata, setPatientDBdata] = React.useState([]);
+    const [isCoordinator, setIsCoordinator] = React.useState(true);
+
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         const handleGetPrescribers = async () => {
@@ -57,6 +61,20 @@ const Profiles = () => {
             }
         };
 
+        const checkAdminType = () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                navigate('/')
+            }
+            const decodedToken = decodeToken(token)
+            if (decodedToken.user_type === 'Admin - Coordinator') {
+                setIsCoordinator(true)
+            } else {
+                setIsCoordinator(false)
+            }
+        }
+
+        checkAdminType()
         handleGetPrescribers();
         handleGetPatients();
     }, [])
@@ -139,7 +157,9 @@ const Profiles = () => {
             <div className='verif-header'>
                 <Tabs value={selectedTab} onChange={handleTabChange}>
                     <Tab className={selectedTab === 0 ? 'active tab-label' : 'tab-label'} label="Prescribers" />
-                    <Tab className={selectedTab === 1 ? 'active tab-label' : 'tab-label'} label="Patients" />
+                    {isCoordinator && (
+                        <Tab className={selectedTab === 1 ? 'active tab-label' : 'tab-label'} label="Patients" />
+                    )}
                 </Tabs>
             </div>
             <div className='content'>
