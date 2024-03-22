@@ -129,7 +129,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
              status_code=500
         )
 
-    print(base)
+    # print(base)
 
     # Find required info columns
     FIRST_NAME_IND=-1
