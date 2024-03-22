@@ -1,7 +1,20 @@
 import React from 'react';
+import { prescriberTabs } from '../shared/tabs-data';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import Header from '../shared/header/header';
+import "./Prescriber.scss"
+
 
 const Prescriber = () => {
-  return <div className="prescriber-component">Prescriber Area (Under Development)</div>;
+
+    const tabs = prescriberTabs;
+
+    return (
+        <div className="prescriber-component">
+            <Header tabs={tabs} />
+            <Outlet />
+        </div>
+    );
 };
 
 export default Prescriber;

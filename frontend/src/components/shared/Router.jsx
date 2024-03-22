@@ -6,6 +6,7 @@ import Prescriber from '../prescriber/Prescriber';
 import Admin from '../admin/Admin';
 import Verification from '../admin/verification/Verification';
 import Profiles from '../admin/profiles/Profiles';
+import GreenResources from '../greenresources/Greenresources';
 
 
 function Router() {
@@ -20,7 +21,8 @@ function Router() {
             <Route path="/admin/profiles" element={<Profiles />} /> */}
         <Route path="/patient" element={<Patient />} />
         <Route path="/prescriber" element={<Prescriber />} /> 
-        {/* <Route path="/prescriber/green-resources" element={<GreenResources />} />  */}
+        <Route path="/prescriber/green-resources" element={<GreenResources />} /> 
+        {/* <Route path="/green-resources" element={<GreenResources />} />  */}
         {/* <Route path="/patient/green-resources" element={<GreenResources />} />  */}
     </Routes>
   );

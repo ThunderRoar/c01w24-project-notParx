@@ -5,6 +5,7 @@ import Prescriber from '../prescriber/Prescriber';
 import Verification from '../admin/verification/Verification';
 import Profiles from '../admin/profiles/Profiles';
 import Admin from '../admin/Admin';
+import GreenResources from '../greenresources/Greenresources';
 import { Navigate } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
             },
             {
               path: "green-resources",
-              element: <Profiles />,
+              element: <GreenResources />
             },
           ]
         },

@@ -1,5 +1,59 @@
-.main {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-bottom: 1rem;
+.map-component {
+    .service-header {
+        font-size: 2rem !important;
+        margin-bottom: 2.6rem;
+        margin-top: -1.75rem;
+    }
+
+    .content {
+        margin-top: -2rem;
+        background-color: #FDFDFF;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+        border-radius: .55rem;
+        display: flex;
+        height: 47rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        border-radius: .85rem;
+
+        .nav {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #749769;
+            border-top-left-radius: .85rem;
+            border-top-right-radius: .85rem;
+
+            .map-filter {
+                margin-right: auto;
+            }
+
+            .map-search-bar {
+                flex: 1;
+                margin: 1rem;
+                input {
+                    width: 100%;
+                    padding: 0.5rem;
+                    border-radius: 0.3rem;
+                    border: 1px solid #ccc;
+                }
+            }
+
+            .map-find-button {
+                margin-left: 1rem;
+            }
+        }
+        .map-container {
+            margin-top: -2rem;
+            height: calc(100% - 1.5rem);
+        }
+    }
+}
+
+// Sizing of the map container
+.leaflet-container {
+    height: 100%;
+    border-bottom-left-radius: .85rem;
+    border-bottom-right-radius: .85rem;
 }
