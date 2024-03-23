@@ -53,3 +53,4 @@ class DownloadPrescriptionPDF(APIView):
         # Return the buffer content as a response
         response = HttpResponse(pdf_buffer, content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="prescription.pdf"'
+        return response
