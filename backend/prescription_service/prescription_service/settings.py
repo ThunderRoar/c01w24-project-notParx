@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 AZURE_CONNECTION_STRING = os.getenv('AZURE_CONNECTION_STRING')
 MONGO_URI = os.getenv('MONGO_URI')
 
-# SECRET_KEY = os.getenv('PRESCRIPTION_SERVICE_URL_DJANGO_SECRET_KEY')
-SECRET_KEY = 'django-insecure-$=mn((0240mbie--hk-q5j%f5s&wzdw60xab6ng!y76t+0b_b2'
+SECRET_KEY = os.getenv('PRESCRIPTION_SERVICE_URL_DJANGO_SECRET_KEY')
+#SECRET_KEY = 'django-insecure-$=mn((0240mbie--hk-q5j%f5s&wzdw60xab6ng!y76t+0b_b2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

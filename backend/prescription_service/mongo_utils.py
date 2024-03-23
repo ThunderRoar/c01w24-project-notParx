@@ -22,6 +22,7 @@ def get_prescription_by_prescription_id(prescription_id):
 def user_details_by_username(username):
     """Retrieve a user from MongoDB by their username."""
     try:
+        # print(f"username: {username}")
         return user_collection.find_one({'username': username})
     except Exception as e:
         print(e)

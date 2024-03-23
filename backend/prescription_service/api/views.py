@@ -21,8 +21,8 @@ class DownloadPrescriptionPDF(APIView):
         """      
         # Using the funciont get_prescription_by_id from mongo_utils.py
         prescription_data = get_prescription_by_prescription_id(prescription_id)
-        
-        username= prescription_data.get('username') # for the paitent 
+        print(f"prescription_data: {prescription_data}")
+        username= prescription_data.get('patientID') # for the paitent 
         user_data = user_details_by_username(username)
         name = user_data.get('firstName') + ' ' + user_data.get('lastName')
 
@@ -41,7 +41,7 @@ class DownloadPrescriptionPDF(APIView):
         pdf = create_pdf(
             name=name,
             activity_plan=activity_plan,
-            prescription_code=prov_doc_id,
+            prescriber_code=prov_doc_id,
             patient_initials=patient_initials
         )
 
