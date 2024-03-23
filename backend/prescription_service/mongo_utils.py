@@ -8,7 +8,7 @@ client = MongoClient(MONGO_URI)
 db = client[DATABASE_NAME]
 prescription_collection = db["api_prescription"]
 user_collection = db["api_user"]
-presriber_collection = db["api_prescriber"]
+prescriber_collection = db["api_prescriber"]
 
 def get_prescription_by_prescription_id(prescription_id):
     """Retrieve a prescription from MongoDB by its prescriptionID."""
@@ -19,18 +19,18 @@ def get_prescription_by_prescription_id(prescription_id):
         return None
     
 
-def user_details(user_id):
-    """Retrieve a user from MongoDB by its _id."""
+def user_details_by_username(username):
+    """Retrieve a user from MongoDB by their username."""
     try:
-        return user_collection.find_one({'_id': ObjectId(user_id)})
+        return user_collection.find_one({'username': username})
     except Exception as e:
         print(e)
         return None
     
-def presriber_details(presriber_id):
-    """Retrieve a presriber from MongoDB by its _id."""
+def prescriber_details_by_provdocid(prov_doc_id):
+    """Retrieve a prescriber from MongoDB by their provDocID."""
     try:
-        return presriber_collection.find_one({'_id': ObjectId(presriber_id)})
+        return prescriber_collection.find_one({'provDocID': prov_doc_id})
     except Exception as e:
         print(e)
         return None
