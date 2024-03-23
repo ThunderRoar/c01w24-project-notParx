@@ -1,6 +1,9 @@
 import './MyPrescriptions.scss';
-import { Button } from '@mui/material';
+import AddNewPrescription from './AddNewPrescription/AddNewPrescription';
+
 import * as React from 'react';
+import ReactPopup from 'reactjs-popup';
+import { Button } from '@mui/material';
 import TablePagination from '@mui/material/TablePagination';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -10,71 +13,60 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 const MyPrescriptions = () => {
-    const [prescriberPage, setPrescriberPage] = React.useState(0);
-    const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5); 
-    const [prescriberDBdata, setPrescriberDBdata] = React.useState([]);
-
-    React.useEffect(() => {
-        const handleGetPrescribers = async () => {
-            try {
-                await fetch('https://notparx-prescriber-service.azurewebsites.net/api/getPrescriberProfiles/', {
-                    method: 'GET',
-                })
-                .then (async response => {
-                    if (response.ok) {
-                        let data = await response.json();
-                        console.log(data);
-                        setPrescriberDBdata(data);
-                    } else {
-                        console.log('Error fetching prescribers: ', response.statusText);
-                    }
-                })
-            } catch(error) {
-                console.error('Error fetching prescriber: ', error);
-            }
-        };
-
-        handleGetPrescribers();
-    }, [])
-    
-    // const prescriberColumns = [ // Sample columns - add depending on what api returns
-    //     { id: 'provDocID', label: 'Code' },
-    //     { id: 'firstName', label: 'First Name' },
-    //     { id: 'lastName', label: 'Last Name' },
-    //     { id: 'email', label: 'Email' },
-    //     { id: 'address', label: 'Address' },
-    //     { id: 'city', label: 'City' },
-    //     { id: 'province', label: 'Prov' },
-    //     { id: 'college', label: 'Licensing College' },
-    //     { id: 'licenseNum', label: 'License#' },
-    //     // { id: '', label: 'Prescriptions'},
-    //     // { id: "prescriptionButton", label: ''}
-    // ];
-
-    const prescriberColumns = [ // Sample columns - add depending on what api returns
+    const sampleData = [
+        { provDocID: 'ON-JB001', patientInitials: 'OW', date: '22 Mar 2024', discoveryPass: true, matchedPatient: 'Owen W', status: 'Logged' },
+    ];
+  
+    const prescriptionColumns = [ // Sample columns - add depending on what api returns
         { id: 'provDocID', label: 'Provider Code' },
         { id: 'patientInitials', label: 'Patient Initials' },
         { id: 'date', label: 'Date' },
         { id: 'discoveryPass', label: 'Discovery Pass' },
-        { id: 'patient', label: 'Matched Patient' },
+        { id: 'matchedPatient', label: 'Matched Patient' },
         { id: 'status', label: 'Status' },
-        { id: 'pdf', label: 'Prescription PDF' },
+        // { id: 'pdf', label: 'Prescription PDF' },
     ];
 
-    const handlePrescriberPageChange = (event, newPage) => {
-        setPrescriberPage(newPage);
+    const [prescriptionPage, setPrescriptionPage] = React.useState(0);
+    const [prescriptionRowsPerPage, setPrescriptionRowsPerPage] = React.useState(5); 
+    const [showPopup, setShowPopup] = React.useState(false);
+    const [prescriptionDBdata, setPrescriptionDBdata] = React.useState([]);
+
+    const handlePrescriptionPageChange = (event, newPage) => {
+        setPrescriptionPage(newPage);
     };
 
-    const handlePrescriberRowsPerPageChange = (event) => {
-        setPrescriberRowsPerPage(+event.target.value);
-        setPrescriberPage(0); 
+    const handlePrescriptionRowsPerPageChange = (event) => {
+        setPrescriptionRowsPerPage(+event.target.value);
+        setPrescriptionPage(0); 
     };
+
+    const handleAddPresClick = () => {
+        setShowPopup(true);  // Open the popup
+    };
+
+    const handlePopupClose = () => {
+        setShowPopup(false); // Close the popup
+    };
+
+    React.useEffect(() => {
+        const handleGetPrescriptions = async () => {
+            try {
+                // TODO: call backend api here
+                setPrescriptionDBdata(sampleData);
+            } catch(error) {
+                console.error('Error fetching prescription: ', error);
+            }
+        };
+
+        handleGetPrescriptions();
+    }, [])
 
     return (
         <div className='prescriber-prescriptions-component'>
             <div className='page-header'>
                 <span>My Prescriptions</span>
-                <Button className='btn' onClick={() => {}}>Add New</Button>
+                <Button className='btn' onClick={handleAddPresClick}>Add New</Button>
             </div>
             <div className='content'>
                 <div className='table-container'>
@@ -82,26 +74,24 @@ const MyPrescriptions = () => {
                         <Table className='table'>
                             <TableHead className='table-header'>
                                 <TableRow className='header-row'>
-                                {prescriberColumns.map((column) => (
-                                    <TableCell key={column.id}>{column.label}</TableCell>
-                                ))}
-
-                                <TableCell key = "prescriptionButton"> 
-                                </TableCell>
-
+                                    {prescriptionColumns.map((column) => (
+                                        <TableCell key={column.id}>{column.label}</TableCell>
+                                    ))}
+                                    <TableCell key={"prescriptionButton"}><span>Prescription PDF</span></TableCell>
                                 </TableRow>
-                                
                             </TableHead>
                             <TableBody>
-                                {prescriberDBdata.slice(prescriberPage * prescriberRowsPerPage,
-                                    prescriberPage * prescriberRowsPerPage + prescriberRowsPerPage).map((row) => (
-                                    <TableRow className='table-row' key={row.id}>
-                                        {/* Render prescriber columns */}
-                                        {prescriberColumns.map((column) => (
+                                {prescriptionDBdata.slice(prescriptionPage * prescriptionRowsPerPage,
+                                    prescriptionPage * prescriptionRowsPerPage + prescriptionRowsPerPage).map((row, id) => (
+                                    <TableRow className='table-row' key={id}>
+                                        {/* Render prescription columns */}
+                                        {prescriptionColumns.map((column) => (
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
-                                        <TableCell key = "prescriptionButton"> 
-                                            <Button className='btn' onClick={() => {}}><span>View Prescriptions</span>
+                                        <TableCell key="prescriptionButton"> 
+                                            {/* TODO: handle view prescriptions */}
+                                            <Button className='btn' onClick={() => {}}>
+                                                <span>View Prescriptions</span>
                                             </Button>
                                         </TableCell>
                                     </TableRow>
@@ -112,14 +102,17 @@ const MyPrescriptions = () => {
                     <TablePagination
                         rowsPerPageOptions={[5, 10, 25]}
                         component="div"
-                        count={prescriberDBdata.length} 
-                        rowsPerPage={prescriberRowsPerPage}
-                        page={prescriberPage}
-                        onPageChange={handlePrescriberPageChange}
-                        onRowsPerPageChange={handlePrescriberRowsPerPageChange}
+                        count={prescriptionDBdata.length} 
+                        rowsPerPage={prescriptionRowsPerPage}
+                        page={prescriptionPage}
+                        onPageChange={handlePrescriptionPageChange}
+                        onRowsPerPageChange={handlePrescriptionRowsPerPageChange}
                     />
                 </div>
             </div>
+            <ReactPopup open={showPopup} closeOnDocumentClick={false} onClose={handlePopupClose}>
+                <AddNewPrescription onClose={handlePopupClose} /> 
+            </ReactPopup>
         </div>
     );
 };

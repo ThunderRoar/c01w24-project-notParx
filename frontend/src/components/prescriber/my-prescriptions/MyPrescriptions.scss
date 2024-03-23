@@ -15,10 +15,10 @@
     background-color: #749769;
     color: #F9FFF8;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  .btn:hover {
-    background-color: rgb(235, 245, 239);
-    color: #749769;
+    &:hover {
+        background: #32402e;
+        cursor: pointer;
+    }
   }
   .content {
       background-color: #FDFDFF;
