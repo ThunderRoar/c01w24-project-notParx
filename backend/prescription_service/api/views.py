@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from io import BytesIO
 
 from PDF_generation import create_pdf
-from mongo_utils import get_prescription_by_id, user_details, presriber_details
+from mongo_utils import get_prescription_by_prescription_id, user_details_by_username, prescriber_details_by_provdocid
 
 class DownloadPrescriptionPDF(APIView):
     """
