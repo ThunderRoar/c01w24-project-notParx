@@ -20,17 +20,28 @@ class DownloadPrescriptionPDF(APIView):
         Get the prescription data and create a PDF.
         """      
         # Using the funciont get_prescription_by_id from mongo_utils.py
-        prescription_data = get_prescription_by_id(prescription_id)
+        prescription_data = get_prescription_by_prescription_id(prescription_id)
         
-        user_data = user_details(prescription_data.get('user_id'))
+        username= prescription_data.get('username') # for the paitent 
+        user_data = user_details_by_username(username)
         name = user_data.get('firstName') + ' ' + user_data.get('lastName')
-        activity_plan = prescription_data.get('DescriptionOfPrescription')
-        presriber_code = prescription_data.get('PrescriberCode')
+
+        prov_doc_id = prescription_data.get('prescriberCode')
+        prescriber_data = prescriber_details_by_provdocid(prov_doc_id)
+
+        # if prescriber_data or username is None:
+        if not prescriber_data or not user_data:
+            return HttpResponse('Prescription not found', status=404)
+        
         patient_initials = user_data.get('firstName')[0] + user_data.get('lastName')[0]
+
+
+        activity_plan = prescription_data.get('descriptionOfPrescription', "")
+
         pdf = create_pdf(
             name=name,
             activity_plan=activity_plan,
-            prescription_code=presriber_code,
+            prescription_code=prov_doc_id,
             patient_initials=patient_initials
         )
 
