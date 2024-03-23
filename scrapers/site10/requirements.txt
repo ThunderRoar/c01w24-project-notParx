@@ -1,1 +1,3 @@
 selenium==4.18.1
+chompjs==1.2.3
+requests==2.26.0

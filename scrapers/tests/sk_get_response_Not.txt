@@ -1,0 +1,14 @@
+{
+    "$type": "Asi.Soa.Core.DataContracts.PagedResult`1[[Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts]], Asi.Contracts",
+    "Items": {
+        "$type": "System.Collections.Generic.List`1[[Asi.Soa.Core.DataContracts.GenericEntityData, Asi.Contracts]], mscorlib",
+        "$values": []
+    },
+    "Offset": 0,
+    "Limit": 21,
+    "Count": 0,
+    "TotalCount": 0,
+    "NextPageLink": null,
+    "HasNext": false,
+    "NextOffset": 0
+}
