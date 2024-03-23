@@ -10,14 +10,15 @@ prescription_collection = db["api_prescription"]
 user_collection = db["api_user"]
 presriber_collection = db["api_prescriber"]
 
-def get_prescription_by_id(prescription_id):
-    """Retrieve a prescription from MongoDB by its _id."""
+def get_prescription_by_prescription_id(prescription_id):
+    """Retrieve a prescription from MongoDB by its prescriptionID."""
     try:
-        return prescription_collection.find_one({'_id': ObjectId(prescription_id)})
+        return prescription_collection.find_one({'prescriptionID': prescription_id})
     except Exception as e:
         print(e)
         return None
     
+
 def user_details(user_id):
     """Retrieve a user from MongoDB by its _id."""
     try:
