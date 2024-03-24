@@ -5,8 +5,9 @@ import Prescriber from '../prescriber/Prescriber';
 import Verification from '../admin/verification/Verification';
 import Profiles from '../admin/profiles/Profiles';
 import Admin from '../admin/Admin';
-import MyPrescriptions from '../prescriber/my-prescriptions/MyPrescriptions';
+import PrescriberPrescriptions from '../prescriber/my-prescriptions/PrescriberPrescriptions';
 import { Navigate } from 'react-router-dom';
+import PatientPrescriptions from '../patient/my-prescriptions/PatientPrescriptions';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
             }, 
             {
               path: "my-prescriptions",
-              element: <Verification />,
+              element: <PatientPrescriptions />,
             },
             {
               path: "green-resources",
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
             }, 
             {
               path: "my-prescriptions",
-              element: <MyPrescriptions />,
+              element: <PrescriberPrescriptions />,
             },
             {
               path: "green-resources",

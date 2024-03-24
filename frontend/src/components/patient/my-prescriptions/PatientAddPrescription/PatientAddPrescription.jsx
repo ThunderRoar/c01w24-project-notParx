@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './AddNewPrescription.scss';
+import './PatientAddPrescription.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -9,29 +9,32 @@ import Checkbox from '@mui/material/Checkbox';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import dayjs from 'dayjs';
 
-const AddNewPrescription = ({ onClose }) => {
+const PatientAddPrescription = ({ onClose }) => {
     const today = dayjs(dayjs().format('YYYY-MM-DD'));
 
     const [date, setDate] = useState(today);
-    const [patientInitials, setPatientInitials] = useState('');
+    const [provDocID, setProvDocID] = useState('');
     const [discoveryPass, setDiscoveryPass] = useState(false);
     const [invalidDate, setInvalidDate] = useState(null);
     const [invalidInput, setInvalidInput] = useState(false);
     const [error, setError] = useState(false);
 
     const handleCreate = async () => {
-        if (!patientInitials) {
+        if (!provDocID) {
             setInvalidInput(true);
             setError(true);
-        }
-        else if (!error) {
+        } else if (false) {
+            // TODO: check if provDocID exists in database
+            setInvalidInput(true);
+            setError(true);
+        } else if (!error) {
             console.log(date.format('YYYY-MM-DD'));
-            console.log(patientInitials);
+            console.log(provDocID);
             console.log(discoveryPass);
 
             // Clear form inputs
             setDate(today);
-            setPatientInitials('');
+            setProvDocID('');
             setDiscoveryPass(false);
 
             // Clear errors
@@ -48,10 +51,11 @@ const AddNewPrescription = ({ onClose }) => {
         setDate(newDate);
     }
 
-    const handlePatientInitialsChange = async (e) => {
-        const inputValue = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
-        setPatientInitials(inputValue);
+    const handleProvDocIDChange = async (e) => {
+        const inputValue = e.target.value.toUpperCase();
+        setProvDocID(inputValue);
         setInvalidInput(false);
+        setError(false || invalidDate);
     }
 
     const handleCheck = async (e) => {
@@ -93,16 +97,15 @@ const AddNewPrescription = ({ onClose }) => {
                     { invalidDate && <span className='error-msg'>Invalid date</span> }
                 </div>
                 <div className='txt-field'>
-                    <small>Patient Initials (FirstLast)</small>
+                    <small>Unique Provider Code</small>
                     <input
                         type="text"
                         className="input-field"
-                        placeholder="Patient Initials"
-                        value={patientInitials}
-                        maxLength={2}
-                        onChange={handlePatientInitialsChange}
+                        placeholder="Unique Provider Code"
+                        value={provDocID}
+                        onChange={handleProvDocIDChange}
                     />
-                    { invalidInput && <span className='error-msg'>Invalid input</span> }
+                    { invalidInput && <span className='error-msg'>Invalid provider code</span> }
                 </div>
                 <div className='checkbox-field'>
                     <small>PC Discovery Pass</small>
@@ -119,4 +122,4 @@ const AddNewPrescription = ({ onClose }) => {
     );
 };
 
-export default AddNewPrescription;
+export default PatientAddPrescription;
