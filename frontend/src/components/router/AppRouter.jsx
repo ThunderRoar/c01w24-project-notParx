@@ -35,10 +35,6 @@ const router = createBrowserRouter([
               path: "profiles",
               element: <Profiles />,
             },
-            {
-                path: "green-resources",
-                element: <GreenResources/>
-            },
           ]
         },
         {
