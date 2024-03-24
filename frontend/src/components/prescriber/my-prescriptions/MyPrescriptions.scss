@@ -10,16 +10,6 @@
       text-decoration: none;
       text-transform: none !important;
   }
-  .btn {
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    background-color: #749769;
-    color: #F9FFF8;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    &:hover {
-        background: #32402e;
-        cursor: pointer;
-    }
-  }
   .content {
       background-color: #FDFDFF;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
@@ -27,6 +17,32 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .add-new-btn {
+        margin: 2rem 2rem 0rem 0rem;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+      }
+      .btn {
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+      }
+      .controls {
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+      }
       .table-container {
           padding-left: 2rem;
           padding-right: 2rem;

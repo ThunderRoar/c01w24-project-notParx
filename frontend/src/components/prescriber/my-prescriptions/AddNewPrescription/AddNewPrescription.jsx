@@ -90,7 +90,7 @@ const AddNewPrescription = ({ onClose }) => {
                             </ThemeProvider>
                         </DemoContainer>
                     </LocalizationProvider>
-                    { invalidDate && <text>Invalid date</text> }
+                    { invalidDate && <span className='error-msg'>Invalid date</span> }
                 </div>
                 <div className='txt-field'>
                     <small>Patient Initials (FirstLast)</small>
@@ -102,7 +102,7 @@ const AddNewPrescription = ({ onClose }) => {
                         maxLength={2}
                         onChange={handlePatientInitialsChange}
                     />
-                    { invalidInput && <text>Invalid input</text> }
+                    { invalidInput && <span className='error-msg'>Invalid input</span> }
                 </div>
                 <div className='checkbox-field'>
                     <small>PC Discovery Pass</small>

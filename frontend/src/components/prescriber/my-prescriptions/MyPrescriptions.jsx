@@ -66,9 +66,11 @@ const MyPrescriptions = () => {
         <div className='prescriber-prescriptions-component'>
             <div className='page-header'>
                 <span>My Prescriptions</span>
-                <Button className='btn' onClick={handleAddPresClick}>Add New</Button>
             </div>
             <div className='content'>
+                <div className='controls'>
+                    <Button className='add-new-btn' onClick={handleAddPresClick}>Add New</Button>
+                </div>
                 <div className='table-container'>
                     <TableContainer className='table-cont'>
                         <Table className='table'>
@@ -91,7 +93,7 @@ const MyPrescriptions = () => {
                                         <TableCell key="prescriptionButton"> 
                                             {/* TODO: handle view prescriptions */}
                                             <Button className='btn' onClick={() => {}}>
-                                                <span>View Prescriptions</span>
+                                                <span>View Prescription</span>
                                             </Button>
                                         </TableCell>
                                     </TableRow>
