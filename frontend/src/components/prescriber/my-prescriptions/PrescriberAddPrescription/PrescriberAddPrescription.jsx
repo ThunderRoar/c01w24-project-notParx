@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './AddNewPrescription.scss';
+import './PrescriberAddPrescription.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -9,7 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import dayjs from 'dayjs';
 
-const AddNewPrescription = ({ onClose }) => {
+const PrescriberAddPrescription = ({ onClose }) => {
     const today = dayjs(dayjs().format('YYYY-MM-DD'));
 
     const [date, setDate] = useState(today);
@@ -52,6 +52,7 @@ const AddNewPrescription = ({ onClose }) => {
         const inputValue = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
         setPatientInitials(inputValue);
         setInvalidInput(false);
+        setError(false || invalidDate);
     }
 
     const handleCheck = async (e) => {
@@ -84,6 +85,7 @@ const AddNewPrescription = ({ onClose }) => {
                                     slotProps={{ textField: { size: 'small' } }}
                                     minDate={today}
                                     value={date}
+                                    format="YYYY/MM/DD"
                                     onChange={handleDateChange}
                                     onError={(newError) => {setInvalidDate(newError); setError(newError);}}
                                 />
@@ -119,4 +121,4 @@ const AddNewPrescription = ({ onClose }) => {
     );
 };
 
-export default AddNewPrescription;
+export default PrescriberAddPrescription;

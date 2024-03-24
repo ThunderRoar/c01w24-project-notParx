@@ -1,5 +1,5 @@
-import './MyPrescriptions.scss';
-import AddNewPrescription from './AddNewPrescription/AddNewPrescription';
+import './PrescriberPrescriptions.scss';
+import PrescriberAddPrescription from './PrescriberAddPrescription/PrescriberAddPrescription';
 
 import * as React from 'react';
 import ReactPopup from 'reactjs-popup';
@@ -12,7 +12,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const MyPrescriptions = () => {
+const PrescriberPrescriptions = () => {
     const sampleData = [
         { provDocID: 'ON-JB001', patientInitials: 'OW', date: '22 Mar 2024', discoveryPass: true, matchedPatient: 'Owen W', status: 'Logged' },
     ];
@@ -113,10 +113,10 @@ const MyPrescriptions = () => {
                 </div>
             </div>
             <ReactPopup open={showPopup} closeOnDocumentClick={false} onClose={handlePopupClose}>
-                <AddNewPrescription onClose={handlePopupClose} /> 
+                <PrescriberAddPrescription onClose={handlePopupClose} /> 
             </ReactPopup>
         </div>
     );
 };
 
-export default MyPrescriptions;
+export default PrescriberPrescriptions;
