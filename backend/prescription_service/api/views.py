@@ -3,11 +3,13 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
 
 from io import BytesIO
 
 from PDF_generation import create_pdf
-from mongo_utils import get_prescription_by_prescription_id, user_details_by_username, prescriber_details_by_provdocid
+from mongo_utils import get_prescription_by_prescription_id, user_details_by_username, prescriber_details_by_provdocid, update_user, insert_prescription, update_prescription, update_prescriber
 
 class DownloadPrescriptionPDF(APIView):
     """
@@ -54,3 +56,113 @@ class DownloadPrescriptionPDF(APIView):
         response = HttpResponse(pdf_buffer, content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="prescription.pdf"'
         return response
+    
+class LogUserPrescription(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, format=None):
+        # Get prescription info
+        initials = request.data.get("initials")
+        date = request.data.get("date")
+        prescriberID = request.data.get("prescriberID")
+        discoveryPass = request.data.get("discoveryPass")
+        username = request.data.get("username")
+        description = request.data.get("description")
+
+        # Make unique string
+
+        prescriptionString = prescriberID + "_" + date + "_" + initials
+
+        # Add prescription to list of prescriptions if not already there
+        user = user_details_by_username(username=username)
+        if user:
+            prescriptions = user['prescribersID']
+            for prescription in prescriptions:
+                if prescription == prescriptionString:
+                    return Response({'error': 'Prescription already logged'}, status=status.HTTP_400_BAD_REQUEST)
+
+            prescriptions.append(prescriptionString)
+
+            filters = {'prescribersID': prescriptions}
+            update_user(username=username, filters=filters)
+
+            # Check for existing prescription and update status accordingly
+            existingPrescription = get_prescription_by_prescription_id(prescription_id=prescriptionString)
+            if existingPrescription is None:
+                newPrescription = {
+                    'prescriptionID': prescriptionString,
+                    'patientID': username,
+                    'matched': False,
+                    'prescriberCode': prescriberID,
+                    'dateOfPrescription': date,
+                    'descriptionOfPrescription': description,
+                    'discoveryPassPrescribed': discoveryPass,
+                    'patientStatus': "Pr not logged yet",
+                    'prescriberStatus': ""
+                }
+                insert_prescription(prescription=newPrescription)
+            else:
+                if discoveryPass:
+                    filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged', 'patientID': username}
+                else:
+                    filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete', 'patientID': username}
+                update_prescription(prescriptionID=prescriptionString, filters=filters)
+            
+            return Response({'success': 'Added prescription'}, status=status.HTTP_200_OK)
+
+        return Response({'error': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
+
+class LogPrescriberPrescription(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, format=None):
+        # Get prescription info
+        initials = request.data.get("initials")
+        date = request.data.get("date")
+        prescriberID = request.data.get("prescriberID")
+        discoveryPass = request.data.get("discoveryPass")
+        description = request.data.get("description")
+
+        # Make unique string
+
+        prescriptionString = prescriberID + "_" + date + "_" + initials
+
+        # Add prescription to list of prescriptions if not already there
+        prescriber = prescriber_details_by_provdocid(prescriberID)
+        if prescriber:
+            prescriptions = prescriber['prescriptions']
+            for prescription in prescriptions:
+                if prescription == prescriptionString:
+                    return Response({'error': 'Prescription already logged'}, status=status.HTTP_400_BAD_REQUEST)
+
+            prescriptions.append(prescriptionString)
+
+            filters = {'prescriptions': prescriptions}
+            update_prescriber(prescriberID=prescriberID, filters=filters)
+
+            # Check for existing prescription and update status accordingly
+            existingPrescription = get_prescription_by_prescription_id(prescription_id=prescriptionString)
+            if existingPrescription is None:
+                newPrescription = {
+                    'prescriptionID': prescriptionString,
+                    'patientID': "",
+                    'matched': False,
+                    'prescriberCode': prescriberID,
+                    'dateOfPrescription': date,
+                    'descriptionOfPrescription': description,
+                    'discoveryPassPrescribed': discoveryPass,
+                    'patientStatus': "",
+                    'prescriberStatus': "Pa not logged yet"
+                }
+
+                insert_prescription(prescription=newPrescription)
+            else:
+                if discoveryPass:
+                    filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged'}
+                else:
+                    filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete'}
+                update_prescription(prescriptionID=prescriptionString, filters=filters)
+            
+            return Response({'success': 'Added prescription'}, status=status.HTTP_200_OK)
+
+        return Response({'error': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
