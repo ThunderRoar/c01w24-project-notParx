@@ -6,6 +6,7 @@ import Verification from '../admin/verification/Verification';
 import Profiles from '../admin/profiles/Profiles';
 import Admin from '../admin/Admin';
 import GreenResources from '../greenresources/Greenresources';
+import MyPrescriptions from '../prescriber/my-prescriptions/MyPrescriptions';
 import { Navigate } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
           element: <Navigate to="login" replace /> 
         }, 
         {
-          path: "login",
+          path: "",
           element: <Login />,
         },
         {
@@ -66,7 +67,7 @@ const router = createBrowserRouter([
             }, 
             {
               path: "my-prescriptions",
-              element: <Verification />,
+              element: <MyPrescriptions />,
             },
             {
               path: "green-resources",
