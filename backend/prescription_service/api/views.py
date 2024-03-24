@@ -38,7 +38,7 @@ class DownloadPrescriptionPDF(APIView):
 
         activity_plan = prescription_data.get('descriptionOfPrescription', "")
         if activity_plan == None:
-            activity_plan = "No activity plan provided"
+            activity_plan = ""
 
         pdf = create_pdf(
             name=name,
