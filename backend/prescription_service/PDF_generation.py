@@ -27,7 +27,7 @@ class PDF(FPDF):
         self.multi_cell(text=f"{activity_plan}", align='C', w = 0, h = 10, border = 0)
 
         # Simulate space before the footer
-        self.ln(180)
+        self.ln(175)
 
         # Add a line for Health Professional's Signature
         self.cell(0, 10, '________________________________________')
@@ -46,7 +46,7 @@ class PDF(FPDF):
         # Draw the third box for the patient's initials
         self.cell(w=box_width, h=10, text=f'Patient Initials: {self.patient_initials}', border=0, align='L', fill=False, new_x=XPos.RIGHT, new_y=YPos.TOP)
 
-        self.ln(10)
+        
 
 
 # Function to create the PDF document
