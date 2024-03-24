@@ -35,3 +35,15 @@ def prescriber_details_by_provdocid(prov_doc_id):
     except Exception as e:
         print(e)
         return None
+    
+def update_user(username, filters):
+    user_collection.update_one({'username': username}, {"$set": filters})
+
+def insert_prescription(prescription):
+    prescription_collection.insert_one(prescription)
+
+def update_prescription(prescriptionID, filters):
+    prescription_collection.update_one({'prescriptionID': prescriptionID}, {"$set": filters})
+
+def update_prescriber(prescriberID, filters):
+    prescriber_collection.update_one({'provDocID': prescriberID}, {"$set": filters})
