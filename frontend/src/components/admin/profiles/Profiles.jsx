@@ -12,6 +12,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab'; 
 import decodeToken from '../../../token_handling/tokenHandling.js';
 import { useNavigate } from 'react-router-dom';
+import PrescriptionView from './PrescriptionView/PrescriptionView.jsx';
+import ReactPopup from 'reactjs-popup';
 
 const Profiles = () => {
     const [prescriberPage, setPrescriberPage] = React.useState(0);
@@ -21,6 +23,16 @@ const Profiles = () => {
     const [isCoordinator, setIsCoordinator] = React.useState(true);
 
     const navigate = useNavigate();
+
+    const [showPopup, setShowPopup] = React.useState(false);
+
+    const handleButtonClick = () => {
+        setShowPopup(true);  // Open the popup
+    };
+
+    const handlePopupClose = () => {
+        setShowPopup(false); // Close the popup
+    };
 
     React.useEffect(() => {
         const handleGetPrescribers = async () => {
@@ -84,25 +96,7 @@ const Profiles = () => {
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
     
     const [selectedTab, setSelectedTab] = React.useState(0); // State for selected tab
-    
-    // Separate Data for Prescribers and Patients
-    const prescriberData = [ 
-        { 
-            id: 1,
-            code: 'MD1001',
-            first: 'John',
-            last: 'Doe',
-        },
-    ];
 
-    const patientData = [
-        { 
-            id: 1,
-            code: 'PT3001', 
-            first: 'Jane',
-            last: 'Smith',
-        },
-    ];
 
     const prescriberColumns = [ // Sample columns - add depending on what api returns
         { id: 'provDocID', label: 'Code' },
@@ -200,7 +194,7 @@ const Profiles = () => {
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
                                             <TableCell key = "prescriptionButton"> 
-                                                <Button className='upload-button' onClick={() => {}}><span>View Prescriptions</span>
+                                                <Button className='upload-button' onClick={handleButtonClick}><span>View Prescriptions</span>
                                                 </Button>
                                             </TableCell>
                                         </TableRow>
@@ -215,7 +209,7 @@ const Profiles = () => {
                                             ))}
 
                                             <TableCell key = "prescriptionButton"> 
-                                                <Button className='upload-button' onClick={() => {}}><span>View Prescriptions</span>
+                                                <Button className='upload-button' onClick={handleButtonClick}><span>View Prescriptions</span>
                                                 </Button>
                                             </TableCell>
                                         </TableRow>
@@ -248,6 +242,9 @@ const Profiles = () => {
                     )}
                 </div>
             </div>
+            <ReactPopup open={showPopup} closeOnDocumentClick={true} onClose={handlePopupClose}>
+                <PrescriptionView onClose={handlePopupClose} /> 
+            </ReactPopup>
         </div>
     );
 };
