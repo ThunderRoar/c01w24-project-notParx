@@ -76,14 +76,14 @@ class LogUserPrescription(APIView):
         # Add prescription to list of prescriptions if not already there
         user = user_details_by_username(username=username)
         if user:
-            prescriptions = user['prescribersID']
+            prescriptions = user['prescriptionIDs']
             for prescription in prescriptions:
                 if prescription == prescriptionString:
                     return Response({'error': 'Prescription already logged'}, status=status.HTTP_400_BAD_REQUEST)
 
             prescriptions.append(prescriptionString)
 
-            filters = {'prescribersID': prescriptions}
+            filters = {'prescriptionIDs': prescriptions}
             update_user(username=username, filters=filters)
 
             # Check for existing prescription and update status accordingly

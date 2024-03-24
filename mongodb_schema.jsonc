@@ -14,7 +14,7 @@
                     "email": "String",
                     "dpass": "Boolean",
                     "actionRequired": "Boolean",
-                    "prescribersID": [ // list of prescriptionIDs they have logged
+                    "prescriptionIDs": [ // list of prescriptionIDs they have logged
                         "String"
                     ]
                 }
