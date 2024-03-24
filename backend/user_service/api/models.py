@@ -20,6 +20,8 @@ class User(models.Model):
 class Prescriber(models.Model):
     provDocID = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=128)
+    email = models.CharField(max_length=128, default='')
+    firstName = models.CharField(max_length=128, default='')
 
 class Admin(models.Model):
     username = models.CharField(max_length=150, unique=True)
