@@ -88,6 +88,7 @@ const PatientAddPrescription = ({ onClose }) => {
                                     slotProps={{ textField: { size: 'small' } }}
                                     minDate={today}
                                     value={date}
+                                    format="YYYY/MM/DD"
                                     onChange={handleDateChange}
                                     onError={(newError) => {setInvalidDate(newError); setError(newError);}}
                                 />
