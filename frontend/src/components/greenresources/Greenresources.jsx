@@ -8,6 +8,9 @@ import gardenIcon from '../../resources/img/gardenIcon.png';
 import homeIcon from '../../resources/img/homeIcon.png';
 import curIcon from '../../resources/img/placeholder.png';
 import earthGIF from '../../resources/img/earth.gif'
+import golf from '../../resources/img/golfIcon.png'
+import fish from '../../resources/img/fishingIcon.png'
+import wildlife from '../../resources/img/wildLifeIcon.png'
 
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -30,8 +33,6 @@ const GreenResources = (props) => {
     const [selectedISO, setSelectedISO] = useState('1');
     const [region, setRegion] = useState('CA');
     const [adminLevel, setAdminLevel] = useState('2');
-
-
 
     const UniversityIcon = new Icon({
         iconUrl: educationBuilding,
@@ -75,12 +76,33 @@ const GreenResources = (props) => {
         popupAnchor:  [-0, -0],
     });
 
+    const FishingIcon = new Icon({
+        iconUrl: fish,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const GolfIcon = new Icon({
+        iconUrl: golf,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
+    const WildlifeIcon = new Icon({
+        iconUrl: wildlife,
+        iconSize: [30, 30],
+        popupAnchor:  [-0, -0],
+    });
+
     const iconMappings = {
         'nature_reserve': NatureReserve,
         'garden': GardenIcon,
         'park': ParkIcon,
         'dog_park': DogParkIcon,
         'home': HomeIcon,
+        'golf_course': GolfIcon,
+        'fishing': FishingIcon,
+        'wildlife_hide': WildlifeIcon,
         'university': UniversityIcon,
         "current": CurrentLocation,
     };
@@ -112,62 +134,6 @@ const GreenResources = (props) => {
         fetchData();
     }, []);
 
-    // const userSelection = () => {
-    //     const fetchData = async () => {
-    //         console.log(selectedOption, selectedISO, region, adminLevel);
-    //         try {
-    //             const response = await axios.get('https://overpass-api.de/api/interpreter', {
-    //                 params: {
-    //                     data: `[out:json];
-    //                             area["ISO3166-1"="CA"][admin_level=2];
-    //                             (
-    //                                 node["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                                 way["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                                 relation["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                             );
-    //                             out body;
-    //                             >;
-    //                             out skel qt;`,
-    //                 }
-    //             });
-    //             setParks(response.data.elements);
-    //             console.log(response.data.elements);
-    //         } catch (error) {
-    //             console.error('Error fetching park data:', error);
-    //         }
-    //     };
-
-    //     fetchData();
-    // };
-
-    // const userSelection = (selectedOption, selectedISO, region, adminLevel) => {
-    //     const fetchData = async () => {
-    //         console.log(selectedOption, selectedISO, region, adminLevel);
-    //         try {
-    //             const response = await axios.get('https://overpass-api.de/api/interpreter', {
-    //                 params: {
-    //                     data: `[out:json];
-    //                             area["ISO3166-${selectedISO}"="${region}"][admin_level=${adminLevel}];
-    //                             (
-    //                                 node["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                                 way["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                                 relation["leisure"="${selectedOption.toLowerCase()}"](area);
-    //                             );
-    //                             out body;
-    //                             >;
-    //                             out skel qt;`,
-    //                 }
-    //             });
-    //             setParks(response.data.elements);
-    //             console.log(response.data.elements);
-    //         } catch (error) {
-    //             console.error('Error fetching park data:', error);
-    //         }
-    //     };
-
-    //     fetchData();
-    // };
-
     useEffect(() => {
         const fetchData = async () => {
             console.log(selectedOption, selectedISO, region, adminLevel);
@@ -187,7 +153,7 @@ const GreenResources = (props) => {
                     }
                 });
                 setParks(response.data.elements);
-                console.log(response.data.elements);
+                // console.log(response.data.elements);
             } catch (error) {
                 console.error('Error fetching park data:', error);
             }
@@ -199,9 +165,7 @@ const GreenResources = (props) => {
 
 
     const handleThemeChange = (e) => {
-        // console.log(e.target.value);
         setSelectedOption(e.target.value);
-        // userSelection(selectedOption, selectedISO, region, adminLevel);
     }
 
     const handleFilterChange = (e) => {
@@ -214,29 +178,7 @@ const GreenResources = (props) => {
             setSelectedISO("2");
             setAdminLevel("4");
         }
-
-        // userSelection(selectedOption, selectedISO, region, adminLevel);
     }
-
-    // const handleFilterChange = (e) => {
-    //     // setRegion(e.target.getAttribute('data-value'));
-        
-    //     let iso, level;
-    //     if (e.target.value === "CA") {
-    //         iso = "1";
-    //         setSelectedISO("1");
-    //         level = "2";
-    //         setAdminLevel("2");
-    //     } else {
-    //         iso = "2";
-    //         setSelectedISO("2");
-    //         level = "4";
-    //         setAdminLevel("4");
-    //     }
-
-    //     // userSelection();
-    //     userSelection(selectedOption, iso, e.target.value, level);
-    // }
 
     function LocationMarker() {
         const map = useMapEvents({
@@ -269,6 +211,9 @@ const GreenResources = (props) => {
                             <option value={"nature_reserve"}><image></image>Nature Reserve</option>
                             <option value={"garden"}>Garden</option>
                             <option value={"dog_park"}>Dog Park</option>
+                            <option value={"fishing"}>Fishing</option>
+                            <option value={"golf_course"}>Golf Course</option>
+                            <option value={"wildlife_hide"}>Wildlife Hide</option>
                         </select>
 
                     </div>
