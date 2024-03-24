@@ -62,7 +62,6 @@ class LogUserPrescription(APIView):
 
     def post(self, request, format=None):
         # Get prescription info
-        initials = request.data.get("initials")
         date = request.data.get("date")
         prescriberID = request.data.get("prescriberID")
         discoveryPass = request.data.get("discoveryPass")
@@ -71,11 +70,15 @@ class LogUserPrescription(APIView):
 
         # Make unique string
 
-        prescriptionString = prescriberID + "_" + date + "_" + initials
-
         # Add prescription to list of prescriptions if not already there
         user = user_details_by_username(username=username)
         if user:
+            firstName = user["firstName"].upper()
+            lastName = user["lastName"].upper()
+            initials = "" + firstName[0] + lastName[0]
+
+            prescriptionString = prescriberID + "_" + date + "_" + initials
+
             prescriptions = user['prescriptionIDs']
             for prescription in prescriptions:
                 if prescription == prescriptionString:
