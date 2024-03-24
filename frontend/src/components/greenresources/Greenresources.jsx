@@ -7,6 +7,7 @@ import dogParkIcon from '../../resources/img/dogParkicon.png';
 import gardenIcon from '../../resources/img/gardenIcon.png';
 import homeIcon from '../../resources/img/homeIcon.png';
 import curIcon from '../../resources/img/placeholder.png';
+import earthGIF from '../../resources/img/earth.gif'
 
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -26,10 +27,10 @@ const GreenResources = (props) => {
     
     const [parks, setParks] = useState([]);
     const [selectedOption, setSelectedOption] = useState('park');
+    const [selectedISO, setSelectedISO] = useState('1');
+    const [region, setRegion] = useState('CA');
+    const [adminLevel, setAdminLevel] = useState('2');
 
-    const [filteredParks, setFilteredParks] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [region, setRegion] = useState('');
 
 
     const UniversityIcon = new Icon({
@@ -111,13 +112,70 @@ const GreenResources = (props) => {
         fetchData();
     }, []);
 
-    const userSelection = () => {
+    // const userSelection = () => {
+    //     const fetchData = async () => {
+    //         console.log(selectedOption, selectedISO, region, adminLevel);
+    //         try {
+    //             const response = await axios.get('https://overpass-api.de/api/interpreter', {
+    //                 params: {
+    //                     data: `[out:json];
+    //                             area["ISO3166-1"="CA"][admin_level=2];
+    //                             (
+    //                                 node["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                                 way["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                                 relation["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                             );
+    //                             out body;
+    //                             >;
+    //                             out skel qt;`,
+    //                 }
+    //             });
+    //             setParks(response.data.elements);
+    //             console.log(response.data.elements);
+    //         } catch (error) {
+    //             console.error('Error fetching park data:', error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // };
+
+    // const userSelection = (selectedOption, selectedISO, region, adminLevel) => {
+    //     const fetchData = async () => {
+    //         console.log(selectedOption, selectedISO, region, adminLevel);
+    //         try {
+    //             const response = await axios.get('https://overpass-api.de/api/interpreter', {
+    //                 params: {
+    //                     data: `[out:json];
+    //                             area["ISO3166-${selectedISO}"="${region}"][admin_level=${adminLevel}];
+    //                             (
+    //                                 node["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                                 way["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                                 relation["leisure"="${selectedOption.toLowerCase()}"](area);
+    //                             );
+    //                             out body;
+    //                             >;
+    //                             out skel qt;`,
+    //                 }
+    //             });
+    //             setParks(response.data.elements);
+    //             console.log(response.data.elements);
+    //         } catch (error) {
+    //             console.error('Error fetching park data:', error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // };
+
+    useEffect(() => {
         const fetchData = async () => {
+            console.log(selectedOption, selectedISO, region, adminLevel);
             try {
                 const response = await axios.get('https://overpass-api.de/api/interpreter', {
                     params: {
                         data: `[out:json];
-                                area["ISO3166-1"="CA"][admin_level=2];
+                                area["ISO3166-${selectedISO}"="${region}"][admin_level=${adminLevel}];
                                 (
                                     node["leisure"="${selectedOption.toLowerCase()}"](area);
                                     way["leisure"="${selectedOption.toLowerCase()}"](area);
@@ -134,41 +192,51 @@ const GreenResources = (props) => {
                 console.error('Error fetching park data:', error);
             }
         };
-
+    
         fetchData();
-    };
+    }, [selectedOption, selectedISO, region, adminLevel]);
+    
 
-    // useEffect(() => {
-    //     const filter = parks.filter(park => {
-    //         if (region && park.tags.name && park.tags.name.toLowerCase().includes(region.toLowerCase())) {
-    //             return true;
-    //         }
 
-    //         // If user has searched something
-    //         if (searchQuery) {
-    //             const searchReq = searchQuery.toLowerCase().split(' ');
-    //             return searchReq.some(term => park.tags.name.toLowerCase().includes(term));
-    //         }
-    //         return true;
-    //     })
-    //     setFilteredParks(filter);
-    // }, [parks, searchQuery, region]);
-
-    const handleSearchChange = (e) => {
-        console.log(e.target.value);
-        setSearchQuery(e.target.value);
+    const handleThemeChange = (e) => {
+        // console.log(e.target.value);
+        setSelectedOption(e.target.value);
+        // userSelection(selectedOption, selectedISO, region, adminLevel);
     }
 
     const handleFilterChange = (e) => {
-        console.log(e.target.value);
-        setSelectedOption(e.target.value);
-        userSelection();
-    }
-
-    const handleRegionChange = (e) => {
         setRegion(e.target.value);
+        
+        if (e.target.value === "CA") {
+            setSelectedISO("1");
+            setAdminLevel("2");
+        } else {
+            setSelectedISO("2");
+            setAdminLevel("4");
+        }
+
+        // userSelection(selectedOption, selectedISO, region, adminLevel);
     }
 
+    // const handleFilterChange = (e) => {
+    //     // setRegion(e.target.getAttribute('data-value'));
+        
+    //     let iso, level;
+    //     if (e.target.value === "CA") {
+    //         iso = "1";
+    //         setSelectedISO("1");
+    //         level = "2";
+    //         setAdminLevel("2");
+    //     } else {
+    //         iso = "2";
+    //         setSelectedISO("2");
+    //         level = "4";
+    //         setAdminLevel("4");
+    //     }
+
+    //     // userSelection();
+    //     userSelection(selectedOption, iso, e.target.value, level);
+    // }
 
     function LocationMarker() {
         const map = useMapEvents({
@@ -190,12 +258,13 @@ const GreenResources = (props) => {
 
     return (
         <div className='map-component'>
-            <div className='service-header'>Green Resources</div>
+            {/* <div className='service-header'>Green Resources</div> */}
             <div className='content'>
                 <div className='nav'>
-                    <div className='map-filter'>
+                    <div className='map-filter-theme'>
                         
-                        <select onChange={handleFilterChange}>
+                        <div className='filter-heading'>Filter:</div>
+                        <select onChange={handleThemeChange}>
                             <option value={"park"}>Park</option>
                             <option value={"nature_reserve"}><image></image>Nature Reserve</option>
                             <option value={"garden"}>Garden</option>
@@ -204,12 +273,30 @@ const GreenResources = (props) => {
 
                     </div>
 
-                    <div className='map-search-bar'>
-                        <input type='text' placeholder='Search Here...' value={searchQuery} onChange={handleSearchChange} />                       
+                    <div className='map-title'>
+                        Green Resources         
                     </div>
 
-                    <div className='map-find-button'>
-                        <button>Search</button>
+                    <div className='map-filter-region'>
+                        <div className='region-heading'>Region:</div>
+                        <select onChange={handleFilterChange}>
+                            {/* Need ISO to be 1 and admin level to 2 for canada and for prov, need ISO to be 2 and amdin level to be 4 */}
+                            <option value={"CA"}>Canada</option> 
+                            <option value={"CA-ON"}>Ontario</option>
+                            <option value={"CA-AB"}>Alberta</option>
+                            <option value={"CA-BC"}>British Columbia</option>
+                            <option value={"CA-MB"}>Manitoba</option>
+                            <option value={"CA-NB"}>New Brunswick</option>
+                            <option value={"CA-NL"}>Newfoundland and Labrador</option>
+                            <option value={"CA-NS"}>Nova Scotia</option>
+                            <option value={"CA-PE"}>Prince Edward Island</option>
+                            <option value={"CA-QC"}>Quebec</option>
+                            <option value={"CA-SK"}>Saskatchewan</option>
+                            <option value={"CA-NT"}>Northwest Territories</option>
+                            <option value={"CA-NU"}>Nunavut</option>
+                            <option value={"CA-YT"}>Yukon</option>
+                        </select>
+
                     </div>
                 </div>
                 <div className='map-container'>
@@ -243,6 +330,9 @@ const GreenResources = (props) => {
                     </MapContainer>
                 </div>
             </div>
+            <section>
+                <img className="earth-revolving-sustainability" src={earthGIF} alt="earth revolving" />
+            </section>
         </div>
     );
 };
