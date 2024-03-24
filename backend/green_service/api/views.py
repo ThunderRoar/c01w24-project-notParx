@@ -16,24 +16,3 @@ load_dotenv()
 GOOGLE_API_KEY=os.getenv('GOOGLE_API_KEY')
 
 # Create your views here.
-class MapView(APIView):
-    permission_classes = [AllowAny]
-
-
-    def get(self, request, format=None):
-        if request.method == "GET":
-            query = request.GET.get('query')
-            api_key = 'GOOGLE_API_KEY'
-            url = 'https://maps.googleapis.com/maps/api/place/textsearch/json'
-
-            params = {
-                'query': query,
-                'key': api_key,
-            }
-
-            try:
-                response = requests.get(url, params=params)
-                data = response.json()
-                return JsonResponse(data)
-            except Exception as e:
-                return JsonResponse({'error': str(e)}, status=500)
