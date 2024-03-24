@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
               path: "green-resources",
-              element: <Profiles />,
+              element: <GreenResources />,
             },
           ]
         },
