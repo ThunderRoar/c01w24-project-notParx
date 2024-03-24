@@ -1,6 +1,6 @@
 import React from 'react';
 import { prescriberTabs } from '../shared/tabs-data';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from '../shared/header/header';
 import "./Prescriber.scss"
 
