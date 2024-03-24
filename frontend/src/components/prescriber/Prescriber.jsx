@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import decodeToken from '../../token_handling/tokenHandling.js';
+import { prescriberTabs } from '../shared/tabs-data';
+import { Outlet } from 'react-router-dom';
 import Header from '../shared/header/header';
-import './Prescriber.scss'
+import "./Prescriber.scss"
 
 const Prescriber = () => {
-
+  const tabs = prescriberTabs;
   const navigate = useNavigate()
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -23,9 +26,10 @@ const Prescriber = () => {
   });
 
   return (
-    <div className="prescriber-component">
-      <Header tabs={[]} />
-    </div>
+      <div className="prescriber-component">
+          <Header tabs={tabs} />
+          <Outlet />
+      </div>
   );
 };
 
