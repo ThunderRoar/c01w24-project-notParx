@@ -6,7 +6,7 @@ import Verification from '../admin/verification/Verification';
 import Profiles from '../admin/profiles/Profiles';
 import Admin from '../admin/Admin';
 import GreenResources from '../greenresources/Greenresources';
-import MyPrescriptions from '../prescriber/my-prescriptions/MyPrescriptions';
+// import MyPrescriptions from '../prescriber/my-prescriptions/MyPrescriptions';
 import PrescriberPrescriptions from '../prescriber/my-prescriptions/PrescriberPrescriptions';
 import { Navigate } from 'react-router-dom';
 import PatientPrescriptions from '../patient/my-prescriptions/PatientPrescriptions';
