@@ -15,11 +15,11 @@ const Login = () => {
       const decodedToken = decodeToken(token)
       if (!decodedToken) {
       } else if (decodedToken.user_type === 'User'){
-        navigate('/Patient')
+        navigate('/patient')
       } else if (decodedToken.user_type === 'Prescriber'){
-        navigate('/Prescriber')
+        navigate('/prescriber')
       } else if (decodedToken.user_type === 'Admin - Coordinator' || decodedToken.user_type === 'Admin - Assistant') {
-        navigate('/Admin')
+        navigate('/admin')
       }
     }
   });

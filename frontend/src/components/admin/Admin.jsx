@@ -22,9 +22,9 @@ const Admin = () => {
     if (!decodedToken) {
       navigate('/')
     } else if (decodedToken.user_type === 'User'){
-      navigate('/Patient')
+      navigate('/patient')
     } else if (decodedToken.user_type === 'Prescriber'){
-      navigate('/Prescriber')
+      navigate('/prescriber')
     }
   });
 
