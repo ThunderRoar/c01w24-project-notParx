@@ -13,10 +13,6 @@ const router = createBrowserRouter([
     {
       path: "/",
       children: [
-        { 
-          index: true,
-          element: <Navigate to="login" replace /> 
-        }, 
         {
           path: "",
           element: <Login />,
@@ -37,6 +33,10 @@ const router = createBrowserRouter([
               path: "profiles",
               element: <Profiles />,
             },
+            {
+                path: "green-resources",
+                element: <GreenResources/>
+            }
           ]
         },
         {
