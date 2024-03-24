@@ -11,4 +11,5 @@ export const prescriberTabs = [
 export const adminTabs = [
     { id: 5, name: 'Verification', link: '/admin/verification'},
     { id: 6, name: 'Profiles', link: '/admin/profiles'},
+    { id: 7, name: 'Green Resources', link: '/admin/green-resources'},
 ];

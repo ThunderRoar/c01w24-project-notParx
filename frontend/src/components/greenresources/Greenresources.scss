@@ -10,6 +10,7 @@
         justify-content: space-between;
         gap: 2rem;
         border-radius: .85rem;
+        z-index: -1;
 
         .nav {
             display: flex;
