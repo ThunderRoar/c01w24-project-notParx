@@ -18,6 +18,23 @@ def get_prescription_by_prescription_id(prescription_id):
         print(e)
         return None
     
+def get_prescriptions_by_prescriber_code(prescriber_code):
+    """Retrieve all prescriptions by prescription code from MongoDB."""
+    try:
+        prescriptions = list(prescription_collection.find({'prescriberCode': prescriber_code}))
+        return prescriptions
+    except Exception as e:
+        print(e)
+        return None
+
+def get_prescriptions_by_patient_id(patient_id):
+    """Retrieve all prescriptions by patient ID from MongoDB."""
+    try:
+        prescriptions = list(prescription_collection.find({'patientID': patient_id}))
+        return prescriptions
+    except Exception as e:
+        print(e)
+        return None
 
 def user_details_by_username(username):
     """Retrieve a user from MongoDB by their username."""

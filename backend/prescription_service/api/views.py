@@ -9,7 +9,15 @@ from rest_framework import status
 from io import BytesIO
 
 from PDF_generation import create_pdf
-from mongo_utils import get_prescription_by_prescription_id, user_details_by_username, prescriber_details_by_provdocid, update_user, insert_prescription, update_prescription, update_prescriber
+from mongo_utils import (
+    get_prescription_by_prescription_id,
+    user_details_by_username,
+    prescriber_details_by_provdocid,
+    update_user, insert_prescription,
+    update_prescription,
+    update_prescriber,
+    get_prescriptions_by_prescriber_code,
+    get_prescriptions_by_patient_id )
 
 class DownloadPrescriptionPDF(APIView):
     """
@@ -169,3 +177,37 @@ class LogPrescriberPrescription(APIView):
             return Response({'success': 'Added prescription'}, status=status.HTTP_200_OK)
 
         return Response({'error': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
+
+# Pull prescriptions based on prescriberCode (ie: provDocID)
+class GetPrescriberPrescriptions(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, prescriber_code, format=None):
+        prescriptions = get_prescriptions_by_prescriber_code(prescriber_code)
+
+        if prescriptions == None:
+            return HttpResponse({'error': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Convert MongoDB documents to a format suitable for JSON response
+        # MongoDB's _id field needs to be converted to string
+        for doc in prescriptions:
+            doc['_id'] = str(doc['_id'])
+
+        return Response(prescriptions)
+
+# Pull prescriptions based on patientID (ie: patient's username)
+class GetPatientPrescriptions(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, patient_id, format=None):
+        prescriptions = get_prescriptions_by_patient_id(patient_id)
+
+        if prescriptions == None:
+            return HttpResponse({'error': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Convert MongoDB documents to a format suitable for JSON response
+        # MongoDB's _id field needs to be converted to string
+        for doc in prescriptions:
+            doc['_id'] = str(doc['_id'])
+
+        return Response(prescriptions)
