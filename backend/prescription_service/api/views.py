@@ -72,6 +72,9 @@ class LogUserPrescription(APIView):
 
         # Add prescription to list of prescriptions if not already there
         user = user_details_by_username(username=username)
+        prescriber = prescriber_details_by_provdocid(prov_doc_id=prescriberID)
+        if prescriber is None:
+            return Response({'error': 'No prescriber with that ID'}, status=status.HTTP_400_BAD_REQUEST)
         if user:
             firstName = user["firstName"].upper()
             lastName = user["lastName"].upper()

@@ -21,6 +21,7 @@ const PatientAddPrescription = ({ onClose }) => {
     const [error, setError] = useState(false);
     const [logError, setLogError] = useState(false);
     const [apiError, setApiError] = useState(false);
+    const [noPrescriberError, setNoPrescriberError] = useState(false);
 
     const handleCreate = async () => {
         if (!provDocID) {
@@ -65,12 +66,18 @@ const PatientAddPrescription = ({ onClose }) => {
                                 setInvalidInput(false);
                                 setApiError(false);
                                 setLogError(false);
+                                setNoPrescriberError(false);
 
                                 // Close Popup
                                 onClose();
                             } else {
-                                setLogError(true)
-                                console.error("Prescription Log Fail");
+                                if (responseData.error === "No prescriber with that ID") {
+                                    setNoPrescriberError(true)
+                                    console.error("Invalid prescriberID");
+                                } else {
+                                    setLogError(true)
+                                    console.error("Prescription Log Fail");
+                                }
                             }
                     } catch (error) {
                         setApiError(true)
@@ -85,12 +92,17 @@ const PatientAddPrescription = ({ onClose }) => {
 
     const handleDateChange = async (newDate) => {
         setDate(newDate);
+        setApiError(false);
+        setLogError(false);
     }
 
     const handleProvDocIDChange = async (e) => {
         const inputValue = e.target.value.toUpperCase();
         setProvDocID(inputValue);
         setInvalidInput(false);
+        setApiError(false);
+        setLogError(false);
+        setNoPrescriberError(false);
         setError(false || invalidDate);
     }
 
@@ -115,6 +127,7 @@ const PatientAddPrescription = ({ onClose }) => {
                 <HighlightOffIcon onClick={onClose} className='close-icon' />
             </div>
             {logError && <span className='duplicate-log-error'>Prescription already logged</span>}
+            {noPrescriberError && <span className='duplicate-log-error'>No prescriber with that ID</span>}
             {apiError && <span className='api-log-error'>Error logging prescription. Ensure information is correct and try again</span>}
             <div className="form-content">
                 <div className='txt-field'>

@@ -50,7 +50,6 @@ const PrescriberAddPrescription = ({ onClose }) => {
                             },
                             body: JSON.stringify({ "date": formattedDate, discoveryPass, prescriberID, initials })
                             });
-                            const responseData = await response.json();
             
                             if (response.ok) {
                                 console.log("Prescription Log Success")
@@ -86,12 +85,16 @@ const PrescriberAddPrescription = ({ onClose }) => {
 
     const handleDateChange = async (newDate) => {
         setDate(newDate);
+        setApiError(false);
+        setLogError(false);
     }
 
     const handlePatientInitialsChange = async (e) => {
         const inputValue = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
         setPatientInitials(inputValue);
         setInvalidInput(false);
+        setApiError(false);
+        setLogError(false);
         setError(false || invalidDate);
     }
 
