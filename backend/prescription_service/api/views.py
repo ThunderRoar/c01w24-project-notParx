@@ -186,7 +186,17 @@ class GetPrescriberPrescriptions(APIView):
         prescriptions = get_prescriptions_by_prescriber_code(prescriber_code)
 
         if prescriptions == None:
-            return HttpResponse({'error': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({'error': 'Something went wrong when retrieving prescriptions'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Add patient names for each prescription
+        for prescription in prescriptions:
+            username = prescription.get('patientID')
+            user_data = user_details_by_username(username)
+            
+            if user_data != None:
+                prescription['matchedPatient'] = user_data.get('firstName') + ' ' + user_data.get('lastName')
+            else:
+                prescription['matchedPatient'] = "N/A"
 
         # Convert MongoDB documents to a format suitable for JSON response
         # MongoDB's _id field needs to be converted to string
@@ -203,7 +213,7 @@ class GetPatientPrescriptions(APIView):
         prescriptions = get_prescriptions_by_patient_id(patient_id)
 
         if prescriptions == None:
-            return HttpResponse({'error': 'Something went wrong'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({'error': 'Something went wrong when retrieving prescriptions'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         # Convert MongoDB documents to a format suitable for JSON response
         # MongoDB's _id field needs to be converted to string

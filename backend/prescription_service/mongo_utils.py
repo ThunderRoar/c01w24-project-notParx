@@ -21,7 +21,30 @@ def get_prescription_by_prescription_id(prescription_id):
 def get_prescriptions_by_prescriber_code(prescriber_code):
     """Retrieve all prescriptions by prescription code from MongoDB."""
     try:
-        prescriptions = list(prescription_collection.find({'prescriberCode': prescriber_code}))
+        match_stage = {
+            "$match": {
+                'prescriberCode': prescriber_code,
+                'prescriberStatus': {'$ne': ''}
+            }
+        }
+
+        # sort prescriptions by date
+        date_conversion_stage = {
+            "$addFields": {
+                "convertedDate": { "$toDate": "$dateOfPrescription" }
+            }
+        }
+        sort_stage = {
+            "$sort": { "convertedDate": 1 }
+        }
+
+        prescriptions = list(prescription_collection.aggregate([
+            match_stage,
+            date_conversion_stage,
+            sort_stage,
+            {"$unset": "convertedDate"} # remove the added field
+        ]))
+
         return prescriptions
     except Exception as e:
         print(e)
@@ -30,7 +53,29 @@ def get_prescriptions_by_prescriber_code(prescriber_code):
 def get_prescriptions_by_patient_id(patient_id):
     """Retrieve all prescriptions by patient ID from MongoDB."""
     try:
-        prescriptions = list(prescription_collection.find({'patientID': patient_id}))
+        match_stage = {
+            "$match": {
+                'patientID': patient_id
+            }
+        }
+
+        # sort prescriptions by date
+        date_conversion_stage = {
+            "$addFields": {
+                "convertedDate": { "$toDate": "$dateOfPrescription" }
+            }
+        }
+        sort_stage = {
+            "$sort": { "convertedDate": 1 }
+        }
+
+        prescriptions = list(prescription_collection.aggregate([
+            match_stage,
+            date_conversion_stage,
+            sort_stage,
+            {"$unset": "convertedDate"} # remove the added field
+        ]))
+
         return prescriptions
     except Exception as e:
         print(e)
