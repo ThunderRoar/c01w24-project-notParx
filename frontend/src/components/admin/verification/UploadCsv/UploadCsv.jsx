@@ -2,9 +2,6 @@ import React, { useState, useRef, useCallback, useLayoutEffect } from 'react';
 import './UploadCsv.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import { useDropzone } from 'react-dropzone';
-import PropTypes from 'prop-types';
-import { responsiveProperty } from '@mui/material/styles/cssUtils';
 
 const UploadCsv = ({ onClose }) => {
     const [selectedFile, setSelectedFile] = useState(null);

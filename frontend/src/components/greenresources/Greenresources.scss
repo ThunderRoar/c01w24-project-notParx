@@ -1,0 +1,102 @@
+.map-component {
+    .content {
+        margin-top: -2rem;
+        background-color: #FDFDFF;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+        border-radius: .55rem;
+        display: flex;
+        height: 34rem;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        border-radius: .85rem;
+        z-index: -1;
+
+        .nav {
+            display: flex;
+            align-items: center;
+            padding: 0.3rem;
+            background-color: #749769;
+            border-top-left-radius: .85rem;
+            border-top-right-radius: .85rem;
+
+            .map-filter-theme {
+                margin-right: auto;
+                padding-left: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .filter-heading {
+                    padding-right: 10px;
+                    font-size: large;
+                }
+                select {
+                    background-color: white;
+                    border: 1px solid #ccc;
+                    padding: 0.3rem;
+                    border-radius: 0.3rem;
+                    width: 100%;
+                    cursor: pointer;
+                }
+            }
+            
+            .map-title {
+                font-size: 2rem !important;
+                flex: 1;
+                padding-left: 80px;
+                text-align: center;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                font-weight: bolder;
+                color: rgb(26, 50, 27);
+            }
+
+            .map-filter-region {
+                margin-left: 1rem;
+                padding-right: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .region-heading {
+                    padding-right: 10px;
+                    font-size: large;
+                }
+                select {
+                    background-color: white;
+                    border: 1px solid #ccc;
+                    padding: 0.3rem;
+                    border-radius: 0.3rem;
+                    width: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+        .map-container {
+            margin-top: -2rem;
+            height: calc(100% - 1.5rem);
+        }
+    }
+
+    section { 
+        .earth-revolving-sustainability {
+            position: fixed;
+            bottom: 0.3rem;
+            right: 0.3rem;
+            width: 3.5rem;
+            transition: transform 0.18s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .earth-revolving-sustainability:hover {
+            transform: translateY(-0.4rem);
+        }
+    }
+}
+
+// Sizing of the map container
+.leaflet-container {
+    height: 100%;
+    border-bottom-left-radius: .85rem;
+    border-bottom-right-radius: .85rem;
+}
+

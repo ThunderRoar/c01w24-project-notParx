@@ -1,0 +1,174 @@
+.prescriber-prescriptions-component {
+  .page-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5rem !important;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: #000000;
+      text-decoration: none;
+      text-transform: none !important;
+  }
+  .content {
+      background-color: #FDFDFF;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+      border-radius: .85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .add-new-btn {
+        margin: 2rem 2rem 0rem 0rem;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+      }
+      .btn {
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+      }
+      .button-section {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+      }
+
+      .table-container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+          padding-top: 2rem;
+          .table-cont {
+              box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+              border-radius: .85rem;
+              .table {
+                  background-color: #FDFDFF;
+                  .table-header {
+                      background-color: #749769;
+                      .header-row {
+                          th {
+                              color: #F9FFF8 !important;
+                          }
+                      }
+                  }
+                  .table-row {
+                      background-color: #F1FAEF;
+                  }
+              }
+          }
+      }
+  }
+}
+
+.action-required {
+    justify-content: space-evenly;
+    color: #ff0000;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+    .action-required-button {
+        margin-left: 2rem;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+    }
+}
+
+.content-popup {
+    background-color: #FDFDFF;
+    padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+        .close-icon {
+            color: #749769;
+            font-size: 2.25rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+  
+    .form-content {
+      height: 60%;
+      margin: 0rem 3rem 0rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      .txt-field {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-bottom: 0.5rem;
+          .error-msg {
+              font-size: 0.75rem;
+              color: red;
+              margin-left: 3px;
+          }
+          .input-field {
+              width: 95%;
+              box-sizing: border-box;
+              padding: 7px;
+              margin-bottom: 0.5rem;
+              margin-top: 0.5rem;
+              margin-left: 0.2rem;
+              border: 1px solid #ffffff;
+              border-radius: 5px;
+              font-size: 1rem;
+              box-shadow: 0.25rem 0.25rem 0.4rem rgba(0, 0, 0, 0.2);
+          }
+      }
+        
+      .btn {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        margin-left: 0.2rem;
+        background-color: #749769;
+        color: #F9FFF8;
+        border: none;
+        border-radius: 0.5rem;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+        &:hover {
+            background: #32402e;
+            cursor: pointer;
+        }
+    }
+  }
+
+}
+  
