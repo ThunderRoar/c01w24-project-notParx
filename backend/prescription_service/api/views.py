@@ -109,6 +109,8 @@ class LogUserPrescription(APIView):
                 insert_prescription(prescription=newPrescription)
             else:
                 if discoveryPass:
+                    if user["address"] == "DNE":
+                        update_user(username=username, filters={'actionRequired': True})
                     filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged', 'patientID': username}
                 else:
                     filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete', 'patientID': username}
@@ -164,6 +166,10 @@ class LogPrescriberPrescription(APIView):
                 insert_prescription(prescription=newPrescription)
             else:
                 if discoveryPass:
+                    username = existingPrescription["patientID"]
+                    user = user_details_by_username(username=username)
+                    if user and user["address"] == "DNE" :
+                        update_user(username=username, filters={'actionRequired': True})
                     filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged'}
                 else:
                     filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete'}

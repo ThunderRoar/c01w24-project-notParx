@@ -207,3 +207,27 @@ class GetUserProfiles(APIView):
       return JsonResponse(response, safe=False)
     
     return Response({"error": "Error occured"}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetActionRequired(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, username, format=None):
+        user = User.objects.filter(username=username).first()
+        if user:
+            actionRequired = user.actionRequired
+            return Response({"actionRequired" : actionRequired}, status=status.HTTP_200_OK)
+        return Response({"error": "Error occured"}, status=status.HTTP_400_BAD_REQUEST)
+    
+class UpdateUserAddress(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, format=None):
+        username = request.data.get('username')
+        address = request.data.get('address')
+        user = User.objects.filter(username=username).first()
+        if user:
+            user.address = address
+            user.actionRequired = False
+            user.save()
+            return Response({"success" : "address sucessfully updated"}, status=status.HTTP_200_OK)
+        return Response({"error": "Error occured"}, status=status.HTTP_400_BAD_REQUEST)
