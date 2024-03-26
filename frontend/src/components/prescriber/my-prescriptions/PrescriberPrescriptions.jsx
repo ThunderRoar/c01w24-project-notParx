@@ -14,10 +14,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 const PrescriberPrescriptions = () => {
-    const sampleData = [
-        { provDocID: 'ON-JB001', patientInitials: 'OW', date: '22 Mar 2024', discoveryPass: true, matchedPatient: 'Owen W', status: 'Logged' },
-    ];
-  
     const prescriptionColumns = [ // Sample columns - add depending on what api returns
         { id: 'prescriberCode', label: 'Provider Code' },
         { id: 'patientInitials', label: 'Patient Initials' },
