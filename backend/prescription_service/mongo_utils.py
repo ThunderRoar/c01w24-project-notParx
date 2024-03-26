@@ -18,44 +18,12 @@ def get_prescription_by_prescription_id(prescription_id):
         print(e)
         return None
     
-def get_prescriptions_by_prescriber_code(prescriber_code):
-    """Retrieve all prescriptions by prescription code from MongoDB."""
+def get_prescriptions(prescriptionIDs):
+    """Retrieve all prescriptions from MongoDB given a list of prescriptionIDs."""
     try:
         match_stage = {
             "$match": {
-                'prescriberCode': prescriber_code,
-                'prescriberStatus': {'$ne': ''}
-            }
-        }
-
-        # sort prescriptions by date
-        date_conversion_stage = {
-            "$addFields": {
-                "convertedDate": { "$toDate": "$dateOfPrescription" }
-            }
-        }
-        sort_stage = {
-            "$sort": { "convertedDate": 1 }
-        }
-
-        prescriptions = list(prescription_collection.aggregate([
-            match_stage,
-            date_conversion_stage,
-            sort_stage,
-            {"$unset": "convertedDate"} # remove the added field
-        ]))
-
-        return prescriptions
-    except Exception as e:
-        print(e)
-        return None
-
-def get_prescriptions_by_patient_id(patient_id):
-    """Retrieve all prescriptions by patient ID from MongoDB."""
-    try:
-        match_stage = {
-            "$match": {
-                'patientID': patient_id
+                "prescriptionID": {"$in": prescriptionIDs}
             }
         }
 

@@ -86,6 +86,11 @@ const PrescriberPrescriptions = () => {
         handleGetPrescriptions();
     }, [])
 
+    // TODO: connect backend endpoint here to download prescription
+    const handleDownloadPrescription = (prescriptionID) => {
+
+    }
+
     return (
         <div className='prescriber-prescriptions-component'>
             <div className='page-header'>
@@ -116,7 +121,7 @@ const PrescriberPrescriptions = () => {
                                         ))}
                                         <TableCell key="prescriptionButton"> 
                                             {/* TODO: handle view prescriptions */}
-                                            <Button className='btn' onClick={() => {}}>
+                                            <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
                                                 <span>View Prescription</span>
                                             </Button>
                                         </TableCell>
