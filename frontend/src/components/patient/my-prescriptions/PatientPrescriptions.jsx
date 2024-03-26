@@ -1,5 +1,6 @@
 import './PatientPrescriptions.scss';
 import PatientAddPrescription from './PatientAddPrescription/PatientAddPrescription';
+import decodeToken from '../../../token_handling/tokenHandling';
 
 import * as React from 'react';
 import ReactPopup from 'reactjs-popup';
@@ -11,20 +12,15 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import decodeToken from '../../../token_handling/tokenHandling.js';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 const PatientPrescriptions = () => {
-    const sampleData = [
-        { provDocID: 'ON-JB001', patientInitials: 'OW', date: '22 Mar 2024', discoveryPass: true, status: 'Logged' },
-    ];
-  
-    const prescriptionColumns = [ // Sample columns - add depending on what api returns
-        { id: 'provDocID', label: 'Provider Code' },
+    const prescriptionColumns = [
+        { id: 'prescriberCode', label: 'Provider Code' },
         { id: 'patientInitials', label: 'Patient Initials' },
-        { id: 'date', label: 'Date' },
-        { id: 'discoveryPass', label: 'Discovery Pass' },
-        { id: 'status', label: 'Status' },
+        { id: 'dateOfPrescription', label: 'Date' },
+        { id: 'discoveryPassPrescribed', label: 'Discovery Pass' },
+        { id: 'patientStatus', label: 'Status' },
         // { id: 'pdf', label: 'Prescription PDF' },
     ];
 
@@ -93,16 +89,43 @@ const PatientPrescriptions = () => {
     React.useEffect(() => {
         const handleGetPrescriptions = async () => {
             try {
-                // TODO: call backend api here
-                setPrescriptionDBdata(sampleData);
+                const token = localStorage.getItem('token');
+                if (token) {
+                    const decodedToken = decodeToken(token);
+                    const patientID = decodedToken.username;
+
+                    await fetch('https://notparx-prescription-service.azurewebsites.net/api/patientPrescriptions/' + patientID + '/', {
+                        method: 'GET',
+                    })
+                    .then (async response => {
+                        if (response.ok) {
+                            let data = await response.json();
+                            console.log(data);
+                            for (let p of data) {
+                                p["patientInitials"] = p["prescriptionID"].slice(-2);
+                                p["discoveryPassPrescribed"] = p["discoveryPassPrescribed"] ? "Prescribed" : "N/A";
+                            }
+                            setPrescriptionDBdata(data);
+                        } else {
+                            console.error('Error fetching prescriptions: ', response.statusText);
+                        }
+                    })
+                } else {
+                    console.error('User not logged in');
+                }
             } catch(error) {
-                console.error('Error fetching prescription: ', error);
+                console.error('Error fetching prescriptions: ', error);
             }
         };
 
         handleGetPrescriptions();
         handleActionRequired();
     }, [])
+
+    // TODO: connect backend endpoint here to download prescription
+    const handleDownloadPrescription = (prescriptionID) => {
+
+    }
 
     const handleAddressChange = async (e) => {
         const inputValue = e.target.value;
@@ -185,8 +208,8 @@ const PatientPrescriptions = () => {
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
                                         <TableCell key="prescriptionButton"> 
-                                            {/* TODO: handle view prescriptions */}
-                                            <Button className='btn' onClick={() => {}}>
+                                            {/* TODO: handle download prescriptions */}
+                                            <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
                                                 <span>View Prescription</span>
                                             </Button>
                                         </TableCell>

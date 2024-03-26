@@ -1,5 +1,6 @@
 import './PrescriberPrescriptions.scss';
 import PrescriberAddPrescription from './PrescriberAddPrescription/PrescriberAddPrescription';
+import decodeToken from '../../../token_handling/tokenHandling';
 
 import * as React from 'react';
 import ReactPopup from 'reactjs-popup';
@@ -13,17 +14,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 const PrescriberPrescriptions = () => {
-    const sampleData = [
-        { provDocID: 'ON-JB001', patientInitials: 'OW', date: '22 Mar 2024', discoveryPass: true, matchedPatient: 'Owen W', status: 'Logged' },
-    ];
-  
     const prescriptionColumns = [ // Sample columns - add depending on what api returns
-        { id: 'provDocID', label: 'Provider Code' },
+        { id: 'prescriberCode', label: 'Provider Code' },
         { id: 'patientInitials', label: 'Patient Initials' },
-        { id: 'date', label: 'Date' },
-        { id: 'discoveryPass', label: 'Discovery Pass' },
+        { id: 'dateOfPrescription', label: 'Date' },
+        { id: 'discoveryPassPrescribed', label: 'Discovery Pass' },
         { id: 'matchedPatient', label: 'Matched Patient' },
-        { id: 'status', label: 'Status' },
+        { id: 'prescriberStatus', label: 'Status' },
         // { id: 'pdf', label: 'Prescription PDF' },
     ];
 
@@ -52,8 +49,31 @@ const PrescriberPrescriptions = () => {
     React.useEffect(() => {
         const handleGetPrescriptions = async () => {
             try {
-                // TODO: call backend api here
-                setPrescriptionDBdata(sampleData);
+                const token = localStorage.getItem('token');
+                if (token) {
+                    const decodedToken = decodeToken(token);
+                    const prescriberCode = decodedToken.username;
+                    console.log(prescriberCode);
+
+                    await fetch('https://notparx-prescription-service.azurewebsites.net/api/prescriberPrescriptions/' + prescriberCode + '/', {
+                        method: 'GET',
+                    })
+                    .then (async response => {
+                        if (response.ok) {
+                            let data = await response.json();
+                            console.log(data);
+                            for (let p of data) {
+                                p["patientInitials"] = p["prescriptionID"].slice(-2);
+                                p["discoveryPassPrescribed"] = p["discoveryPassPrescribed"] ? "Prescribed" : "N/A";
+                            }
+                            setPrescriptionDBdata(data);
+                        } else {
+                            console.error('Error fetching prescriptions: ', response.statusText);
+                        }
+                    })
+                } else {
+                    console.error('User not logged in');
+                }
             } catch(error) {
                 console.error('Error fetching prescription: ', error);
             }
@@ -61,6 +81,11 @@ const PrescriberPrescriptions = () => {
 
         handleGetPrescriptions();
     }, [])
+
+    // TODO: connect backend endpoint here to download prescription
+    const handleDownloadPrescription = (prescriptionID) => {
+
+    }
 
     return (
         <div className='prescriber-prescriptions-component'>
@@ -92,7 +117,7 @@ const PrescriberPrescriptions = () => {
                                         ))}
                                         <TableCell key="prescriptionButton"> 
                                             {/* TODO: handle view prescriptions */}
-                                            <Button className='btn' onClick={() => {}}>
+                                            <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
                                                 <span>View Prescription</span>
                                             </Button>
                                         </TableCell>

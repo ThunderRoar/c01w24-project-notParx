@@ -9,7 +9,14 @@ from rest_framework import status
 from io import BytesIO
 
 from PDF_generation import create_pdf
-from mongo_utils import get_prescription_by_prescription_id, user_details_by_username, prescriber_details_by_provdocid, update_user, insert_prescription, update_prescription, update_prescriber
+from mongo_utils import (
+    get_prescription_by_prescription_id,
+    user_details_by_username,
+    prescriber_details_by_provdocid,
+    update_user, insert_prescription,
+    update_prescription,
+    update_prescriber,
+    get_prescriptions )
 
 class DownloadPrescriptionPDF(APIView):
     """
@@ -180,3 +187,61 @@ class LogPrescriberPrescription(APIView):
             return Response({'success': 'Added prescription'}, status=status.HTTP_200_OK)
 
         return Response({'error': 'Something went wrong'}, status=status.HTTP_400_BAD_REQUEST)
+
+# Pull prescriptions based on prescriberCode (ie: provDocID)
+class GetPrescriberPrescriptions(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, prescriber_code, format=None):
+        prescriber_profile = prescriber_details_by_provdocid(prescriber_code)
+
+        if prescriber_profile:
+            prescription_ids = prescriber_profile.get("prescriptions")
+            prescriptions = get_prescriptions(prescription_ids)
+
+            if prescriptions or prescriptions == []:
+                # Add patient names for each prescription
+                for prescription in prescriptions:
+                    username = prescription.get('patientID')
+                    user_data = user_details_by_username(username)
+                    
+                    if user_data != None:
+                        prescription['matchedPatient'] = user_data.get('firstName') + ' ' + user_data.get('lastName')
+                    else:
+                        prescription['matchedPatient'] = "N/A"
+
+                    # Convert MongoDB documents to a format suitable for JSON response
+                    # MongoDB's _id field needs to be converted to string
+                    prescription['_id'] = str(prescription['_id'])
+
+                return Response(prescriptions)
+            else: # prescriptions == None
+                return Response({'error': 'Something went wrong when retrieving prescriptions'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        return Response({'error: Prescriber not found'}, status=status.HTTP_400_BAD_REQUEST)
+
+# Pull prescriptions based on patientID (ie: patient's username)
+class GetPatientPrescriptions(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, patient_id, format=None):
+        patient_profile = user_details_by_username(patient_id)
+
+        if patient_profile:
+            prescription_ids = patient_profile.get("prescriptionIDs")
+            prescriptions = get_prescriptions(prescription_ids)
+
+            if prescriptions or prescriptions == []:
+                # Remove other patients with the same initials
+                prescriptions = [p for p in prescriptions if p.get('patientID') == patient_id]
+
+                # Convert MongoDB documents to a format suitable for JSON response
+                # MongoDB's _id field needs to be converted to string
+                for doc in prescriptions:
+                    doc['_id'] = str(doc['_id'])
+
+                return Response(prescriptions)
+            else: # prescriptions == None
+                return Response({'error': 'Something went wrong when retrieving prescriptions'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        return Response({'error: Patient not found'}, status=status.HTTP_400_BAD_REQUEST)
