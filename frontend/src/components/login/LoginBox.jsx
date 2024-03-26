@@ -20,7 +20,7 @@ const LoginBox = () => {
     const [email, setEmail] = React.useState('');
     const [language, setLanguage] = React.useState('');
     const [city, setCity] = React.useState('');
-    const [address, setAddress] = React.useState('');
+    const [address, setAddress] = React.useState("");
     const [provDocID, setProvDocID] = React.useState('');
     const [province, setProvince] = React.useState('AB');
     const [boxHeight, setBoxHeight] = React.useState(400);
@@ -213,12 +213,13 @@ const LoginBox = () => {
             }
 
             if (activeButton === patient) {
+                const bodyAddress = address === "" ? "DNE" : address;
                 const response = await fetch('https://notparx-user-service.azurewebsites.net/api/registerUser/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, password, firstName, lastName, address, city, province, language, email })
+                body: JSON.stringify({ username, password, firstName, lastName, "address" : bodyAddress, city, province, language, email })
                 });
                 const responseData = await response.json();
 
@@ -393,7 +394,7 @@ const LoginBox = () => {
                                     </>
                                 )}
                                 <small>Address</small>
-                                <input type="text" className="input-field" placeholder="Address" value={address} onChange={handleAddressChange}/>
+                                <input type="text" className="input-field" placeholder="Address (Optional)" value={address} onChange={handleAddressChange}/>
                                 </>
                             )}
                             {(currentView === login || (currentView === signUp && activeButton === patient)) && (
