@@ -8,6 +8,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import Checkbox from '@mui/material/Checkbox';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import dayjs from 'dayjs';
+import decodeToken from '../../../../token_handling/tokenHandling.js';
 
 const PatientAddPrescription = ({ onClose }) => {
     const today = dayjs(dayjs().format('YYYY-MM-DD'));
@@ -18,13 +19,12 @@ const PatientAddPrescription = ({ onClose }) => {
     const [invalidDate, setInvalidDate] = useState(null);
     const [invalidInput, setInvalidInput] = useState(false);
     const [error, setError] = useState(false);
+    const [logError, setLogError] = useState(false);
+    const [apiError, setApiError] = useState(false);
+    const [noPrescriberError, setNoPrescriberError] = useState(false);
 
     const handleCreate = async () => {
         if (!provDocID) {
-            setInvalidInput(true);
-            setError(true);
-        } else if (false) {
-            // TODO: check if provDocID exists in database
             setInvalidInput(true);
             setError(true);
         } else if (!error) {
@@ -32,29 +32,77 @@ const PatientAddPrescription = ({ onClose }) => {
             console.log(provDocID);
             console.log(discoveryPass);
 
-            // Clear form inputs
-            setDate(today);
-            setProvDocID('');
-            setDiscoveryPass(false);
+            //Log prescription
+            const token = localStorage.getItem('token');
+            if (token) {
+                const decodedToken = decodeToken(token)
+                if (!decodedToken) {
+                    setApiError(true)
+                } else {
+                    const username = decodedToken.username
+                    const prescriberID = provDocID
+                    const formattedDate = date.format('YYYY/MM/DD')
+                    try {
+                        const response = await fetch('https://notparx-prescription-service.azurewebsites.net/api/logUserPrescription/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ username, "date": formattedDate, discoveryPass, prescriberID })
+                            });
+                            const responseData = await response.json();
+            
+                            if (response.ok) {
+                                console.log("Prescription Log Success")
 
-            // Clear errors
-            setError(false);
-            setInvalidDate(null);
-            setInvalidInput(false);
+                                // Clear form inputs
+                                setDate(today);
+                                setProvDocID('');
+                                setDiscoveryPass(false);
 
-            // Close Popup
-            onClose();
+                                // Clear errors
+                                setError(false);
+                                setInvalidDate(null);
+                                setInvalidInput(false);
+                                setApiError(false);
+                                setLogError(false);
+                                setNoPrescriberError(false);
+
+                                // Close Popup
+                                onClose();
+                            } else {
+                                if (responseData.error === "No prescriber with that ID") {
+                                    setNoPrescriberError(true)
+                                    console.error("Invalid prescriberID");
+                                } else {
+                                    setLogError(true)
+                                    console.error("Prescription Log Fail");
+                                }
+                            }
+                    } catch (error) {
+                        setApiError(true)
+                        console.error("Error");
+                    }
+                }
+            } else {
+                setApiError(true)
+            }
         }
     }
 
     const handleDateChange = async (newDate) => {
         setDate(newDate);
+        setApiError(false);
+        setLogError(false);
     }
 
     const handleProvDocIDChange = async (e) => {
         const inputValue = e.target.value.toUpperCase();
         setProvDocID(inputValue);
         setInvalidInput(false);
+        setApiError(false);
+        setLogError(false);
+        setNoPrescriberError(false);
         setError(false || invalidDate);
     }
 
@@ -78,6 +126,9 @@ const PatientAddPrescription = ({ onClose }) => {
                 <div>Add a New Prescription</div>
                 <HighlightOffIcon onClick={onClose} className='close-icon' />
             </div>
+            {logError && <span className='duplicate-log-error'>Prescription already logged</span>}
+            {noPrescriberError && <span className='duplicate-log-error'>No prescriber with that ID</span>}
+            {apiError && <span className='api-log-error'>Error logging prescription. Ensure information is correct and try again</span>}
             <div className="form-content">
                 <div className='txt-field'>
                     <small>Date</small>
@@ -86,7 +137,6 @@ const PatientAddPrescription = ({ onClose }) => {
                             <ThemeProvider theme={customDatePicker}>
                                 <DatePicker
                                     slotProps={{ textField: { size: 'small' } }}
-                                    minDate={today}
                                     value={date}
                                     format="YYYY/MM/DD"
                                     onChange={handleDateChange}

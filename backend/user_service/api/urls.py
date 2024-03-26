@@ -8,4 +8,6 @@ urlpatterns = [
     path('loginPrescriber/', views.LoginPrescriber.as_view(), name='loginPrescriber'),
 	path('loginAdmin/', views.LoginAdmin.as_view(), name='loginAdmin'),
     path('getUserProfiles/',views.GetUserProfiles.as_view(), name='getUserProfiles'),
+    path('getActionRequired/<str:username>/', views.GetActionRequired.as_view(), name='getActionRequired'),
+    path('updateUserAddress/', views.UpdateUserAddress.as_view(), name='updateUserAddress'),
 ]

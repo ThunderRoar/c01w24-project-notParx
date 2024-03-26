@@ -79,6 +79,9 @@ class LogUserPrescription(APIView):
 
         # Add prescription to list of prescriptions if not already there
         user = user_details_by_username(username=username)
+        prescriber = prescriber_details_by_provdocid(prov_doc_id=prescriberID)
+        if prescriber is None:
+            return Response({'error': 'No prescriber with that ID'}, status=status.HTTP_400_BAD_REQUEST)
         if user:
             firstName = user["firstName"].upper()
             lastName = user["lastName"].upper()
@@ -113,6 +116,8 @@ class LogUserPrescription(APIView):
                 insert_prescription(prescription=newPrescription)
             else:
                 if discoveryPass:
+                    if user["address"] == "DNE":
+                        update_user(username=username, filters={'actionRequired': True})
                     filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged', 'patientID': username}
                 else:
                     filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete', 'patientID': username}
@@ -168,6 +173,10 @@ class LogPrescriberPrescription(APIView):
                 insert_prescription(prescription=newPrescription)
             else:
                 if discoveryPass:
+                    username = existingPrescription["patientID"]
+                    user = user_details_by_username(username=username)
+                    if user and user["address"] == "DNE" :
+                        update_user(username=username, filters={'actionRequired': True})
                     filters = {'matched': True, 'patientStatus': 'Pr logged', 'prescriberStatus': 'Pa logged'}
                 else:
                     filters = {'matched': True, 'patientStatus': 'Complete', 'prescriberStatus': 'Complete'}
