@@ -63,7 +63,7 @@ class DownloadPrescriptionPDF(APIView):
 
         # Return the buffer content as a response
         response = HttpResponse(pdf_buffer, content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename=f"PaRx - {prov_doc_id}.pdf"'
+        response['Content-Disposition'] = 'attachment; filename=PaRx - {prov_doc_id}.pdf'
         return response
     
 class LogUserPrescription(APIView):

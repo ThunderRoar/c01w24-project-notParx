@@ -124,7 +124,7 @@ const PatientPrescriptions = () => {
 
     // TODO: connect backend endpoint here to download prescription
     const handleDownloadPrescription = async (prescriptionID) => {
-        let url = 'https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/' + prescriptionID + '/';
+        let url = `https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/${prescriptionID}/`;
         try {
             const response = await fetch(url, {
                 method: 'GET',
@@ -133,8 +133,9 @@ const PatientPrescriptions = () => {
             if (!response.ok) {
                 console.error('Error downloading prescription: ', response.statusText);
             }
-
-            const cdHeader = response.headers.get('content-disposition');
+            console.log(response.text)
+            const cdHeader = response.headers.get('Content-Disposition');
+            console.log(cdHeader);
             let filename = "prescription.pdf";
             if (cdHeader) {
                 const matches = /filename="([^"]+)"/.exec(cdHeader);

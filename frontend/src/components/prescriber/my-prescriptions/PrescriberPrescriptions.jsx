@@ -53,7 +53,7 @@ const PrescriberPrescriptions = () => {
                 if (token) {
                     const decodedToken = decodeToken(token);
                     const prescriberCode = decodedToken.username;
-                    console.log(prescriberCode);
+                    // console.log(prescriberCode);
 
                     await fetch('https://notparx-prescription-service.azurewebsites.net/api/prescriberPrescriptions/' + prescriberCode + '/', {
                         method: 'GET',
@@ -84,7 +84,10 @@ const PrescriberPrescriptions = () => {
 
     // TODO: connect backend endpoint here to download prescription
     const handleDownloadPrescription = async (prescriptionID) => {
-        let url = 'https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/' + prescriptionID + '/';
+        console.log(prescriptionID);
+        // let url = `https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/${prescriptionID}/`;
+        let url = `https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/testing123/`;
+
         try {
             const response = await fetch(url, {
                 method: 'GET',
@@ -93,14 +96,12 @@ const PrescriberPrescriptions = () => {
             if (!response.ok) {
                 console.error('Error downloading prescription: ', response.statusText);
             }
-
+            console.log(response)
             const cdHeader = response.headers.get('content-disposition');
+            console.log(cdHeader);
             let filename = "prescription.pdf";
             if (cdHeader) {
-                const matches = /filename="([^"]+)"/.exec(cdHeader);
-                if (matches && matches.length > 1) {
-                    filename = matches[1];
-                }
+                filename = cdHeader.split('filename=')[1];
             }
             // Process the response as a Blob to handle the binary PDF data
             const blob = await response.blob();
