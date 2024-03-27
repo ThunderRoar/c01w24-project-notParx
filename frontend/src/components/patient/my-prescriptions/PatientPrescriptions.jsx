@@ -142,11 +142,10 @@ const PatientPrescriptions = () => {
                 if (matches.length > 1) {
                     filename = matches[1];
                 }
+                filename=filename.substring(0, filename.length-1);
             }
 
-            console.log(filename);
-            filename=filename.substring(0, filename.length-1);
-
+            // console.log(filename);
             // Process the response as a Blob to handle the binary PDF data
             const blob = await response.blob();
             const downloadUrl = window.URL.createObjectURL(blob);
