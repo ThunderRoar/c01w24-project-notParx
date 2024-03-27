@@ -97,7 +97,7 @@ const PrescriberPrescriptions = () => {
                 console.error('Error downloading prescription: ', response.statusText);
             }
             console.log(response)
-            const cdHeader = response.headers.get('content-disposition');
+            const cdHeader = response.headers.get('Content-Disposition');
             console.log(cdHeader);
             let filename = "prescription.pdf";
             if (cdHeader) {
