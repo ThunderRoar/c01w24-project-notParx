@@ -84,7 +84,7 @@ const PrescriberPrescriptions = () => {
 
     // TODO: connect backend endpoint here to download prescription
     const handleDownloadPrescription = async (prescriptionID) => {
-        console.log(prescriptionID);
+        //console.log(prescriptionID);
         let url = `https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/${prescriptionID}/`;
         
         try {
