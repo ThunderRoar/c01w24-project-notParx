@@ -63,6 +63,37 @@ const PatientPrescriptions = () => {
         }
     }
 
+    const handleGetPrescriptions = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            if (token) {
+                const decodedToken = decodeToken(token);
+                const patientID = decodedToken.username;
+
+                await fetch('https://notparx-prescription-service.azurewebsites.net/api/patientPrescriptions/' + patientID + '/', {
+                    method: 'GET',
+                })
+                .then (async response => {
+                    if (response.ok) {
+                        let data = await response.json();
+                        console.log(data);
+                        for (let p of data) {
+                            p["patientInitials"] = p["prescriptionID"].slice(-2);
+                            p["discoveryPassPrescribed"] = p["discoveryPassPrescribed"].toString();
+                        }
+                        setPrescriptionDBdata(data);
+                    } else {
+                        console.error('Error fetching prescriptions: ', response.statusText);
+                    }
+                })
+            } else {
+                console.error('User not logged in');
+            }
+        } catch(error) {
+            console.error('Error fetching prescriptions: ', error);
+        }
+    };
+
     const handlePrescriptionPageChange = (event, newPage) => {
         setPrescriptionPage(newPage);
     };
@@ -83,41 +114,11 @@ const PatientPrescriptions = () => {
     const handlePopupClose = () => {
         setShowPopup(false); // Close the popup
         setShowUpdateAddress(false);
-        setInvalidInput(false)
+        setInvalidInput(false);
+        handleGetPrescriptions();
     };
 
     React.useEffect(() => {
-        const handleGetPrescriptions = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                if (token) {
-                    const decodedToken = decodeToken(token);
-                    const patientID = decodedToken.username;
-
-                    await fetch('https://notparx-prescription-service.azurewebsites.net/api/patientPrescriptions/' + patientID + '/', {
-                        method: 'GET',
-                    })
-                    .then (async response => {
-                        if (response.ok) {
-                            let data = await response.json();
-                            console.log(data);
-                            for (let p of data) {
-                                p["patientInitials"] = p["prescriptionID"].slice(-2);
-                                p["discoveryPassPrescribed"] = p["discoveryPassPrescribed"] ? "Prescribed" : "N/A";
-                            }
-                            setPrescriptionDBdata(data);
-                        } else {
-                            console.error('Error fetching prescriptions: ', response.statusText);
-                        }
-                    })
-                } else {
-                    console.error('User not logged in');
-                }
-            } catch(error) {
-                console.error('Error fetching prescriptions: ', error);
-            }
-        };
-
         handleGetPrescriptions();
         handleActionRequired();
     }, [])
