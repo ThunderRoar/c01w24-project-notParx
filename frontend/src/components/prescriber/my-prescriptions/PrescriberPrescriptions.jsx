@@ -83,8 +83,39 @@ const PrescriberPrescriptions = () => {
     }, [])
 
     // TODO: connect backend endpoint here to download prescription
-    const handleDownloadPrescription = (prescriptionID) => {
+    const handleDownloadPrescription = async (prescriptionID) => {
+        url = 'https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/' + prescriptionID + '/';
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                // Add headers if needed, e.g., Authorization for protected routes
+            });        
+            if (!response.ok) {
+                console.error('Error downloading prescription: ', response.statusText);
+            }
 
+            const cdHeader = response.headers.get('content-disposition');
+            let filename = "prescription.pdf";
+            if (cdHeader) {
+                const matches = /filename="([^"]+)"/.exec(cdHeader);
+                if (matches && matches.length > 1) {
+                    filename = matches[1];
+                }
+            }
+            // Process the response as a Blob to handle the binary PDF data
+            const blob = await response.blob();
+            const downloadUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.setAttribute('download', filename); // Set the file name for the download
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        }
+        catch (error) {
+            console.error('Download error:', error);
+            // Handle error scenario, e.g., show a notification or message to the user
+        }
     }
 
     return (
