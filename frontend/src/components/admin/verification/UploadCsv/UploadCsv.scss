@@ -63,7 +63,6 @@
         align-items: center;
         justify-content: center;
         .verify-button {
-            margin: 2rem 2rem 0rem 0rem;
             padding: 0.5rem 2rem 0.5rem 2rem;
             background-color: #749769;
             color: #F9FFF8;
@@ -75,5 +74,27 @@
                 cursor: pointer;
             }
         }
+        .loading-button {
+            padding: 0.4rem 2.5rem 0.4rem 2.5rem;
+            background-color: #749769;
+            color: #F9FFF8;
+            border: none;
+            border-radius: 0.55rem;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            &:hover {
+                background: #32402e;
+                cursor: pointer;
+            }
+        }
     }
+}
+
+.error-popup {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    justify-content: center;
+    align-items: center;
+    color: red;
 }
