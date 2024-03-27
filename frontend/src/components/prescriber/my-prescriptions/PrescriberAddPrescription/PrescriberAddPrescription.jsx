@@ -41,7 +41,7 @@ const PrescriberAddPrescription = ({ onClose }) => {
                 } else {
                     const prescriberID = decodedToken.username
                     const initials = patientInitials
-                    const formattedDate = date.format('YYYY/MM/DD')
+                    const formattedDate = date.format('YYYY-MM-DD')
                     try {
                         const response = await fetch('https://notparx-prescription-service.azurewebsites.net/api/logPrescriberPrescription/', {
                             method: 'POST',
