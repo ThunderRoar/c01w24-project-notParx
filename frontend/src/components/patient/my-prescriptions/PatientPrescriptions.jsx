@@ -124,8 +124,42 @@ const PatientPrescriptions = () => {
     }, [])
 
     // TODO: connect backend endpoint here to download prescription
-    const handleDownloadPrescription = (prescriptionID) => {
+    const handleDownloadPrescription = async (prescriptionID) => {
+        let url = `https://notparx-prescription-service.azurewebsites.net/api/downloadprescription/${prescriptionID}/`;
+        
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                // Add headers if needed, e.g., Authorization for protected routes
+            });        
+            if (!response.ok) {
+                console.error('Error downloading prescription: ', response.statusText);
+            }
+            let contentDisposition = response.headers.get('Content-Disposition');
+            let filename = "prescription.pdf"; // Default filename if not found
+            console.log(contentDisposition);
+            if (contentDisposition) {
+                let matches = contentDisposition.match(/filename="?(.+)"?/);
+                if (matches.length > 1) {
+                    filename = matches[1];
+                }
+                filename=filename.substring(0, filename.length-1);
+            }
 
+            // Process the response as a Blob to handle the binary PDF data
+            const blob = await response.blob();
+            const downloadUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.setAttribute('download', filename); // Set the file name for the download
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        }
+        catch (error) {
+            console.error('Download error:', error);
+            // Handle error scenario, e.g., show a notification or message to the user
+        }
     }
 
     const handleAddressChange = async (e) => {
@@ -209,10 +243,14 @@ const PatientPrescriptions = () => {
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
                                         <TableCell key="prescriptionButton"> 
-                                            {/* TODO: handle download prescriptions */}
-                                            <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
-                                                <span>View Prescription</span>
-                                            </Button>
+                                            {
+                                                (row["patientStatus"] !== "Pr not logged yet") ?  
+                                                <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
+                                                    <span>View Prescription</span>
+                                                </Button> 
+                                                : 
+                                                "Can't download without PR log"
+                                            }
                                         </TableCell>
                                     </TableRow>
                                 ))}

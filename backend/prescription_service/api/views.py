@@ -46,6 +46,8 @@ class DownloadPrescriptionPDF(APIView):
 
 
         activity_plan = prescription_data.get('descriptionOfPrescription', "")
+        if activity_plan == None:
+            activity_plan = ""
 
         pdf = create_pdf(
             name=name,
@@ -61,8 +63,8 @@ class DownloadPrescriptionPDF(APIView):
 
         # Return the buffer content as a response
         response = HttpResponse(pdf_buffer, content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="prescription.pdf"'
-        return response
+        response['Content-Disposition'] = f'attachment; filename="PaRx - {prov_doc_id}.pdf"'
+        return response 
     
 class LogUserPrescription(APIView):
     permission_classes = [AllowAny]
