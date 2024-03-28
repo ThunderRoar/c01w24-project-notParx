@@ -21,17 +21,21 @@ const Profiles = () => {
     const [prescriberDBdata, setPrescriberDBdata] = React.useState([]);
     const [patientDBdata, setPatientDBdata] = React.useState([]);
     const [isCoordinator, setIsCoordinator] = React.useState(true);
+    const [selectedID, setSelectedID] = React.useState(null);
+    const [selectedPrescriptionType, setSelectedPrescriptionType] = React.useState(null);
 
     const navigate = useNavigate();
 
     const [showPopup, setShowPopup] = React.useState(false);
 
-    const handleButtonClick = () => {
-        setShowPopup(true);  // Open the popup
+    const handleButtonClick = (prescriberCode, type) => {
+        setShowPopup(true);
+        setSelectedID(prescriberCode);
+        setSelectedPrescriptionType(type);
     };
 
     const handlePopupClose = () => {
-        setShowPopup(false); // Close the popup
+        setShowPopup(false);
     };
 
     React.useEffect(() => {
@@ -62,7 +66,7 @@ const Profiles = () => {
                 .then (async response => {
                     if (response.ok) {
                         let data = await response.json();
-                        console.log(data);
+                        console.log('patient data', data);
                         setPatientDBdata(data);
                     } else {
                         console.log('Error fetching patients: ', response.statusText);
@@ -91,12 +95,10 @@ const Profiles = () => {
         handleGetPatients();
     }, [])
 
-
     const [patientPage, setPatientPage] = React.useState(0);
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
     
     const [selectedTab, setSelectedTab] = React.useState(0); // State for selected tab
-
 
     const prescriberColumns = [ // Sample columns - add depending on what api returns
         { id: 'provDocID', label: 'Code' },
@@ -108,8 +110,6 @@ const Profiles = () => {
         { id: 'province', label: 'Prov' },
         { id: 'college', label: 'Licensing College' },
         { id: 'licenseNum', label: 'License#' },
-        // { id: '', label: 'Prescriptions'},
-        // { id: "prescriptionButton", label: ''}
     ];
 
     const patientColumns = [
@@ -194,7 +194,11 @@ const Profiles = () => {
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
                                             <TableCell key = "prescriptionButton"> 
-                                                <Button className='upload-button' onClick={handleButtonClick}><span>View Prescriptions</span>
+                                                <Button 
+                                                    className='upload-button' 
+                                                    onClick={() => handleButtonClick(row.provDocID, 'prescriber')}
+                                                >
+                                                    <span>View Prescriptions</span>
                                                 </Button>
                                             </TableCell>
                                         </TableRow>
@@ -209,7 +213,11 @@ const Profiles = () => {
                                             ))}
 
                                             <TableCell key = "prescriptionButton"> 
-                                                <Button className='upload-button' onClick={handleButtonClick}><span>View Prescriptions</span>
+                                                <Button 
+                                                    className='upload-button' 
+                                                    onClick={() => handleButtonClick(row.username, 'patient')}
+                                                >
+                                                    <span>View Prescriptions</span>
                                                 </Button>
                                             </TableCell>
                                         </TableRow>
@@ -218,7 +226,7 @@ const Profiles = () => {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    {selectedTab === 0 && ( // Show Prescriber Pagination
+                    {selectedTab === 0 && (
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
@@ -229,7 +237,7 @@ const Profiles = () => {
                             onRowsPerPageChange={handlePrescriberRowsPerPageChange}
                         />
                     )}
-                    {selectedTab === 1 && ( // Show Patient Pagination
+                    {selectedTab === 1 && (
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
@@ -243,7 +251,11 @@ const Profiles = () => {
                 </div>
             </div>
             <ReactPopup open={showPopup} closeOnDocumentClick={true} onClose={handlePopupClose}>
-                <PrescriptionView onClose={handlePopupClose} /> 
+                <PrescriptionView 
+                    onClose={handlePopupClose}
+                    userId={selectedID}
+                    type={selectedPrescriptionType}
+                /> 
             </ReactPopup>
         </div>
     );
