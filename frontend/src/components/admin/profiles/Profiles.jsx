@@ -250,7 +250,7 @@ const Profiles = () => {
                     )}
                 </div>
             </div>
-            <ReactPopup open={showPopup} closeOnDocumentClick={true} onClose={handlePopupClose}>
+            <ReactPopup open={showPopup} closeOnDocumentClick={false} onClose={handlePopupClose}>
                 <PrescriptionView 
                     onClose={handlePopupClose}
                     userId={selectedID}

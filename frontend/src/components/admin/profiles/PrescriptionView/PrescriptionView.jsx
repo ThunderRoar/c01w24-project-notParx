@@ -2,7 +2,7 @@ import './PrescriptionView.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, FormControl, Select, MenuItem } from '@mui/material';
 import TablePagination from '@mui/material/TablePagination';
 
 const PrescriptionView = ( { onClose, userId, type } ) => {
@@ -12,6 +12,7 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
     const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5);
     const [patientPage, setPatientPage] = React.useState(0);
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
+    const [selectedStatus, setSelectedStatus] = React.useState(''); 
 
     const handlePrescriberPageChange = (event, newPage) => {
         setPrescriberPage(newPage);
@@ -85,7 +86,7 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         { id: 'dateOfPrescription', label: 'Date' },
         { id: 'discoveryPassPrescribed', label: 'Discovery Pass' },
         { id: 'matchedPatient', label: 'Matched Patient' },
-        { id: 'prescriberStatus', label: 'Status' },
+        // { id: 'prescriberStatus', label: 'Status' },
         // { id: 'pdf', label: 'Prescription PDF' },
     ];
 
@@ -94,8 +95,17 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         { id: 'patientInitials', label: 'Patient Initials' },
         { id: 'dateOfPrescription', label: 'Date' },
         { id: 'discoveryPassPrescribed', label: 'Discovery Pass' },
-        { id: 'patientStatus', label: 'Status' },
+        // { id: 'patientStatus', label: 'Status' },
         // { id: 'pdf', label: 'Prescription PDF' },
+    ];
+
+    const statusOptions = [
+        { value: 'Pa not logged yet', label: 'Pa Not Logged Yet' },
+        { value: 'Pr not logged yet', label: 'Pr Not Logged Yet' },
+        { value: 'Complete', label: 'Complete' },
+        { value: 'Pa logged', label: 'Pa Logged' },
+        { value: 'Pr logged', label: 'Pr Logged' },
+        { value: 'Complete with discovery pass', label: 'Complete with Discovery Pass' },
     ];
 
     const handleDownloadPrescription = async (prescriptionID) => {
@@ -137,6 +147,26 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         }
     }
 
+    const handleStatusUpdate = async (prescriptionId, newStatus) => {
+        try {
+            const response = await fetch(`https://notparx-prescription-service.azurewebsites.net/api/updateprescription/${prescriptionId}/`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ status: newStatus })
+            });
+    
+            if (response.ok) {
+                console.log('Status updated successfully');
+            } else {
+                console.error('Error updating status: ', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error updating status: ', error);
+        }
+    };
+
     return (
         <div className="prescription-view">
             <div className="popup-header">
@@ -154,7 +184,10 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                         <TableCell key={column.id}>{column.label}</TableCell>
                                     ))}
 
-                                    <TableCell key = "prescriptionButton"> 
+                                    <TableCell key="prescriberStatus">
+                                        Status
+                                    </TableCell>
+                                    <TableCell key = "prescriptionButton">
                                     </TableCell>
 
                                     </TableRow>
@@ -164,6 +197,9 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                         <TableCell key={column.id}>{column.label}</TableCell>
                                     ))}
 
+                                    <TableCell key="patientStatus">
+                                        Status
+                                    </TableCell>
                                     <TableCell key = "prescriptionButton"> 
                                     </TableCell>
 
@@ -179,6 +215,27 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                             {prescriptionColumnsPrescriber.map((column) => (
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
+                                            <TableCell key="prescriberStatus">
+                                                <FormControl fullWidth className='status-form'> 
+                                                    <Select
+                                                        value={row.prescriberStatus} // Display the current status
+                                                        displayEmpty  // Show empty selection if needed
+                                                        onChange={(e) => {
+                                                            console.log(row);
+                                                            console.log(e);
+                                                            setSelectedStatus(e.target.value);
+                                                            // Optionally call a function to update on backend:
+                                                            //handleStatusUpdate(row.prescriptionID, e.target.value); 
+                                                        }}
+                                                    >
+                                                        {statusOptions.map((option) => (
+                                                            <MenuItem key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </MenuItem>
+                                                        ))}
+                                                    </Select>
+                                                </FormControl>
+                                            </TableCell>
                                             <TableCell key = "prescriptionButton"> 
                                                 <Button 
                                                     className='upload-button'
@@ -197,6 +254,26 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                             {prescriptionColumnsPatient.map((column) => (
                                                 <TableCell key={column.id}>{row[column.id]}</TableCell>
                                             ))}
+
+                                            <TableCell key="patientStatus">
+                                                <FormControl fullWidth> 
+                                                    <Select
+                                                        value={row.patientStatus} // Display the current status
+                                                        displayEmpty  // Show empty selection if needed
+                                                        onChange={(e) => {
+                                                            setSelectedStatus(e.target.value);
+                                                            // Optionally call a function to update on backend:
+                                                            //handleStatusUpdate(row.prescriptionID, e.target.value); 
+                                                        }}
+                                                    >
+                                                        {statusOptions.map((option) => (
+                                                            <MenuItem key={option.value} value={option.value}>
+                                                                {option.label}
+                                                            </MenuItem>
+                                                        ))}
+                                                    </Select>
+                                                </FormControl>
+                                            </TableCell>
 
                                             <TableCell key = "prescriptionButton"> 
                                                 <Button 

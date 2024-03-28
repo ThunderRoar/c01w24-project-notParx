@@ -1,10 +1,8 @@
 .prescription-view {
     background-color: #FDFDFF;
     padding: 1.5rem 2.5rem;
-    min-width: 65vw;
-    width: 65vw;
-    min-height: 60vh;
-    height: 60vh;
+    width: 70vw;
+    height: 75vh;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 0.85rem;
     display: flex;
@@ -26,6 +24,7 @@
     }
 
     .content {
+        overflow: scroll;
         // background-color: #FDFDFF;
         // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
         // border-radius: .85rem;
@@ -59,6 +58,11 @@
                         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
                     }
                 }
+            }
+        }
+        .status-form {
+            .MuiInputBase-root {
+                background-color: white;
             }
         }
     }
