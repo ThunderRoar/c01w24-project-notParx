@@ -145,7 +145,6 @@ const PatientPrescriptions = () => {
                 filename=filename.substring(0, filename.length-1);
             }
 
-            // console.log(filename);
             // Process the response as a Blob to handle the binary PDF data
             const blob = await response.blob();
             const downloadUrl = window.URL.createObjectURL(blob);
@@ -243,10 +242,14 @@ const PatientPrescriptions = () => {
                                             <TableCell key={column.id}>{row[column.id]}</TableCell>
                                         ))}
                                         <TableCell key="prescriptionButton"> 
-                                            {/* TODO: handle download prescriptions */}
-                                            <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
-                                                <span>View Prescription</span>
-                                            </Button>
+                                            {
+                                                (row["patientStatus"] !== "Pr not logged yet") ?  
+                                                <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
+                                                    <span>View Prescription</span>
+                                                </Button> 
+                                                : 
+                                                "Can't download without PR log"
+                                            }
                                         </TableCell>
                                     </TableRow>
                                 ))}
