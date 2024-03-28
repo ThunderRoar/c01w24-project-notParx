@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import decodeToken from '../../token_handling/tokenHandling.js';
+import { patientTabs } from '../shared/tabs-data';
+import { Outlet } from 'react-router-dom';
 import Header from '../shared/header/header';
 import './Patient.scss';
 
 const Patient = () => {
+  const tabs = patientTabs;
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -25,7 +28,8 @@ const Patient = () => {
 
   return (
     <div className="patient-component">
-      <Header tabs={[]} />
+      <Header tabs={tabs} />
+      <Outlet />
     </div>
   );
 };
