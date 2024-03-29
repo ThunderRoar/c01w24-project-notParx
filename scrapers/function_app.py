@@ -2,6 +2,8 @@ import azure.functions as func
 import logging
 import os
 import requests
+import time
+import threading
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
@@ -29,6 +31,8 @@ def update_job_succeeded(old_file_name, new_file_name):
 @app.route(route="verifier")
 @app.function_name(name="verifier")
 async def verifier(req: func.HttpRequest) -> func.HttpResponse:
+    start_time = time.time()
+
     # Note: imports have to be here or azure breaks
     import csv
     
@@ -56,7 +60,33 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
 
     logging.info('Python HTTP trigger function received a request.')
 
-    # TODO restart on hitting 9 min time limit.
+
+    # Func to initiate new verification process wchich will start where the last one left off
+    async def initiate_verification_process(blob_service_client, csv_name, base_res):
+        """Starts an asynchronous GET request to trigger the verification process."""
+        def verify_csv():
+            encoded_csv_name = requests.utils.quote(csv_name)
+            url = f'https://c01notparx-verifer.azurewebsites.net/api/verifier?csv_name={encoded_csv_name}'
+            try:
+                requests.get(url, timeout=10)
+            except requests.RequestException as e:
+                print(f"Error initiating verification for {csv_name}: {e}")
+
+        # Overwrite what has been done so far
+        out_stream = StringIO(newline = '')
+        writer = csv.writer(out_stream)
+        for row in base_res:
+            writer.writerow(row)
+        
+        container_client = blob_service_client.get_container_client(container="csv-container")
+        res = await container_client.upload_blob(name=csv_name, data=out_stream.getvalue(), overwrite=True)
+        print("overwrote intermediate as: " + csv_name)
+        
+        blob_service_client.close()
+
+        # Start the GET request in a new thread
+        thread = threading.Thread(target=verify_csv)
+        thread.start()
 
     # Create the BlobServiceClient object
     blob_service_client = BlobServiceClient.from_connection_string(os.environ['STORAGE_CONNECTION_STRING'])
@@ -85,12 +115,21 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     download_stream = await download_client.download_blob()
     data = await download_stream.readall()
     
-    base = []
-    reader = csv.reader(data.decode("utf-8").splitlines())
-    for row in reader:
-        base.append(row)
+    try:
+        base = []
+        reader = csv.reader(data.decode("utf-8-sig").splitlines())
+        for row in reader:
+            base.append(row)
+    except Exception as e:
+        print(e)
+        print("Decoding input csv failed. Potentially not utf-8 encoded. Quitting")
+        update_job_failed(blob_name)
+        return func.HttpResponse(
+             "Decoding input csv failed. Potentially not utf-8 encoded. Quitting",
+             status_code=500
+        )
 
-    print(base)
+    # print(base)
 
     # Find required info columns
     FIRST_NAME_IND=-1
@@ -99,6 +138,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     LICENSING_IND=-1
     COLLEGE_IND=-1
     STATUS_IND=-1
+    PRESCRIBER_IND=-1
     try:
         for i in range(len(base[0])):
             col = base[0][i]
@@ -114,6 +154,8 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                 COLLEGE_IND = i
             if col is not None and col.strip() == "Status":
                 STATUS_IND = i
+            if col is not None and col.strip() == "Code":
+                PRESCRIBER_IND = i
     except:
         logging.info('Failed to parse csv headers')
         update_job_failed(blob_name)
@@ -125,15 +167,21 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     if -1 in [FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND]:
         update_job_failed(blob_name)
         return func.HttpResponse(
-             "Missing required csv headers (First Name, Last Name, Province, Licensing College, Licensing #)",
+             "Missing required csv headers (First Name, Last Name, Province, Licensing College, Licence #)",
              status_code=400
         )
     
     base_res = []
     base_res.append(base[0][:])
+
+    # Optional columns that may need to be added if not already by the uploader
     if STATUS_IND == -1:
         base_res[0].append("Status")
         STATUS_IND = len(base_res[0]) - 1
+    
+    if PRESCRIBER_IND == -1:
+        base_res[0].append("Code")
+        PRESCRIBER_IND = len(base_res[0]) - 1
     
     scraping_strategy = {
         "BC": site1,
@@ -150,13 +198,26 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
 
     # Parse row by row
     for i in range(1,len(base)):
+
+        # re-call function after 9 min (Azure function timeout limit is 10 min)
+        if (time.time() - start_time >= 540):
+            base_res.extend(base[i:])
+            await initiate_verification_process(blob_service_client, blob_name, base_res)
+            return func.HttpResponse(
+                "Reached time limit. Initiated follow up async process to conitnue work.",
+                status_code=200
+            )
+
         try:
             base_res.append(base[i][:])
-            while len(base_res[i]) <  max([FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND, STATUS_IND]) + 1:
+            while len(base_res[i]) <  max([FIRST_NAME_IND, LAST_NAME_IND, PROVINCE_IND, LICENSING_IND, COLLEGE_IND, STATUS_IND, PRESCRIBER_IND]) + 1:
                 base_res[i].append("")
             
             # If row already has something in status column, don't reprocess it
             if base_res[i][STATUS_IND] != "":
+                continue
+            
+            if base_res[i][PRESCRIBER_IND] != "":
                 continue
 
             first_name = base_res[i][FIRST_NAME_IND].strip()
@@ -165,6 +226,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
             license_id = base_res[i][LICENSING_IND].strip()
             college = base_res[i][COLLEGE_IND].strip()
             status = "ERROR"
+            prescriber_id = ""
 
             # Verify row
             if province not in scraping_strategy:
@@ -172,7 +234,6 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                 continue
             status = scraping_strategy[province].get_status(first_name, last_name, license_id)
 
-            # TODO: send verified practitioner to our backend
             if status == "VERIFIED":
                 body = {
                     "firstName": first_name,
@@ -182,16 +243,28 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
                     "licenseNum": license_id,
                     "status": status
                 }
-                requests.post(GENERATE_ID_URL, data = body)
+                response_prescriber_id = requests.post(GENERATE_ID_URL, data = body)
+
+                if response_prescriber_id.ok:
+                    prescriber_id = response_prescriber_id.json()['provDocID']
+                    base_res[i][PRESCRIBER_IND] = prescriber_id
+                    print(f"row i={i}       status: {status}      unique_prescriber_id: {prescriber_id}")
 
             base_res[i][STATUS_IND] = status
+            # Debugging print of status
             print(f"row i={i} status: {status}")
+
 
         except Exception as e:
             logging.info(f'Error during row i={i}. Error: {str(e)}')
+            
             while len(base_res[i]) < STATUS_IND + 1:
                 base_res[i].append("")
             base_res[i][STATUS_IND] = "ERROR"
+
+            while len(base_res[i]) < PRESCRIBER_IND + 1:
+                base_res[i].append("")
+            base_res[i][PRESCRIBER_IND] = ""
 
     
     # Job complete - upload new csv
@@ -207,7 +280,7 @@ async def verifier(req: func.HttpRequest) -> func.HttpResponse:
     
     blob_service_client.close()
 
-    # TODO Send updated status/filename to backend
+    # Send updated status/filename to backend
     update_job_succeeded(blob_name, filename)
     return func.HttpResponse(
         "File processed successfully",

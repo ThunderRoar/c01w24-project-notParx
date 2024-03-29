@@ -1,0 +1,69 @@
+.prescription-view {
+    background-color: #FDFDFF;
+    padding: 1.5rem 2.5rem;
+    width: 70vw;
+    height: 75vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .popup-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .close-icon {
+            color: #749769;
+            font-size: 2.25rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .content {
+        overflow: scroll;
+        // background-color: #FDFDFF;
+        // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+        // border-radius: .85rem;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        .table-container {
+            // padding-left: 2rem;
+            // padding-right: 2rem;
+            // padding-top: 2rem;
+            .table-cont {
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
+                border-radius: .85rem;
+                .table {
+                    background-color: #FDFDFF;
+                    .table-header {
+                        background-color: #749769;
+                        .header-row {
+                            th {
+                                color: #F9FFF8 !important;
+                            }
+                        }
+                    }
+                    .table-row {
+                        background-color: #F1FAEF;
+                    }
+                    .upload-button {
+                        padding: 0.5rem 2rem 0.5rem 2rem;
+                        background-color: #749769;
+                        color: #F9FFF8;
+                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                    }
+                }
+            }
+        }
+        .status-form {
+            .MuiInputBase-root {
+                background-color: white;
+            }
+        }
+    }
+}
