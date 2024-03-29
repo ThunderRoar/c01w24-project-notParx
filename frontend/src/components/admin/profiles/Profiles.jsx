@@ -120,7 +120,6 @@ const Profiles = () => {
         { id: 'city', label: 'City' },
         { id: 'province', label: 'Prov' },
         { id: 'language', label: 'Language' },
-        { id: 'dpass', label: 'Discovery Pass'},
         { id: 'actionRequired', label: 'Action Required' }
     ];
 
@@ -209,7 +208,7 @@ const Profiles = () => {
                                         <TableRow className='table-row' key={row.id}>
                                             {/* Render patient columns */}
                                             {patientColumns.map((column) => (
-                                                <TableCell key={column.id}>{row[column.id]}</TableCell>
+                                                <TableCell key={column.id}>{String(row[column.id])}</TableCell>
                                             ))}
 
                                             <TableCell key = "prescriptionButton"> 
