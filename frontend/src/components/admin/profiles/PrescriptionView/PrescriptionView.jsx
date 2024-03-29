@@ -12,7 +12,6 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
     const [prescriberRowsPerPage, setPrescriberRowsPerPage] = React.useState(5);
     const [patientPage, setPatientPage] = React.useState(0);
     const [patientRowsPerPage, setPatientRowsPerPage] = React.useState(5);
-    const [selectedStatus, setSelectedStatus] = React.useState(''); 
 
     const handlePrescriberPageChange = (event, newPage) => {
         setPrescriberPage(newPage);
@@ -31,6 +30,9 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         setPatientRowsPerPage(+event.target.value);
         setPatientPage(0); 
     };
+
+    const [, updateState] = React.useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
 
     React.useEffect(() => {
         const handleGetPrescriberPrescriptions = async () => {
@@ -232,9 +234,8 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                                         value={row.prescriberStatus}
                                                         displayEmpty
                                                         onChange={(e) => {
-                                                            console.log(row);
-                                                            console.log(e);
-                                                            setSelectedStatus(e.target.value);
+                                                            row.prescriberStatus = e.target.value;
+                                                            forceUpdate();
                                                             handleStatusUpdate(row.prescriptionID, e.target.value, 'prescriber'); 
                                                         }}
                                                     >
@@ -271,7 +272,8 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                                         value={row.patientStatus}
                                                         displayEmpty
                                                         onChange={(e) => {
-                                                            setSelectedStatus(e.target.value);
+                                                            row.patientStatus = e.target.value;
+                                                            forceUpdate();
                                                             handleStatusUpdate(row.prescriptionID, e.target.value, 'patient'); 
                                                         }}
                                                     >
