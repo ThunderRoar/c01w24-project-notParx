@@ -257,10 +257,17 @@ class UpdatePrescription(APIView):
                 return Response({'error': 'Prescription not found'}, status=status.HTTP_404_NOT_FOUND)
 
             new_status = request.data.get("status")
-            if new_status:
-                prescription['prescriberStatus'] = new_status
+            prescription_type = request.GET.get('prescriptionType')
 
-            # Add logic for other fields
+            if new_status:
+                if prescription_type == 'prescriber':
+                    prescription['prescriberStatus'] = new_status
+                elif prescription_type == 'patient':
+                    prescription['patientStatus'] = new_status
+
+            if prescription['prescriberStatus'] == 'Complete with discovery pass' and prescription['patientStatus'] == 'Complete with discovery pass':
+                prescription['discoveryPassPrescribed'] = True
+            else: prescription['discoveryPassPrescribed'] = False
 
             update_prescription(prescriptionID=prescription_id, filters=prescription)
 

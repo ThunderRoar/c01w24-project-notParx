@@ -99,12 +99,17 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         // { id: 'pdf', label: 'Prescription PDF' },
     ];
 
-    const statusOptions = [
-        { value: 'Pa not logged yet', label: 'Pa Not Logged Yet' },
+    const statusOptionsPatient = [
         { value: 'Pr not logged yet', label: 'Pr Not Logged Yet' },
         { value: 'Complete', label: 'Complete' },
-        { value: 'Pa logged', label: 'Pa Logged' },
         { value: 'Pr logged', label: 'Pr Logged' },
+        { value: 'Complete with discovery pass', label: 'Complete with Discovery Pass' },
+    ];
+
+    const statusOptionsPrescriber = [
+        { value: 'Pa not logged yet', label: 'Pa Not Logged Yet' },
+        { value: 'Complete', label: 'Complete' },
+        { value: 'Pa logged', label: 'Pa Logged' },
         { value: 'Complete with discovery pass', label: 'Complete with Discovery Pass' },
     ];
 
@@ -147,9 +152,11 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
         }
     }
 
-    const handleStatusUpdate = async (prescriptionId, newStatus) => {
+    const handleStatusUpdate = async (prescriptionId, newStatus, prescriptionType) => {
         try {
-            const response = await fetch(`https://notparx-prescription-service.azurewebsites.net/api/updateprescription/${prescriptionId}/`, {
+            const url = new URL(`https://notparx-prescription-service.azurewebsites.net/api/updateprescription/${prescriptionId}/`);
+            url.searchParams.append('prescriptionType', prescriptionType); 
+            const response = await fetch(url.toString(), {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -170,7 +177,11 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
     return (
         <div className="prescription-view">
             <div className="popup-header">
-                <div>Patient's Prescriptions</div>
+                {type === 'prescriber' ? (
+                    <div>Prescriber's Prescriptions</div>
+                ) : (
+                    <div>Patient's Prescriptions</div>
+                )}
                 <HighlightOffIcon onClick={onClose} className='close-icon' />
             </div>
             <div className='content'>
@@ -218,17 +229,16 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                             <TableCell key="prescriberStatus">
                                                 <FormControl fullWidth className='status-form'> 
                                                     <Select
-                                                        value={row.prescriberStatus} // Display the current status
-                                                        displayEmpty  // Show empty selection if needed
+                                                        value={row.prescriberStatus}
+                                                        displayEmpty
                                                         onChange={(e) => {
                                                             console.log(row);
                                                             console.log(e);
                                                             setSelectedStatus(e.target.value);
-                                                            // Optionally call a function to update on backend:
-                                                            //handleStatusUpdate(row.prescriptionID, e.target.value); 
+                                                            handleStatusUpdate(row.prescriptionID, e.target.value, 'prescriber'); 
                                                         }}
                                                     >
-                                                        {statusOptions.map((option) => (
+                                                        {statusOptionsPrescriber.map((option) => (
                                                             <MenuItem key={option.value} value={option.value}>
                                                                 {option.label}
                                                             </MenuItem>
@@ -256,17 +266,16 @@ const PrescriptionView = ( { onClose, userId, type } ) => {
                                             ))}
 
                                             <TableCell key="patientStatus">
-                                                <FormControl fullWidth> 
+                                                <FormControl fullWidth className='status-form'> 
                                                     <Select
-                                                        value={row.patientStatus} // Display the current status
-                                                        displayEmpty  // Show empty selection if needed
+                                                        value={row.patientStatus}
+                                                        displayEmpty
                                                         onChange={(e) => {
                                                             setSelectedStatus(e.target.value);
-                                                            // Optionally call a function to update on backend:
-                                                            //handleStatusUpdate(row.prescriptionID, e.target.value); 
+                                                            handleStatusUpdate(row.prescriptionID, e.target.value, 'patient'); 
                                                         }}
                                                     >
-                                                        {statusOptions.map((option) => (
+                                                        {statusOptionsPatient.map((option) => (
                                                             <MenuItem key={option.value} value={option.value}>
                                                                 {option.label}
                                                             </MenuItem>
