@@ -259,17 +259,14 @@ class UpdatePrescription(APIView):
             new_status = request.data.get("status")
             prescription_type = request.GET.get('prescriptionType')
 
+            status_field = f"{prescription_type}Status"
+
             if new_status:
-                if prescription_type == 'prescriber':
-                    prescription['prescriberStatus'] = new_status
-                elif prescription_type == 'patient':
-                    prescription['patientStatus'] = new_status
+                prescription[status_field] = new_status  
 
             if new_status == 'Complete with discovery pass':
-                if prescription_type == 'prescriber':
-                    prescription['patientStatus'] = new_status
-                elif prescription_type == 'patient':
-                    prescription['prescriberStatus'] = new_status
+                opposite_status_field = f"{('patient' if prescription_type == 'prescriber' else 'prescriber')}Status"
+                prescription[opposite_status_field] = new_status 
 
             update_prescription(prescriptionID=prescription_id, filters=prescription)
 
