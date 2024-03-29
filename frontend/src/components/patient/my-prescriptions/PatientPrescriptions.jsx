@@ -246,7 +246,7 @@ const PatientPrescriptions = () => {
                                             {
                                                 (row["patientStatus"] !== "Pr not logged yet") ?  
                                                 <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
-                                                    <span>View Prescription</span>
+                                                    <span>Download Prescription</span>
                                                 </Button> 
                                                 : 
                                                 "Can't download without PR log"

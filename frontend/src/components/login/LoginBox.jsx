@@ -154,7 +154,7 @@ const LoginBox = () => {
                 if (response.ok) {
                     console.log("Login Success")
                     localStorage.setItem('token', responseData.token)
-                    navigate('/Patient')
+                    navigate('/patient')
                 } else {
                     setLoginError(true)
                     console.error(response.error);
@@ -172,7 +172,7 @@ const LoginBox = () => {
                 if (response.ok) {
                     console.log("Login Success")
                     localStorage.setItem('token', responseData.token)
-                    navigate('/Prescriber')
+                    navigate('/prescriber')
                 } else {
                     setLoginError(true)
                     console.error("Login Fail");
@@ -190,7 +190,7 @@ const LoginBox = () => {
                 if (response.ok) {
                     console.log("Login Success")
                     localStorage.setItem('token', responseData.token)
-                    navigate('/Admin')
+                    navigate('/admin')
                 } else {
                     setLoginError(true)
                     console.error("Login Fail");
@@ -248,7 +248,7 @@ const LoginBox = () => {
                 if (response.ok) {
                     console.log("Prescriber Register Success")
                     localStorage.setItem('token', responseData.token)
-                    navigate('/Prescriber')
+                    navigate('/prescriber')
                 } else if (responseData.error === "Already signed up"){
                     setPrescriberAlreadySignedUp(true)
                     console.error("Presciber Register Fail");

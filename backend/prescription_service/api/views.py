@@ -245,3 +245,32 @@ class GetPatientPrescriptions(APIView):
                 return Response({'error': 'Something went wrong when retrieving prescriptions'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response({'error: Patient not found'}, status=status.HTTP_400_BAD_REQUEST)
+
+class UpdatePrescription(APIView):
+    permission_classes = [AllowAny]
+
+    def patch(self, request, prescription_id, format=None):
+        try:
+            prescription = get_prescription_by_prescription_id(prescription_id)
+
+            if not prescription:
+                return Response({'error': 'Prescription not found'}, status=status.HTTP_404_NOT_FOUND)
+
+            new_status = request.data.get("status")
+            prescription_type = request.GET.get('prescriptionType')
+
+            status_field = f"{prescription_type}Status"
+
+            if new_status:
+                prescription[status_field] = new_status  
+
+            if new_status == 'Complete with discovery pass':
+                opposite_status_field = f"{('patient' if prescription_type == 'prescriber' else 'prescriber')}Status"
+                prescription[opposite_status_field] = new_status 
+
+            update_prescription(prescriptionID=prescription_id, filters=prescription)
+
+            return Response({'message': 'Prescription updated'}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

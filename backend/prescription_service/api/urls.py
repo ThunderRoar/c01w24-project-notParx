@@ -11,4 +11,5 @@ urlpatterns = [
     path('logPrescriberPrescription/', views.LogPrescriberPrescription.as_view(), name='logPrescriberPrescription'),
     path('prescriberPrescriptions/<str:prescriber_code>/', views.GetPrescriberPrescriptions.as_view(), name='prescriberPrescriptions'),
     path('patientPrescriptions/<str:patient_id>/', views.GetPatientPrescriptions.as_view(), name='patientPrescriptions'),
+    path('updateprescription/<str:prescription_id>/', views.UpdatePrescription.as_view(), name='updateprescription'),
 ]

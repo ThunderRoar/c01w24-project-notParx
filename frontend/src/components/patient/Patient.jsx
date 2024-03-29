@@ -20,9 +20,9 @@ const Patient = () => {
       navigate('/')
     } else if (decodedToken.user_type === 'Prescriber'){
       console.log('prescriber....')
-      navigate('/Prescriber')
+      navigate('/prescriber')
     } else if (decodedToken.user_type === 'Admin - Coordinator' || decodedToken.user_type === 'Admin - Assistant') {
-      navigate('/Admin')
+      navigate('/admin')
     }
   });
 

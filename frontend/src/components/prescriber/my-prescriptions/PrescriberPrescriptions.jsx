@@ -153,7 +153,7 @@ const PrescriberPrescriptions = () => {
                                         ))}
                                         <TableCell key="prescriptionButton"> 
                                         <Button className='btn' onClick={() => handleDownloadPrescription(row["prescriptionID"])}>
-                                                <span>View Prescription</span>
+                                                <span>Download Prescription</span>
                                         </Button>
                                         </TableCell>
                                     </TableRow>
