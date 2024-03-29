@@ -265,6 +265,12 @@ class UpdatePrescription(APIView):
                 elif prescription_type == 'patient':
                     prescription['patientStatus'] = new_status
 
+            if new_status == 'Complete with discovery pass':
+                if prescription_type == 'prescriber':
+                    prescription['patientStatus'] = new_status
+                elif prescription_type == 'patient':
+                    prescription['prescriberStatus'] = new_status
+
             update_prescription(prescriptionID=prescription_id, filters=prescription)
 
             return Response({'message': 'Prescription updated'}, status=status.HTTP_200_OK)
